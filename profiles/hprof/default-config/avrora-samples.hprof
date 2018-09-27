@@ -1,0 +1,816 @@
+JAVA PROFILE 1.0.1, created Thu Sep 27 22:20:58 2018
+
+Copyright (c) 2003, 2005, Oracle and/or its affiliates. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+
+  - Neither the name of Oracle nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+Header for -agentlib:hprof (or -Xrunhprof) ASCII Output (JDK 5.0 JVMTI based)
+
+WARNING!  This file format is under development, and is subject to
+change without notice.
+
+This file contains the following types of records:
+
+THREAD START
+THREAD END      mark the lifetime of Java threads
+
+TRACE           represents a Java stack trace.  Each trace consists
+                of a series of stack frames.  Other records refer to
+                TRACEs to identify (1) where object allocations have
+                taken place, (2) the frames in which GC roots were
+                found, and (3) frequently executed methods.
+
+HEAP DUMP       is a complete snapshot of all live objects in the Java
+                heap.  Following distinctions are made:
+
+                ROOT    root set as determined by GC
+                CLS     classes 
+                OBJ     instances
+                ARR     arrays
+
+SITES           is a sorted list of allocation sites.  This identifies
+                the most heavily allocated object types, and the TRACE
+                at which those allocations occurred.
+
+CPU SAMPLES     is a statistical profile of program execution.  The VM
+                periodically samples all running threads, and assigns
+                a quantum to active TRACEs in those threads.  Entries
+                in this record are TRACEs ranked by the percentage of
+                total quanta they consumed; top-ranked TRACEs are
+                typically hot spots in the program.
+
+CPU TIME        is a profile of program execution obtained by measuring
+                the time spent in individual methods (excluding the time
+                spent in callees), as well as by counting the number of
+                times each method is called. Entries in this record are
+                TRACEs ranked by the percentage of total CPU time. The
+                "count" field indicates the number of times each TRACE 
+                is invoked.
+
+MONITOR TIME    is a profile of monitor contention obtained by measuring
+                the time spent by a thread waiting to enter a monitor.
+                Entries in this record are TRACEs ranked by the percentage
+                of total monitor contention time and a brief description
+                of the monitor.  The "count" field indicates the number of 
+                times the monitor was contended at that TRACE.
+
+MONITOR DUMP    is a complete snapshot of all the monitors and threads in 
+                the System.
+
+HEAP DUMP, SITES, CPU SAMPLES|TIME and MONITOR DUMP|TIME records are generated 
+at program exit.  They can also be obtained during program execution by typing 
+Ctrl-\ (on Solaris) or by typing Ctrl-Break (on Win32).
+
+--------
+
+THREAD START (obj=5000017e, id = 200001, name="main", group="main")
+THREAD START (obj=5000045b, id = 200007, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200008, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200006, name="node-3", group="main")
+THREAD START (obj=5000045b, id = 200004, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200005, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200009, name="node-2", group="main")
+THREAD END (id = 200005)
+THREAD END (id = 200008)
+THREAD END (id = 200007)
+THREAD END (id = 200009)
+THREAD END (id = 200006)
+THREAD END (id = 200004)
+THREAD START (obj=5000045b, id = 200010, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200013, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200012, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200014, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200015, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200011, name="node-3", group="main")
+THREAD END (id = 200012)
+THREAD END (id = 200015)
+THREAD END (id = 200010)
+THREAD END (id = 200011)
+THREAD END (id = 200013)
+THREAD END (id = 200014)
+THREAD START (obj=5000045b, id = 200020, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200019, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200016, name="node-3", group="main")
+THREAD START (obj=5000045b, id = 200018, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200021, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200017, name="node-4", group="main")
+THREAD END (id = 200020)
+THREAD END (id = 200016)
+THREAD END (id = 200017)
+THREAD END (id = 200021)
+THREAD END (id = 200018)
+THREAD END (id = 200019)
+THREAD START (obj=5000045b, id = 200023, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200026, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200024, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200027, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200025, name="node-3", group="main")
+THREAD START (obj=5000045b, id = 200022, name="node-4", group="main")
+THREAD END (id = 200024)
+THREAD END (id = 200025)
+THREAD END (id = 200023)
+THREAD END (id = 200026)
+THREAD END (id = 200027)
+THREAD END (id = 200022)
+THREAD START (obj=5000045b, id = 200029, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200033, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200028, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200032, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200030, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200031, name="node-3", group="main")
+THREAD END (id = 200028)
+THREAD END (id = 200030)
+THREAD END (id = 200029)
+THREAD END (id = 200031)
+THREAD END (id = 200033)
+THREAD END (id = 200032)
+THREAD START (obj=5000045b, id = 200038, name="node-3", group="main")
+THREAD START (obj=5000045b, id = 200035, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200034, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200039, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200037, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200036, name="node-4", group="main")
+THREAD END (id = 200036)
+THREAD END (id = 200038)
+THREAD END (id = 200034)
+THREAD END (id = 200035)
+THREAD END (id = 200037)
+THREAD END (id = 200039)
+THREAD START (obj=5000045b, id = 200044, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200043, name="node-3", group="main")
+THREAD START (obj=5000045b, id = 200042, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200045, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200041, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200040, name="node-2", group="main")
+THREAD END (id = 200042)
+THREAD END (id = 200041)
+THREAD END (id = 200040)
+THREAD END (id = 200043)
+THREAD END (id = 200045)
+THREAD END (id = 200044)
+THREAD START (obj=5000045b, id = 200047, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200046, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200048, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200049, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200050, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200051, name="node-3", group="main")
+THREAD END (id = 200049)
+THREAD END (id = 200048)
+THREAD END (id = 200051)
+THREAD END (id = 200046)
+THREAD END (id = 200047)
+THREAD END (id = 200050)
+THREAD START (obj=5000045b, id = 200056, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200053, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200054, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200057, name="node-3", group="main")
+THREAD START (obj=5000045b, id = 200052, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200055, name="node-1", group="main")
+THREAD END (id = 200055)
+THREAD END (id = 200053)
+THREAD END (id = 200056)
+THREAD END (id = 200054)
+THREAD END (id = 200052)
+THREAD END (id = 200057)
+THREAD START (obj=5000045b, id = 200058, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200059, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200063, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200062, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200061, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200060, name="node-3", group="main")
+THREAD END (id = 200062)
+THREAD END (id = 200059)
+THREAD END (id = 200058)
+THREAD END (id = 200063)
+THREAD END (id = 200060)
+THREAD END (id = 200061)
+THREAD START (obj=5000045b, id = 200064, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200068, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200067, name="node-3", group="main")
+THREAD START (obj=5000045b, id = 200066, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200069, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200065, name="node-5", group="main")
+THREAD END (id = 200065)
+THREAD END (id = 200069)
+THREAD END (id = 200067)
+THREAD END (id = 200068)
+THREAD END (id = 200066)
+THREAD END (id = 200064)
+THREAD START (obj=5000045b, id = 200070, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200075, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200074, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200071, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200073, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200072, name="node-3", group="main")
+THREAD END (id = 200074)
+THREAD END (id = 200075)
+THREAD END (id = 200072)
+THREAD END (id = 200073)
+THREAD END (id = 200071)
+THREAD END (id = 200070)
+THREAD START (obj=5000045b, id = 200076, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200080, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200079, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200081, name="node-3", group="main")
+THREAD START (obj=5000045b, id = 200078, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200077, name="node-2", group="main")
+THREAD END (id = 200080)
+THREAD END (id = 200076)
+THREAD END (id = 200081)
+THREAD END (id = 200078)
+THREAD END (id = 200079)
+THREAD END (id = 200077)
+THREAD START (obj=5000045b, id = 200084, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200083, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200086, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200085, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200087, name="node-3", group="main")
+THREAD START (obj=5000045b, id = 200082, name="node-1", group="main")
+THREAD END (id = 200082)
+THREAD END (id = 200086)
+THREAD END (id = 200084)
+THREAD END (id = 200087)
+THREAD END (id = 200085)
+THREAD END (id = 200083)
+THREAD START (obj=5000045b, id = 200088, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200089, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200092, name="node-3", group="main")
+THREAD START (obj=5000045b, id = 200091, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200090, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200093, name="node-1", group="main")
+THREAD END (id = 200092)
+THREAD END (id = 200091)
+THREAD END (id = 200089)
+THREAD END (id = 200090)
+THREAD END (id = 200088)
+THREAD END (id = 200093)
+THREAD START (obj=5000045b, id = 200096, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200094, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200098, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200097, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200095, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200099, name="node-3", group="main")
+THREAD END (id = 200094)
+THREAD END (id = 200095)
+THREAD END (id = 200097)
+THREAD END (id = 200096)
+THREAD END (id = 200099)
+THREAD END (id = 200098)
+THREAD START (obj=5000045b, id = 200100, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200104, name="node-3", group="main")
+THREAD START (obj=5000045b, id = 200105, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200102, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200101, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200103, name="node-1", group="main")
+THREAD END (id = 200103)
+THREAD END (id = 200101)
+THREAD END (id = 200105)
+THREAD END (id = 200100)
+THREAD END (id = 200102)
+THREAD END (id = 200104)
+THREAD START (obj=5000045b, id = 200106, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200107, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200108, name="node-3", group="main")
+THREAD START (obj=5000045b, id = 200109, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200110, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200111, name="node-0", group="main")
+THREAD END (id = 200110)
+THREAD END (id = 200109)
+THREAD END (id = 200107)
+THREAD END (id = 200108)
+THREAD END (id = 200106)
+THREAD END (id = 200111)
+THREAD START (obj=5000045b, id = 200112, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200116, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200115, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200117, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200113, name="node-3", group="main")
+THREAD START (obj=5000045b, id = 200114, name="node-1", group="main")
+THREAD END (id = 200114)
+THREAD END (id = 200116)
+THREAD END (id = 200113)
+THREAD END (id = 200117)
+THREAD END (id = 200112)
+THREAD END (id = 200115)
+THREAD START (obj=5000045b, id = 200122, name="node-3", group="main")
+THREAD START (obj=5000045b, id = 200119, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200118, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200123, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200121, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200120, name="node-2", group="main")
+THREAD END (id = 200120)
+THREAD END (id = 200119)
+THREAD END (id = 200122)
+THREAD END (id = 200123)
+THREAD END (id = 200118)
+THREAD END (id = 200121)
+THREAD START (obj=5000045b, id = 200124, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200125, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200128, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200126, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200127, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200129, name="node-3", group="main")
+THREAD END (id = 200128)
+THREAD END (id = 200124)
+THREAD END (id = 200126)
+THREAD END (id = 200125)
+THREAD END (id = 200129)
+THREAD END (id = 200127)
+THREAD START (obj=5000045b, id = 200135, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200130, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200134, name="node-3", group="main")
+THREAD START (obj=5000045b, id = 200133, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200131, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200132, name="node-2", group="main")
+THREAD END (id = 200133)
+THREAD END (id = 200135)
+THREAD END (id = 200132)
+THREAD END (id = 200130)
+THREAD END (id = 200131)
+THREAD END (id = 200134)
+THREAD START (obj=5000045b, id = 200140, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200136, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200139, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200141, name="node-3", group="main")
+THREAD START (obj=5000045b, id = 200137, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200138, name="node-0", group="main")
+THREAD END (id = 200140)
+THREAD END (id = 200137)
+THREAD END (id = 200141)
+THREAD END (id = 200139)
+THREAD END (id = 200136)
+THREAD END (id = 200138)
+THREAD START (obj=5000045b, id = 200146, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200142, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200143, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200147, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200145, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200144, name="node-3", group="main")
+THREAD END (id = 200146)
+THREAD END (id = 200144)
+THREAD END (id = 200142)
+THREAD END (id = 200147)
+THREAD END (id = 200143)
+THREAD END (id = 200145)
+THREAD START (obj=5000045b, id = 200149, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200150, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200148, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200152, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200153, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200151, name="node-3", group="main")
+THREAD END (id = 200149)
+THREAD END (id = 200152)
+THREAD END (id = 200148)
+THREAD END (id = 200151)
+THREAD END (id = 200153)
+THREAD END (id = 200150)
+THREAD START (obj=5000045b, id = 200154, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200155, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200158, name="node-3", group="main")
+THREAD START (obj=5000045b, id = 200159, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200157, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200156, name="node-2", group="main")
+THREAD END (id = 200154)
+THREAD END (id = 200157)
+THREAD END (id = 200158)
+THREAD END (id = 200155)
+THREAD END (id = 200156)
+THREAD END (id = 200159)
+THREAD START (obj=5000045b, id = 200160, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200162, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200164, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200163, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200161, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200165, name="node-3", group="main")
+THREAD END (id = 200161)
+THREAD END (id = 200165)
+THREAD END (id = 200160)
+THREAD END (id = 200163)
+THREAD END (id = 200162)
+THREAD END (id = 200164)
+THREAD START (obj=5000045b, id = 200167, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200170, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200169, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200168, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200166, name="node-3", group="main")
+THREAD START (obj=5000045b, id = 200171, name="node-5", group="main")
+THREAD END (id = 200168)
+THREAD END (id = 200171)
+THREAD END (id = 200167)
+THREAD END (id = 200170)
+THREAD END (id = 200166)
+THREAD END (id = 200169)
+THREAD START (obj=5000045b, id = 200172, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200176, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200175, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200174, name="node-1", group="main")
+THREAD START (obj=5000045b, id = 200177, name="node-3", group="main")
+THREAD START (obj=5000045b, id = 200173, name="node-2", group="main")
+THREAD END (id = 200174)
+THREAD END (id = 200172)
+THREAD END (id = 200175)
+THREAD END (id = 200176)
+THREAD END (id = 200177)
+THREAD END (id = 200173)
+THREAD START (obj=5000045b, id = 200182, name="node-2", group="main")
+THREAD START (obj=5000045b, id = 200179, name="node-4", group="main")
+THREAD START (obj=5000045b, id = 200178, name="node-3", group="main")
+THREAD START (obj=5000045b, id = 200183, name="node-5", group="main")
+THREAD START (obj=5000045b, id = 200181, name="node-0", group="main")
+THREAD START (obj=5000045b, id = 200180, name="node-1", group="main")
+THREAD END (id = 200178)
+THREAD END (id = 200183)
+THREAD END (id = 200181)
+THREAD END (id = 200179)
+THREAD END (id = 200180)
+THREAD END (id = 200182)
+THREAD END (id = 200001)
+TRACE 300202:
+	java.lang.Object.wait(Object.java:Unknown line)
+	java.lang.Object.wait(Object.java:502)
+	avrora.sim.clock.RippleSynchronizer.waitForLink(RippleSynchronizer.java:181)
+	avrora.sim.clock.RippleSynchronizer.waitFor(RippleSynchronizer.java:156)
+TRACE 300181:
+	java.io.FileOutputStream.write(FileOutputStream.java:Unknown line)
+	java.io.FileOutputStream.write(FileOutputStream.java:290)
+	org.dacapo.harness.TeeOutputStream.write(TeeOutputStream.java:105)
+	java.io.FilterOutputStream.write(FilterOutputStream.java:125)
+TRACE 300203:
+	java.lang.Object.hashCode(Object.java:Unknown line)
+	java.util.HashMap.hash(HashMap.java:339)
+	java.util.HashMap.get(HashMap.java:557)
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:308)
+TRACE 300201:
+	java.lang.Object.notifyAll(Object.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.notifyLink(RippleSynchronizer.java:198)
+	avrora.sim.clock.RippleSynchronizer.advance(RippleSynchronizer.java:148)
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:314)
+TRACE 300205:
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:256)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:114)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:382)
+	avrora.sim.Simulator.start(Simulator.java:523)
+TRACE 300207:
+	java.lang.Object.notifyAll(Object.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.notifyLink(RippleSynchronizer.java:198)
+	avrora.sim.clock.RippleSynchronizer.advance(RippleSynchronizer.java:144)
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:314)
+TRACE 300186:
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:259)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:114)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:382)
+	avrora.sim.Simulator.start(Simulator.java:523)
+TRACE 300193:
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:312)
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:537)
+	avrora.sim.radio.Medium$Receiver.access$000(Medium.java:260)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireUnlocked(Medium.java:331)
+TRACE 300212:
+	java.lang.Object.notifyAll(Object.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.notifyLink(RippleSynchronizer.java:198)
+	avrora.sim.clock.RippleSynchronizer.advance(RippleSynchronizer.java:144)
+	avrora.sim.clock.RippleSynchronizer.access$000(RippleSynchronizer.java:22)
+TRACE 300224:
+	avrora.sim.mcu.DefaultMCU$Pin.write(DefaultMCU.java:216)
+	avrora.sim.mcu.ATMegaFamily$PortRegister.write(ATMegaFamily.java:210)
+	avrora.sim.AtmelInterpreter$IORegBehavior.write(AtmelInterpreter.java:715)
+	avrora.sim.AtmelInterpreter.writeVolatile(AtmelInterpreter.java:755)
+TRACE 300194:
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:312)
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:537)
+	avrora.sim.radio.Medium$Receiver.access$000(Medium.java:260)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:368)
+TRACE 300214:
+	avrora.sim.AtmelInterpreter$IORegBehavior.read(AtmelInterpreter.java:712)
+	avrora.sim.AtmelInterpreter.readVolatile(AtmelInterpreter.java:750)
+	avrora.sim.AtmelInterpreter.readSRAM(AtmelInterpreter.java:670)
+	avrora.sim.AtmelInterpreter.getIORegisterByte(AtmelInterpreter.java:807)
+TRACE 300198:
+	java.lang.Object.wait(Object.java:Unknown line)
+	java.lang.Object.wait(Object.java:502)
+	avrora.sim.clock.RippleSynchronizer.waitForLink(RippleSynchronizer.java:181)
+	avrora.sim.clock.RippleSynchronizer.waitFor(RippleSynchronizer.java:166)
+TRACE 300282:
+	avrora.sim.AtmelInterpreter$IORegBehavior.write(AtmelInterpreter.java:715)
+	avrora.sim.AtmelInterpreter.writeVolatile(AtmelInterpreter.java:755)
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:688)
+	avrora.sim.AtmelInterpreter.writeIORegisterByte(AtmelInterpreter.java:940)
+TRACE 300287:
+	java.lang.Object.notifyAll(Object.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.notifyLink(RippleSynchronizer.java:198)
+	avrora.sim.clock.RippleSynchronizer.advance(RippleSynchronizer.java:140)
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:314)
+TRACE 300225:
+	java.lang.Object.notifyAll(Object.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.notifyLink(RippleSynchronizer.java:198)
+	avrora.sim.clock.RippleSynchronizer.advance(RippleSynchronizer.java:148)
+	avrora.sim.clock.RippleSynchronizer.access$000(RippleSynchronizer.java:22)
+TRACE 300275:
+	avrora.arch.legacy.LegacyInstr$RETI.accept(LegacyInstr.java:2309)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:256)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:114)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:382)
+TRACE 300206:
+	avrora.sim.clock.RippleSynchronizer.advance(RippleSynchronizer.java:129)
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:314)
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:537)
+	avrora.sim.radio.Medium$Receiver.access$000(Medium.java:260)
+TRACE 300293:
+	avrora.arch.legacy.LegacyInstr$STS.accept(LegacyInstr.java:2785)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:256)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:114)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:382)
+TRACE 300192:
+	avrora.sim.radio.Medium$Receiver.earliestNewTransmission(Medium.java:487)
+	avrora.sim.radio.Medium$Receiver.access$100(Medium.java:260)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireUnlocked(Medium.java:333)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:317)
+TRACE 300288:
+	java.lang.Object.wait(Object.java:Unknown line)
+	java.lang.Object.wait(Object.java:502)
+	avrora.sim.clock.RippleSynchronizer.waitForLink(RippleSynchronizer.java:181)
+	avrora.sim.clock.RippleSynchronizer.waitFor(RippleSynchronizer.java:170)
+TRACE 300230:
+	avrora.sim.clock.DeltaQueue.insertEvent(DeltaQueue.java:172)
+	avrora.sim.clock.MainClock.insertEvent(MainClock.java:79)
+	avrora.sim.radio.CC1000Radio$SPITicker.fire(CC1000Radio.java:1033)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:124)
+TRACE 300310:
+	avrora.sim.clock.DeltaQueue.insertEvent(DeltaQueue.java:172)
+	avrora.sim.clock.MainClock.insertEvent(MainClock.java:79)
+	avrora.sim.clock.DerivedClock.insertEvent(DerivedClock.java:100)
+	avrora.sim.mcu.Timer8Bit.tickerFinish(Timer8Bit.java:341)
+TRACE 300215:
+	avrora.sim.radio.Medium$Receiver.getIntersection(Medium.java:511)
+	avrora.sim.radio.Medium$Receiver.access$200(Medium.java:260)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:378)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:369)
+TRACE 300208:
+	avrora.sim.clock.RippleSynchronizer$NotifyEvent.fire(RippleSynchronizer.java:87)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:124)
+	avrora.sim.clock.DeltaQueue.skipAhead(DeltaQueue.java:268)
+	avrora.sim.clock.MainClock.skipAhead(MainClock.java:118)
+TRACE 300223:
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:124)
+	avrora.sim.clock.DeltaQueue.skipAhead(DeltaQueue.java:268)
+	avrora.sim.clock.MainClock.skipAhead(MainClock.java:118)
+	avrora.arch.legacy.LegacyInterpreter.sleepLoop(LegacyInterpreter.java:246)
+TRACE 300278:
+	avrora.sim.radio.Medium$Probe$List.fireBeforeTransmit(Medium.java:90)
+	avrora.sim.radio.Medium$Transmitter$Ticker.fire(Medium.java:247)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:124)
+	avrora.sim.clock.DeltaQueue.skipAhead(DeltaQueue.java:268)
+TRACE 300292:
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:967)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:633)
+	avrora.arch.legacy.LegacyInstr$CALL.accept(LegacyInstr.java:1340)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:256)
+TRACE 300276:
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:967)
+	avrora.arch.legacy.LegacyInterpreter.pushPC(LegacyInterpreter.java:1539)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:228)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:106)
+TRACE 300200:
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:114)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:382)
+	avrora.sim.Simulator.start(Simulator.java:523)
+	avrora.sim.SimulatorThread.run(SimulatorThread.java:99)
+TRACE 300279:
+	java.io.FileOutputStream.writeBytes(FileOutputStream.java:Unknown line)
+	java.io.FileOutputStream.write(FileOutputStream.java:326)
+	java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	java.io.BufferedOutputStream.flush(BufferedOutputStream.java:140)
+TRACE 300303:
+	java.lang.Runtime.gc(Runtime.java:Unknown line)
+	java.lang.System.gc(System.java:993)
+	org.dacapo.harness.Benchmark.run(Benchmark.java:178)
+	org.dacapo.harness.TestHarness.runBenchmark(TestHarness.java:199)
+TRACE 300340:
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:537)
+	avrora.sim.radio.Medium$Receiver.access$000(Medium.java:260)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:368)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:314)
+TRACE 300290:
+	java.lang.AbstractStringBuilder.<init>(AbstractStringBuilder.java:68)
+	java.lang.StringBuilder.<init>(StringBuilder.java:89)
+	org.dacapo.harness.Callback.start(Callback.java:161)
+	org.dacapo.harness.Callback.start(Callback.java:157)
+TRACE 300221:
+	avrora.monitors.PacketMonitor$Mon.renderPacket(PacketMonitor.java:208)
+	avrora.monitors.PacketMonitor$Mon.fireBeforeTransmitEnd(PacketMonitor.java:144)
+	avrora.sim.radio.Medium$Probe$List.fireBeforeTransmitEnd(Medium.java:98)
+	avrora.sim.radio.Medium$Transmitter$Ticker.fire(Medium.java:232)
+TRACE 300228:
+	avrora.arch.legacy.LegacyInstr$CPSE.accept(LegacyInstr.java:1612)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:256)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:114)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:382)
+TRACE 300271:
+	java.io.RandomAccessFile.read0(RandomAccessFile.java:Unknown line)
+	java.io.RandomAccessFile.read(RandomAccessFile.java:337)
+	cck.elf.ELFDataInputStream.read_1(ELFDataInputStream.java:92)
+	cck.elf.ELFDataInputStream.read_4(ELFDataInputStream.java:103)
+TRACE 300063:
+	java.lang.ClassLoader.defineClass1(ClassLoader.java:Unknown line)
+	java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	java.net.URLClassLoader.defineClass(URLClassLoader.java:467)
+TRACE 300222:
+	avrora.sim.AtmelInterpreter$IORegBehavior.read(AtmelInterpreter.java:712)
+	avrora.sim.AtmelInterpreter.readVolatile(AtmelInterpreter.java:750)
+	avrora.sim.AtmelInterpreter.readSRAM(AtmelInterpreter.java:670)
+	avrora.sim.AtmelInterpreter.setIORegBit(AtmelInterpreter.java:639)
+TRACE 300309:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:1429)
+	avrora.arch.legacy.LegacyInstr$STD.accept(LegacyInstr.java:2734)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:256)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:114)
+TRACE 300273:
+	java.lang.Object.notifyAll(Object.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.notifyLink(RippleSynchronizer.java:198)
+	avrora.sim.clock.RippleSynchronizer.advance(RippleSynchronizer.java:140)
+	avrora.sim.clock.RippleSynchronizer.access$000(RippleSynchronizer.java:22)
+TRACE 300277:
+	avrora.sim.output.SimPrinter.printBuffer(SimPrinter.java:74)
+	avrora.monitors.PacketMonitor$Mon.fireBeforeTransmitEnd(PacketMonitor.java:144)
+	avrora.sim.radio.Medium$Probe$List.fireBeforeTransmitEnd(Medium.java:98)
+	avrora.sim.radio.Medium$Transmitter$Ticker.fire(Medium.java:232)
+TRACE 300353:
+	avrora.sim.CodeSegment.readInstr(CodeSegment.java:179)
+	avrora.sim.AtmelInterpreter.getInstr(AtmelInterpreter.java:1019)
+	avrora.sim.AtmelInterpreter.getInstrSize(AtmelInterpreter.java:795)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:1328)
+TRACE 300187:
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:258)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:114)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:382)
+	avrora.sim.Simulator.start(Simulator.java:523)
+TRACE 300231:
+	sun.nio.cs.UTF_8.updatePositions(UTF_8.java:77)
+	sun.nio.cs.UTF_8.access$200(UTF_8.java:57)
+	sun.nio.cs.UTF_8$Encoder.encodeArrayLoop(UTF_8.java:636)
+	sun.nio.cs.UTF_8$Encoder.encodeLoop(UTF_8.java:691)
+TRACE 300233:
+	java.io.FileOutputStream.close0(FileOutputStream.java:Unknown line)
+	java.io.FileOutputStream.access$000(FileOutputStream.java:53)
+	java.io.FileOutputStream$1.close(FileOutputStream.java:356)
+	java.io.FileDescriptor.closeAll(FileDescriptor.java:212)
+TRACE 300283:
+	avrora.sim.radio.Medium$Receiver.access$100(Medium.java:260)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireUnlocked(Medium.java:333)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:317)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:124)
+TRACE 300294:
+	avrora.sim.radio.Medium$Probe$List.fireBeforeTransmit(Medium.java:90)
+	avrora.sim.radio.Medium$Transmitter$Ticker.fire(Medium.java:247)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:124)
+	avrora.sim.clock.DeltaQueue.advanceSlow(DeltaQueue.java:298)
+TRACE 300307:
+	avrora.sim.clock.DeltaQueue.insertEvent(DeltaQueue.java:183)
+	avrora.sim.clock.MainClock.insertEvent(MainClock.java:79)
+	avrora.sim.radio.CC1000Radio$SPITicker.fire(CC1000Radio.java:1033)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:124)
+TRACE 300308:
+	java.io.RandomAccessFile.read0(RandomAccessFile.java:Unknown line)
+	java.io.RandomAccessFile.read(RandomAccessFile.java:337)
+	cck.elf.ELFDataInputStream.read_1(ELFDataInputStream.java:92)
+	cck.elf.ELFDataInputStream.read_4(ELFDataInputStream.java:104)
+TRACE 300329:
+	avrora.sim.radio.Medium$Probe$List.fireAfterReceive(Medium.java:104)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:419)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:369)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:314)
+TRACE 300335:
+	avrora.monitors.PacketMonitor$Mon.renderPacket(PacketMonitor.java:208)
+	avrora.monitors.PacketMonitor$Mon.fireAfterReceiveEnd(PacketMonitor.java:196)
+	avrora.sim.radio.Medium$Probe$List.fireAfterReceiveEnd(Medium.java:112)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:426)
+TRACE 300350:
+	avrora.monitors.LEDMonitor$Mon.fireAfterTransition(LEDMonitor.java:61)
+	avrora.sim.util.MulticastFSMProbe.fireAfterTransition(MulticastFSMProbe.java:53)
+	avrora.sim.FiniteStateMachine.fireAfter(FiniteStateMachine.java:119)
+	avrora.sim.FiniteStateMachine.transition(FiniteStateMachine.java:280)
+TRACE 300211:
+	avrora.sim.radio.Medium.newTransmission(Medium.java:685)
+	avrora.sim.radio.Medium$Transmitter.beginTransmit(Medium.java:199)
+	avrora.sim.radio.CC1000Radio$MainRegister.decode(CC1000Radio.java:289)
+	avrora.sim.radio.CC1000Radio$RadioRegister.write(CC1000Radio.java:217)
+TRACE 300284:
+	avrora.sim.clock.DeltaQueue.insertEvent(DeltaQueue.java:172)
+	avrora.sim.clock.MainClock.insertEvent(MainClock.java:79)
+	avrora.sim.radio.Medium$Transmitter$Ticker.fire(Medium.java:248)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:124)
+TRACE 300306:
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:967)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:634)
+	avrora.arch.legacy.LegacyInstr$CALL.accept(LegacyInstr.java:1340)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:256)
+TRACE 300327:
+	avrora.sim.state.RegisterUtil$BoolView.getValue(RegisterUtil.java:77)
+	avrora.sim.mcu.ADC$ControlRegister.write(ADC.java:224)
+	avrora.sim.AtmelInterpreter$IORegBehavior.write(AtmelInterpreter.java:715)
+	avrora.sim.AtmelInterpreter.writeVolatile(AtmelInterpreter.java:755)
+TRACE 300336:
+	avrora.sim.clock.DeltaQueue$Link.remove(DeltaQueue.java:119)
+	avrora.sim.clock.DeltaQueue.removeEvent(DeltaQueue.java:207)
+	avrora.sim.clock.MainClock.removeEvent(MainClock.java:89)
+	avrora.sim.radio.Medium$Receiver.endReceive(Medium.java:290)
+TRACE 300337:
+	avrora.sim.clock.DeltaQueue.insertEvent(DeltaQueue.java:183)
+	avrora.sim.clock.MainClock.insertEvent(MainClock.java:79)
+	avrora.sim.radio.Medium$Transmitter$Ticker.fire(Medium.java:248)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:124)
+TRACE 300349:
+	avrora.arch.legacy.LegacyInterpreter.sleepLoop(LegacyInterpreter.java:246)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:111)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:382)
+	avrora.sim.Simulator.start(Simulator.java:523)
+CPU SAMPLES BEGIN (total = 20481) Thu Sep 27 22:24:08 2018
+rank   self  accum   count trace method
+   1 35,81% 35,81%    7335 300202 java.lang.Object.wait
+   2 26,79% 62,60%    5486 300181 java.io.FileOutputStream.write
+   3 12,25% 74,84%    2508 300203 java.lang.Object.hashCode
+   4 11,59% 86,44%    2374 300201 java.lang.Object.notifyAll
+   5  4,17% 90,61%     854 300205 avrora.arch.legacy.LegacyInterpreter.fastLoop
+   6  1,82% 92,43%     373 300207 java.lang.Object.notifyAll
+   7  1,38% 93,81%     283 300186 avrora.arch.legacy.LegacyInterpreter.fastLoop
+   8  1,20% 95,01%     245 300193 avrora.sim.clock.RippleSynchronizer.waitForNeighbors
+   9  0,52% 95,52%     106 300212 java.lang.Object.notifyAll
+  10  0,44% 95,97%      91 300224 avrora.sim.mcu.DefaultMCU$Pin.write
+  11  0,36% 96,32%      73 300194 avrora.sim.clock.RippleSynchronizer.waitForNeighbors
+  12  0,35% 96,67%      71 300214 avrora.sim.AtmelInterpreter$IORegBehavior.read
+  13  0,23% 96,90%      48 300198 java.lang.Object.wait
+  14  0,19% 97,09%      39 300282 avrora.sim.AtmelInterpreter$IORegBehavior.write
+  15  0,18% 97,28%      37 300287 java.lang.Object.notifyAll
+  16  0,17% 97,45%      35 300225 java.lang.Object.notifyAll
+  17  0,15% 97,59%      30 300275 avrora.arch.legacy.LegacyInstr$RETI.accept
+  18  0,12% 97,71%      25 300206 avrora.sim.clock.RippleSynchronizer.advance
+  19  0,12% 97,83%      24 300293 avrora.arch.legacy.LegacyInstr$STS.accept
+  20  0,11% 97,94%      22 300192 avrora.sim.radio.Medium$Receiver.earliestNewTransmission
+  21  0,10% 98,04%      21 300288 java.lang.Object.wait
+  22  0,10% 98,14%      20 300230 avrora.sim.clock.DeltaQueue.insertEvent
+  23  0,09% 98,23%      19 300310 avrora.sim.clock.DeltaQueue.insertEvent
+  24  0,08% 98,32%      17 300215 avrora.sim.radio.Medium$Receiver.getIntersection
+  25  0,08% 98,39%      16 300208 avrora.sim.clock.RippleSynchronizer$NotifyEvent.fire
+  26  0,07% 98,47%      15 300223 avrora.sim.clock.DeltaQueue$Link.fire
+  27  0,06% 98,53%      13 300278 avrora.sim.radio.Medium$Probe$List.fireBeforeTransmit
+  28  0,06% 98,59%      13 300292 avrora.sim.AtmelInterpreter.pushByte
+  29  0,05% 98,65%      11 300276 avrora.sim.AtmelInterpreter.pushByte
+  30  0,04% 98,69%       9 300200 avrora.arch.legacy.LegacyInterpreter.runLoop
+  31  0,04% 98,74%       9 300279 java.io.FileOutputStream.writeBytes
+  32  0,04% 98,78%       9 300303 java.lang.Runtime.gc
+  33  0,04% 98,82%       9 300340 avrora.sim.radio.Medium$Receiver.waitForNeighbors
+  34  0,04% 98,86%       8 300290 java.lang.AbstractStringBuilder.<init>
+  35  0,03% 98,90%       7 300221 avrora.monitors.PacketMonitor$Mon.renderPacket
+  36  0,03% 98,93%       7 300228 avrora.arch.legacy.LegacyInstr$CPSE.accept
+  37  0,03% 98,96%       7 300271 java.io.RandomAccessFile.read0
+  38  0,03% 98,99%       6 300063 java.lang.ClassLoader.defineClass1
+  39  0,03% 99,02%       6 300222 avrora.sim.AtmelInterpreter$IORegBehavior.read
+  40  0,03% 99,05%       6 300309 avrora.arch.legacy.LegacyInterpreter.visit
+  41  0,02% 99,08%       5 300273 java.lang.Object.notifyAll
+  42  0,02% 99,10%       5 300277 avrora.sim.output.SimPrinter.printBuffer
+  43  0,02% 99,13%       5 300353 avrora.sim.CodeSegment.readInstr
+  44  0,02% 99,15%       4 300187 avrora.arch.legacy.LegacyInterpreter.fastLoop
+  45  0,02% 99,17%       4 300231 sun.nio.cs.UTF_8.updatePositions
+  46  0,02% 99,18%       4 300233 java.io.FileOutputStream.close0
+  47  0,02% 99,20%       4 300283 avrora.sim.radio.Medium$Receiver.access$100
+  48  0,02% 99,22%       4 300294 avrora.sim.radio.Medium$Probe$List.fireBeforeTransmit
+  49  0,02% 99,24%       4 300307 avrora.sim.clock.DeltaQueue.insertEvent
+  50  0,02% 99,26%       4 300308 java.io.RandomAccessFile.read0
+  51  0,02% 99,28%       4 300329 avrora.sim.radio.Medium$Probe$List.fireAfterReceive
+  52  0,02% 99,30%       4 300335 avrora.monitors.PacketMonitor$Mon.renderPacket
+  53  0,02% 99,32%       4 300350 avrora.monitors.LEDMonitor$Mon.fireAfterTransition
+  54  0,01% 99,34%       3 300211 avrora.sim.radio.Medium.newTransmission
+  55  0,01% 99,35%       3 300284 avrora.sim.clock.DeltaQueue.insertEvent
+  56  0,01% 99,37%       3 300306 avrora.sim.AtmelInterpreter.pushByte
+  57  0,01% 99,38%       3 300327 avrora.sim.state.RegisterUtil$BoolView.getValue
+  58  0,01% 99,39%       3 300336 avrora.sim.clock.DeltaQueue$Link.remove
+  59  0,01% 99,41%       3 300337 avrora.sim.clock.DeltaQueue.insertEvent
+  60  0,01% 99,42%       3 300349 avrora.arch.legacy.LegacyInterpreter.sleepLoop
+CPU SAMPLES END

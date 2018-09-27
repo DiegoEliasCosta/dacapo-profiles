@@ -1,0 +1,953 @@
+JAVA PROFILE 1.0.1, created Thu Sep 27 22:48:57 2018
+
+Copyright (c) 2003, 2005, Oracle and/or its affiliates. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+
+  - Neither the name of Oracle nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+Header for -agentlib:hprof (or -Xrunhprof) ASCII Output (JDK 5.0 JVMTI based)
+
+WARNING!  This file format is under development, and is subject to
+change without notice.
+
+This file contains the following types of records:
+
+THREAD START
+THREAD END      mark the lifetime of Java threads
+
+TRACE           represents a Java stack trace.  Each trace consists
+                of a series of stack frames.  Other records refer to
+                TRACEs to identify (1) where object allocations have
+                taken place, (2) the frames in which GC roots were
+                found, and (3) frequently executed methods.
+
+HEAP DUMP       is a complete snapshot of all live objects in the Java
+                heap.  Following distinctions are made:
+
+                ROOT    root set as determined by GC
+                CLS     classes 
+                OBJ     instances
+                ARR     arrays
+
+SITES           is a sorted list of allocation sites.  This identifies
+                the most heavily allocated object types, and the TRACE
+                at which those allocations occurred.
+
+CPU SAMPLES     is a statistical profile of program execution.  The VM
+                periodically samples all running threads, and assigns
+                a quantum to active TRACEs in those threads.  Entries
+                in this record are TRACEs ranked by the percentage of
+                total quanta they consumed; top-ranked TRACEs are
+                typically hot spots in the program.
+
+CPU TIME        is a profile of program execution obtained by measuring
+                the time spent in individual methods (excluding the time
+                spent in callees), as well as by counting the number of
+                times each method is called. Entries in this record are
+                TRACEs ranked by the percentage of total CPU time. The
+                "count" field indicates the number of times each TRACE 
+                is invoked.
+
+MONITOR TIME    is a profile of monitor contention obtained by measuring
+                the time spent by a thread waiting to enter a monitor.
+                Entries in this record are TRACEs ranked by the percentage
+                of total monitor contention time and a brief description
+                of the monitor.  The "count" field indicates the number of 
+                times the monitor was contended at that TRACE.
+
+MONITOR DUMP    is a complete snapshot of all the monitors and threads in 
+                the System.
+
+HEAP DUMP, SITES, CPU SAMPLES|TIME and MONITOR DUMP|TIME records are generated 
+at program exit.  They can also be obtained during program execution by typing 
+Ctrl-\ (on Solaris) or by typing Ctrl-Break (on Win32).
+
+--------
+
+THREAD START (obj=5000017e, id = 200001, name="main", group="main")
+THREAD START (obj=5000017e, id = 200004, name="Thread-0", group="main")
+THREAD START (obj=5000017e, id = 200005, name="Java2D Disposer", group="system")
+THREAD START (obj=5000095d, id = 200006, name="Thread-2", group="main")
+THREAD END (id = 200006)
+THREAD START (obj=5000095d, id = 200007, name="Thread-3", group="main")
+THREAD END (id = 200007)
+THREAD START (obj=5000099e, id = 200008, name="Thread-1", group="main")
+THREAD END (id = 200008)
+THREAD END (id = 200001)
+TRACE 300713:
+	java.util.zip.Deflater.deflateBytes(Deflater.java:Unknown line)
+	java.util.zip.Deflater.deflate(Deflater.java:444)
+	java.util.zip.Deflater.deflate(Deflater.java:366)
+	java.util.zip.DeflaterOutputStream.deflate(DeflaterOutputStream.java:251)
+TRACE 300718:
+	java.io.FileOutputStream.close0(FileOutputStream.java:Unknown line)
+	java.io.FileOutputStream.access$000(FileOutputStream.java:53)
+	java.io.FileOutputStream$1.close(FileOutputStream.java:356)
+	java.io.FileDescriptor.closeAll(FileDescriptor.java:212)
+TRACE 300062:
+	java.lang.ClassLoader.defineClass1(ClassLoader.java:Unknown line)
+	java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	java.net.URLClassLoader.defineClass(URLClassLoader.java:467)
+TRACE 300178:
+	java.util.zip.Inflater.inflateBytes(Inflater.java:Unknown line)
+	java.util.zip.Inflater.inflate(Inflater.java:259)
+	java.util.zip.InflaterInputStream.read(InflaterInputStream.java:152)
+	sun.misc.Resource.getBytes(Resource.java:124)
+TRACE 300695:
+	sun.java2d.pisces.PiscesCache.<init>(PiscesCache.java:71)
+	sun.java2d.pisces.Renderer.endRendering(Renderer.java:533)
+	sun.java2d.pisces.PiscesRenderingEngine.getAATileGenerator(PiscesRenderingEngine.java:564)
+	sun.java2d.pipe.AAShapePipe.renderPath(AAShapePipe.java:152)
+TRACE 300573:
+	sun.font.FreetypeFontScaler.getGlyphMetricsNative(FreetypeFontScaler.java:Unknown line)
+	sun.font.FreetypeFontScaler.getGlyphMetrics(FreetypeFontScaler.java:101)
+	sun.font.FileFont.getGlyphMetrics(FileFont.java:199)
+	sun.font.FileFontStrike.getGlyphMetrics(FileFontStrike.java:870)
+TRACE 300194:
+	java.lang.String.intern(String.java:Unknown line)
+	org.apache.batik.dom.svg.SVGOMDocument.createAttributeNS(SVGOMDocument.java:336)
+	org.apache.batik.dom.AbstractElement.setAttributeNS(AbstractElement.java:260)
+	org.apache.batik.dom.util.SAXDocumentFactory.startElement(SAXDocumentFactory.java:649)
+TRACE 300455:
+	java.io.RandomAccessFile.open0(RandomAccessFile.java:Unknown line)
+	java.io.RandomAccessFile.open(RandomAccessFile.java:316)
+	java.io.RandomAccessFile.<init>(RandomAccessFile.java:243)
+	java.io.RandomAccessFile.<init>(RandomAccessFile.java:124)
+TRACE 300500:
+	java.lang.Object.clone(Object.java:Unknown line)
+	java.awt.geom.RectangularShape.clone(RectangularShape.java:391)
+	org.apache.batik.gvt.CompositeShapePainter.getPaintedBounds2D(CompositeShapePainter.java:158)
+	org.apache.batik.gvt.ShapeNode.getPrimitiveBounds(ShapeNode.java:238)
+TRACE 300751:
+	sun.font.SunLayoutEngine.nativeLayout(SunLayoutEngine.java:Unknown line)
+	sun.font.SunLayoutEngine.layout(SunLayoutEngine.java:158)
+	sun.font.GlyphLayout$EngineRecord.layout(GlyphLayout.java:685)
+	sun.font.GlyphLayout.layout(GlyphLayout.java:466)
+TRACE 300119:
+	java.io.FileOutputStream.writeBytes(FileOutputStream.java:Unknown line)
+	java.io.FileOutputStream.write(FileOutputStream.java:326)
+	java.io.BufferedOutputStream.write(BufferedOutputStream.java:122)
+	org.dacapo.harness.Benchmark.fileFromInputStream(Benchmark.java:623)
+TRACE 300351:
+	java.lang.Object.hashCode(Object.java:Unknown line)
+	java.awt.RenderingHints$Key.hashCode(RenderingHints.java:186)
+	java.util.HashMap.hash(HashMap.java:339)
+	java.util.HashMap.put(HashMap.java:612)
+TRACE 300692:
+	sun.java2d.pisces.Renderer.<init>(Renderer.java:361)
+	sun.java2d.pisces.PiscesRenderingEngine.getAATileGenerator(PiscesRenderingEngine.java:555)
+	sun.java2d.pipe.AAShapePipe.renderPath(AAShapePipe.java:152)
+	sun.java2d.pipe.AAShapePipe.fill(AAShapePipe.java:68)
+TRACE 300703:
+	sun.font.FreetypeFontScaler.getGlyphImageNative(FreetypeFontScaler.java:Unknown line)
+	sun.font.FreetypeFontScaler.getGlyphImage(FreetypeFontScaler.java:115)
+	sun.font.FileFont.getGlyphImage(FileFont.java:208)
+	sun.font.FileFontStrike.getSlot0GlyphImagePtrs(FileFontStrike.java:445)
+TRACE 300716:
+	org.apache.batik.ext.awt.image.codec.png.PNGImageEncoder.encodePass(PNGImageEncoder.java:413)
+	org.apache.batik.ext.awt.image.codec.png.PNGImageEncoder.writeIDAT(PNGImageEncoder.java:501)
+	org.apache.batik.ext.awt.image.codec.png.PNGImageEncoder.encode(PNGImageEncoder.java:1032)
+	org.apache.batik.ext.awt.image.codec.png.PNGTranscoderInternalCodecWriteAdapter.writeImage(PNGTranscoderInternalCodecWriteAdapter.java:87)
+TRACE 300049:
+	java.util.zip.ZipFile.open(ZipFile.java:Unknown line)
+	java.util.zip.ZipFile.<init>(ZipFile.java:225)
+	java.util.zip.ZipFile.<init>(ZipFile.java:155)
+	java.util.jar.JarFile.<init>(JarFile.java:166)
+TRACE 300065:
+	java.lang.ClassLoader.findBootstrapClass(ClassLoader.java:Unknown line)
+	java.lang.ClassLoader.findBootstrapClassOrNull(ClassLoader.java:1015)
+	java.lang.ClassLoader.loadClass(ClassLoader.java:413)
+	java.lang.ClassLoader.loadClass(ClassLoader.java:411)
+TRACE 300084:
+	sun.net.www.protocol.jar.Handler.openConnection(Handler.java:41)
+	java.net.URL.openConnection(URL.java:979)
+	sun.misc.URLClassPath$Loader.getResource(URLClassPath.java:736)
+	sun.misc.URLClassPath.getResource(URLClassPath.java:239)
+TRACE 300095:
+	java.lang.String.substring(String.java:1965)
+	java.net.URL.<init>(URL.java:554)
+	java.net.URL.<init>(URL.java:490)
+	java.net.URL.<init>(URL.java:439)
+TRACE 300113:
+	java.util.zip.ZipFile.getNextEntry(ZipFile.java:Unknown line)
+	java.util.zip.ZipFile.access$500(ZipFile.java:60)
+	java.util.zip.ZipFile$ZipEntryIterator.next(ZipFile.java:523)
+	java.util.zip.ZipFile$ZipEntryIterator.nextElement(ZipFile.java:514)
+TRACE 300115:
+	java.util.regex.Matcher.<init>(Matcher.java:225)
+	java.util.regex.Pattern.matcher(Pattern.java:1093)
+	java.lang.String.replace(String.java:2239)
+	org.dacapo.harness.TestHarness.<init>(TestHarness.java:260)
+TRACE 300118:
+	java.io.FileOutputStream.open0(FileOutputStream.java:Unknown line)
+	java.io.FileOutputStream.open(FileOutputStream.java:270)
+	java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	java.io.FileOutputStream.<init>(FileOutputStream.java:162)
+TRACE 300120:
+	java.util.zip.Inflater.inflateBytes(Inflater.java:Unknown line)
+	java.util.zip.Inflater.inflate(Inflater.java:259)
+	java.util.zip.InflaterInputStream.read(InflaterInputStream.java:152)
+	java.io.FilterInputStream.read(FilterInputStream.java:133)
+TRACE 300122:
+	java.lang.Object.<init>(Object.java:37)
+	java.io.InputStream.<init>(InputStream.java:45)
+	java.util.zip.ZipFile$ZipFileInputStream.<init>(ZipFile.java:711)
+	java.util.zip.ZipFile.getInputStream(ZipFile.java:375)
+TRACE 300123:
+	org.dacapo.harness.Benchmark.unpackZipStream(Benchmark.java:601)
+	org.dacapo.harness.Benchmark.unpackZipFileResource(Benchmark.java:582)
+	org.dacapo.harness.Benchmark.prepare(Benchmark.java:262)
+	org.dacapo.harness.Benchmark.initialize(Benchmark.java:238)
+TRACE 300127:
+	java.util.zip.Inflater.inflateBytes(Inflater.java:Unknown line)
+	java.util.zip.Inflater.inflate(Inflater.java:259)
+	java.util.zip.InflaterInputStream.read(InflaterInputStream.java:152)
+	java.util.zip.ZipInputStream.read(ZipInputStream.java:194)
+TRACE 300144:
+	java.util.Properties$LineReader.readLine(Properties.java:433)
+	java.util.Properties.load0(Properties.java:353)
+	java.util.Properties.load(Properties.java:341)
+	java.security.Security.initialize(Security.java:90)
+TRACE 300158:
+	java.util.ServiceLoader$1.<init>(ServiceLoader.java:469)
+	java.util.ServiceLoader.iterator(ServiceLoader.java:466)
+	java.util.ResourceBundle.<clinit>(ResourceBundle.java:377)
+	org.apache.batik.i18n.LocalizableSupport.lookupResourceBundle(LocalizableSupport.java:259)
+TRACE 300175:
+	java.security.AccessController.doPrivileged(AccessController.java:Unknown line)
+	java.net.URLClassLoader.findClass(URLClassLoader.java:361)
+	org.dacapo.harness.DacapoClassLoader.loadClass(DacapoClassLoader.java:120)
+	java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+TRACE 300176:
+	org.dacapo.harness.Benchmark.run(Benchmark.java:181)
+	org.dacapo.harness.TestHarness.runBenchmark(TestHarness.java:199)
+	org.dacapo.harness.TestHarness.main(TestHarness.java:152)
+	sun.reflect.NativeMethodAccessorImpl.invoke0(NativeMethodAccessorImpl.java:Unknown line)
+TRACE 300177:
+	java.lang.System.nanoTime(System.java:Unknown line)
+	java.net.URLClassLoader.defineClass(URLClassLoader.java:444)
+	java.net.URLClassLoader.access$100(URLClassLoader.java:73)
+	java.net.URLClassLoader$1.run(URLClassLoader.java:368)
+TRACE 300183:
+	java.io.ExpiringCache.entryFor(ExpiringCache.java:103)
+	java.io.ExpiringCache.get(ExpiringCache.java:78)
+	java.io.UnixFileSystem.canonicalize(UnixFileSystem.java:152)
+	java.io.File.getCanonicalPath(File.java:618)
+TRACE 300186:
+	java.util.zip.ZipFile.read(ZipFile.java:Unknown line)
+	java.util.zip.ZipFile.access$1400(ZipFile.java:60)
+	java.util.zip.ZipFile$ZipFileInputStream.read(ZipFile.java:734)
+	java.util.zip.ZipFile$ZipFileInflaterInputStream.fill(ZipFile.java:434)
+TRACE 300189:
+	java.lang.ClassLoader.checkCerts(ClassLoader.java:888)
+	java.lang.ClassLoader.preDefineClass(ClassLoader.java:668)
+	java.lang.ClassLoader.defineClass(ClassLoader.java:761)
+	java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+TRACE 300190:
+	java.util.zip.ZipFile.getEntryMethod(ZipFile.java:Unknown line)
+	java.util.zip.ZipFile.getInputStream(ZipFile.java:377)
+	java.util.jar.JarFile.getInputStream(JarFile.java:447)
+	sun.misc.URLClassPath$JarLoader$2.getInputStream(URLClassPath.java:977)
+TRACE 300191:
+	java.lang.StringBuffer.<init>(StringBuffer.java:116)
+	org.apache.crimson.parser.Parser2.parseLiteral(Parser2.java:701)
+	org.apache.crimson.parser.Parser2.maybeElement(Parser2.java:1399)
+	org.apache.crimson.parser.Parser2.content(Parser2.java:1779)
+TRACE 300192:
+	org.apache.batik.dom.AbstractAttr.getNodeName(AbstractAttr.java:98)
+	org.apache.batik.dom.AbstractElement$NamedNodeHashMap.setNamedItemNS(AbstractElement.java:779)
+	org.apache.batik.dom.AbstractElement.setAttributeNS(AbstractElement.java:263)
+	org.apache.batik.dom.util.SAXDocumentFactory.startElement(SAXDocumentFactory.java:649)
+TRACE 300193:
+	org.apache.batik.dom.AbstractChildNode.setNextSibling(AbstractChildNode.java:80)
+	org.apache.batik.dom.AbstractParentNode$ChildNodes.append(AbstractParentNode.java:778)
+	org.apache.batik.dom.AbstractParentNode.appendChild(AbstractParentNode.java:219)
+	org.apache.batik.dom.util.SAXDocumentFactory.startElement(SAXDocumentFactory.java:626)
+TRACE 300195:
+	org.apache.crimson.parser.XmlReader$Iso8859_1Reader.read(XmlReader.java:848)
+	org.apache.crimson.parser.XmlReader.read(XmlReader.java:487)
+	org.apache.crimson.parser.InputEntity.fillbuf(InputEntity.java:1068)
+	org.apache.crimson.parser.InputEntity.getc(InputEntity.java:313)
+TRACE 300196:
+	org.apache.batik.dom.AbstractElement$NamedNodeHashMap.setNamedItem(AbstractElement.java:830)
+	org.apache.batik.dom.AbstractElement$NamedNodeHashMap.setNamedItemNS(AbstractElement.java:779)
+	org.apache.batik.dom.AbstractElement.setAttributeNS(AbstractElement.java:263)
+	org.apache.batik.dom.util.SAXDocumentFactory.startElement(SAXDocumentFactory.java:649)
+TRACE 300197:
+	org.apache.batik.dom.util.DoublyIndexedTable.<init>(DoublyIndexedTable.java:60)
+	org.apache.batik.dom.util.DoublyIndexedTable.<init>(DoublyIndexedTable.java:51)
+	org.apache.batik.dom.svg.AbstractElement.<init>(AbstractElement.java:47)
+	org.apache.batik.dom.svg.SVGOMElement.<init>(SVGOMElement.java:124)
+TRACE 300198:
+	org.apache.batik.dom.svg.SVGOMPathElement.<init>(SVGOMPathElement.java:93)
+	org.apache.batik.dom.svg.SVGDOMImplementation$PathElementFactory.create(SVGDOMImplementation.java:1325)
+	org.apache.batik.dom.svg.SVGDOMImplementation.createElementNS(SVGDOMImplementation.java:207)
+	org.apache.batik.dom.svg.SVGOMDocument.createElementNS(SVGOMDocument.java:350)
+TRACE 300250:
+	java.lang.invoke.MethodHandles$Lookup.<clinit>(MethodHandles.java:512)
+	java.lang.invoke.MethodHandleNatives.linkMethodHandleConstant(MethodHandleNatives.java:475)
+	java.awt.GraphicsEnvironment.getHeadlessProperty(GraphicsEnvironment.java:164)
+	java.awt.GraphicsEnvironment.isHeadless(GraphicsEnvironment.java:141)
+TRACE 300284:
+	jdk.internal.org.objectweb.asm.MethodWriter.startFrame(MethodWriter.java:1857)
+	jdk.internal.org.objectweb.asm.MethodWriter.visitFrame(MethodWriter.java:1764)
+	jdk.internal.org.objectweb.asm.MethodWriter.visitMaxs(MethodWriter.java:1473)
+	java.lang.invoke.InvokerBytecodeGenerator.classFileEpilogue(InvokerBytecodeGenerator.java:319)
+TRACE 300292:
+	java.lang.Class.isArray(Class.java:Unknown line)
+	java.lang.invoke.InvokerBytecodeGenerator.isStaticallyNameable(InvokerBytecodeGenerator.java:815)
+	java.lang.invoke.InvokerBytecodeGenerator.emitReferenceCast(InvokerBytecodeGenerator.java:567)
+	java.lang.invoke.InvokerBytecodeGenerator.emitImplicitConversion(InvokerBytecodeGenerator.java:534)
+TRACE 300295:
+	java.lang.invoke.MemberName$Factory.resolveOrFail(MemberName.java:1003)
+	java.lang.invoke.MethodHandles$Lookup.resolveOrFail(MethodHandles.java:1386)
+	java.lang.invoke.MethodHandles$Lookup.findStatic(MethodHandles.java:780)
+	java.lang.invoke.MethodHandleImpl.findCollector(MethodHandleImpl.java:1387)
+TRACE 300306:
+	java.lang.invoke.BoundMethodHandle$Factory.emitPushFields(BoundMethodHandle.java:729)
+	java.lang.invoke.BoundMethodHandle$Factory.generateConcreteBMHClass(BoundMethodHandle.java:690)
+	java.lang.invoke.BoundMethodHandle$Factory$1.apply(BoundMethodHandle.java:492)
+	java.lang.invoke.BoundMethodHandle$Factory$1.apply(BoundMethodHandle.java:489)
+TRACE 300322:
+	org.apache.batik.bridge.SVGBridgeExtension.registerTags(SVGBridgeExtension.java:97)
+	org.apache.batik.bridge.BridgeContext.registerSVGBridges(BridgeContext.java:2032)
+	org.apache.batik.bridge.BridgeContext.setDocument(BridgeContext.java:443)
+	org.apache.batik.bridge.GVTBuilder.build(GVTBuilder.java:54)
+TRACE 300323:
+	java.lang.ClassLoader.checkCerts(ClassLoader.java:887)
+	java.lang.ClassLoader.preDefineClass(ClassLoader.java:668)
+	java.lang.ClassLoader.defineClass(ClassLoader.java:761)
+	java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+TRACE 300325:
+	org.apache.batik.css.engine.value.svg.SVGValueConstants.<clinit>(SVGValueConstants.java:2472)
+	org.apache.batik.css.engine.value.svg.AlignmentBaselineManager.<clinit>(AlignmentBaselineManager.java:41)
+	org.apache.batik.css.engine.SVGCSSEngine.<clinit>(SVGCSSEngine.java:194)
+	org.apache.batik.dom.svg.SVGDOMImplementation.createCSSEngine(SVGDOMImplementation.java:110)
+TRACE 300326:
+	org.apache.batik.css.engine.SVGCSSEngine.<clinit>(SVGCSSEngine.java:194)
+	org.apache.batik.dom.svg.SVGDOMImplementation.createCSSEngine(SVGDOMImplementation.java:110)
+	org.apache.batik.dom.ExtensibleDOMImplementation.createCSSEngine(ExtensibleDOMImplementation.java:212)
+	org.apache.batik.bridge.BridgeContext.initializeDocument(BridgeContext.java:379)
+TRACE 300328:
+	org.apache.batik.dom.svg.SVGStylableElement.getCSSClass(SVGStylableElement.java:161)
+	org.apache.batik.css.engine.sac.CSSClassCondition.match(CSSClassCondition.java:56)
+	org.apache.batik.css.engine.sac.CSSConditionalSelector.match(CSSConditionalSelector.java:82)
+	org.apache.batik.css.engine.CSSEngine.addMatchingRules(CSSEngine.java:1333)
+TRACE 300341:
+	org.apache.batik.dom.svg.SVGGraphicsElement.getMotionTransform(SVGGraphicsElement.java:268)
+	org.apache.batik.bridge.AbstractGraphicsNodeBridge.computeTransform(AbstractGraphicsNodeBridge.java:172)
+	org.apache.batik.bridge.AbstractGraphicsNodeBridge.setTransform(AbstractGraphicsNodeBridge.java:198)
+	org.apache.batik.bridge.AbstractGraphicsNodeBridge.createGraphicsNode(AbstractGraphicsNodeBridge.java:112)
+TRACE 300342:
+	org.apache.batik.gvt.CompositeShapePainter.addShapePainter(CompositeShapePainter.java:73)
+	org.apache.batik.bridge.PaintServer.convertFillAndStroke(PaintServer.java:160)
+	org.apache.batik.bridge.SVGShapeElementBridge.createShapePainter(SVGShapeElementBridge.java:117)
+	org.apache.batik.bridge.SVGDecoratedShapeElementBridge.createFillStrokePainter(SVGDecoratedShapeElementBridge.java:58)
+TRACE 300343:
+	org.apache.batik.dom.svg.AbstractSVGList$ListBuilder.endList(AbstractSVGList.java:538)
+	org.apache.batik.dom.svg.AbstractSVGPathSegList$PathSegListBuilder.endPath(AbstractSVGPathSegList.java:890)
+	org.apache.batik.parser.PathParser.doParse(PathParser.java:119)
+	org.apache.batik.parser.AbstractParser.parse(AbstractParser.java:150)
+TRACE 300344:
+	org.apache.batik.parser.AbstractParser.<init>(AbstractParser.java:55)
+	org.apache.batik.parser.NumberParser.<init>(NumberParser.java:29)
+	org.apache.batik.parser.PathParser.<init>(PathParser.java:40)
+	org.apache.batik.dom.svg.AbstractSVGPathSegList.doParse(AbstractSVGPathSegList.java:156)
+TRACE 300345:
+	org.apache.batik.parser.AWTPathProducer.closePath(AWTPathProducer.java:143)
+	org.apache.batik.dom.svg.SVGAnimatedPathDataSupport.handlePathSegList(SVGAnimatedPathDataSupport.java:64)
+	org.apache.batik.bridge.SVGPathElementBridge.buildShape(SVGPathElementBridge.java:89)
+	org.apache.batik.bridge.SVGShapeElementBridge.createGraphicsNode(SVGShapeElementBridge.java:60)
+TRACE 300346:
+	org.apache.batik.bridge.PaintServer.convertStroke(PaintServer.java:475)
+	org.apache.batik.bridge.PaintServer.convertFillAndStroke(PaintServer.java:150)
+	org.apache.batik.bridge.SVGShapeElementBridge.createShapePainter(SVGShapeElementBridge.java:117)
+	org.apache.batik.bridge.SVGDecoratedShapeElementBridge.createFillStrokePainter(SVGDecoratedShapeElementBridge.java:58)
+TRACE 300347:
+	org.apache.batik.gvt.AbstractGraphicsNode.setVisible(AbstractGraphicsNode.java:264)
+	org.apache.batik.bridge.AbstractGraphicsNodeBridge.createGraphicsNode(AbstractGraphicsNodeBridge.java:115)
+	org.apache.batik.bridge.SVGShapeElementBridge.createGraphicsNode(SVGShapeElementBridge.java:52)
+	org.apache.batik.bridge.GVTBuilder.buildGraphicsNode(GVTBuilder.java:206)
+TRACE 300348:
+	java.awt.geom.GeneralPath.<init>(GeneralPath.java:73)
+	org.apache.batik.ext.awt.geom.ExtendedGeneralPath.<init>(ExtendedGeneralPath.java:69)
+	org.apache.batik.parser.AWTPathProducer.startPath(AWTPathProducer.java:116)
+	org.apache.batik.dom.svg.SVGAnimatedPathDataSupport.handlePathSegList(SVGAnimatedPathDataSupport.java:59)
+TRACE 300349:
+	org.apache.batik.parser.AWTPathProducer.endPath(AWTPathProducer.java:123)
+	org.apache.batik.dom.svg.SVGAnimatedPathDataSupport.handlePathSegList(SVGAnimatedPathDataSupport.java:184)
+	org.apache.batik.bridge.SVGPathElementBridge.buildShape(SVGPathElementBridge.java:89)
+	org.apache.batik.bridge.SVGShapeElementBridge.createGraphicsNode(SVGShapeElementBridge.java:60)
+TRACE 300350:
+	org.apache.batik.dom.svg.SVGOMAnimatedPathData$AnimSVGPathSegList.<init>(SVGOMAnimatedPathData.java:534)
+	org.apache.batik.dom.svg.SVGOMAnimatedPathData.getAnimatedPathSegList(SVGOMAnimatedPathData.java:110)
+	org.apache.batik.dom.svg.SVGOMPathElement.getAnimatedPathSegList(SVGOMPathElement.java:166)
+	org.apache.batik.bridge.SVGPathElementBridge.buildShape(SVGPathElementBridge.java:87)
+TRACE 300376:
+	sun.font.Type1Font.<clinit>(Type1Font.java:141)
+	sun.font.SunFontManager.initIDs(SunFontManager.java:Unknown line)
+	sun.font.SunFontManager.access$200(SunFontManager.java:65)
+	sun.font.SunFontManager$1.run(SunFontManager.java:343)
+TRACE 300409:
+	java.util.Properties.load0(Properties.java:392)
+	java.util.Properties.load(Properties.java:341)
+	sun.font.FcFontConfiguration.readFcInfo(FcFontConfiguration.java:434)
+	sun.font.FcFontConfiguration.init(FcFontConfiguration.java:94)
+TRACE 300434:
+	sun.nio.ch.FileChannelImpl.<init>(FileChannelImpl.java:75)
+	sun.nio.ch.FileChannelImpl.open(FileChannelImpl.java:97)
+	java.io.RandomAccessFile.getChannel(RandomAccessFile.java:282)
+	sun.font.TrueTypeFont.open(TrueTypeFont.java:317)
+TRACE 300457:
+	sun.awt.FcFontManager.getFontPathNative(FcFontManager.java:Unknown line)
+	sun.awt.X11FontManager.getFontPath(X11FontManager.java:787)
+	sun.font.SunFontManager.getPlatformFontPath(SunFontManager.java:3282)
+	sun.font.SunFontManager$10.run(SunFontManager.java:3308)
+TRACE 300459:
+	java.nio.DirectByteBuffer.get(DirectByteBuffer.java:249)
+	sun.font.Type1Font.nextTokenType(Type1Font.java:591)
+	sun.font.Type1Font.initNames(Type1Font.java:373)
+	sun.font.Type1Font.verify(Type1Font.java:303)
+TRACE 300472:
+	sun.nio.ch.FileDispatcherImpl.read0(FileDispatcherImpl.java:Unknown line)
+	sun.nio.ch.FileDispatcherImpl.read(FileDispatcherImpl.java:46)
+	sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	sun.nio.ch.IOUtil.read(IOUtil.java:197)
+TRACE 300475:
+	sun.font.TrueTypeFont.lookupName(TrueTypeFont.java:1248)
+	sun.font.TrueTypeFont.getFamilyName(TrueTypeFont.java:1565)
+	sun.font.SunFontManager.getInstalledFontFamilyNames(SunFontManager.java:3771)
+	sun.java2d.SunGraphicsEnvironment.getAvailableFontFamilyNames(SunGraphicsEnvironment.java:225)
+TRACE 300478:
+	org.apache.batik.gvt.font.FontFamilyResolver.<clinit>(FontFamilyResolver.java:104)
+	org.apache.batik.bridge.SVGTextElementBridge.getFontList(SVGTextElementBridge.java:1438)
+	org.apache.batik.bridge.SVGTextElementBridge.getAttributeMap(SVGTextElementBridge.java:1507)
+	org.apache.batik.bridge.SVGTextElementBridge.fillAttributedStringBuffer(SVGTextElementBridge.java:853)
+TRACE 300484:
+	java.util.zip.ZipFile.getEntry(ZipFile.java:Unknown line)
+	java.util.zip.ZipFile.getEntry(ZipFile.java:316)
+	java.util.jar.JarFile.getEntry(JarFile.java:240)
+	java.util.jar.JarFile.getJarEntry(JarFile.java:223)
+TRACE 300485:
+	java.text.AttributedString.createRunAttributeDataVectors(AttributedString.java:419)
+	java.text.AttributedString.<init>(AttributedString.java:158)
+	org.apache.batik.bridge.SVGTextElementBridge$AttributedStringBuffer.toAttributedString(SVGTextElementBridge.java:1155)
+	org.apache.batik.bridge.SVGTextElementBridge.buildAttributedString(SVGTextElementBridge.java:814)
+TRACE 300487:
+	java.awt.geom.Path2D$Float.getBounds2D(Path2D.java:785)
+	org.apache.batik.ext.awt.geom.ExtendedGeneralPath.getBounds2D(ExtendedGeneralPath.java:525)
+	org.apache.batik.gvt.FillShapePainter.getPaintedBounds2D(FillShapePainter.java:103)
+	org.apache.batik.gvt.CompositeShapePainter.getPaintedBounds2D(CompositeShapePainter.java:156)
+TRACE 300498:
+	sun.java2d.pipe.RenderingEngine.feedConsumer(RenderingEngine.java:367)
+	sun.java2d.pisces.PiscesRenderingEngine.pathTo(PiscesRenderingEngine.java:484)
+	sun.java2d.pisces.PiscesRenderingEngine.strokeTo(PiscesRenderingEngine.java:363)
+	sun.java2d.pisces.PiscesRenderingEngine.createStrokedShape(PiscesRenderingEngine.java:69)
+TRACE 300499:
+	sun.java2d.pisces.Stroker.finish(Stroker.java:438)
+	sun.java2d.pisces.Stroker.pathDone(Stroker.java:421)
+	sun.java2d.pisces.PiscesRenderingEngine.pathTo(PiscesRenderingEngine.java:485)
+	sun.java2d.pisces.PiscesRenderingEngine.strokeTo(PiscesRenderingEngine.java:363)
+TRACE 300520:
+	sun.font.Font2D.getFontMetrics(Font2D.java:412)
+	java.awt.Font.defaultLineMetrics(Font.java:2176)
+	java.awt.Font.getLineMetrics(Font.java:2283)
+	java.awt.font.TextLayout.standardInit(TextLayout.java:638)
+TRACE 300565:
+	sun.font.GlyphLayout.layout(GlyphLayout.java:496)
+	sun.font.ExtendedTextSourceLabel.createGV(ExtendedTextSourceLabel.java:329)
+	sun.font.ExtendedTextSourceLabel.getGV(ExtendedTextSourceLabel.java:315)
+	sun.font.ExtendedTextSourceLabel.createLogicalBounds(ExtendedTextSourceLabel.java:225)
+TRACE 300578:
+	java.awt.geom.Rectangle2D$Float.setRect(Rectangle2D.java:210)
+	java.awt.font.GlyphMetrics.<init>(GlyphMetrics.java:184)
+	org.apache.batik.gvt.font.GVTGlyphMetrics.<init>(GVTGlyphMetrics.java:60)
+	org.apache.batik.gvt.font.AWTGVTGlyphVector.getGlyphMetrics(AWTGVTGlyphVector.java:430)
+TRACE 300579:
+	sun.font.AttributeValues.equals(AttributeValues.java:456)
+	java.awt.Font.equals(Font.java:1655)
+	java.util.HashMap.getNode(HashMap.java:572)
+	java.util.HashMap.get(HashMap.java:557)
+TRACE 300580:
+	java.util.HashMap.hash(HashMap.java:339)
+	java.util.HashMap.put(HashMap.java:612)
+	java.util.HashSet.add(HashSet.java:220)
+	java.text.AttributedString$AttributedStringIterator.getAllAttributeKeys(AttributedString.java:982)
+TRACE 300581:
+	sun.nio.ch.FileDispatcherImpl.read0(FileDispatcherImpl.java:Unknown line)
+	sun.nio.ch.FileDispatcherImpl.read(FileDispatcherImpl.java:46)
+	sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	sun.nio.ch.IOUtil.read(IOUtil.java:192)
+TRACE 300582:
+	java.text.Bidi.<init>(Bidi.java:128)
+	java.awt.font.TextLine.standardCreateTextLine(TextLine.java:1199)
+	java.awt.font.TextLayout.standardInit(TextLayout.java:654)
+	java.awt.font.TextLayout.<init>(TextLayout.java:538)
+TRACE 300583:
+	org.apache.batik.gvt.font.GVTLineMetrics.getAscent(GVTLineMetrics.java:134)
+	org.apache.batik.gvt.renderer.StrokingTextPainter.adjustChunkOffsets(StrokingTextPainter.java:694)
+	org.apache.batik.gvt.renderer.StrokingTextPainter.computeTextRuns(StrokingTextPainter.java:256)
+	org.apache.batik.gvt.renderer.StrokingTextPainter.getTextRuns(StrokingTextPainter.java:198)
+TRACE 300584:
+	java.lang.Thread.isInterrupted(Thread.java:Unknown line)
+	java.lang.Thread.isInterrupted(Thread.java:964)
+	java.nio.channels.spi.AbstractInterruptibleChannel.begin(AbstractInterruptibleChannel.java:172)
+	sun.nio.ch.FileChannelImpl.position(FileChannelImpl.java:283)
+TRACE 300586:
+	java.awt.image.ColorModel$1.run(ColorModel.java:207)
+	java.security.AccessController.doPrivileged(AccessController.java:Unknown line)
+	java.awt.image.ColorModel.loadLibraries(ColorModel.java:206)
+	java.awt.image.ColorModel.<clinit>(ColorModel.java:219)
+TRACE 300612:
+	sun.java2d.loops.SurfaceType.<clinit>(SurfaceType.java:251)
+	sun.java2d.NullSurfaceData.<init>(NullSurfaceData.java:46)
+	sun.java2d.NullSurfaceData.<clinit>(NullSurfaceData.java:43)
+	sun.java2d.SurfaceData.initIDs(SurfaceData.java:Unknown line)
+TRACE 300666:
+	sun.java2d.loops.GraphicsPrimitiveMgr.registerNativeLoops(GraphicsPrimitiveMgr.java:Unknown line)
+	sun.java2d.loops.GraphicsPrimitiveMgr.<clinit>(GraphicsPrimitiveMgr.java:69)
+	sun.java2d.loops.DrawLine.locate(DrawLine.java:55)
+	sun.java2d.SurfaceData.makeRenderLoops(SurfaceData.java:878)
+TRACE 300689:
+	sun.java2d.pisces.Renderer.emitRow(Renderer.java:558)
+	sun.java2d.pisces.Renderer._endRendering(Renderer.java:502)
+	sun.java2d.pisces.Renderer.endRendering(Renderer.java:534)
+	sun.java2d.pisces.PiscesRenderingEngine.getAATileGenerator(PiscesRenderingEngine.java:564)
+TRACE 300690:
+	sun.java2d.pisces.Renderer._endRendering(Renderer.java:460)
+	sun.java2d.pisces.Renderer.endRendering(Renderer.java:534)
+	sun.java2d.pisces.PiscesRenderingEngine.getAATileGenerator(PiscesRenderingEngine.java:564)
+	sun.java2d.pipe.AAShapePipe.renderPath(AAShapePipe.java:152)
+TRACE 300691:
+	org.apache.batik.gvt.ShapeNode.primitivePaint(ShapeNode.java:152)
+	org.apache.batik.gvt.AbstractGraphicsNode.paint(AbstractGraphicsNode.java:509)
+	org.apache.batik.gvt.ShapeNode.paint(ShapeNode.java:143)
+	org.apache.batik.gvt.CompositeGraphicsNode.primitivePaint(CompositeGraphicsNode.java:165)
+TRACE 300693:
+	sun.java2d.pipe.AAShapePipe.renderPath(AAShapePipe.java:150)
+	sun.java2d.pipe.AAShapePipe.draw(AAShapePipe.java:64)
+	sun.java2d.pipe.PixelToParallelogramConverter.draw(PixelToParallelogramConverter.java:148)
+	sun.java2d.pipe.ValidatePipe.draw(ValidatePipe.java:154)
+TRACE 300694:
+	sun.java2d.pisces.Renderer.<init>(Renderer.java:357)
+	sun.java2d.pisces.PiscesRenderingEngine.getAATileGenerator(PiscesRenderingEngine.java:560)
+	sun.java2d.pipe.AAShapePipe.renderPath(AAShapePipe.java:152)
+	sun.java2d.pipe.AAShapePipe.draw(AAShapePipe.java:64)
+TRACE 300696:
+	sun.java2d.pisces.Stroker.lineTo(Stroker.java:359)
+	sun.java2d.pipe.RenderingEngine.feedConsumer(RenderingEngine.java:366)
+	sun.java2d.pisces.PiscesRenderingEngine.pathTo(PiscesRenderingEngine.java:484)
+	sun.java2d.pisces.PiscesRenderingEngine.strokeTo(PiscesRenderingEngine.java:363)
+TRACE 300697:
+	sun.java2d.pisces.Renderer$ScanlineIterator.next(Renderer.java:93)
+	sun.java2d.pisces.Renderer$ScanlineIterator.access$600(Renderer.java:32)
+	sun.java2d.pisces.Renderer._endRendering(Renderer.java:450)
+	sun.java2d.pisces.Renderer.endRendering(Renderer.java:534)
+TRACE 300698:
+	sun.java2d.loops.MaskFill.MaskFill(MaskFill.java:Unknown line)
+	sun.java2d.pipe.AlphaColorPipe.renderPathTile(AlphaColorPipe.java:55)
+	sun.java2d.pipe.AAShapePipe.renderTiles(AAShapePipe.java:201)
+	sun.java2d.pipe.AAShapePipe.renderPath(AAShapePipe.java:159)
+TRACE 300699:
+	sun.java2d.pisces.Renderer.curveBreakIntoLinesAndAdd(Renderer.java:212)
+	sun.java2d.pisces.Renderer.curveTo(Renderer.java:395)
+	sun.java2d.pipe.RenderingEngine.feedConsumer(RenderingEngine.java:373)
+	sun.java2d.pisces.PiscesRenderingEngine.pathTo(PiscesRenderingEngine.java:484)
+TRACE 300702:
+	sun.java2d.SunGraphics2D.fill(SunGraphics2D.java:2527)
+	org.apache.batik.gvt.font.AWTGVTGlyphVector.draw(AWTGVTGlyphVector.java:941)
+	org.apache.batik.gvt.text.GlyphLayout.draw(GlyphLayout.java:380)
+	org.apache.batik.gvt.renderer.StrokingTextPainter.paintTextRuns(StrokingTextPainter.java:999)
+TRACE 300704:
+	org.apache.batik.gvt.font.AWTGVTGlyphVector.draw(AWTGVTGlyphVector.java:899)
+	org.apache.batik.gvt.text.GlyphLayout.draw(GlyphLayout.java:380)
+	org.apache.batik.gvt.renderer.StrokingTextPainter.paintTextRuns(StrokingTextPainter.java:999)
+	org.apache.batik.gvt.renderer.StrokingTextPainter.paint(StrokingTextPainter.java:172)
+TRACE 300705:
+	org.apache.batik.ext.awt.image.rendered.PadRed.handleZero(PadRed.java:193)
+	org.apache.batik.ext.awt.image.rendered.PadRed.copyData(PadRed.java:92)
+	org.apache.batik.gvt.renderer.StaticRenderer.repaint(StaticRenderer.java:394)
+	org.apache.batik.gvt.renderer.StaticRenderer.repaint(StaticRenderer.java:344)
+TRACE 300710:
+	org.apache.batik.ext.awt.image.codec.png.PNGEncodeParam.filterRow(PNGEncodeParam.java:1407)
+	org.apache.batik.ext.awt.image.codec.png.PNGImageEncoder.encodePass(PNGImageEncoder.java:432)
+	org.apache.batik.ext.awt.image.codec.png.PNGImageEncoder.writeIDAT(PNGImageEncoder.java:501)
+	org.apache.batik.ext.awt.image.codec.png.PNGImageEncoder.encode(PNGImageEncoder.java:1032)
+TRACE 300711:
+	org.apache.batik.ext.awt.image.codec.png.PNGImageEncoder.encodePass(PNGImageEncoder.java:413)
+	org.apache.batik.ext.awt.image.codec.png.PNGImageEncoder.writeIDAT(PNGImageEncoder.java:501)
+	org.apache.batik.ext.awt.image.codec.png.PNGImageEncoder.encode(PNGImageEncoder.java:1032)
+	org.apache.batik.ext.awt.image.codec.png.PNGTranscoderInternalCodecWriteAdapter.writeImage(PNGTranscoderInternalCodecWriteAdapter.java:87)
+TRACE 300712:
+	org.apache.batik.ext.awt.image.codec.png.PNGEncodeParam.filterRow(PNGEncodeParam.java:1395)
+	org.apache.batik.ext.awt.image.codec.png.PNGImageEncoder.encodePass(PNGImageEncoder.java:432)
+	org.apache.batik.ext.awt.image.codec.png.PNGImageEncoder.writeIDAT(PNGImageEncoder.java:501)
+	org.apache.batik.ext.awt.image.codec.png.PNGImageEncoder.encode(PNGImageEncoder.java:1032)
+TRACE 300714:
+	org.apache.batik.ext.awt.image.codec.png.CRC.updateCRC(PNGImageEncoder.java:66)
+	org.apache.batik.ext.awt.image.codec.png.IDATOutputStream.flush(PNGImageEncoder.java:223)
+	org.apache.batik.ext.awt.image.codec.png.IDATOutputStream.write(PNGImageEncoder.java:245)
+	java.util.zip.DeflaterOutputStream.deflate(DeflaterOutputStream.java:253)
+TRACE 300715:
+	org.apache.batik.ext.awt.image.codec.png.PNGEncodeParam.filterRow(PNGEncodeParam.java:1385)
+	org.apache.batik.ext.awt.image.codec.png.PNGImageEncoder.encodePass(PNGImageEncoder.java:432)
+	org.apache.batik.ext.awt.image.codec.png.PNGImageEncoder.writeIDAT(PNGImageEncoder.java:501)
+	org.apache.batik.ext.awt.image.codec.png.PNGImageEncoder.encode(PNGImageEncoder.java:1032)
+TRACE 300717:
+	org.apache.batik.ext.awt.image.codec.png.PNGImageEncoder.encodePass(PNGImageEncoder.java:432)
+	org.apache.batik.ext.awt.image.codec.png.PNGImageEncoder.writeIDAT(PNGImageEncoder.java:501)
+	org.apache.batik.ext.awt.image.codec.png.PNGImageEncoder.encode(PNGImageEncoder.java:1032)
+	org.apache.batik.ext.awt.image.codec.png.PNGTranscoderInternalCodecWriteAdapter.writeImage(PNGTranscoderInternalCodecWriteAdapter.java:87)
+TRACE 300719:
+	java.io.BufferedOutputStream.write(BufferedOutputStream.java:98)
+	java.io.PrintStream.write(PrintStream.java:449)
+	java.io.FilterOutputStream.write(FilterOutputStream.java:77)
+	org.dacapo.harness.TeeOutputStream.write(TeeOutputStream.java:101)
+TRACE 300720:
+	org.apache.crimson.parser.Parser2.parseLiteral(Parser2.java:712)
+	org.apache.crimson.parser.Parser2.maybeElement(Parser2.java:1399)
+	org.apache.crimson.parser.Parser2.content(Parser2.java:1779)
+	org.apache.crimson.parser.Parser2.maybeElement(Parser2.java:1507)
+TRACE 300721:
+	org.apache.batik.dom.util.SAXDocumentFactory.startElement(SAXDocumentFactory.java:583)
+	org.apache.crimson.parser.Parser2.maybeElement(Parser2.java:1488)
+	org.apache.crimson.parser.Parser2.content(Parser2.java:1779)
+	org.apache.crimson.parser.Parser2.maybeElement(Parser2.java:1507)
+TRACE 300722:
+	org.apache.batik.dom.svg.SVGOMEllipseElement.initializeLiveAttributes(SVGOMEllipseElement.java:105)
+	org.apache.batik.dom.svg.SVGOMEllipseElement.<init>(SVGOMEllipseElement.java:90)
+	org.apache.batik.dom.svg.SVGDOMImplementation$EllipseElementFactory.create(SVGDOMImplementation.java:704)
+	org.apache.batik.dom.svg.SVGDOMImplementation.createElementNS(SVGDOMImplementation.java:207)
+TRACE 300723:
+	org.apache.batik.css.parser.CSSLexicalUnit.createInteger(CSSLexicalUnit.java:209)
+	org.apache.batik.css.parser.Parser.hexcolor(Parser.java:1456)
+	org.apache.batik.css.parser.Parser.parseTerm(Parser.java:1046)
+	org.apache.batik.css.parser.Parser.parseExpression(Parser.java:888)
+TRACE 300724:
+	org.apache.batik.ext.awt.image.codec.png.PNGRegistryEntry$1.run(PNGRegistryEntry.java:92)
+TRACE 300726:
+	java.awt.image.ColorModel.getLinearRGB16TosRGB8LUT(ColorModel.java:1771)
+	java.awt.image.ColorModel.getGray16TosRGB8LUT(ColorModel.java:1889)
+	java.awt.image.ComponentColorModel.setupLUTs(ComponentColorModel.java:443)
+	java.awt.image.ComponentColorModel.<init>(ComponentColorModel.java:299)
+TRACE 300729:
+	org.apache.batik.ext.awt.image.codec.png.PNGRed.processPixels(PNGRed.java:1508)
+	org.apache.batik.ext.awt.image.codec.png.PNGRed.decodePass(PNGRed.java:1820)
+	org.apache.batik.ext.awt.image.codec.png.PNGRed.decodeImage(PNGRed.java:1835)
+	org.apache.batik.ext.awt.image.codec.png.PNGRed.parse_IEND_chunk(PNGRed.java:785)
+TRACE 300730:
+	java.awt.image.Raster.getPixel(Raster.java:1519)
+	org.apache.batik.ext.awt.image.codec.png.PNGRed.processPixels(PNGRed.java:1506)
+	org.apache.batik.ext.awt.image.codec.png.PNGRed.decodePass(PNGRed.java:1820)
+	org.apache.batik.ext.awt.image.codec.png.PNGRed.decodeImage(PNGRed.java:1835)
+TRACE 300731:
+	java.lang.System.arraycopy(System.java:Unknown line)
+	org.apache.batik.ext.awt.image.codec.png.PNGRed.decodePass(PNGRed.java:1810)
+	org.apache.batik.ext.awt.image.codec.png.PNGRed.decodeImage(PNGRed.java:1835)
+	org.apache.batik.ext.awt.image.codec.png.PNGRed.parse_IEND_chunk(PNGRed.java:785)
+TRACE 300732:
+	sun.awt.image.ByteInterleavedRaster.setPixels(ByteInterleavedRaster.java:1085)
+	org.apache.batik.ext.awt.image.GraphicsUtil.copyData_FALLBACK(GraphicsUtil.java:817)
+	org.apache.batik.ext.awt.image.GraphicsUtil.copyData(GraphicsUtil.java:836)
+	org.apache.batik.ext.awt.image.codec.png.PNGRed.copyData(PNGRed.java:1848)
+TRACE 300738:
+	java.awt.image.WritableRaster.setPixel(WritableRaster.java:508)
+	java.awt.image.BandCombineOp.filter(BandCombineOp.java:180)
+	org.apache.batik.ext.awt.image.rendered.Any2sRGBRed.copyData(Any2sRGBRed.java:237)
+	org.apache.batik.ext.awt.image.rendered.FormatRed.copyData(FormatRed.java:116)
+TRACE 300739:
+	java.awt.image.WritableRaster.setPixel(WritableRaster.java:508)
+	java.awt.image.BandCombineOp.filter(BandCombineOp.java:180)
+	org.apache.batik.ext.awt.image.rendered.Any2sRGBRed.copyData(Any2sRGBRed.java:237)
+	org.apache.batik.ext.awt.image.rendered.FormatRed.copyData(FormatRed.java:116)
+TRACE 300740:
+	java.awt.image.BandCombineOp.filter(BandCombineOp.java:175)
+	org.apache.batik.ext.awt.image.rendered.Any2sRGBRed.copyData(Any2sRGBRed.java:237)
+	org.apache.batik.ext.awt.image.rendered.FormatRed.copyData(FormatRed.java:116)
+	org.apache.batik.ext.awt.image.rendered.AbstractRed.getData(AbstractRed.java:526)
+TRACE 300741:
+	java.awt.image.SinglePixelPackedSampleModel.setPixels(SinglePixelPackedSampleModel.java:689)
+	java.awt.image.WritableRaster.setPixels(WritableRaster.java:565)
+	org.apache.batik.ext.awt.image.GraphicsUtil.copyData(GraphicsUtil.java:1199)
+	org.apache.batik.ext.awt.image.GraphicsUtil.copyData(GraphicsUtil.java:1112)
+TRACE 300742:
+	java.awt.image.SinglePixelPackedSampleModel.setPixels(SinglePixelPackedSampleModel.java:683)
+	java.awt.image.WritableRaster.setPixels(WritableRaster.java:565)
+	org.apache.batik.ext.awt.image.GraphicsUtil.copyData(GraphicsUtil.java:1199)
+	org.apache.batik.ext.awt.image.GraphicsUtil.copyData(GraphicsUtil.java:1112)
+TRACE 300743:
+	java.awt.image.Raster.getPixels(Raster.java:1580)
+	org.apache.batik.ext.awt.image.GraphicsUtil.copyData(GraphicsUtil.java:1180)
+	org.apache.batik.ext.awt.image.GraphicsUtil.copyData(GraphicsUtil.java:1112)
+	org.apache.batik.ext.awt.image.rendered.FormatRed.copyData(FormatRed.java:125)
+TRACE 300744:
+	org.apache.batik.dom.xbl.GenericXBLManager.getXblParentNode(GenericXBLManager.java:65)
+	org.apache.batik.dom.AbstractNode.getXblParentNode(AbstractNode.java:1193)
+	org.apache.batik.dom.svg.AbstractElement.getCSSParentNode(AbstractElement.java:73)
+	org.apache.batik.css.engine.CSSEngine.getCSSParentNode(CSSEngine.java:74)
+TRACE 300745:
+	org.apache.batik.parser.PathParser.doParse(PathParser.java:110)
+	org.apache.batik.parser.AbstractParser.parse(AbstractParser.java:150)
+	org.apache.batik.dom.svg.AbstractSVGPathSegList.doParse(AbstractSVGPathSegList.java:161)
+	org.apache.batik.dom.svg.SVGOMAnimatedPathData$BaseSVGPathSegList.revalidate(SVGOMAnimatedPathData.java:302)
+TRACE 300746:
+	java.lang.Object.hashCode(Object.java:Unknown line)
+	java.util.HashMap.hash(HashMap.java:339)
+	java.util.HashMap.containsKey(HashMap.java:596)
+	org.apache.batik.transcoder.TranscodingHints.containsKey(TranscodingHints.java:65)
+TRACE 300747:
+	org.apache.batik.bridge.SVGTextElementBridge.initializeDynamicSupport(SVGTextElementBridge.java:394)
+	org.apache.batik.bridge.SVGTextElementBridge.buildGraphicsNode(SVGTextElementBridge.java:301)
+	org.apache.batik.bridge.GVTBuilder.buildGraphicsNode(GVTBuilder.java:217)
+	org.apache.batik.bridge.GVTBuilder.buildComposite(GVTBuilder.java:164)
+TRACE 300748:
+	org.apache.batik.parser.AbstractParser.<init>(AbstractParser.java:39)
+	org.apache.batik.parser.LengthParser.<init>(LengthParser.java:40)
+	org.apache.batik.parser.LengthListParser.<init>(LengthListParser.java:35)
+	org.apache.batik.dom.svg.AbstractSVGLengthList.doParse(AbstractSVGLengthList.java:145)
+TRACE 300749:
+	java.lang.Object.hashCode(Object.java:Unknown line)
+	java.util.WeakHashMap.hash(WeakHashMap.java:298)
+	java.util.WeakHashMap.put(WeakHashMap.java:449)
+	org.apache.batik.bridge.SVGTextElementBridge.getAttributeMap(SVGTextElementBridge.java:1496)
+TRACE 300750:
+	org.apache.batik.gvt.text.BidiAttributedCharacterIterator.<init>(BidiAttributedCharacterIterator.java:102)
+	org.apache.batik.gvt.renderer.StrokingTextPainter.computeTextRuns(StrokingTextPainter.java:219)
+	org.apache.batik.gvt.renderer.StrokingTextPainter.getTextRuns(StrokingTextPainter.java:198)
+	org.apache.batik.gvt.renderer.StrokingTextPainter.getBounds2D(StrokingTextPainter.java:1085)
+TRACE 300753:
+	sun.font.FreetypeFontScaler.getGlyphImageNative(FreetypeFontScaler.java:Unknown line)
+	sun.font.FreetypeFontScaler.getGlyphImage(FreetypeFontScaler.java:115)
+	sun.font.FileFont.getGlyphImage(FileFont.java:208)
+	sun.font.FileFontStrike.getGlyphImagePtr(FileFontStrike.java:392)
+TRACE 300754:
+	org.apache.batik.gvt.text.GlyphLayout.doExplicitGlyphLayout(GlyphLayout.java:1119)
+	org.apache.batik.gvt.text.GlyphLayout.adjustTextSpacing(GlyphLayout.java:1478)
+	org.apache.batik.gvt.text.GlyphLayout.getAdvance2D(GlyphLayout.java:388)
+	org.apache.batik.gvt.renderer.StrokingTextPainter.getTextChunk(StrokingTextPainter.java:636)
+TRACE 300755:
+	java.lang.Object.clone(Object.java:Unknown line)
+	sun.font.FontLineMetrics.clone(FontLineMetrics.java:113)
+	java.awt.Font.defaultLineMetrics(Font.java:2234)
+	java.awt.Font.getLineMetrics(Font.java:2246)
+TRACE 300756:
+	java.text.AttributedString.<init>(AttributedString.java:247)
+	java.text.AttributedString.<init>(AttributedString.java:183)
+	org.apache.batik.gvt.renderer.StrokingTextPainter.createModifiedACIForFontMatching(StrokingTextPainter.java:446)
+	org.apache.batik.gvt.renderer.StrokingTextPainter.computeTextRuns(StrokingTextPainter.java:226)
+TRACE 300757:
+	org.apache.batik.gvt.AbstractGraphicsNode.paint(AbstractGraphicsNode.java:489)
+	org.apache.batik.gvt.CompositeGraphicsNode.primitivePaint(CompositeGraphicsNode.java:165)
+	org.apache.batik.gvt.filter.GraphicsNodeRed8Bit.genRect(GraphicsNodeRed8Bit.java:140)
+	org.apache.batik.gvt.filter.GraphicsNodeRed8Bit.copyData(GraphicsNodeRed8Bit.java:116)
+TRACE 300758:
+	sun.java2d.pisces.Renderer._endRendering(Renderer.java:452)
+	sun.java2d.pisces.Renderer.endRendering(Renderer.java:534)
+	sun.java2d.pisces.PiscesRenderingEngine.getAATileGenerator(PiscesRenderingEngine.java:564)
+	sun.java2d.pipe.AAShapePipe.renderPath(AAShapePipe.java:152)
+TRACE 300759:
+	java.lang.Object.clone(Object.java:Unknown line)
+	java.awt.RenderingHints.clone(RenderingHints.java:1274)
+	sun.java2d.SunGraphics2D.getRenderingHints(SunGraphics2D.java:1429)
+	org.apache.batik.gvt.AbstractGraphicsNode.paint(AbstractGraphicsNode.java:466)
+TRACE 300760:
+	sun.java2d.pisces.Renderer$ScanlineIterator.access$600(Renderer.java:32)
+	sun.java2d.pisces.Renderer._endRendering(Renderer.java:450)
+	sun.java2d.pisces.Renderer.endRendering(Renderer.java:534)
+	sun.java2d.pisces.PiscesRenderingEngine.getAATileGenerator(PiscesRenderingEngine.java:564)
+TRACE 300761:
+	sun.java2d.pisces.PiscesRenderingEngine.getAATileGenerator(PiscesRenderingEngine.java:560)
+	sun.java2d.pipe.AAShapePipe.renderPath(AAShapePipe.java:152)
+	sun.java2d.pipe.AAShapePipe.draw(AAShapePipe.java:64)
+	sun.java2d.pipe.PixelToParallelogramConverter.draw(PixelToParallelogramConverter.java:148)
+TRACE 300762:
+	sun.java2d.pipe.ShapeSpanIterator.nextSpan(ShapeSpanIterator.java:Unknown line)
+	sun.java2d.pipe.Region.appendSpans(Region.java:414)
+	sun.java2d.SunGraphics2D.validateCompClip(SunGraphics2D.java:1919)
+	sun.java2d.SunGraphics2D.setClip(SunGraphics2D.java:2049)
+TRACE 300763:
+	sun.java2d.SunGraphics2D.checkFontInfo(SunGraphics2D.java:628)
+	sun.java2d.SunGraphics2D.getGVFontInfo(SunGraphics2D.java:845)
+	sun.java2d.pipe.GlyphListPipe.drawGlyphVector(GlyphListPipe.java:120)
+	sun.java2d.SunGraphics2D.drawGlyphVector(SunGraphics2D.java:3003)
+TRACE 300764:
+	org.apache.batik.ext.awt.image.GraphicsUtil.copyData_INT_PACK(GraphicsUtil.java:789)
+	org.apache.batik.ext.awt.image.rendered.AbstractTiledRed.copyToRasterByBlocks(AbstractTiledRed.java:457)
+	org.apache.batik.ext.awt.image.rendered.AbstractTiledRed.copyData(AbstractTiledRed.java:297)
+	org.apache.batik.ext.awt.image.rendered.TranslateRed.copyData(TranslateRed.java:105)
+TRACE 300765:
+	java.lang.ClassLoader.getPackage(ClassLoader.java:1619)
+	java.net.URLClassLoader.getAndVerifyPackage(URLClassLoader.java:393)
+	java.net.URLClassLoader.definePackageInternal(URLClassLoader.java:419)
+	java.net.URLClassLoader.defineClass(URLClassLoader.java:451)
+CPU SAMPLES BEGIN (total = 199) Thu Sep 27 22:48:59 2018
+rank   self  accum   count trace method
+   1  9,55%  9,55%      19 300713 java.util.zip.Deflater.deflateBytes
+   2  5,03% 14,57%      10 300718 java.io.FileOutputStream.close0
+   3  3,52% 18,09%       7 300062 java.lang.ClassLoader.defineClass1
+   4  2,51% 20,60%       5 300178 java.util.zip.Inflater.inflateBytes
+   5  2,51% 23,12%       5 300695 sun.java2d.pisces.PiscesCache.<init>
+   6  2,01% 25,13%       4 300573 sun.font.FreetypeFontScaler.getGlyphMetricsNative
+   7  1,51% 26,63%       3 300194 java.lang.String.intern
+   8  1,51% 28,14%       3 300455 java.io.RandomAccessFile.open0
+   9  1,51% 29,65%       3 300500 java.lang.Object.clone
+  10  1,51% 31,16%       3 300751 sun.font.SunLayoutEngine.nativeLayout
+  11  1,01% 32,16%       2 300119 java.io.FileOutputStream.writeBytes
+  12  1,01% 33,17%       2 300351 java.lang.Object.hashCode
+  13  1,01% 34,17%       2 300692 sun.java2d.pisces.Renderer.<init>
+  14  1,01% 35,18%       2 300703 sun.font.FreetypeFontScaler.getGlyphImageNative
+  15  1,01% 36,18%       2 300716 org.apache.batik.ext.awt.image.codec.png.PNGImageEncoder.encodePass
+  16  0,50% 36,68%       1 300049 java.util.zip.ZipFile.open
+  17  0,50% 37,19%       1 300065 java.lang.ClassLoader.findBootstrapClass
+  18  0,50% 37,69%       1 300084 sun.net.www.protocol.jar.Handler.openConnection
+  19  0,50% 38,19%       1 300095 java.lang.String.substring
+  20  0,50% 38,69%       1 300113 java.util.zip.ZipFile.getNextEntry
+  21  0,50% 39,20%       1 300115 java.util.regex.Matcher.<init>
+  22  0,50% 39,70%       1 300118 java.io.FileOutputStream.open0
+  23  0,50% 40,20%       1 300120 java.util.zip.Inflater.inflateBytes
+  24  0,50% 40,70%       1 300122 java.lang.Object.<init>
+  25  0,50% 41,21%       1 300123 org.dacapo.harness.Benchmark.unpackZipStream
+  26  0,50% 41,71%       1 300127 java.util.zip.Inflater.inflateBytes
+  27  0,50% 42,21%       1 300144 java.util.Properties$LineReader.readLine
+  28  0,50% 42,71%       1 300158 java.util.ServiceLoader$1.<init>
+  29  0,50% 43,22%       1 300175 java.security.AccessController.doPrivileged
+  30  0,50% 43,72%       1 300176 org.dacapo.harness.Benchmark.run
+  31  0,50% 44,22%       1 300177 java.lang.System.nanoTime
+  32  0,50% 44,72%       1 300183 java.io.ExpiringCache.entryFor
+  33  0,50% 45,23%       1 300186 java.util.zip.ZipFile.read
+  34  0,50% 45,73%       1 300189 java.lang.ClassLoader.checkCerts
+  35  0,50% 46,23%       1 300190 java.util.zip.ZipFile.getEntryMethod
+  36  0,50% 46,73%       1 300191 java.lang.StringBuffer.<init>
+  37  0,50% 47,24%       1 300192 org.apache.batik.dom.AbstractAttr.getNodeName
+  38  0,50% 47,74%       1 300193 org.apache.batik.dom.AbstractChildNode.setNextSibling
+  39  0,50% 48,24%       1 300195 org.apache.crimson.parser.XmlReader$Iso8859_1Reader.read
+  40  0,50% 48,74%       1 300196 org.apache.batik.dom.AbstractElement$NamedNodeHashMap.setNamedItem
+  41  0,50% 49,25%       1 300197 org.apache.batik.dom.util.DoublyIndexedTable.<init>
+  42  0,50% 49,75%       1 300198 org.apache.batik.dom.svg.SVGOMPathElement.<init>
+  43  0,50% 50,25%       1 300250 java.lang.invoke.MethodHandles$Lookup.<clinit>
+  44  0,50% 50,75%       1 300284 jdk.internal.org.objectweb.asm.MethodWriter.startFrame
+  45  0,50% 51,26%       1 300292 java.lang.Class.isArray
+  46  0,50% 51,76%       1 300295 java.lang.invoke.MemberName$Factory.resolveOrFail
+  47  0,50% 52,26%       1 300306 java.lang.invoke.BoundMethodHandle$Factory.emitPushFields
+  48  0,50% 52,76%       1 300322 org.apache.batik.bridge.SVGBridgeExtension.registerTags
+  49  0,50% 53,27%       1 300323 java.lang.ClassLoader.checkCerts
+  50  0,50% 53,77%       1 300325 org.apache.batik.css.engine.value.svg.SVGValueConstants.<clinit>
+  51  0,50% 54,27%       1 300326 org.apache.batik.css.engine.SVGCSSEngine.<clinit>
+  52  0,50% 54,77%       1 300328 org.apache.batik.dom.svg.SVGStylableElement.getCSSClass
+  53  0,50% 55,28%       1 300341 org.apache.batik.dom.svg.SVGGraphicsElement.getMotionTransform
+  54  0,50% 55,78%       1 300342 org.apache.batik.gvt.CompositeShapePainter.addShapePainter
+  55  0,50% 56,28%       1 300343 org.apache.batik.dom.svg.AbstractSVGList$ListBuilder.endList
+  56  0,50% 56,78%       1 300344 org.apache.batik.parser.AbstractParser.<init>
+  57  0,50% 57,29%       1 300345 org.apache.batik.parser.AWTPathProducer.closePath
+  58  0,50% 57,79%       1 300346 org.apache.batik.bridge.PaintServer.convertStroke
+  59  0,50% 58,29%       1 300347 org.apache.batik.gvt.AbstractGraphicsNode.setVisible
+  60  0,50% 58,79%       1 300348 java.awt.geom.GeneralPath.<init>
+  61  0,50% 59,30%       1 300349 org.apache.batik.parser.AWTPathProducer.endPath
+  62  0,50% 59,80%       1 300350 org.apache.batik.dom.svg.SVGOMAnimatedPathData$AnimSVGPathSegList.<init>
+  63  0,50% 60,30%       1 300376 sun.font.Type1Font.<clinit>
+  64  0,50% 60,80%       1 300409 java.util.Properties.load0
+  65  0,50% 61,31%       1 300434 sun.nio.ch.FileChannelImpl.<init>
+  66  0,50% 61,81%       1 300457 sun.awt.FcFontManager.getFontPathNative
+  67  0,50% 62,31%       1 300459 java.nio.DirectByteBuffer.get
+  68  0,50% 62,81%       1 300472 sun.nio.ch.FileDispatcherImpl.read0
+  69  0,50% 63,32%       1 300475 sun.font.TrueTypeFont.lookupName
+  70  0,50% 63,82%       1 300478 org.apache.batik.gvt.font.FontFamilyResolver.<clinit>
+  71  0,50% 64,32%       1 300484 java.util.zip.ZipFile.getEntry
+  72  0,50% 64,82%       1 300485 java.text.AttributedString.createRunAttributeDataVectors
+  73  0,50% 65,33%       1 300487 java.awt.geom.Path2D$Float.getBounds2D
+  74  0,50% 65,83%       1 300498 sun.java2d.pipe.RenderingEngine.feedConsumer
+  75  0,50% 66,33%       1 300499 sun.java2d.pisces.Stroker.finish
+  76  0,50% 66,83%       1 300520 sun.font.Font2D.getFontMetrics
+  77  0,50% 67,34%       1 300565 sun.font.GlyphLayout.layout
+  78  0,50% 67,84%       1 300578 java.awt.geom.Rectangle2D$Float.setRect
+  79  0,50% 68,34%       1 300579 sun.font.AttributeValues.equals
+  80  0,50% 68,84%       1 300580 java.util.HashMap.hash
+  81  0,50% 69,35%       1 300581 sun.nio.ch.FileDispatcherImpl.read0
+  82  0,50% 69,85%       1 300582 java.text.Bidi.<init>
+  83  0,50% 70,35%       1 300583 org.apache.batik.gvt.font.GVTLineMetrics.getAscent
+  84  0,50% 70,85%       1 300584 java.lang.Thread.isInterrupted
+  85  0,50% 71,36%       1 300586 java.awt.image.ColorModel$1.run
+  86  0,50% 71,86%       1 300612 sun.java2d.loops.SurfaceType.<clinit>
+  87  0,50% 72,36%       1 300666 sun.java2d.loops.GraphicsPrimitiveMgr.registerNativeLoops
+  88  0,50% 72,86%       1 300689 sun.java2d.pisces.Renderer.emitRow
+  89  0,50% 73,37%       1 300690 sun.java2d.pisces.Renderer._endRendering
+  90  0,50% 73,87%       1 300691 org.apache.batik.gvt.ShapeNode.primitivePaint
+  91  0,50% 74,37%       1 300693 sun.java2d.pipe.AAShapePipe.renderPath
+  92  0,50% 74,87%       1 300694 sun.java2d.pisces.Renderer.<init>
+  93  0,50% 75,38%       1 300696 sun.java2d.pisces.Stroker.lineTo
+  94  0,50% 75,88%       1 300697 sun.java2d.pisces.Renderer$ScanlineIterator.next
+  95  0,50% 76,38%       1 300698 sun.java2d.loops.MaskFill.MaskFill
+  96  0,50% 76,88%       1 300699 sun.java2d.pisces.Renderer.curveBreakIntoLinesAndAdd
+  97  0,50% 77,39%       1 300702 sun.java2d.SunGraphics2D.fill
+  98  0,50% 77,89%       1 300704 org.apache.batik.gvt.font.AWTGVTGlyphVector.draw
+  99  0,50% 78,39%       1 300705 org.apache.batik.ext.awt.image.rendered.PadRed.handleZero
+ 100  0,50% 78,89%       1 300710 org.apache.batik.ext.awt.image.codec.png.PNGEncodeParam.filterRow
+ 101  0,50% 79,40%       1 300711 org.apache.batik.ext.awt.image.codec.png.PNGImageEncoder.encodePass
+ 102  0,50% 79,90%       1 300712 org.apache.batik.ext.awt.image.codec.png.PNGEncodeParam.filterRow
+ 103  0,50% 80,40%       1 300714 org.apache.batik.ext.awt.image.codec.png.CRC.updateCRC
+ 104  0,50% 80,90%       1 300715 org.apache.batik.ext.awt.image.codec.png.PNGEncodeParam.filterRow
+ 105  0,50% 81,41%       1 300717 org.apache.batik.ext.awt.image.codec.png.PNGImageEncoder.encodePass
+ 106  0,50% 81,91%       1 300719 java.io.BufferedOutputStream.write
+ 107  0,50% 82,41%       1 300720 org.apache.crimson.parser.Parser2.parseLiteral
+ 108  0,50% 82,91%       1 300721 org.apache.batik.dom.util.SAXDocumentFactory.startElement
+ 109  0,50% 83,42%       1 300722 org.apache.batik.dom.svg.SVGOMEllipseElement.initializeLiveAttributes
+ 110  0,50% 83,92%       1 300723 org.apache.batik.css.parser.CSSLexicalUnit.createInteger
+ 111  0,50% 84,42%       1 300724 org.apache.batik.ext.awt.image.codec.png.PNGRegistryEntry$1.run
+ 112  0,50% 84,92%       1 300726 java.awt.image.ColorModel.getLinearRGB16TosRGB8LUT
+ 113  0,50% 85,43%       1 300729 org.apache.batik.ext.awt.image.codec.png.PNGRed.processPixels
+ 114  0,50% 85,93%       1 300730 java.awt.image.Raster.getPixel
+ 115  0,50% 86,43%       1 300731 java.lang.System.arraycopy
+ 116  0,50% 86,93%       1 300732 sun.awt.image.ByteInterleavedRaster.setPixels
+ 117  0,50% 87,44%       1 300738 java.awt.image.WritableRaster.setPixel
+ 118  0,50% 87,94%       1 300739 java.awt.image.WritableRaster.setPixel
+ 119  0,50% 88,44%       1 300740 java.awt.image.BandCombineOp.filter
+ 120  0,50% 88,94%       1 300741 java.awt.image.SinglePixelPackedSampleModel.setPixels
+ 121  0,50% 89,45%       1 300742 java.awt.image.SinglePixelPackedSampleModel.setPixels
+ 122  0,50% 89,95%       1 300743 java.awt.image.Raster.getPixels
+ 123  0,50% 90,45%       1 300744 org.apache.batik.dom.xbl.GenericXBLManager.getXblParentNode
+ 124  0,50% 90,95%       1 300745 org.apache.batik.parser.PathParser.doParse
+ 125  0,50% 91,46%       1 300746 java.lang.Object.hashCode
+ 126  0,50% 91,96%       1 300747 org.apache.batik.bridge.SVGTextElementBridge.initializeDynamicSupport
+ 127  0,50% 92,46%       1 300748 org.apache.batik.parser.AbstractParser.<init>
+ 128  0,50% 92,96%       1 300749 java.lang.Object.hashCode
+ 129  0,50% 93,47%       1 300750 org.apache.batik.gvt.text.BidiAttributedCharacterIterator.<init>
+ 130  0,50% 93,97%       1 300753 sun.font.FreetypeFontScaler.getGlyphImageNative
+ 131  0,50% 94,47%       1 300754 org.apache.batik.gvt.text.GlyphLayout.doExplicitGlyphLayout
+ 132  0,50% 94,97%       1 300755 java.lang.Object.clone
+ 133  0,50% 95,48%       1 300756 java.text.AttributedString.<init>
+ 134  0,50% 95,98%       1 300757 org.apache.batik.gvt.AbstractGraphicsNode.paint
+ 135  0,50% 96,48%       1 300758 sun.java2d.pisces.Renderer._endRendering
+ 136  0,50% 96,98%       1 300759 java.lang.Object.clone
+ 137  0,50% 97,49%       1 300760 sun.java2d.pisces.Renderer$ScanlineIterator.access$600
+ 138  0,50% 97,99%       1 300761 sun.java2d.pisces.PiscesRenderingEngine.getAATileGenerator
+ 139  0,50% 98,49%       1 300762 sun.java2d.pipe.ShapeSpanIterator.nextSpan
+ 140  0,50% 98,99%       1 300763 sun.java2d.SunGraphics2D.checkFontInfo
+ 141  0,50% 99,50%       1 300764 org.apache.batik.ext.awt.image.GraphicsUtil.copyData_INT_PACK
+ 142  0,50% 100,00%       1 300765 java.lang.ClassLoader.getPackage
+CPU SAMPLES END

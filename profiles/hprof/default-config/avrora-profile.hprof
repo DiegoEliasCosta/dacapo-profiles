@@ -1,0 +1,2731 @@
+JAVA PROFILE 1.0.1, created Thu Sep 27 21:53:53 2018
+
+Copyright (c) 2003, 2005, Oracle and/or its affiliates. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+
+  - Neither the name of Oracle nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+Header for -agentlib:hprof (or -Xrunhprof) ASCII Output (JDK 5.0 JVMTI based)
+
+WARNING!  This file format is under development, and is subject to
+change without notice.
+
+This file contains the following types of records:
+
+THREAD START
+THREAD END      mark the lifetime of Java threads
+
+TRACE           represents a Java stack trace.  Each trace consists
+                of a series of stack frames.  Other records refer to
+                TRACEs to identify (1) where object allocations have
+                taken place, (2) the frames in which GC roots were
+                found, and (3) frequently executed methods.
+
+HEAP DUMP       is a complete snapshot of all live objects in the Java
+                heap.  Following distinctions are made:
+
+                ROOT    root set as determined by GC
+                CLS     classes 
+                OBJ     instances
+                ARR     arrays
+
+SITES           is a sorted list of allocation sites.  This identifies
+                the most heavily allocated object types, and the TRACE
+                at which those allocations occurred.
+
+CPU SAMPLES     is a statistical profile of program execution.  The VM
+                periodically samples all running threads, and assigns
+                a quantum to active TRACEs in those threads.  Entries
+                in this record are TRACEs ranked by the percentage of
+                total quanta they consumed; top-ranked TRACEs are
+                typically hot spots in the program.
+
+CPU TIME        is a profile of program execution obtained by measuring
+                the time spent in individual methods (excluding the time
+                spent in callees), as well as by counting the number of
+                times each method is called. Entries in this record are
+                TRACEs ranked by the percentage of total CPU time. The
+                "count" field indicates the number of times each TRACE 
+                is invoked.
+
+MONITOR TIME    is a profile of monitor contention obtained by measuring
+                the time spent by a thread waiting to enter a monitor.
+                Entries in this record are TRACEs ranked by the percentage
+                of total monitor contention time and a brief description
+                of the monitor.  The "count" field indicates the number of 
+                times the monitor was contended at that TRACE.
+
+MONITOR DUMP    is a complete snapshot of all the monitors and threads in 
+                the System.
+
+HEAP DUMP, SITES, CPU SAMPLES|TIME and MONITOR DUMP|TIME records are generated 
+at program exit.  They can also be obtained during program execution by typing 
+Ctrl-\ (on Solaris) or by typing Ctrl-Break (on Win32).
+
+--------
+
+THREAD START (obj=50000172, id = 200002, name="HPROF gc_finish watcher", group="system")
+THREAD START (obj=50000172, id = 200001, name="main", group="main")
+THREAD START (obj=5000045c, id = 200005, name="node-4", group="main")
+THREAD START (obj=5000045c, id = 200006, name="node-5", group="main")
+THREAD START (obj=5000045c, id = 200010, name="node-2", group="main")
+THREAD START (obj=5000045c, id = 200009, name="node-0", group="main")
+THREAD START (obj=5000045c, id = 200008, name="node-1", group="main")
+THREAD START (obj=5000045c, id = 200007, name="node-3", group="main")
+THREAD END (id = 200005)
+THREAD END (id = 200007)
+THREAD END (id = 200006)
+THREAD END (id = 200008)
+THREAD END (id = 200009)
+THREAD END (id = 200010)
+THREAD END (id = 200001)
+TRACE 313308:
+	java.lang.Thread.join(Thread.java:Unknown line)
+	java.lang.Thread.join(Thread.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.join(RippleSynchronizer.java:Unknown line)
+	avrora.sim.Simulation.join(Simulation.java:Unknown line)
+TRACE 312848:
+	java.lang.Object.wait(Object.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.waitForLink(RippleSynchronizer.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.waitFor(RippleSynchronizer.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:Unknown line)
+TRACE 312219:
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+	avrora.sim.Simulator.start(Simulator.java:Unknown line)
+TRACE 311862:
+	avrora.sim.clock.MainClock.advance(MainClock.java:Unknown line)
+	avrora.sim.AtmelInterpreter.commit(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 311863:
+	avrora.sim.AtmelInterpreter.commit(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 311861:
+	avrora.sim.clock.DeltaQueue.advance(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.advance(MainClock.java:Unknown line)
+	avrora.sim.AtmelInterpreter.commit(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312574:
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$PUSH.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312624:
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$POP.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312572:
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312571:
+	avrora.sim.AtmelInterpreter.setSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$PUSH.accept(LegacyInstr.java:Unknown line)
+TRACE 312575:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$PUSH.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312622:
+	avrora.sim.AtmelInterpreter.readSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312627:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$POP.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312621:
+	avrora.sim.AtmelInterpreter.setSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$POP.accept(LegacyInstr.java:Unknown line)
+TRACE 312573:
+	avrora.sim.AtmelInterpreter.writeDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$PUSH.accept(LegacyInstr.java:Unknown line)
+TRACE 312566:
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$PUSH.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312568:
+	avrora.sim.AtmelInterpreter.getSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$PUSH.accept(LegacyInstr.java:Unknown line)
+TRACE 312576:
+	avrora.arch.legacy.LegacyInstr$PUSH.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312626:
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$POP.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312628:
+	avrora.arch.legacy.LegacyInstr$POP.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312618:
+	avrora.sim.AtmelInterpreter.getSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$POP.accept(LegacyInstr.java:Unknown line)
+TRACE 312623:
+	avrora.sim.AtmelInterpreter.getDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$POP.accept(LegacyInstr.java:Unknown line)
+TRACE 312300:
+	avrora.sim.AtmelInterpreter.readSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$LDS.accept(LegacyInstr.java:Unknown line)
+TRACE 312304:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$LDS.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312163:
+	avrora.sim.AtmelInterpreter.fireBeforeWrite(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+TRACE 312164:
+	avrora.sim.AtmelInterpreter.fireAfterWrite(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+TRACE 312225:
+	avrora.sim.AtmelInterpreter.fireBeforeRead(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.readSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+TRACE 312226:
+	avrora.sim.AtmelInterpreter.fireAfterRead(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.readSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+TRACE 312866:
+	avrora.sim.radio.Medium$Receiver.earliestNewTransmission(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$100(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireUnlocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+TRACE 312301:
+	avrora.sim.AtmelInterpreter.getDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$LDS.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312303:
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$LDS.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312305:
+	avrora.arch.legacy.LegacyInstr$LDS.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312565:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$PUSH.accept(LegacyInstr.java:Unknown line)
+TRACE 312570:
+	cck.util.Arithmetic.high(Arithmetic.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 311890:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$LDI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312567:
+	cck.util.Arithmetic.uword(Arithmetic.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312619:
+	cck.util.Arithmetic.low(Arithmetic.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312569:
+	cck.util.Arithmetic.low(Arithmetic.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312620:
+	cck.util.Arithmetic.high(Arithmetic.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312625:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$POP.accept(LegacyInstr.java:Unknown line)
+TRACE 312617:
+	cck.util.Arithmetic.uword(Arithmetic.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312147:
+	avrora.sim.AtmelInterpreter.readSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getIORegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$IN.accept(LegacyInstr.java:Unknown line)
+TRACE 311872:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$EOR.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312849:
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$000(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireUnlocked(Medium.java:Unknown line)
+TRACE 311883:
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeIORegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$OUT.accept(LegacyInstr.java:Unknown line)
+TRACE 311905:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CPC.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312490:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$AND.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 311899:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CPI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312175:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$MOV.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312148:
+	avrora.sim.AtmelInterpreter.getIORegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$IN.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 311908:
+	avrora.arch.legacy.LegacyInstr$BRNE.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 311868:
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$EOR.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 311884:
+	avrora.sim.AtmelInterpreter.writeIORegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$OUT.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312151:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$IN.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 311885:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$OUT.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312878:
+	avrora.sim.clock.DeltaQueue.skipAhead(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.skipAhead(MainClock.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.sleepLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 313276:
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+	avrora.sim.Simulator.start(Simulator.java:Unknown line)
+	avrora.sim.SimulatorThread.run(SimulatorThread.java:Unknown line)
+TRACE 311902:
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CPC.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312229:
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$RET.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312167:
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CALL.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312778:
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+	avrora.sim.Simulator.start(Simulator.java:Unknown line)
+TRACE 312770:
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.pushPC(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 311889:
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$LDI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312370:
+	avrora.arch.legacy.LegacyInstr$NOP.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 311891:
+	avrora.arch.legacy.LegacyInstr$LDI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 311895:
+	avrora.arch.legacy.LegacyInstr$RJMP.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312806:
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$RETI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312892:
+	avrora.sim.FiniteStateMachine.transition(FiniteStateMachine.java:Unknown line)
+	avrora.sim.mcu.AtmelMicrocontroller.wakeup(AtmelMicrocontroller.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.leaveSleepMode(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+TRACE 311900:
+	avrora.arch.legacy.LegacyInstr$CPI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 311897:
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CPI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312486:
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$AND.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312874:
+	avrora.sim.radio.Medium$Receiver$Ticker.fireUnlocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.skipAhead(DeltaQueue.java:Unknown line)
+TRACE 313025:
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+TRACE 312387:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CP.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312172:
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$MOV.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312174:
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$MOV.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312823:
+	avrora.sim.FiniteStateMachine.transition(FiniteStateMachine.java:Unknown line)
+	avrora.sim.mcu.AtmelMicrocontroller.sleep(AtmelMicrocontroller.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.enterSleepMode(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312165:
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312162:
+	avrora.sim.AtmelInterpreter.setSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CALL.accept(LegacyInstr.java:Unknown line)
+TRACE 312227:
+	avrora.sim.AtmelInterpreter.readSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312176:
+	avrora.arch.legacy.LegacyInstr$MOV.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312224:
+	avrora.sim.AtmelInterpreter.setSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$RET.accept(LegacyInstr.java:Unknown line)
+TRACE 312767:
+	avrora.sim.AtmelInterpreter.setSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.pushPC(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+TRACE 312768:
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.pushPC(LegacyInterpreter.java:Unknown line)
+TRACE 312804:
+	avrora.sim.AtmelInterpreter.readSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312385:
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CP.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312876:
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.skipAhead(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.skipAhead(MainClock.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.sleepLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312145:
+	avrora.sim.AtmelInterpreter.readVolatile(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.readSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getIORegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312803:
+	avrora.sim.AtmelInterpreter.setSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$RETI.accept(LegacyInstr.java:Unknown line)
+TRACE 312150:
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$IN.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 311865:
+	avrora.sim.clock.DeltaQueue.access$000(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.add(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.newLink(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.insertAfter(DeltaQueue.java:Unknown line)
+TRACE 312152:
+	avrora.arch.legacy.LegacyInstr$IN.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 311866:
+	avrora.sim.clock.DeltaQueue$Link.add(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.newLink(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.insertAfter(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.insertEvent(DeltaQueue.java:Unknown line)
+TRACE 311687:
+	avrora.sim.clock.DeltaQueue.newLink(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.insertAfter(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.insertEvent(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.insertEvent(MainClock.java:Unknown line)
+TRACE 312879:
+	avrora.sim.clock.MainClock.skipAhead(MainClock.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.sleepLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 311881:
+	avrora.sim.AtmelInterpreter.writeVolatile(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeIORegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 311886:
+	avrora.arch.legacy.LegacyInstr$OUT.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 311875:
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$OUT.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312299:
+	avrora.sim.AtmelInterpreter.fireAfterRead(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.readSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312891:
+	avrora.sim.FiniteStateMachine.fireAfter(FiniteStateMachine.java:Unknown line)
+	avrora.sim.FiniteStateMachine.transition(FiniteStateMachine.java:Unknown line)
+	avrora.sim.mcu.AtmelMicrocontroller.wakeup(AtmelMicrocontroller.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.leaveSleepMode(LegacyInterpreter.java:Unknown line)
+TRACE 312169:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CALL.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312889:
+	avrora.sim.FiniteStateMachine.fireBefore(FiniteStateMachine.java:Unknown line)
+	avrora.sim.FiniteStateMachine.transition(FiniteStateMachine.java:Unknown line)
+	avrora.sim.mcu.AtmelMicrocontroller.wakeup(AtmelMicrocontroller.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.leaveSleepMode(LegacyInterpreter.java:Unknown line)
+TRACE 312302:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$LDS.accept(LegacyInstr.java:Unknown line)
+TRACE 312298:
+	avrora.sim.AtmelInterpreter.fireBeforeRead(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.readSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312797:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$COM.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312885:
+	avrora.sim.radio.CC1000Radio$SPITicker.fire(CC1000Radio.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.skipAhead(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.skipAhead(MainClock.java:Unknown line)
+TRACE 312772:
+	avrora.arch.legacy.LegacyInterpreter.pushPC(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312811:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$RETI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312195:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$ORI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312820:
+	avrora.sim.FiniteStateMachine.fireBefore(FiniteStateMachine.java:Unknown line)
+	avrora.sim.FiniteStateMachine.transition(FiniteStateMachine.java:Unknown line)
+	avrora.sim.mcu.AtmelMicrocontroller.sleep(AtmelMicrocontroller.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.enterSleepMode(LegacyInterpreter.java:Unknown line)
+TRACE 312822:
+	avrora.sim.FiniteStateMachine.fireAfter(FiniteStateMachine.java:Unknown line)
+	avrora.sim.FiniteStateMachine.transition(FiniteStateMachine.java:Unknown line)
+	avrora.sim.mcu.AtmelMicrocontroller.sleep(AtmelMicrocontroller.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.enterSleepMode(LegacyInterpreter.java:Unknown line)
+TRACE 312994:
+	avrora.sim.radio.Medium$Receiver.getIntersection(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$200(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+TRACE 311873:
+	avrora.arch.legacy.LegacyInstr$EOR.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 311871:
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$EOR.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 311906:
+	avrora.arch.legacy.LegacyInstr$CPC.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312875:
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.skipAhead(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.skipAhead(MainClock.java:Unknown line)
+TRACE 313018:
+	avrora.sim.output.SimPrinter.printBuffer(SimPrinter.java:Unknown line)
+	avrora.monitors.PacketMonitor$Mon.fireAfterReceiveEnd(PacketMonitor.java:Unknown line)
+	avrora.sim.radio.Medium$Probe$List.fireAfterReceiveEnd(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+TRACE 312833:
+	java.util.HashMap.get(HashMap.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$000(Medium.java:Unknown line)
+TRACE 312232:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$RET.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312083:
+	avrora.sim.mcu.DefaultMCU$Pin.write(DefaultMCU.java:Unknown line)
+	avrora.sim.mcu.ATMegaFamily$PortRegister.write(ATMegaFamily.java:Unknown line)
+	avrora.sim.AtmelInterpreter$IORegBehavior.write(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeVolatile(AtmelInterpreter.java:Unknown line)
+TRACE 312790:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CPSE.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312886:
+	avrora.arch.legacy.LegacyInterpreter.sleepLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+	avrora.sim.Simulator.start(Simulator.java:Unknown line)
+TRACE 312895:
+	avrora.sim.mcu.AtmelMicrocontroller.wakeup(AtmelMicrocontroller.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.leaveSleepMode(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312899:
+	avrora.arch.legacy.LegacyInterpreter.leaveSleepMode(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312883:
+	avrora.sim.mcu.SPI.exchange(SPI.java:Unknown line)
+	avrora.sim.radio.CC1000Radio$SPITicker.fire(CC1000Radio.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.skipAhead(DeltaQueue.java:Unknown line)
+TRACE 312843:
+	avrora.sim.clock.RippleSynchronizer.advance(RippleSynchronizer.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$000(Medium.java:Unknown line)
+TRACE 312645:
+	avrora.sim.mcu.SPI.receive(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.exchange(SPI.java:Unknown line)
+	avrora.sim.radio.CC1000Radio$SPITicker.fire(CC1000Radio.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+TRACE 312166:
+	avrora.sim.AtmelInterpreter.writeDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CALL.accept(LegacyInstr.java:Unknown line)
+TRACE 312221:
+	avrora.sim.AtmelInterpreter.getSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$RET.accept(LegacyInstr.java:Unknown line)
+TRACE 312159:
+	avrora.sim.AtmelInterpreter.getSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CALL.accept(LegacyInstr.java:Unknown line)
+TRACE 312228:
+	avrora.sim.AtmelInterpreter.getDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$RET.accept(LegacyInstr.java:Unknown line)
+TRACE 312084:
+	avrora.sim.mcu.ATMegaFamily$PortRegister.write(ATMegaFamily.java:Unknown line)
+	avrora.sim.AtmelInterpreter$IORegBehavior.write(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeVolatile(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:Unknown line)
+TRACE 312788:
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CPSE.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 311917:
+	avrora.sim.AtmelInterpreter$IORegBehavior.read(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.readVolatile(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.readSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getIORegisterByte(AtmelInterpreter.java:Unknown line)
+TRACE 312764:
+	avrora.sim.AtmelInterpreter.getSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.pushPC(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+TRACE 312769:
+	avrora.sim.AtmelInterpreter.writeDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.pushPC(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+TRACE 312805:
+	avrora.sim.AtmelInterpreter.getDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$RETI.accept(LegacyInstr.java:Unknown line)
+TRACE 311893:
+	avrora.sim.AtmelInterpreter$IORegBehavior.write(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeVolatile(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeIORegisterByte(AtmelInterpreter.java:Unknown line)
+TRACE 303613:
+	java.util.LinkedList.checkPositionIndex(LinkedList.java:Unknown line)
+	java.util.LinkedList.listIterator(LinkedList.java:Unknown line)
+	java.util.AbstractList.listIterator(AbstractList.java:Unknown line)
+	java.util.AbstractSequentialList.iterator(AbstractSequentialList.java:Unknown line)
+TRACE 312800:
+	avrora.sim.AtmelInterpreter.getSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$RETI.accept(LegacyInstr.java:Unknown line)
+TRACE 311867:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$EOR.accept(LegacyInstr.java:Unknown line)
+TRACE 312852:
+	java.util.LinkedList.listIterator(LinkedList.java:Unknown line)
+	java.util.AbstractList.listIterator(AbstractList.java:Unknown line)
+	java.util.AbstractSequentialList.iterator(AbstractSequentialList.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.earliestNewTransmission(Medium.java:Unknown line)
+TRACE 311907:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$BRNE.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312817:
+	cck.util.Arithmetic.getBitField(Arithmetic.java:Unknown line)
+	avrora.sim.mcu.ATMega128.getSleepMode(ATMega128.java:Unknown line)
+	avrora.sim.mcu.AtmelMicrocontroller.sleep(AtmelMicrocontroller.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.enterSleepMode(LegacyInterpreter.java:Unknown line)
+TRACE 312818:
+	avrora.sim.mcu.ATMega128.getSleepMode(ATMega128.java:Unknown line)
+	avrora.sim.mcu.AtmelMicrocontroller.sleep(AtmelMicrocontroller.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.enterSleepMode(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 311901:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CPC.accept(LegacyInstr.java:Unknown line)
+TRACE 312138:
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$STS.accept(LegacyInstr.java:Unknown line)
+TRACE 312140:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$STS.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312489:
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$AND.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312491:
+	avrora.arch.legacy.LegacyInstr$AND.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 311887:
+	avrora.arch.legacy.LegacyInterpreter.low(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$LDI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 311888:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$LDI.accept(LegacyInstr.java:Unknown line)
+TRACE 312369:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$NOP.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 311894:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$RJMP.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312080:
+	avrora.sim.mcu.DefaultMCU$Pin.printWrite(DefaultMCU.java:Unknown line)
+	avrora.sim.mcu.DefaultMCU$Pin.write(DefaultMCU.java:Unknown line)
+	avrora.sim.mcu.ATMegaFamily$PortRegister.write(ATMegaFamily.java:Unknown line)
+	avrora.sim.AtmelInterpreter$IORegBehavior.write(AtmelInterpreter.java:Unknown line)
+TRACE 312644:
+	avrora.sim.mcu.SPI.postSPIInterrupt(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.receive(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.exchange(SPI.java:Unknown line)
+	avrora.sim.radio.CC1000Radio$SPITicker.fire(CC1000Radio.java:Unknown line)
+TRACE 312388:
+	avrora.arch.legacy.LegacyInstr$CP.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312785:
+	avrora.sim.mcu.SPI$SPDReg$TransmitRegister.write(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI$SPDReg.write(SPI.java:Unknown line)
+	avrora.sim.AtmelInterpreter$IORegBehavior.write(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeVolatile(AtmelInterpreter.java:Unknown line)
+TRACE 312381:
+	avrora.sim.AtmelInterpreter.writeRegisterWord(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$SBIW.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312757:
+	avrora.sim.state.RegisterUtil$BoolView.setValue(RegisterUtil.java:Unknown line)
+	avrora.sim.mcu.SPI$SPSReg.clearSPIF(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.unpostSPIInterrupt(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.invoke(SPI.java:Unknown line)
+TRACE 312642:
+	avrora.sim.state.RegisterUtil$BoolView.setValue(RegisterUtil.java:Unknown line)
+	avrora.sim.mcu.SPI$SPSReg.setSPIF(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.postSPIInterrupt(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.receive(SPI.java:Unknown line)
+TRACE 312759:
+	avrora.sim.mcu.SPI.unpostSPIInterrupt(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.invoke(SPI.java:Unknown line)
+	avrora.sim.InterruptTable.beforeInvoke(InterruptTable.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+TRACE 311896:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CPI.accept(LegacyInstr.java:Unknown line)
+TRACE 306250:
+	java.io.FileOutputStream.write(FileOutputStream.java:Unknown line)
+	org.dacapo.harness.TeeOutputStream.write(TeeOutputStream.java:Unknown line)
+	java.io.FilterOutputStream.write(FilterOutputStream.java:Unknown line)
+	java.io.PrintStream.write(PrintStream.java:Unknown line)
+TRACE 311898:
+	avrora.arch.legacy.LegacyInterpreter.low(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CPI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312485:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$AND.accept(LegacyInstr.java:Unknown line)
+TRACE 312835:
+	avrora.sim.SimulatorThread.getSimulator(SimulatorThread.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$000(Medium.java:Unknown line)
+TRACE 312829:
+	avrora.sim.clock.MainClock.getCount(MainClock.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.skipAhead(DeltaQueue.java:Unknown line)
+TRACE 312487:
+	avrora.arch.legacy.LegacyInterpreter.low(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$AND.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312838:
+	avrora.sim.clock.MainClock.getCount(MainClock.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$000(Medium.java:Unknown line)
+TRACE 312825:
+	avrora.arch.legacy.LegacyInterpreter.enterSleepMode(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$SLEEP.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312824:
+	avrora.sim.mcu.AtmelMicrocontroller.sleep(AtmelMicrocontroller.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.enterSleepMode(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$SLEEP.accept(LegacyInstr.java:Unknown line)
+TRACE 312840:
+	avrora.sim.clock.RippleSynchronizer$NotifyEvent.access$100(RippleSynchronizer.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$000(Medium.java:Unknown line)
+TRACE 312171:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$MOV.accept(LegacyInstr.java:Unknown line)
+TRACE 312173:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$MOV.accept(LegacyInstr.java:Unknown line)
+TRACE 312252:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$ADD.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312847:
+	avrora.sim.clock.RippleSynchronizer.waitFor(RippleSynchronizer.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$000(Medium.java:Unknown line)
+TRACE 312872:
+	avrora.sim.clock.DeltaQueue.insertEvent(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.insertEvent(MainClock.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireUnlocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+TRACE 312375:
+	avrora.sim.AtmelInterpreter.getRegisterWord(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$SBIW.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312873:
+	avrora.sim.clock.MainClock.insertEvent(MainClock.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireUnlocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+TRACE 312880:
+	avrora.sim.clock.DeltaQueue.insertAfter(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.insertEvent(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.insertEvent(MainClock.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireUnlocked(Medium.java:Unknown line)
+TRACE 312384:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CP.accept(LegacyInstr.java:Unknown line)
+TRACE 311864:
+	avrora.sim.clock.DeltaQueue.newEventList(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.access$000(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.add(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.newLink(DeltaQueue.java:Unknown line)
+TRACE 303616:
+	java.util.LinkedList$ListItr.<init>(LinkedList.java:Unknown line)
+	java.util.LinkedList.listIterator(LinkedList.java:Unknown line)
+	java.util.AbstractList.listIterator(AbstractList.java:Unknown line)
+	java.util.AbstractSequentialList.iterator(AbstractSequentialList.java:Unknown line)
+TRACE 312854:
+	java.util.AbstractSequentialList.iterator(AbstractSequentialList.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.earliestNewTransmission(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$100(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireUnlocked(Medium.java:Unknown line)
+TRACE 312867:
+	avrora.sim.radio.Medium$Receiver.access$100(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireUnlocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+TRACE 312146:
+	avrora.sim.AtmelInterpreter.fireAfterRead(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.readSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getIORegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312853:
+	java.util.AbstractList.listIterator(AbstractList.java:Unknown line)
+	java.util.AbstractSequentialList.iterator(AbstractSequentialList.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.earliestNewTransmission(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$100(Medium.java:Unknown line)
+TRACE 312142:
+	avrora.sim.AtmelInterpreter.toSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getIORegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$IN.accept(LegacyInstr.java:Unknown line)
+TRACE 312143:
+	avrora.sim.AtmelInterpreter.fireBeforeRead(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.readSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getIORegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 311874:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$OUT.accept(LegacyInstr.java:Unknown line)
+TRACE 306252:
+	org.dacapo.harness.TeeOutputStream.write(TeeOutputStream.java:Unknown line)
+	java.io.FilterOutputStream.write(FilterOutputStream.java:Unknown line)
+	java.io.PrintStream.write(PrintStream.java:Unknown line)
+	sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:Unknown line)
+TRACE 311876:
+	avrora.sim.AtmelInterpreter.toSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeIORegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$OUT.accept(LegacyInstr.java:Unknown line)
+TRACE 312149:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$IN.accept(LegacyInstr.java:Unknown line)
+TRACE 312877:
+	avrora.sim.clock.DeltaQueue.free(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.skipAhead(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.skipAhead(MainClock.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.sleepLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312851:
+	avrora.sim.radio.Medium$Receiver.access$000(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireUnlocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+TRACE 312850:
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$000(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireUnlocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+TRACE 311882:
+	avrora.sim.AtmelInterpreter.fireAfterWrite(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeIORegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 311877:
+	avrora.sim.AtmelInterpreter.fireBeforeWrite(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeIORegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312139:
+	avrora.sim.AtmelInterpreter.writeDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$STS.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312135:
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$STS.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312493:
+	avrora.arch.legacy.LegacyInstr$BREQ.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312890:
+	avrora.sim.util.TransactionalList.isEmpty(TransactionalList.java:Unknown line)
+	avrora.sim.FiniteStateMachine.fireAfter(FiniteStateMachine.java:Unknown line)
+	avrora.sim.FiniteStateMachine.transition(FiniteStateMachine.java:Unknown line)
+	avrora.sim.mcu.AtmelMicrocontroller.wakeup(AtmelMicrocontroller.java:Unknown line)
+TRACE 312888:
+	avrora.sim.util.TransactionalList.isEmpty(TransactionalList.java:Unknown line)
+	avrora.sim.FiniteStateMachine.fireBefore(FiniteStateMachine.java:Unknown line)
+	avrora.sim.FiniteStateMachine.transition(FiniteStateMachine.java:Unknown line)
+	avrora.sim.mcu.AtmelMicrocontroller.wakeup(AtmelMicrocontroller.java:Unknown line)
+TRACE 312141:
+	avrora.arch.legacy.LegacyInstr$STS.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312260:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$ADC.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312991:
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$000(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+TRACE 312130:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$SUBI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 311880:
+	avrora.sim.AtmelInterpreter$SREGBehavior.write(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeVolatile(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeIORegisterByte(AtmelInterpreter.java:Unknown line)
+TRACE 312231:
+	avrora.arch.legacy.LegacyInterpreter.uword(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$RET.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312846:
+	avrora.sim.clock.RippleSynchronizer.waitForLink(RippleSynchronizer.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.waitFor(RippleSynchronizer.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:Unknown line)
+TRACE 312170:
+	avrora.arch.legacy.LegacyInstr$CALL.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312796:
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$COM.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312819:
+	avrora.sim.util.TransactionalList.isEmpty(TransactionalList.java:Unknown line)
+	avrora.sim.FiniteStateMachine.fireBefore(FiniteStateMachine.java:Unknown line)
+	avrora.sim.FiniteStateMachine.transition(FiniteStateMachine.java:Unknown line)
+	avrora.sim.mcu.AtmelMicrocontroller.sleep(AtmelMicrocontroller.java:Unknown line)
+TRACE 312233:
+	avrora.arch.legacy.LegacyInstr$RET.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312791:
+	avrora.arch.legacy.LegacyInstr$CPSE.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312780:
+	avrora.sim.mcu.SPI$SPDReg.read(SPI.java:Unknown line)
+	avrora.sim.AtmelInterpreter$IORegBehavior.read(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.readVolatile(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.readSRAM(AtmelInterpreter.java:Unknown line)
+TRACE 312904:
+	avrora.sim.mcu.Timer8Bit$Mode_CTC.fire(Timer8Bit.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.skipAhead(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.skipAhead(MainClock.java:Unknown line)
+TRACE 312816:
+	cck.util.Arithmetic.getBit(Arithmetic.java:Unknown line)
+	cck.util.Arithmetic.getBitField(Arithmetic.java:Unknown line)
+	avrora.sim.mcu.ATMega128.getSleepMode(ATMega128.java:Unknown line)
+	avrora.sim.mcu.AtmelMicrocontroller.sleep(AtmelMicrocontroller.java:Unknown line)
+TRACE 312643:
+	avrora.sim.mcu.SPI$SPSReg.setSPIF(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.postSPIInterrupt(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.receive(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.exchange(SPI.java:Unknown line)
+TRACE 312783:
+	avrora.sim.state.RegisterUtil$BoolView.getValue(RegisterUtil.java:Unknown line)
+	avrora.sim.mcu.SPI$TransferEvent.enableTransfer(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI$SPDReg$TransmitRegister.write(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI$SPDReg.write(SPI.java:Unknown line)
+TRACE 312775:
+	avrora.sim.clock.MainClock.advance(MainClock.java:Unknown line)
+	avrora.sim.AtmelInterpreter.advanceClock(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312798:
+	avrora.arch.legacy.LegacyInstr$COM.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312897:
+	avrora.sim.clock.MainClock.advance(MainClock.java:Unknown line)
+	avrora.sim.AtmelInterpreter.advanceClock(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.leaveSleepMode(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+TRACE 312761:
+	avrora.sim.InterruptTable.beforeInvoke(InterruptTable.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312793:
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$COM.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 311859:
+	avrora.arch.legacy.LegacyInstr$JMP.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 311879:
+	avrora.sim.AtmelInterpreter.disableInterrupts(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter$SREGBehavior.write(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeVolatile(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:Unknown line)
+TRACE 312898:
+	avrora.sim.AtmelInterpreter.advanceClock(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.leaveSleepMode(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312784:
+	avrora.sim.mcu.SPI$TransferEvent.enableTransfer(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI$SPDReg$TransmitRegister.write(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI$SPDReg.write(SPI.java:Unknown line)
+	avrora.sim.AtmelInterpreter$IORegBehavior.write(AtmelInterpreter.java:Unknown line)
+TRACE 312786:
+	avrora.sim.mcu.SPI$SPDReg.write(SPI.java:Unknown line)
+	avrora.sim.AtmelInterpreter$IORegBehavior.write(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeVolatile(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:Unknown line)
+TRACE 312808:
+	avrora.arch.legacy.LegacyInterpreter.uword(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$RETI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312821:
+	avrora.sim.util.TransactionalList.isEmpty(TransactionalList.java:Unknown line)
+	avrora.sim.FiniteStateMachine.fireAfter(FiniteStateMachine.java:Unknown line)
+	avrora.sim.FiniteStateMachine.transition(FiniteStateMachine.java:Unknown line)
+	avrora.sim.mcu.AtmelMicrocontroller.sleep(AtmelMicrocontroller.java:Unknown line)
+TRACE 312776:
+	avrora.sim.AtmelInterpreter.advanceClock(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312639:
+	avrora.sim.AtmelInterpreter.setPosted(AtmelInterpreter.java:Unknown line)
+	avrora.sim.mcu.SPI.postSPIInterrupt(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.receive(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.exchange(SPI.java:Unknown line)
+TRACE 312881:
+	avrora.sim.clock.MainClock.getCount(MainClock.java:Unknown line)
+	avrora.sim.radio.CC1000Radio$SPITicker.fire(CC1000Radio.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.skipAhead(DeltaQueue.java:Unknown line)
+TRACE 312191:
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$ORI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312638:
+	avrora.sim.InterruptTable.post(InterruptTable.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setPosted(AtmelInterpreter.java:Unknown line)
+	avrora.sim.mcu.SPI.postSPIInterrupt(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.receive(SPI.java:Unknown line)
+TRACE 312758:
+	avrora.sim.mcu.SPI$SPSReg.clearSPIF(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.unpostSPIInterrupt(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.invoke(SPI.java:Unknown line)
+	avrora.sim.InterruptTable.beforeInvoke(InterruptTable.java:Unknown line)
+TRACE 312647:
+	avrora.sim.clock.DeltaQueue.insertAfter(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.insertEvent(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.insertEvent(MainClock.java:Unknown line)
+	avrora.sim.radio.CC1000Radio$SPITicker.fire(CC1000Radio.java:Unknown line)
+TRACE 312812:
+	avrora.arch.legacy.LegacyInstr$RETI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312884:
+	avrora.sim.clock.MainClock.insertEvent(MainClock.java:Unknown line)
+	avrora.sim.radio.CC1000Radio$SPITicker.fire(CC1000Radio.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.skipAhead(DeltaQueue.java:Unknown line)
+TRACE 312636:
+	avrora.sim.state.RegisterUtil$BoolView.getValue(RegisterUtil.java:Unknown line)
+	avrora.sim.mcu.SPI.receive(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.exchange(SPI.java:Unknown line)
+	avrora.sim.radio.CC1000Radio$SPITicker.fire(CC1000Radio.java:Unknown line)
+TRACE 312754:
+	avrora.sim.AtmelInterpreter.setPosted(AtmelInterpreter.java:Unknown line)
+	avrora.sim.mcu.SPI.unpostSPIInterrupt(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.invoke(SPI.java:Unknown line)
+	avrora.sim.InterruptTable.beforeInvoke(InterruptTable.java:Unknown line)
+TRACE 312760:
+	avrora.sim.mcu.SPI.invoke(SPI.java:Unknown line)
+	avrora.sim.InterruptTable.beforeInvoke(InterruptTable.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 311870:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$EOR.accept(LegacyInstr.java:Unknown line)
+TRACE 312810:
+	avrora.sim.AtmelInterpreter.enableInterrupts(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$RETI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312194:
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$ORI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312753:
+	avrora.sim.InterruptTable.unpost(InterruptTable.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setPosted(AtmelInterpreter.java:Unknown line)
+	avrora.sim.mcu.SPI.unpostSPIInterrupt(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.invoke(SPI.java:Unknown line)
+TRACE 312648:
+	avrora.sim.clock.DeltaQueue.insertEvent(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.insertEvent(MainClock.java:Unknown line)
+	avrora.sim.radio.CC1000Radio$SPITicker.fire(CC1000Radio.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+TRACE 312196:
+	avrora.arch.legacy.LegacyInstr$ORI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 311869:
+	avrora.arch.legacy.LegacyInterpreter.low(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$EOR.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 311904:
+	avrora.arch.legacy.LegacyInterpreter.low(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CPC.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 311903:
+	avrora.arch.legacy.LegacyInterpreter.bit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CPC.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312379:
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeRegisterWord(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$SBIW.accept(LegacyInstr.java:Unknown line)
+TRACE 312372:
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getRegisterWord(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$SBIW.accept(LegacyInstr.java:Unknown line)
+TRACE 312842:
+	avrora.sim.clock.RippleSynchronizer.notifyLink(RippleSynchronizer.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.advance(RippleSynchronizer.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:Unknown line)
+TRACE 312220:
+	cck.util.Arithmetic.uword(Arithmetic.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312826:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$SLEEP.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312222:
+	cck.util.Arithmetic.low(Arithmetic.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312827:
+	avrora.arch.legacy.LegacyInstr$SLEEP.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312160:
+	cck.util.Arithmetic.low(Arithmetic.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312223:
+	cck.util.Arithmetic.high(Arithmetic.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312161:
+	cck.util.Arithmetic.high(Arithmetic.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312158:
+	cck.util.Arithmetic.uword(Arithmetic.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 311852:
+	avrora.sim.util.TransactionalList.isEmpty(TransactionalList.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+	avrora.sim.Simulator.start(Simulator.java:Unknown line)
+TRACE 312787:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CPSE.accept(LegacyInstr.java:Unknown line)
+TRACE 312248:
+	avrora.sim.AtmelInterpreter.getRegisterUnsigned(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$ADD.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312794:
+	avrora.arch.legacy.LegacyInterpreter.low(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$COM.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312766:
+	cck.util.Arithmetic.high(Arithmetic.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.pushPC(LegacyInterpreter.java:Unknown line)
+TRACE 312763:
+	cck.util.Arithmetic.uword(Arithmetic.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.pushPC(LegacyInterpreter.java:Unknown line)
+TRACE 303612:
+	java.util.LinkedList.isPositionIndex(LinkedList.java:Unknown line)
+	java.util.LinkedList.checkPositionIndex(LinkedList.java:Unknown line)
+	java.util.LinkedList.listIterator(LinkedList.java:Unknown line)
+	java.util.AbstractList.listIterator(AbstractList.java:Unknown line)
+TRACE 312802:
+	cck.util.Arithmetic.high(Arithmetic.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312801:
+	cck.util.Arithmetic.low(Arithmetic.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312799:
+	cck.util.Arithmetic.uword(Arithmetic.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.popByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312192:
+	avrora.arch.legacy.LegacyInterpreter.low(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$ORI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312765:
+	cck.util.Arithmetic.low(Arithmetic.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setSP(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.pushByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.pushPC(LegacyInterpreter.java:Unknown line)
+TRACE 312750:
+	avrora.sim.InterruptTable.getPendingInterrupts(InterruptTable.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+	avrora.sim.Simulator.start(Simulator.java:Unknown line)
+TRACE 312029:
+	avrora.sim.output.SimPrinter.printBuffer(SimPrinter.java:Unknown line)
+	avrora.monitors.LEDMonitor$Mon.fireAfterTransition(LEDMonitor.java:Unknown line)
+	avrora.sim.util.MulticastFSMProbe.fireAfterTransition(MulticastFSMProbe.java:Unknown line)
+	avrora.sim.FiniteStateMachine.fireAfter(FiniteStateMachine.java:Unknown line)
+TRACE 312382:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$SBIW.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312488:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$AND.accept(LegacyInstr.java:Unknown line)
+TRACE 312079:
+	avrora.sim.mcu.DefaultMCU.access$000(DefaultMCU.java:Unknown line)
+	avrora.sim.mcu.DefaultMCU$Pin.printWrite(DefaultMCU.java:Unknown line)
+	avrora.sim.mcu.DefaultMCU$Pin.write(DefaultMCU.java:Unknown line)
+	avrora.sim.mcu.ATMegaFamily$PortRegister.write(ATMegaFamily.java:Unknown line)
+TRACE 313178:
+	avrora.sim.clock.MainClock.getCount(MainClock.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+TRACE 312078:
+	cck.util.Arithmetic.getBit(Arithmetic.java:Unknown line)
+	avrora.sim.mcu.ATMegaFamily$PortRegister.write(ATMegaFamily.java:Unknown line)
+	avrora.sim.AtmelInterpreter$IORegBehavior.write(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeVolatile(AtmelInterpreter.java:Unknown line)
+TRACE 312909:
+	avrora.sim.clock.RippleSynchronizer$NotifyEvent.fire(RippleSynchronizer.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.skipAhead(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.skipAhead(MainClock.java:Unknown line)
+TRACE 313194:
+	avrora.sim.radio.Medium$BasicArbitrator.mergeTransmissions(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+TRACE 312400:
+	avrora.sim.mcu.Timer8Bit.tickerFinish(Timer8Bit.java:Unknown line)
+	avrora.sim.mcu.Timer8Bit.access$100(Timer8Bit.java:Unknown line)
+	avrora.sim.mcu.Timer8Bit$Mode_CTC.fire(Timer8Bit.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+TRACE 312386:
+	avrora.arch.legacy.LegacyInterpreter.low(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CP.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312399:
+	avrora.sim.clock.DerivedClock.insertEvent(DerivedClock.java:Unknown line)
+	avrora.sim.mcu.Timer8Bit.tickerFinish(Timer8Bit.java:Unknown line)
+	avrora.sim.mcu.Timer8Bit.access$100(Timer8Bit.java:Unknown line)
+	avrora.sim.mcu.Timer8Bit$Mode_CTC.fire(Timer8Bit.java:Unknown line)
+TRACE 312268:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$SBCI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312832:
+	java.util.HashMap.getNode(HashMap.java:Unknown line)
+	java.util.HashMap.get(HashMap.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:Unknown line)
+TRACE 312831:
+	java.util.HashMap.hash(HashMap.java:Unknown line)
+	java.util.HashMap.get(HashMap.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:Unknown line)
+TRACE 312836:
+	avrora.sim.Simulator.getClock(Simulator.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$000(Medium.java:Unknown line)
+TRACE 312837:
+	avrora.sim.clock.DeltaQueue.getCount(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.getCount(MainClock.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:Unknown line)
+TRACE 312828:
+	avrora.sim.clock.DeltaQueue.getCount(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.getCount(MainClock.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+TRACE 312834:
+	avrora.sim.Simulation$Node.getSimulator(Simulation.java:Unknown line)
+	avrora.sim.SimulatorThread.getSimulator(SimulatorThread.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:Unknown line)
+TRACE 312839:
+	avrora.sim.clock.RippleSynchronizer$NotifyEvent.currentWaitLink(RippleSynchronizer.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer$NotifyEvent.access$100(RippleSynchronizer.java:Unknown line)
+	avrora.sim.clock.RippleSynchronizer.waitForNeighbors(RippleSynchronizer.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:Unknown line)
+TRACE 312255:
+	avrora.sim.AtmelInterpreter.getRegisterUnsigned(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$ADC.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 313221:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$LSR.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 313229:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$ROR.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 313199:
+	avrora.sim.radio.Medium$Probe$List.fireAfterReceive(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+TRACE 313026:
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.skipAhead(DeltaQueue.java:Unknown line)
+TRACE 312830:
+	avrora.sim.radio.Medium$TXRX.getBitNum(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireUnlocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+TRACE 312855:
+	java.util.LinkedList$ListItr.hasNext(LinkedList.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.earliestNewTransmission(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$100(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireUnlocked(Medium.java:Unknown line)
+TRACE 312584:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$DEC.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 311916:
+	avrora.sim.RWRegister.read(RWRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter$IORegBehavior.read(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.readVolatile(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.readSRAM(AtmelInterpreter.java:Unknown line)
+TRACE 312492:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$BREQ.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312383:
+	avrora.arch.legacy.LegacyInstr$SBIW.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312694:
+	java.lang.AbstractStringBuilder.append(AbstractStringBuilder.java:Unknown line)
+	java.lang.StringBuffer.append(StringBuffer.java:Unknown line)
+	cck.text.Terminal.append(Terminal.java:Unknown line)
+	avrora.monitors.PacketMonitor$Mon.renderByte(PacketMonitor.java:Unknown line)
+TRACE 312137:
+	avrora.sim.AtmelInterpreter.fireAfterWrite(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312134:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$STS.accept(LegacyInstr.java:Unknown line)
+TRACE 306253:
+	java.io.FilterOutputStream.write(FilterOutputStream.java:Unknown line)
+	java.io.PrintStream.write(PrintStream.java:Unknown line)
+	sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:Unknown line)
+	sun.nio.cs.StreamEncoder.implFlushBuffer(StreamEncoder.java:Unknown line)
+TRACE 312136:
+	avrora.sim.AtmelInterpreter.fireBeforeWrite(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeDataByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312056:
+	avrora.sim.AtmelInterpreter.setIORegBit(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CBI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312144:
+	avrora.sim.AtmelInterpreter$SREGBehavior.read(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.readVolatile(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.readSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getIORegisterByte(AtmelInterpreter.java:Unknown line)
+TRACE 312168:
+	avrora.arch.legacy.LegacyInterpreter.high(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CALL.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312230:
+	cck.util.Arithmetic.uword(Arithmetic.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.uword(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$RET.accept(LegacyInstr.java:Unknown line)
+TRACE 312792:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$COM.accept(LegacyInstr.java:Unknown line)
+TRACE 312417:
+	avrora.arch.legacy.LegacyInstr$BRGE.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312795:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$COM.accept(LegacyInstr.java:Unknown line)
+TRACE 312774:
+	avrora.sim.clock.DeltaQueue.advance(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.advance(MainClock.java:Unknown line)
+	avrora.sim.AtmelInterpreter.advanceClock(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+TRACE 312157:
+	avrora.arch.legacy.LegacyInterpreter.low(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CALL.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312762:
+	cck.util.Arithmetic.low(Arithmetic.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.pushPC(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312371:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getRegisterWord(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312632:
+	avrora.sim.RWRegister.read(RWRegister.java:Unknown line)
+	avrora.sim.mcu.SPI.exchange(SPI.java:Unknown line)
+	avrora.sim.radio.CC1000Radio$SPITicker.fire(CC1000Radio.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+TRACE 312404:
+	avrora.sim.mcu.Timer8Bit$BufferedRegister.read(Timer8Bit.java:Unknown line)
+	avrora.sim.mcu.Timer8Bit.tickerStart(Timer8Bit.java:Unknown line)
+	avrora.sim.mcu.Timer8Bit.access$000(Timer8Bit.java:Unknown line)
+	avrora.sim.mcu.Timer8Bit$Mode_CTC.fire(Timer8Bit.java:Unknown line)
+TRACE 311857:
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$JMP.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312777:
+	avrora.sim.InterruptTable.afterInvoke(InterruptTable.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312887:
+	avrora.sim.Simulator.getMicrocontroller(Simulator.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.leaveSleepMode(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312773:
+	avrora.sim.AtmelInterpreter.getInterruptVectorAddress(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312637:
+	cck.util.Arithmetic.setBit(Arithmetic.java:Unknown line)
+	avrora.sim.InterruptTable.post(InterruptTable.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setPosted(AtmelInterpreter.java:Unknown line)
+	avrora.sim.mcu.SPI.postSPIInterrupt(SPI.java:Unknown line)
+TRACE 312193:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$ORI.accept(LegacyInstr.java:Unknown line)
+TRACE 312789:
+	avrora.arch.legacy.LegacyInterpreter.low(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CPSE.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312755:
+	avrora.sim.RWRegister.getValue(RWRegister.java:Unknown line)
+	avrora.sim.state.RegisterUtil$BoolView.setValue(RegisterUtil.java:Unknown line)
+	avrora.sim.mcu.SPI$SPSReg.clearSPIF(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.unpostSPIInterrupt(SPI.java:Unknown line)
+TRACE 311878:
+	avrora.sim.InterruptTable.disableAll(InterruptTable.java:Unknown line)
+	avrora.sim.AtmelInterpreter.disableInterrupts(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter$SREGBehavior.write(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeVolatile(AtmelInterpreter.java:Unknown line)
+TRACE 312253:
+	avrora.arch.legacy.LegacyInstr$ADD.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312779:
+	avrora.sim.RWRegister.read(RWRegister.java:Unknown line)
+	avrora.sim.mcu.SPI$SPDReg.read(SPI.java:Unknown line)
+	avrora.sim.AtmelInterpreter$IORegBehavior.read(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.readVolatile(AtmelInterpreter.java:Unknown line)
+TRACE 312040:
+	avrora.sim.AtmelInterpreter.setIORegBit(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$SBI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312894:
+	avrora.sim.FiniteStateMachine.getTransitionTime(FiniteStateMachine.java:Unknown line)
+	avrora.sim.mcu.AtmelMicrocontroller.wakeup(AtmelMicrocontroller.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.leaveSleepMode(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+TRACE 312635:
+	avrora.sim.RWRegister.getValue(RWRegister.java:Unknown line)
+	avrora.sim.state.RegisterUtil$BoolView.getValue(RegisterUtil.java:Unknown line)
+	avrora.sim.mcu.SPI.receive(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.exchange(SPI.java:Unknown line)
+TRACE 312809:
+	avrora.sim.InterruptTable.enableAll(InterruptTable.java:Unknown line)
+	avrora.sim.AtmelInterpreter.enableInterrupts(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$RETI.accept(LegacyInstr.java:Unknown line)
+TRACE 312751:
+	cck.util.Arithmetic.lowestBit(Arithmetic.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312397:
+	avrora.sim.clock.DeltaQueue.insertEvent(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.insertEvent(MainClock.java:Unknown line)
+	avrora.sim.clock.DerivedClock.insertEvent(DerivedClock.java:Unknown line)
+	avrora.sim.mcu.Timer8Bit.tickerFinish(Timer8Bit.java:Unknown line)
+TRACE 312251:
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$ADD.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312131:
+	avrora.arch.legacy.LegacyInstr$SUBI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312190:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$ORI.accept(LegacyInstr.java:Unknown line)
+TRACE 313197:
+	avrora.monitors.PacketMonitor$Mon.fireAfterReceive(PacketMonitor.java:Unknown line)
+	avrora.sim.radio.Medium$Probe$List.fireAfterReceive(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+TRACE 312807:
+	cck.util.Arithmetic.uword(Arithmetic.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.uword(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$RETI.accept(LegacyInstr.java:Unknown line)
+TRACE 312882:
+	avrora.sim.mcu.SPI.newFrame(SPI.java:Unknown line)
+	avrora.sim.radio.CC1000Radio$SPITicker.fire(CC1000Radio.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.skipAhead(DeltaQueue.java:Unknown line)
+TRACE 312207:
+	avrora.sim.clock.DeltaQueue.insertAfter(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.insertEvent(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.insertEvent(MainClock.java:Unknown line)
+	avrora.sim.clock.DerivedClock.insertEvent(DerivedClock.java:Unknown line)
+TRACE 312771:
+	cck.util.Arithmetic.high(Arithmetic.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.pushPC(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312752:
+	cck.util.Arithmetic.setBit(Arithmetic.java:Unknown line)
+	avrora.sim.InterruptTable.unpost(InterruptTable.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setPosted(AtmelInterpreter.java:Unknown line)
+	avrora.sim.mcu.SPI.unpostSPIInterrupt(SPI.java:Unknown line)
+TRACE 312390:
+	avrora.sim.mcu.Timer8Bit.tickerStart(Timer8Bit.java:Unknown line)
+	avrora.sim.mcu.Timer8Bit.access$000(Timer8Bit.java:Unknown line)
+	avrora.sim.mcu.Timer8Bit$Mode_CTC.fire(Timer8Bit.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+TRACE 312893:
+	avrora.sim.FiniteStateMachine.getCurrentState(FiniteStateMachine.java:Unknown line)
+	avrora.sim.mcu.AtmelMicrocontroller.wakeup(AtmelMicrocontroller.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.leaveSleepMode(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.invokeInterrupt(LegacyInterpreter.java:Unknown line)
+TRACE 312782:
+	avrora.sim.RWRegister.getValue(RWRegister.java:Unknown line)
+	avrora.sim.state.RegisterUtil$BoolView.getValue(RegisterUtil.java:Unknown line)
+	avrora.sim.mcu.SPI$TransferEvent.enableTransfer(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI$SPDReg$TransmitRegister.write(SPI.java:Unknown line)
+TRACE 312634:
+	avrora.sim.RWRegister.write(RWRegister.java:Unknown line)
+	avrora.sim.mcu.SPI.receive(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.exchange(SPI.java:Unknown line)
+	avrora.sim.radio.CC1000Radio$SPITicker.fire(CC1000Radio.java:Unknown line)
+TRACE 312641:
+	avrora.sim.RWRegister.setValue(RWRegister.java:Unknown line)
+	avrora.sim.state.RegisterUtil$BoolView.setValue(RegisterUtil.java:Unknown line)
+	avrora.sim.mcu.SPI$SPSReg.setSPIF(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.postSPIInterrupt(SPI.java:Unknown line)
+TRACE 312640:
+	avrora.sim.RWRegister.getValue(RWRegister.java:Unknown line)
+	avrora.sim.state.RegisterUtil$BoolView.setValue(RegisterUtil.java:Unknown line)
+	avrora.sim.mcu.SPI$SPSReg.setSPIF(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.postSPIInterrupt(SPI.java:Unknown line)
+TRACE 312781:
+	avrora.sim.RWRegister.write(RWRegister.java:Unknown line)
+	avrora.sim.mcu.SPI$SPDReg$TransmitRegister.write(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI$SPDReg.write(SPI.java:Unknown line)
+	avrora.sim.AtmelInterpreter$IORegBehavior.write(AtmelInterpreter.java:Unknown line)
+TRACE 312936:
+	java.util.LinkedList.listIterator(LinkedList.java:Unknown line)
+	java.util.AbstractList.listIterator(AbstractList.java:Unknown line)
+	java.util.AbstractSequentialList.iterator(AbstractSequentialList.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+TRACE 312126:
+	avrora.sim.AtmelInterpreter.getRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$SUBI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 313176:
+	java.util.LinkedList$ListItr.next(LinkedList.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+TRACE 312129:
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$SUBI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312920:
+	java.util.LinkedList.listIterator(LinkedList.java:Unknown line)
+	java.util.AbstractList.listIterator(AbstractList.java:Unknown line)
+	java.util.AbstractSequentialList.iterator(AbstractSequentialList.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.getIntersection(Medium.java:Unknown line)
+TRACE 312396:
+	avrora.sim.clock.MainClock.getCount(MainClock.java:Unknown line)
+	avrora.sim.clock.DerivedClock.insertEvent(DerivedClock.java:Unknown line)
+	avrora.sim.mcu.Timer8Bit.tickerFinish(Timer8Bit.java:Unknown line)
+	avrora.sim.mcu.Timer8Bit.access$100(Timer8Bit.java:Unknown line)
+TRACE 312398:
+	avrora.sim.clock.MainClock.insertEvent(MainClock.java:Unknown line)
+	avrora.sim.clock.DerivedClock.insertEvent(DerivedClock.java:Unknown line)
+	avrora.sim.mcu.Timer8Bit.tickerFinish(Timer8Bit.java:Unknown line)
+	avrora.sim.mcu.Timer8Bit.access$100(Timer8Bit.java:Unknown line)
+TRACE 312756:
+	avrora.sim.RWRegister.setValue(RWRegister.java:Unknown line)
+	avrora.sim.state.RegisterUtil$BoolView.setValue(RegisterUtil.java:Unknown line)
+	avrora.sim.mcu.SPI$SPSReg.clearSPIF(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.unpostSPIInterrupt(SPI.java:Unknown line)
+TRACE 312896:
+	avrora.sim.clock.DeltaQueue.advance(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.advance(MainClock.java:Unknown line)
+	avrora.sim.AtmelInterpreter.advanceClock(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.leaveSleepMode(LegacyInterpreter.java:Unknown line)
+TRACE 312629:
+	avrora.sim.clock.DeltaQueue.getCount(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.getCount(MainClock.java:Unknown line)
+	avrora.sim.radio.CC1000Radio$SPITicker.fire(CC1000Radio.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+TRACE 313191:
+	java.util.LinkedList$ListItr.next(LinkedList.java:Unknown line)
+	avrora.sim.radio.Medium$BasicArbitrator.mergeTransmissions(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+TRACE 312903:
+	avrora.sim.mcu.Timer8Bit.access$100(Timer8Bit.java:Unknown line)
+	avrora.sim.mcu.Timer8Bit$Mode_CTC.fire(Timer8Bit.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.skipAhead(DeltaQueue.java:Unknown line)
+TRACE 312926:
+	java.util.LinkedList$ListItr.next(LinkedList.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.getIntersection(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$200(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+TRACE 311892:
+	avrora.sim.RWRegister.write(RWRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter$IORegBehavior.write(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeVolatile(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:Unknown line)
+TRACE 312633:
+	avrora.sim.mcu.SPI.newFrame(SPI.java:Unknown line)
+	avrora.sim.mcu.SPI.exchange(SPI.java:Unknown line)
+	avrora.sim.radio.CC1000Radio$SPITicker.fire(CC1000Radio.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+TRACE 312965:
+	java.util.LinkedList.listIterator(LinkedList.java:Unknown line)
+	java.util.AbstractList.listIterator(AbstractList.java:Unknown line)
+	java.util.AbstractSequentialList.iterator(AbstractSequentialList.java:Unknown line)
+	avrora.sim.radio.Medium$BasicArbitrator.mergeTransmissions(Medium.java:Unknown line)
+TRACE 312378:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeRegisterWord(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+TRACE 312901:
+	avrora.sim.mcu.Timer8Bit.access$000(Timer8Bit.java:Unknown line)
+	avrora.sim.mcu.Timer8Bit$Mode_CTC.fire(Timer8Bit.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.skipAhead(DeltaQueue.java:Unknown line)
+TRACE 312902:
+	avrora.sim.mcu.Timer8Bit$BufferedRegister.read(Timer8Bit.java:Unknown line)
+	avrora.sim.mcu.Timer8Bit$Mode_CTC.fire(Timer8Bit.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.skipAhead(DeltaQueue.java:Unknown line)
+TRACE 312814:
+	avrora.sim.RWRegister.read(RWRegister.java:Unknown line)
+	avrora.sim.mcu.ATMega128.getSleepMode(ATMega128.java:Unknown line)
+	avrora.sim.mcu.AtmelMicrocontroller.sleep(AtmelMicrocontroller.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.enterSleepMode(LegacyInterpreter.java:Unknown line)
+TRACE 312813:
+	avrora.sim.Simulator.getMicrocontroller(Simulator.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.enterSleepMode(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$SLEEP.accept(LegacyInstr.java:Unknown line)
+TRACE 312815:
+	cck.util.Arithmetic.getBit(Arithmetic.java:Unknown line)
+	avrora.sim.mcu.ATMega128.getSleepMode(ATMega128.java:Unknown line)
+	avrora.sim.mcu.AtmelMicrocontroller.sleep(AtmelMicrocontroller.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.enterSleepMode(LegacyInterpreter.java:Unknown line)
+TRACE 312249:
+	avrora.arch.legacy.LegacyInterpreter.low(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$ADD.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312247:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getRegisterUnsigned(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$ADD.accept(LegacyInstr.java:Unknown line)
+TRACE 306251:
+	java.io.OutputStream.flush(OutputStream.java:Unknown line)
+	org.dacapo.harness.TeeOutputStream.write(TeeOutputStream.java:Unknown line)
+	java.io.FilterOutputStream.write(FilterOutputStream.java:Unknown line)
+	java.io.PrintStream.write(PrintStream.java:Unknown line)
+TRACE 312127:
+	avrora.arch.legacy.LegacyInterpreter.low(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$SUBI.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 313004:
+	avrora.monitors.PacketMonitor$Mon.renderByte(PacketMonitor.java:Unknown line)
+	avrora.monitors.PacketMonitor$Mon.renderByte(PacketMonitor.java:Unknown line)
+	avrora.monitors.PacketMonitor$Mon.renderPacket(PacketMonitor.java:Unknown line)
+	avrora.monitors.PacketMonitor$Mon.fireAfterReceiveEnd(PacketMonitor.java:Unknown line)
+TRACE 312055:
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setIORegBit(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CBI.accept(LegacyInstr.java:Unknown line)
+TRACE 313177:
+	avrora.sim.clock.DeltaQueue.getCount(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.getCount(MainClock.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+TRACE 303615:
+	java.util.LinkedList.node(LinkedList.java:Unknown line)
+	java.util.LinkedList$ListItr.<init>(LinkedList.java:Unknown line)
+	java.util.LinkedList.listIterator(LinkedList.java:Unknown line)
+	java.util.AbstractList.listIterator(AbstractList.java:Unknown line)
+TRACE 312297:
+	avrora.arch.legacy.LegacyInstr$BRLT.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312049:
+	avrora.sim.AtmelInterpreter.readSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setIORegBit(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$CBI.accept(LegacyInstr.java:Unknown line)
+TRACE 312261:
+	avrora.arch.legacy.LegacyInstr$ADC.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312259:
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$ADC.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 313005:
+	avrora.monitors.PacketMonitor$Mon.renderByte(PacketMonitor.java:Unknown line)
+	avrora.monitors.PacketMonitor$Mon.renderPacket(PacketMonitor.java:Unknown line)
+	avrora.monitors.PacketMonitor$Mon.fireAfterReceiveEnd(PacketMonitor.java:Unknown line)
+	avrora.sim.radio.Medium$Probe$List.fireAfterReceiveEnd(Medium.java:Unknown line)
+TRACE 313179:
+	avrora.sim.clock.Clock.cyclesToMillis(Clock.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+TRACE 311965:
+	avrora.sim.AtmelInterpreter.readSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setIORegBit(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$SBI.accept(LegacyInstr.java:Unknown line)
+TRACE 312966:
+	java.util.AbstractList.listIterator(AbstractList.java:Unknown line)
+	java.util.AbstractSequentialList.iterator(AbstractSequentialList.java:Unknown line)
+	avrora.sim.radio.Medium$BasicArbitrator.mergeTransmissions(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+TRACE 312036:
+	avrora.sim.AtmelInterpreter$IORegBehavior.write(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeVolatile(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setIORegBit(AtmelInterpreter.java:Unknown line)
+TRACE 312039:
+	avrora.sim.AtmelInterpreter.writeSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setIORegBit(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$SBI.accept(LegacyInstr.java:Unknown line)
+TRACE 313204:
+	avrora.sim.AtmelInterpreter.getRegisterWord(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$LPM.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312986:
+	avrora.sim.clock.DeltaQueue.insertAfter(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.DeltaQueue.insertEvent(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.insertEvent(MainClock.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+TRACE 311962:
+	avrora.sim.AtmelInterpreter$IORegBehavior.read(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.readVolatile(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.readSRAM(AtmelInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.setIORegBit(AtmelInterpreter.java:Unknown line)
+TRACE 313023:
+	avrora.sim.clock.DeltaQueue.insertEvent(DeltaQueue.java:Unknown line)
+	avrora.sim.clock.MainClock.insertEvent(MainClock.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+TRACE 313195:
+	avrora.sim.clock.MainClock.getCount(MainClock.java:Unknown line)
+	avrora.sim.radio.CC1000Radio$Receiver.nextByte(CC1000Radio.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+TRACE 312921:
+	java.util.AbstractList.listIterator(AbstractList.java:Unknown line)
+	java.util.AbstractSequentialList.iterator(AbstractSequentialList.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.getIntersection(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$200(Medium.java:Unknown line)
+TRACE 312928:
+	java.util.AbstractList.<init>(AbstractList.java:Unknown line)
+	java.util.AbstractSequentialList.<init>(AbstractSequentialList.java:Unknown line)
+	java.util.LinkedList.<init>(LinkedList.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.getIntersection(Medium.java:Unknown line)
+TRACE 312933:
+	java.util.LinkedList.add(LinkedList.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.getIntersection(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$200(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+TRACE 312932:
+	java.util.LinkedList.linkLast(LinkedList.java:Unknown line)
+	java.util.LinkedList.add(LinkedList.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.getIntersection(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$200(Medium.java:Unknown line)
+TRACE 313024:
+	avrora.sim.clock.MainClock.insertEvent(MainClock.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+TRACE 313184:
+	avrora.sim.radio.Medium$BasicArbitrator.getNoise(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+TRACE 313012:
+	avrora.monitors.PacketMonitor$Mon.renderPacket(PacketMonitor.java:Unknown line)
+	avrora.monitors.PacketMonitor$Mon.fireAfterReceiveEnd(PacketMonitor.java:Unknown line)
+	avrora.sim.radio.Medium$Probe$List.fireAfterReceiveEnd(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+TRACE 312993:
+	avrora.sim.radio.Medium$Receiver.access$000(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+	avrora.sim.clock.DeltaQueue$Link.fire(DeltaQueue.java:Unknown line)
+TRACE 313181:
+	avrora.sim.radio.Medium$BasicArbitrator.computeReceivedPower(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+TRACE 312583:
+	avrora.sim.AtmelInterpreter.writeRegisterByte(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$DEC.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312992:
+	avrora.sim.radio.Medium$Receiver.waitForNeighbors(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$000(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+TRACE 312996:
+	avrora.sim.radio.CC1000Radio$Receiver.nextByte(CC1000Radio.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+TRACE 312257:
+	avrora.arch.legacy.LegacyInterpreter.low(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$ADC.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 313172:
+	java.util.AbstractSequentialList.iterator(AbstractSequentialList.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+TRACE 312930:
+	java.util.LinkedList.<init>(LinkedList.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.getIntersection(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$200(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+TRACE 313190:
+	java.util.AbstractSequentialList.iterator(AbstractSequentialList.java:Unknown line)
+	avrora.sim.radio.Medium$BasicArbitrator.mergeTransmissions(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+TRACE 312995:
+	avrora.sim.radio.Medium$Receiver.access$200(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fire(Medium.java:Unknown line)
+TRACE 312254:
+	avrora.arch.legacy.LegacyRegister.getNumber(LegacyRegister.java:Unknown line)
+	avrora.sim.AtmelInterpreter.getRegisterUnsigned(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$ADC.accept(LegacyInstr.java:Unknown line)
+TRACE 312580:
+	avrora.sim.AtmelInterpreter.getRegisterUnsigned(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$DEC.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312691:
+	java.lang.String.<init>(String.java:Unknown line)
+	cck.text.StringUtil.convertToHex(StringUtil.java:Unknown line)
+	cck.text.StringUtil.toHex(StringUtil.java:Unknown line)
+	avrora.monitors.PacketMonitor$Mon.renderByte(PacketMonitor.java:Unknown line)
+TRACE 312696:
+	cck.text.Terminal.append(Terminal.java:Unknown line)
+	avrora.monitors.PacketMonitor$Mon.renderByte(PacketMonitor.java:Unknown line)
+	avrora.monitors.PacketMonitor$Mon.renderByte(PacketMonitor.java:Unknown line)
+	avrora.monitors.PacketMonitor$Mon.renderPacket(PacketMonitor.java:Unknown line)
+TRACE 312929:
+	java.util.AbstractSequentialList.<init>(AbstractSequentialList.java:Unknown line)
+	java.util.LinkedList.<init>(LinkedList.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.getIntersection(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$200(Medium.java:Unknown line)
+TRACE 312585:
+	avrora.arch.legacy.LegacyInstr$DEC.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312922:
+	java.util.AbstractSequentialList.iterator(AbstractSequentialList.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.getIntersection(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver.access$200(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+TRACE 313171:
+	java.util.AbstractList.listIterator(AbstractList.java:Unknown line)
+	java.util.AbstractSequentialList.iterator(AbstractSequentialList.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.deliverByte(Medium.java:Unknown line)
+	avrora.sim.radio.Medium$Receiver$Ticker.fireLocked(Medium.java:Unknown line)
+TRACE 312695:
+	java.lang.StringBuffer.append(StringBuffer.java:Unknown line)
+	cck.text.Terminal.append(Terminal.java:Unknown line)
+	avrora.monitors.PacketMonitor$Mon.renderByte(PacketMonitor.java:Unknown line)
+	avrora.monitors.PacketMonitor$Mon.renderByte(PacketMonitor.java:Unknown line)
+TRACE 312692:
+	cck.text.StringUtil.convertToHex(StringUtil.java:Unknown line)
+	cck.text.StringUtil.toHex(StringUtil.java:Unknown line)
+	avrora.monitors.PacketMonitor$Mon.renderByte(PacketMonitor.java:Unknown line)
+	avrora.monitors.PacketMonitor$Mon.renderByte(PacketMonitor.java:Unknown line)
+TRACE 312693:
+	cck.text.StringUtil.toHex(StringUtil.java:Unknown line)
+	avrora.monitors.PacketMonitor$Mon.renderByte(PacketMonitor.java:Unknown line)
+	avrora.monitors.PacketMonitor$Mon.renderByte(PacketMonitor.java:Unknown line)
+	avrora.monitors.PacketMonitor$Mon.renderPacket(PacketMonitor.java:Unknown line)
+TRACE 313059:
+	avrora.sim.AtmelInterpreter.getRegisterWord(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$LDD.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312600:
+	avrora.arch.legacy.LegacyInstr$BRPL.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.runLoop(LegacyInterpreter.java:Unknown line)
+	avrora.sim.AtmelInterpreter.start(AtmelInterpreter.java:Unknown line)
+TRACE 312244:
+	avrora.sim.AtmelInterpreter.writeRegisterWord(AtmelInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.visit(LegacyInterpreter.java:Unknown line)
+	avrora.arch.legacy.LegacyInstr$MOVW.accept(LegacyInstr.java:Unknown line)
+	avrora.arch.legacy.LegacyInterpreter.fastLoop(LegacyInterpreter.java:Unknown line)
+TRACE 312339:
+	avrora.sim.platform.ExternalFlash$PD5Output.write(ExternalFlash.java:Unknown line)
+	avrora.sim.mcu.DefaultMCU$Pin.write(DefaultMCU.java:Unknown line)
+	avrora.sim.mcu.ATMegaFamily$PortRegister.write(ATMegaFamily.java:Unknown line)
+	avrora.sim.AtmelInterpreter$IORegBehavior.write(AtmelInterpreter.java:Unknown line)
+TRACE 312336:
+	avrora.sim.platform.ExternalFlash$PD3Output.write(ExternalFlash.java:Unknown line)
+	avrora.sim.mcu.DefaultMCU$Pin.write(DefaultMCU.java:Unknown line)
+	avrora.sim.mcu.ATMegaFamily$PortRegister.write(ATMegaFamily.java:Unknown line)
+	avrora.sim.AtmelInterpreter$IORegBehavior.write(AtmelInterpreter.java:Unknown line)
+CPU TIME (ms) BEGIN (total = 8579184) Thu Sep 27 22:14:21 2018
+rank   self  accum   count trace method
+   1 14,28% 14,28%       6 313308 java.lang.Thread.join
+   2 12,67% 26,95%  432409 312848 java.lang.Object.wait
+   3  5,81% 32,76%  912843 312219 avrora.arch.legacy.LegacyInterpreter.fastLoop
+   4  4,80% 37,56% 44333552 311862 avrora.sim.clock.MainClock.advance
+   5  4,77% 42,33% 44333552 311863 avrora.sim.AtmelInterpreter.commit
+   6  1,94% 44,27% 44333552 311861 avrora.sim.clock.DeltaQueue.advance
+   7  1,90% 46,17% 7370314 312574 avrora.sim.AtmelInterpreter.pushByte
+   8  1,87% 48,04% 7370314 312624 avrora.sim.AtmelInterpreter.popByte
+   9  1,38% 49,43% 7370314 312572 avrora.sim.AtmelInterpreter.writeSRAM
+  10  1,38% 50,81% 7370314 312571 avrora.sim.AtmelInterpreter.setSP
+  11  1,38% 52,19% 7370314 312575 avrora.arch.legacy.LegacyInterpreter.visit
+  12  1,37% 53,56% 7370314 312622 avrora.sim.AtmelInterpreter.readSRAM
+  13  1,36% 54,93% 7370314 312627 avrora.arch.legacy.LegacyInterpreter.visit
+  14  1,36% 56,29% 7370314 312621 avrora.sim.AtmelInterpreter.setSP
+  15  0,88% 57,16% 7370314 312573 avrora.sim.AtmelInterpreter.writeDataByte
+  16  0,87% 58,04% 7370314 312566 avrora.sim.AtmelInterpreter.getRegisterByte
+  17  0,87% 58,91% 7370314 312568 avrora.sim.AtmelInterpreter.getSP
+  18  0,86% 59,77% 7370314 312576 avrora.arch.legacy.LegacyInstr$PUSH.accept
+  19  0,86% 60,62% 7370314 312626 avrora.sim.AtmelInterpreter.writeRegisterByte
+  20  0,86% 61,48% 7370314 312628 avrora.arch.legacy.LegacyInstr$POP.accept
+  21  0,85% 62,33% 7370314 312618 avrora.sim.AtmelInterpreter.getSP
+  22  0,85% 63,19% 7370314 312623 avrora.sim.AtmelInterpreter.getDataByte
+  23  0,58% 63,77% 3290985 312300 avrora.sim.AtmelInterpreter.readSRAM
+  24  0,58% 64,35% 3290985 312304 avrora.arch.legacy.LegacyInterpreter.visit
+  25  0,43% 64,78% 9150744 312163 avrora.sim.AtmelInterpreter.fireBeforeWrite
+  26  0,43% 65,21% 9150744 312164 avrora.sim.AtmelInterpreter.fireAfterWrite
+  27  0,43% 65,64% 9150744 312225 avrora.sim.AtmelInterpreter.fireBeforeRead
+  28  0,42% 66,06% 9150744 312226 avrora.sim.AtmelInterpreter.fireAfterRead
+  29  0,37% 66,43%  596025 312866 avrora.sim.radio.Medium$Receiver.earliestNewTransmission
+  30  0,36% 66,79% 3290985 312301 avrora.sim.AtmelInterpreter.getDataByte
+  31  0,36% 67,16% 3290985 312303 avrora.sim.AtmelInterpreter.writeRegisterByte
+  32  0,36% 67,52% 3290985 312305 avrora.arch.legacy.LegacyInstr$LDS.accept
+  33  0,35% 67,87% 7370314 312565 avrora.arch.legacy.LegacyRegister.getNumber
+  34  0,35% 68,22% 7370314 312570 cck.util.Arithmetic.high
+  35  0,35% 68,57% 1971367 311890 avrora.arch.legacy.LegacyInterpreter.visit
+  36  0,35% 68,91% 7370314 312567 cck.util.Arithmetic.uword
+  37  0,35% 69,26% 7370314 312619 cck.util.Arithmetic.low
+  38  0,34% 69,61% 7370314 312569 cck.util.Arithmetic.low
+  39  0,34% 69,95% 7370314 312620 cck.util.Arithmetic.high
+  40  0,34% 70,29% 7370314 312625 avrora.arch.legacy.LegacyRegister.getNumber
+  41  0,34% 70,64% 7370314 312617 cck.util.Arithmetic.uword
+  42  0,34% 70,98% 1367621 312147 avrora.sim.AtmelInterpreter.readSRAM
+  43  0,34% 71,31% 1098570 311872 avrora.arch.legacy.LegacyInterpreter.visit
+  44  0,33% 71,65%  596025 312849 avrora.sim.clock.RippleSynchronizer.waitForNeighbors
+  45  0,33% 71,98% 1368622 311883 avrora.sim.AtmelInterpreter.writeSRAM
+  46  0,33% 72,30% 1237453 311905 avrora.arch.legacy.LegacyInterpreter.visit
+  47  0,30% 72,61%  809865 312490 avrora.arch.legacy.LegacyInterpreter.visit
+  48  0,29% 72,90% 1579015 311899 avrora.arch.legacy.LegacyInterpreter.visit
+  49  0,27% 73,17% 1470930 312175 avrora.arch.legacy.LegacyInterpreter.visit
+  50  0,25% 73,42% 1367621 312148 avrora.sim.AtmelInterpreter.getIORegisterByte
+  51  0,25% 73,66% 2128663 311908 avrora.arch.legacy.LegacyInstr$BRNE.accept
+  52  0,24% 73,91% 2197140 311868 avrora.sim.AtmelInterpreter.getRegisterByte
+  53  0,24% 74,15% 1368622 311884 avrora.sim.AtmelInterpreter.writeIORegisterByte
+  54  0,24% 74,40% 1367621 312151 avrora.arch.legacy.LegacyInterpreter.visit
+  55  0,24% 74,64% 1368622 311885 avrora.arch.legacy.LegacyInterpreter.visit
+  56  0,24% 74,88% 1378250 312878 avrora.sim.clock.DeltaQueue.skipAhead
+  57  0,24% 75,11%       6 313276 avrora.arch.legacy.LegacyInterpreter.runLoop
+  58  0,23% 75,35% 2474906 311902 avrora.sim.AtmelInterpreter.getRegisterByte
+  59  0,23% 75,58%  918084 312229 avrora.sim.AtmelInterpreter.popByte
+  60  0,23% 75,81%  905556 312167 avrora.sim.AtmelInterpreter.pushByte
+  61  0,23% 76,04%  431173 312778 avrora.arch.legacy.LegacyInterpreter.invokeInterrupt
+  62  0,22% 76,26%  862346 312770 avrora.sim.AtmelInterpreter.pushByte
+  63  0,22% 76,48% 1971367 311889 avrora.sim.AtmelInterpreter.writeRegisterByte
+  64  0,22% 76,69% 3077226 312370 avrora.arch.legacy.LegacyInstr$NOP.accept
+  65  0,22% 76,91% 1971367 311891 avrora.arch.legacy.LegacyInstr$LDI.accept
+  66  0,21% 77,12% 1896766 311895 avrora.arch.legacy.LegacyInstr$RJMP.accept
+  67  0,21% 77,33%  862346 312806 avrora.sim.AtmelInterpreter.popByte
+  68  0,19% 77,53%  430253 312892 avrora.sim.FiniteStateMachine.transition
+  69  0,18% 77,71% 1579015 311900 avrora.arch.legacy.LegacyInstr$CPI.accept
+  70  0,18% 77,89% 1579015 311897 avrora.sim.AtmelInterpreter.getRegisterByte
+  71  0,18% 78,07% 1619730 312486 avrora.sim.AtmelInterpreter.getRegisterByte
+  72  0,18% 78,25%  595312 312874 avrora.sim.radio.Medium$Receiver$Ticker.fireUnlocked
+  73  0,18% 78,42%  103511 313025 avrora.sim.radio.Medium$Receiver$Ticker.deliverByte
+  74  0,17% 78,60%  879480 312387 avrora.arch.legacy.LegacyInterpreter.visit
+  75  0,17% 78,77% 1470930 312172 avrora.sim.AtmelInterpreter.getRegisterByte
+  76  0,17% 78,94% 1470930 312174 avrora.sim.AtmelInterpreter.writeRegisterByte
+  77  0,17% 79,11%  430259 312823 avrora.sim.FiniteStateMachine.transition
+  78  0,17% 79,28%  905556 312165 avrora.sim.AtmelInterpreter.writeSRAM
+  79  0,17% 79,45%  905556 312162 avrora.sim.AtmelInterpreter.setSP
+  80  0,17% 79,61%  918084 312227 avrora.sim.AtmelInterpreter.readSRAM
+  81  0,17% 79,78% 1470930 312176 avrora.arch.legacy.LegacyInstr$MOV.accept
+  82  0,17% 79,95%  918084 312224 avrora.sim.AtmelInterpreter.setSP
+  83  0,16% 80,11%  862346 312767 avrora.sim.AtmelInterpreter.setSP
+  84  0,16% 80,27%  862346 312768 avrora.sim.AtmelInterpreter.writeSRAM
+  85  0,16% 80,43%  862346 312804 avrora.sim.AtmelInterpreter.readSRAM
+  86  0,16% 80,58% 1758960 312385 avrora.sim.AtmelInterpreter.getRegisterByte
+  87  0,16% 80,74% 1378250 312876 avrora.sim.clock.DeltaQueue$Link.fire
+  88  0,16% 80,90% 1367621 312145 avrora.sim.AtmelInterpreter.readVolatile
+  89  0,16% 81,05%  862346 312803 avrora.sim.AtmelInterpreter.setSP
+  90  0,15% 81,21% 1367621 312150 avrora.sim.AtmelInterpreter.writeRegisterByte
+  91  0,15% 81,36% 1395980 311865 avrora.sim.clock.DeltaQueue.access$000
+  92  0,15% 81,51% 1367621 312152 avrora.arch.legacy.LegacyInstr$IN.accept
+  93  0,15% 81,66% 1395980 311866 avrora.sim.clock.DeltaQueue$Link.add
+  94  0,15% 81,81% 1396016 311687 avrora.sim.clock.DeltaQueue.newLink
+  95  0,15% 81,96% 1378250 312879 avrora.sim.clock.MainClock.skipAhead
+  96  0,15% 82,11% 1368622 311881 avrora.sim.AtmelInterpreter.writeVolatile
+  97  0,15% 82,26% 1368622 311886 avrora.arch.legacy.LegacyInstr$OUT.accept
+  98  0,15% 82,41% 1368622 311875 avrora.sim.AtmelInterpreter.getRegisterByte
+  99  0,15% 82,56% 3290985 312299 avrora.sim.AtmelInterpreter.fireAfterRead
+ 100  0,15% 82,71% 1290759 312891 avrora.sim.FiniteStateMachine.fireAfter
+ 101  0,15% 82,86%  452778 312169 avrora.arch.legacy.LegacyInterpreter.visit
+ 102  0,15% 83,01% 1290759 312889 avrora.sim.FiniteStateMachine.fireBefore
+ 103  0,15% 83,15% 3290985 312302 avrora.arch.legacy.LegacyRegister.getNumber
+ 104  0,15% 83,30% 3290985 312298 avrora.sim.AtmelInterpreter.fireBeforeRead
+ 105  0,14% 83,44%  432590 312797 avrora.arch.legacy.LegacyInterpreter.visit
+ 106  0,14% 83,58%  425588 312885 avrora.sim.radio.CC1000Radio$SPITicker.fire
+ 107  0,14% 83,72%  431173 312772 avrora.arch.legacy.LegacyInterpreter.pushPC
+ 108  0,14% 83,86%  431173 312811 avrora.arch.legacy.LegacyInterpreter.visit
+ 109  0,13% 83,99%  457700 312195 avrora.arch.legacy.LegacyInterpreter.visit
+ 110  0,13% 84,12% 1290777 312820 avrora.sim.FiniteStateMachine.fireBefore
+ 111  0,13% 84,25% 1290777 312822 avrora.sim.FiniteStateMachine.fireAfter
+ 112  0,13% 84,37%  103511 312994 avrora.sim.radio.Medium$Receiver.getIntersection
+ 113  0,12% 84,50% 1098570 311873 avrora.arch.legacy.LegacyInstr$EOR.accept
+ 114  0,12% 84,62% 1098570 311871 avrora.sim.AtmelInterpreter.writeRegisterByte
+ 115  0,12% 84,74% 1237453 311906 avrora.arch.legacy.LegacyInstr$CPC.accept
+ 116  0,12% 84,85%  698506 312875 avrora.sim.radio.Medium$Receiver$Ticker.fire
+ 117  0,12% 84,97%    2359 313018 avrora.sim.output.SimPrinter.printBuffer
+ 118  0,12% 85,08%  699536 312833 java.util.HashMap.get
+ 119  0,12% 85,20%  459042 312232 avrora.arch.legacy.LegacyInterpreter.visit
+ 120  0,11% 85,31% 1372088 312083 avrora.sim.mcu.DefaultMCU$Pin.write
+ 121  0,11% 85,42%  426972 312790 avrora.arch.legacy.LegacyInterpreter.visit
+ 122  0,11% 85,53%  429718 312886 avrora.arch.legacy.LegacyInterpreter.sleepLoop
+ 123  0,11% 85,64%  430253 312895 avrora.sim.mcu.AtmelMicrocontroller.wakeup
+ 124  0,11% 85,75%  430253 312899 avrora.arch.legacy.LegacyInterpreter.leaveSleepMode
+ 125  0,11% 85,85%  425588 312883 avrora.sim.mcu.SPI.exchange
+ 126  0,11% 85,96%  699536 312843 avrora.sim.clock.RippleSynchronizer.advance
+ 127  0,11% 86,07%  426978 312645 avrora.sim.mcu.SPI.receive
+ 128  0,11% 86,17%  905556 312166 avrora.sim.AtmelInterpreter.writeDataByte
+ 129  0,11% 86,28%  918084 312221 avrora.sim.AtmelInterpreter.getSP
+ 130  0,10% 86,38%  905556 312159 avrora.sim.AtmelInterpreter.getSP
+ 131  0,10% 86,48%  918084 312228 avrora.sim.AtmelInterpreter.getDataByte
+ 132  0,10% 86,59%  171511 312084 avrora.sim.mcu.ATMegaFamily$PortRegister.write
+ 133  0,10% 86,69%  853944 312788 avrora.sim.AtmelInterpreter.getRegisterByte
+ 134  0,10% 86,79%  875019 311917 avrora.sim.AtmelInterpreter$IORegBehavior.read
+ 135  0,10% 86,89%  862346 312764 avrora.sim.AtmelInterpreter.getSP
+ 136  0,10% 86,99%  862346 312769 avrora.sim.AtmelInterpreter.writeDataByte
+ 137  0,10% 87,09%  862346 312805 avrora.sim.AtmelInterpreter.getDataByte
+ 138  0,10% 87,19%  875990 311893 avrora.sim.AtmelInterpreter$IORegBehavior.write
+ 139  0,10% 87,29%  908979 303613 java.util.LinkedList.checkPositionIndex
+ 140  0,10% 87,39%  862346 312800 avrora.sim.AtmelInterpreter.getSP
+ 141  0,10% 87,48% 2197140 311867 avrora.arch.legacy.LegacyRegister.getNumber
+ 142  0,10% 87,58%  596025 312852 java.util.LinkedList.listIterator
+ 143  0,10% 87,68% 2128663 311907 avrora.arch.legacy.LegacyInterpreter.visit
+ 144  0,10% 87,77%  430259 312817 cck.util.Arithmetic.getBitField
+ 145  0,10% 87,87%  430259 312818 avrora.sim.mcu.ATMega128.getSleepMode
+ 146  0,09% 87,96% 2474906 311901 avrora.arch.legacy.LegacyRegister.getNumber
+ 147  0,09% 88,05%  577800 312138 avrora.sim.AtmelInterpreter.writeSRAM
+ 148  0,09% 88,15%  577800 312140 avrora.arch.legacy.LegacyInterpreter.visit
+ 149  0,09% 88,24%  809865 312489 avrora.sim.AtmelInterpreter.writeRegisterByte
+ 150  0,09% 88,33%  809865 312491 avrora.arch.legacy.LegacyInstr$AND.accept
+ 151  0,09% 88,41% 1971367 311887 avrora.arch.legacy.LegacyInterpreter.low
+ 152  0,09% 88,50% 1971367 311888 avrora.arch.legacy.LegacyRegister.getNumber
+ 153  0,09% 88,59% 3077226 312369 avrora.arch.legacy.LegacyInterpreter.visit
+ 154  0,09% 88,67% 1896766 311894 avrora.arch.legacy.LegacyInterpreter.visit
+ 155  0,08% 88,76% 1372088 312080 avrora.sim.mcu.DefaultMCU$Pin.printWrite
+ 156  0,08% 88,84%  426978 312644 avrora.sim.mcu.SPI.postSPIInterrupt
+ 157  0,08% 88,92%  879480 312388 avrora.arch.legacy.LegacyInstr$CP.accept
+ 158  0,08% 89,00%  426972 312785 avrora.sim.mcu.SPI$SPDReg$TransmitRegister.write
+ 159  0,08% 89,08%  353162 312381 avrora.sim.AtmelInterpreter.writeRegisterWord
+ 160  0,08% 89,16%  426972 312757 avrora.sim.state.RegisterUtil$BoolView.setValue
+ 161  0,08% 89,23%  426978 312642 avrora.sim.state.RegisterUtil$BoolView.setValue
+ 162  0,08% 89,31%  426972 312759 avrora.sim.mcu.SPI.unpostSPIInterrupt
+ 163  0,07% 89,39% 1579015 311896 avrora.arch.legacy.LegacyRegister.getNumber
+ 164  0,07% 89,46%  600047 306250 java.io.FileOutputStream.write
+ 165  0,07% 89,53% 1579015 311898 avrora.arch.legacy.LegacyInterpreter.low
+ 166  0,07% 89,60% 1619730 312485 avrora.arch.legacy.LegacyRegister.getNumber
+ 167  0,07% 89,68%  699536 312835 avrora.sim.SimulatorThread.getSimulator
+ 168  0,07% 89,75%  698506 312829 avrora.sim.clock.MainClock.getCount
+ 169  0,07% 89,82% 1619730 312487 avrora.arch.legacy.LegacyInterpreter.low
+ 170  0,07% 89,89%  699536 312838 avrora.sim.clock.MainClock.getCount
+ 171  0,07% 89,96%  430259 312825 avrora.arch.legacy.LegacyInterpreter.enterSleepMode
+ 172  0,07% 90,03%  430259 312824 avrora.sim.mcu.AtmelMicrocontroller.sleep
+ 173  0,07% 90,10%  699536 312840 avrora.sim.clock.RippleSynchronizer$NotifyEvent.access$100
+ 174  0,07% 90,17% 1470930 312171 avrora.arch.legacy.LegacyRegister.getNumber
+ 175  0,07% 90,24% 1470930 312173 avrora.arch.legacy.LegacyRegister.getNumber
+ 176  0,07% 90,30%  221046 312252 avrora.arch.legacy.LegacyInterpreter.visit
+ 177  0,07% 90,37%  699536 312847 avrora.sim.clock.RippleSynchronizer.waitFor
+ 178  0,07% 90,43%  593656 312872 avrora.sim.clock.DeltaQueue.insertEvent
+ 179  0,07% 90,50%  353162 312375 avrora.sim.AtmelInterpreter.getRegisterWord
+ 180  0,06% 90,56%  593656 312873 avrora.sim.clock.MainClock.insertEvent
+ 181  0,06% 90,63%  590112 312880 avrora.sim.clock.DeltaQueue.insertAfter
+ 182  0,06% 90,69% 1758960 312384 avrora.arch.legacy.LegacyRegister.getNumber
+ 183  0,06% 90,75% 1395980 311864 avrora.sim.clock.DeltaQueue.newEventList
+ 184  0,06% 90,82%  908979 303616 java.util.LinkedList$ListItr.<init>
+ 185  0,06% 90,88%  596025 312854 java.util.AbstractSequentialList.iterator
+ 186  0,06% 90,94%  596025 312867 avrora.sim.radio.Medium$Receiver.access$100
+ 187  0,06% 91,00% 1367621 312146 avrora.sim.AtmelInterpreter.fireAfterRead
+ 188  0,06% 91,07%  596025 312853 java.util.AbstractList.listIterator
+ 189  0,06% 91,13% 1367621 312142 avrora.sim.AtmelInterpreter.toSRAM
+ 190  0,06% 91,19% 1367621 312143 avrora.sim.AtmelInterpreter.fireBeforeRead
+ 191  0,06% 91,25% 1368622 311874 avrora.arch.legacy.LegacyRegister.getNumber
+ 192  0,06% 91,32%  600047 306252 org.dacapo.harness.TeeOutputStream.write
+ 193  0,06% 91,38% 1368622 311876 avrora.sim.AtmelInterpreter.toSRAM
+ 194  0,06% 91,44% 1367621 312149 avrora.arch.legacy.LegacyRegister.getNumber
+ 195  0,06% 91,50% 1378244 312877 avrora.sim.clock.DeltaQueue.free
+ 196  0,06% 91,56%  596025 312851 avrora.sim.radio.Medium$Receiver.access$000
+ 197  0,06% 91,62%  596025 312850 avrora.sim.radio.Medium$Receiver.waitForNeighbors
+ 198  0,06% 91,68% 1368622 311882 avrora.sim.AtmelInterpreter.fireAfterWrite
+ 199  0,06% 91,74% 1368622 311877 avrora.sim.AtmelInterpreter.fireBeforeWrite
+ 200  0,06% 91,80%  577800 312139 avrora.sim.AtmelInterpreter.writeDataByte
+ 201  0,06% 91,86%  577800 312135 avrora.sim.AtmelInterpreter.getRegisterByte
+ 202  0,06% 91,92%  526039 312493 avrora.arch.legacy.LegacyInstr$BREQ.accept
+ 203  0,06% 91,98% 1290759 312890 avrora.sim.util.TransactionalList.isEmpty
+ 204  0,06% 92,04% 1290759 312888 avrora.sim.util.TransactionalList.isEmpty
+ 205  0,06% 92,09%  577800 312141 avrora.arch.legacy.LegacyInstr$STS.accept
+ 206  0,06% 92,15%  150268 312260 avrora.arch.legacy.LegacyInterpreter.visit
+ 207  0,05% 92,21%  103511 312991 avrora.sim.clock.RippleSynchronizer.waitForNeighbors
+ 208  0,05% 92,26%  226135 312130 avrora.arch.legacy.LegacyInterpreter.visit
+ 209  0,05% 92,31%  492632 311880 avrora.sim.AtmelInterpreter$SREGBehavior.write
+ 210  0,05% 92,37%  459042 312231 avrora.arch.legacy.LegacyInterpreter.uword
+ 211  0,05% 92,42%  699536 312846 avrora.sim.clock.RippleSynchronizer.waitForLink
+ 212  0,05% 92,48%  452778 312170 avrora.arch.legacy.LegacyInstr$CALL.accept
+ 213  0,05% 92,53%  432590 312796 avrora.sim.AtmelInterpreter.writeRegisterByte
+ 214  0,05% 92,58% 1290777 312819 avrora.sim.util.TransactionalList.isEmpty
+ 215  0,05% 92,64%  459042 312233 avrora.arch.legacy.LegacyInstr$RET.accept
+ 216  0,05% 92,69%  426972 312791 avrora.arch.legacy.LegacyInstr$CPSE.accept
+ 217  0,05% 92,74%  426972 312780 avrora.sim.mcu.SPI$SPDReg.read
+ 218  0,05% 92,79%  170414 312904 avrora.sim.mcu.Timer8Bit$Mode_CTC.fire
+ 219  0,05% 92,85% 1290777 312816 cck.util.Arithmetic.getBit
+ 220  0,05% 92,90%  426978 312643 avrora.sim.mcu.SPI$SPSReg.setSPIF
+ 221  0,05% 92,95%  426972 312783 avrora.sim.state.RegisterUtil$BoolView.getValue
+ 222  0,05% 93,00%  431173 312775 avrora.sim.clock.MainClock.advance
+ 223  0,05% 93,05%  432590 312798 avrora.arch.legacy.LegacyInstr$COM.accept
+ 224  0,05% 93,10%  430253 312897 avrora.sim.clock.MainClock.advance
+ 225  0,05% 93,15%  431173 312761 avrora.sim.InterruptTable.beforeInvoke
+ 226  0,05% 93,20%  432590 312793 avrora.sim.AtmelInterpreter.getRegisterByte
+ 227  0,05% 93,25%  431185 311859 avrora.arch.legacy.LegacyInstr$JMP.accept
+ 228  0,05% 93,31%  460485 311879 avrora.sim.AtmelInterpreter.disableInterrupts
+ 229  0,05% 93,36%  430253 312898 avrora.sim.AtmelInterpreter.advanceClock
+ 230  0,05% 93,41%  426972 312784 avrora.sim.mcu.SPI$TransferEvent.enableTransfer
+ 231  0,05% 93,46%  426972 312786 avrora.sim.mcu.SPI$SPDReg.write
+ 232  0,05% 93,51%  431173 312808 avrora.arch.legacy.LegacyInterpreter.uword
+ 233  0,05% 93,56% 1290777 312821 avrora.sim.util.TransactionalList.isEmpty
+ 234  0,05% 93,61%  431173 312776 avrora.sim.AtmelInterpreter.advanceClock
+ 235  0,05% 93,66%  426978 312639 avrora.sim.AtmelInterpreter.setPosted
+ 236  0,05% 93,71%  425588 312881 avrora.sim.clock.MainClock.getCount
+ 237  0,05% 93,76%  457700 312191 avrora.sim.AtmelInterpreter.getRegisterByte
+ 238  0,05% 93,80%  426978 312638 avrora.sim.InterruptTable.post
+ 239  0,05% 93,85%  426972 312758 avrora.sim.mcu.SPI$SPSReg.clearSPIF
+ 240  0,05% 93,90%  426978 312647 avrora.sim.clock.DeltaQueue.insertAfter
+ 241  0,05% 93,95%  431173 312812 avrora.arch.legacy.LegacyInstr$RETI.accept
+ 242  0,05% 94,00%  425588 312884 avrora.sim.clock.MainClock.insertEvent
+ 243  0,05% 94,05%  426978 312636 avrora.sim.state.RegisterUtil$BoolView.getValue
+ 244  0,05% 94,10%  426972 312754 avrora.sim.AtmelInterpreter.setPosted
+ 245  0,05% 94,15%  426972 312760 avrora.sim.mcu.SPI.invoke
+ 246  0,05% 94,19% 1098570 311870 avrora.arch.legacy.LegacyRegister.getNumber
+ 247  0,05% 94,24%  431173 312810 avrora.sim.AtmelInterpreter.enableInterrupts
+ 248  0,05% 94,29%  457700 312194 avrora.sim.AtmelInterpreter.writeRegisterByte
+ 249  0,05% 94,34%  426972 312753 avrora.sim.InterruptTable.unpost
+ 250  0,05% 94,39%  426978 312648 avrora.sim.clock.DeltaQueue.insertEvent
+ 251  0,05% 94,43%  457700 312196 avrora.arch.legacy.LegacyInstr$ORI.accept
+ 252  0,05% 94,48% 1098570 311869 avrora.arch.legacy.LegacyInterpreter.low
+ 253  0,05% 94,53% 1237453 311904 avrora.arch.legacy.LegacyInterpreter.low
+ 254  0,05% 94,58% 1237453 311903 avrora.arch.legacy.LegacyInterpreter.bit
+ 255  0,05% 94,62%  706324 312379 avrora.sim.AtmelInterpreter.writeRegisterByte
+ 256  0,05% 94,67%  706324 312372 avrora.sim.AtmelInterpreter.getRegisterByte
+ 257  0,04% 94,71% 1118372 312842 avrora.sim.clock.RippleSynchronizer.notifyLink
+ 258  0,04% 94,76%  918084 312220 cck.util.Arithmetic.uword
+ 259  0,04% 94,80%  430259 312826 avrora.arch.legacy.LegacyInterpreter.visit
+ 260  0,04% 94,84%  918084 312222 cck.util.Arithmetic.low
+ 261  0,04% 94,88%  430259 312827 avrora.arch.legacy.LegacyInstr$SLEEP.accept
+ 262  0,04% 94,93%  905556 312160 cck.util.Arithmetic.low
+ 263  0,04% 94,97%  918084 312223 cck.util.Arithmetic.high
+ 264  0,04% 95,01%  905556 312161 cck.util.Arithmetic.high
+ 265  0,04% 95,05%  905556 312158 cck.util.Arithmetic.uword
+ 266  0,04% 95,09%  912843 311852 avrora.sim.util.TransactionalList.isEmpty
+ 267  0,04% 95,13%  853944 312787 avrora.arch.legacy.LegacyRegister.getNumber
+ 268  0,04% 95,17%  442092 312248 avrora.sim.AtmelInterpreter.getRegisterUnsigned
+ 269  0,04% 95,21%  865180 312794 avrora.arch.legacy.LegacyInterpreter.low
+ 270  0,04% 95,26%  862346 312766 cck.util.Arithmetic.high
+ 271  0,04% 95,30%  862346 312763 cck.util.Arithmetic.uword
+ 272  0,04% 95,34%  908979 303612 java.util.LinkedList.isPositionIndex
+ 273  0,04% 95,38%  862346 312802 cck.util.Arithmetic.high
+ 274  0,04% 95,42%  862346 312801 cck.util.Arithmetic.low
+ 275  0,04% 95,45%  862346 312799 cck.util.Arithmetic.uword
+ 276  0,04% 95,49%  915400 312192 avrora.arch.legacy.LegacyInterpreter.low
+ 277  0,04% 95,53%  862346 312765 cck.util.Arithmetic.low
+ 278  0,04% 95,57%  899003 312750 avrora.sim.InterruptTable.getPendingInterrupts
+ 279  0,04% 95,61%    1466 312029 avrora.sim.output.SimPrinter.printBuffer
+ 280  0,04% 95,64%  353162 312382 avrora.arch.legacy.LegacyInterpreter.visit
+ 281  0,04% 95,68%  809865 312488 avrora.arch.legacy.LegacyRegister.getNumber
+ 282  0,03% 95,71% 1372088 312079 avrora.sim.mcu.DefaultMCU.access$000
+ 283  0,03% 95,75%  304815 313178 avrora.sim.clock.MainClock.getCount
+ 284  0,03% 95,78% 1372088 312078 cck.util.Arithmetic.getBit
+ 285  0,03% 95,82%  104728 312909 avrora.sim.clock.RippleSynchronizer$NotifyEvent.fire
+ 286  0,03% 95,85%  101152 313194 avrora.sim.radio.Medium$BasicArbitrator.mergeTransmissions
+ 287  0,03% 95,88%  182231 312400 avrora.sim.mcu.Timer8Bit.tickerFinish
+ 288  0,03% 95,91%  879480 312386 avrora.arch.legacy.LegacyInterpreter.low
+ 289  0,03% 95,95%  182231 312399 avrora.sim.clock.DerivedClock.insertEvent
+ 290  0,03% 95,97%  100350 312268 avrora.arch.legacy.LegacyInterpreter.visit
+ 291  0,03% 96,00%  699536 312832 java.util.HashMap.getNode
+ 292  0,03% 96,03%  699536 312831 java.util.HashMap.hash
+ 293  0,03% 96,06%  699536 312836 avrora.sim.Simulator.getClock
+ 294  0,03% 96,09%  699536 312837 avrora.sim.clock.DeltaQueue.getCount
+ 295  0,03% 96,12%  699536 312828 avrora.sim.clock.DeltaQueue.getCount
+ 296  0,03% 96,15%  699536 312834 avrora.sim.Simulation$Node.getSimulator
+ 297  0,03% 96,18%  699536 312839 avrora.sim.clock.RippleSynchronizer$NotifyEvent.currentWaitLink
+ 298  0,03% 96,20%  300536 312255 avrora.sim.AtmelInterpreter.getRegisterUnsigned
+ 299  0,03% 96,23%   76480 313221 avrora.arch.legacy.LegacyInterpreter.visit
+ 300  0,03% 96,26%   76480 313229 avrora.arch.legacy.LegacyInterpreter.visit
+ 301  0,03% 96,29%  101152 313199 avrora.sim.radio.Medium$Probe$List.fireAfterReceive
+ 302  0,03% 96,31%  103194 313026 avrora.sim.radio.Medium$Receiver$Ticker.fireLocked
+ 303  0,03% 96,34%  596025 312830 avrora.sim.radio.Medium$TXRX.getBitNum
+ 304  0,03% 96,36%  627857 312855 java.util.LinkedList$ListItr.hasNext
+ 305  0,02% 96,39%  117437 312584 avrora.arch.legacy.LegacyInterpreter.visit
+ 306  0,02% 96,41%  639914 311916 avrora.sim.RWRegister.read
+ 307  0,02% 96,43%  526039 312492 avrora.arch.legacy.LegacyInterpreter.visit
+ 308  0,02% 96,46%  353162 312383 avrora.arch.legacy.LegacyInstr$SBIW.accept
+ 309  0,02% 96,48%  124546 312694 java.lang.AbstractStringBuilder.append
+ 310  0,02% 96,51%  577800 312137 avrora.sim.AtmelInterpreter.fireAfterWrite
+ 311  0,02% 96,53%  577800 312134 avrora.arch.legacy.LegacyRegister.getNumber
+ 312  0,02% 96,55%    8747 306253 java.io.FilterOutputStream.write
+ 313  0,02% 96,58%  577800 312136 avrora.sim.AtmelInterpreter.fireBeforeWrite
+ 314  0,02% 96,60%   99928 312056 avrora.sim.AtmelInterpreter.setIORegBit
+ 315  0,02% 96,62%  492626 312144 avrora.sim.AtmelInterpreter$SREGBehavior.read
+ 316  0,02% 96,64%  452778 312168 avrora.arch.legacy.LegacyInterpreter.high
+ 317  0,02% 96,66%  459042 312230 cck.util.Arithmetic.uword
+ 318  0,02% 96,68%  432590 312792 avrora.arch.legacy.LegacyRegister.getNumber
+ 319  0,02% 96,70%  199599 312417 avrora.arch.legacy.LegacyInstr$BRGE.accept
+ 320  0,02% 96,73%  432590 312795 avrora.arch.legacy.LegacyRegister.getNumber
+ 321  0,02% 96,75%  431173 312774 avrora.sim.clock.DeltaQueue.advance
+ 322  0,02% 96,77%  452778 312157 avrora.arch.legacy.LegacyInterpreter.low
+ 323  0,02% 96,79%  431173 312762 cck.util.Arithmetic.low
+ 324  0,02% 96,81%  706324 312371 avrora.arch.legacy.LegacyRegister.getNumber
+ 325  0,02% 96,83%  426978 312632 avrora.sim.RWRegister.read
+ 326  0,02% 96,85%  182219 312404 avrora.sim.mcu.Timer8Bit$BufferedRegister.read
+ 327  0,02% 96,87%  431185 311857 avrora.arch.legacy.LegacyInterpreter.visit
+ 328  0,02% 96,89%  431173 312777 avrora.sim.InterruptTable.afterInvoke
+ 329  0,02% 96,91%  430253 312887 avrora.sim.Simulator.getMicrocontroller
+ 330  0,02% 96,93%  431173 312773 avrora.sim.AtmelInterpreter.getInterruptVectorAddress
+ 331  0,02% 96,95%  426978 312637 cck.util.Arithmetic.setBit
+ 332  0,02% 96,97%  457700 312193 avrora.arch.legacy.LegacyRegister.getNumber
+ 333  0,02% 96,99%  426972 312789 avrora.arch.legacy.LegacyInterpreter.low
+ 334  0,02% 97,01%  426972 312755 avrora.sim.RWRegister.getValue
+ 335  0,02% 97,03%  460485 311878 avrora.sim.InterruptTable.disableAll
+ 336  0,02% 97,05%  221046 312253 avrora.arch.legacy.LegacyInstr$ADD.accept
+ 337  0,02% 97,07%  426972 312779 avrora.sim.RWRegister.read
+ 338  0,02% 97,09%   91939 312040 avrora.sim.AtmelInterpreter.setIORegBit
+ 339  0,02% 97,11%  430253 312894 avrora.sim.FiniteStateMachine.getTransitionTime
+ 340  0,02% 97,13%  426978 312635 avrora.sim.RWRegister.getValue
+ 341  0,02% 97,15%  431173 312809 avrora.sim.InterruptTable.enableAll
+ 342  0,02% 97,17%  431173 312751 cck.util.Arithmetic.lowestBit
+ 343  0,02% 97,19%  182231 312397 avrora.sim.clock.DeltaQueue.insertEvent
+ 344  0,02% 97,21%  221046 312251 avrora.sim.AtmelInterpreter.writeRegisterByte
+ 345  0,02% 97,23%  226135 312131 avrora.arch.legacy.LegacyInstr$SUBI.accept
+ 346  0,02% 97,25%  457700 312190 avrora.arch.legacy.LegacyRegister.getNumber
+ 347  0,02% 97,27%  101152 313197 avrora.monitors.PacketMonitor$Mon.fireAfterReceive
+ 348  0,02% 97,29%  431173 312807 cck.util.Arithmetic.uword
+ 349  0,02% 97,31%  425588 312882 avrora.sim.mcu.SPI.newFrame
+ 350  0,02% 97,33%  182237 312207 avrora.sim.clock.DeltaQueue.insertAfter
+ 351  0,02% 97,35%  431173 312771 cck.util.Arithmetic.high
+ 352  0,02% 97,37%  426972 312752 cck.util.Arithmetic.setBit
+ 353  0,02% 97,39%  182231 312390 avrora.sim.mcu.Timer8Bit.tickerStart
+ 354  0,02% 97,41%  430253 312893 avrora.sim.FiniteStateMachine.getCurrentState
+ 355  0,02% 97,42%  426972 312782 avrora.sim.RWRegister.getValue
+ 356  0,02% 97,44%  426978 312634 avrora.sim.RWRegister.write
+ 357  0,02% 97,46%  426978 312641 avrora.sim.RWRegister.setValue
+ 358  0,02% 97,48%  426978 312640 avrora.sim.RWRegister.getValue
+ 359  0,02% 97,50%  426972 312781 avrora.sim.RWRegister.write
+ 360  0,02% 97,52%  103521 312936 java.util.LinkedList.listIterator
+ 361  0,02% 97,54%  226135 312126 avrora.sim.AtmelInterpreter.getRegisterByte
+ 362  0,02% 97,56%  102511 313176 java.util.LinkedList$ListItr.next
+ 363  0,02% 97,58%  226135 312129 avrora.sim.AtmelInterpreter.writeRegisterByte
+ 364  0,02% 97,60%  105880 312920 java.util.LinkedList.listIterator
+ 365  0,02% 97,62%  182231 312396 avrora.sim.clock.MainClock.getCount
+ 366  0,02% 97,63%  182231 312398 avrora.sim.clock.MainClock.insertEvent
+ 367  0,02% 97,65%  426972 312756 avrora.sim.RWRegister.setValue
+ 368  0,02% 97,67%  430253 312896 avrora.sim.clock.DeltaQueue.advance
+ 369  0,02% 97,69%  426978 312629 avrora.sim.clock.DeltaQueue.getCount
+ 370  0,02% 97,71%  102511 313191 java.util.LinkedList$ListItr.next
+ 371  0,02% 97,73%  170414 312903 avrora.sim.mcu.Timer8Bit.access$100
+ 372  0,02% 97,75%  108476 312926 java.util.LinkedList$ListItr.next
+ 373  0,02% 97,77%  445198 311892 avrora.sim.RWRegister.write
+ 374  0,02% 97,78%  426978 312633 avrora.sim.mcu.SPI.newFrame
+ 375  0,02% 97,80%  103521 312965 java.util.LinkedList.listIterator
+ 376  0,02% 97,82%  706324 312378 avrora.arch.legacy.LegacyRegister.getNumber
+ 377  0,02% 97,84%  170414 312901 avrora.sim.mcu.Timer8Bit.access$000
+ 378  0,02% 97,86%  170414 312902 avrora.sim.mcu.Timer8Bit$BufferedRegister.read
+ 379  0,02% 97,88%  430259 312814 avrora.sim.RWRegister.read
+ 380  0,02% 97,89%  430259 312813 avrora.sim.Simulator.getMicrocontroller
+ 381  0,02% 97,91%  430259 312815 cck.util.Arithmetic.getBit
+ 382  0,02% 97,93%  442092 312249 avrora.arch.legacy.LegacyInterpreter.low
+ 383  0,02% 97,94%  442092 312247 avrora.arch.legacy.LegacyRegister.getNumber
+ 384  0,02% 97,96%  600047 306251 java.io.OutputStream.flush
+ 385  0,02% 97,97%  452270 312127 avrora.arch.legacy.LegacyInterpreter.low
+ 386  0,01% 97,99%  103376 313004 avrora.monitors.PacketMonitor$Mon.renderByte
+ 387  0,01% 98,00%   99928 312055 avrora.sim.AtmelInterpreter.writeSRAM
+ 388  0,01% 98,02%  304815 313177 avrora.sim.clock.DeltaQueue.getCount
+ 389  0,01% 98,03%  332890 303615 java.util.LinkedList.node
+ 390  0,01% 98,05%  281920 312297 avrora.arch.legacy.LegacyInstr$BRLT.accept
+ 391  0,01% 98,06%   99928 312049 avrora.sim.AtmelInterpreter.readSRAM
+ 392  0,01% 98,08%  150268 312261 avrora.arch.legacy.LegacyInstr$ADC.accept
+ 393  0,01% 98,09%  150268 312259 avrora.sim.AtmelInterpreter.writeRegisterByte
+ 394  0,01% 98,10%  103376 313005 avrora.monitors.PacketMonitor$Mon.renderByte
+ 395  0,01% 98,12%  304815 313179 avrora.sim.clock.Clock.cyclesToMillis
+ 396  0,01% 98,13%   91939 311965 avrora.sim.AtmelInterpreter.readSRAM
+ 397  0,01% 98,14%  103521 312966 java.util.AbstractList.listIterator
+ 398  0,01% 98,16%  191867 312036 avrora.sim.AtmelInterpreter$IORegBehavior.write
+ 399  0,01% 98,17%   91939 312039 avrora.sim.AtmelInterpreter.writeSRAM
+ 400  0,01% 98,18%   44816 313204 avrora.sim.AtmelInterpreter.getRegisterWord
+ 401  0,01% 98,19%  105353 312986 avrora.sim.clock.DeltaQueue.insertAfter
+ 402  0,01% 98,21%  191867 311962 avrora.sim.AtmelInterpreter$IORegBehavior.read
+ 403  0,01% 98,22%  103511 313023 avrora.sim.clock.DeltaQueue.insertEvent
+ 404  0,01% 98,23%  101152 313195 avrora.sim.clock.MainClock.getCount
+ 405  0,01% 98,24%  105880 312921 java.util.AbstractList.listIterator
+ 406  0,01% 98,25%  103521 312928 java.util.AbstractList.<init>
+ 407  0,01% 98,27%  104884 312933 java.util.LinkedList.add
+ 408  0,01% 98,28%  104884 312932 java.util.LinkedList.linkLast
+ 409  0,01% 98,29%  103511 313024 avrora.sim.clock.MainClock.insertEvent
+ 410  0,01% 98,30%  101152 313184 avrora.sim.radio.Medium$BasicArbitrator.getNoise
+ 411  0,01% 98,31%    2359 313012 avrora.monitors.PacketMonitor$Mon.renderPacket
+ 412  0,01% 98,32%  103511 312993 avrora.sim.radio.Medium$Receiver.access$000
+ 413  0,01% 98,34%  102511 313181 avrora.sim.radio.Medium$BasicArbitrator.computeReceivedPower
+ 414  0,01% 98,35%  117437 312583 avrora.sim.AtmelInterpreter.writeRegisterByte
+ 415  0,01% 98,36%  103511 312992 avrora.sim.radio.Medium$Receiver.waitForNeighbors
+ 416  0,01% 98,37%  103511 312996 avrora.sim.radio.CC1000Radio$Receiver.nextByte
+ 417  0,01% 98,38%  300536 312257 avrora.arch.legacy.LegacyInterpreter.low
+ 418  0,01% 98,39%  101152 313172 java.util.AbstractSequentialList.iterator
+ 419  0,01% 98,40%  103521 312930 java.util.LinkedList.<init>
+ 420  0,01% 98,42%  101152 313190 java.util.AbstractSequentialList.iterator
+ 421  0,01% 98,43%  103511 312995 avrora.sim.radio.Medium$Receiver.access$200
+ 422  0,01% 98,44%  300536 312254 avrora.arch.legacy.LegacyRegister.getNumber
+ 423  0,01% 98,45%  117437 312580 avrora.sim.AtmelInterpreter.getRegisterUnsigned
+ 424  0,01% 98,46%  124546 312691 java.lang.String.<init>
+ 425  0,01% 98,47%  124546 312696 cck.text.Terminal.append
+ 426  0,01% 98,48%  103521 312929 java.util.AbstractSequentialList.<init>
+ 427  0,01% 98,49%  117437 312585 avrora.arch.legacy.LegacyInstr$DEC.accept
+ 428  0,01% 98,50%  105880 312922 java.util.AbstractSequentialList.iterator
+ 429  0,01% 98,52%  101152 313171 java.util.AbstractList.listIterator
+ 430  0,01% 98,53%  124546 312695 java.lang.StringBuffer.append
+ 431  0,01% 98,54%  124546 312692 cck.text.StringUtil.convertToHex
+ 432  0,01% 98,55%  124546 312693 cck.text.StringUtil.toHex
+ 433  0,01% 98,56%   55949 313059 avrora.sim.AtmelInterpreter.getRegisterWord
+ 434  0,01% 98,57%  110447 312600 avrora.arch.legacy.LegacyInstr$BRPL.accept
+ 435  0,01% 98,58%   40633 312244 avrora.sim.AtmelInterpreter.writeRegisterWord
+ 436  0,01% 98,59%  166383 312339 avrora.sim.platform.ExternalFlash$PD5Output.write
+ 437  0,01% 98,60%  166383 312336 avrora.sim.platform.ExternalFlash$PD3Output.write
+CPU TIME (ms) END

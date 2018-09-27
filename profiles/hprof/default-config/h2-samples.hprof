@@ -1,0 +1,2781 @@
+JAVA PROFILE 1.0.1, created Thu Sep 27 22:42:51 2018
+
+Copyright (c) 2003, 2005, Oracle and/or its affiliates. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+
+  - Neither the name of Oracle nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+Header for -agentlib:hprof (or -Xrunhprof) ASCII Output (JDK 5.0 JVMTI based)
+
+WARNING!  This file format is under development, and is subject to
+change without notice.
+
+This file contains the following types of records:
+
+THREAD START
+THREAD END      mark the lifetime of Java threads
+
+TRACE           represents a Java stack trace.  Each trace consists
+                of a series of stack frames.  Other records refer to
+                TRACEs to identify (1) where object allocations have
+                taken place, (2) the frames in which GC roots were
+                found, and (3) frequently executed methods.
+
+HEAP DUMP       is a complete snapshot of all live objects in the Java
+                heap.  Following distinctions are made:
+
+                ROOT    root set as determined by GC
+                CLS     classes 
+                OBJ     instances
+                ARR     arrays
+
+SITES           is a sorted list of allocation sites.  This identifies
+                the most heavily allocated object types, and the TRACE
+                at which those allocations occurred.
+
+CPU SAMPLES     is a statistical profile of program execution.  The VM
+                periodically samples all running threads, and assigns
+                a quantum to active TRACEs in those threads.  Entries
+                in this record are TRACEs ranked by the percentage of
+                total quanta they consumed; top-ranked TRACEs are
+                typically hot spots in the program.
+
+CPU TIME        is a profile of program execution obtained by measuring
+                the time spent in individual methods (excluding the time
+                spent in callees), as well as by counting the number of
+                times each method is called. Entries in this record are
+                TRACEs ranked by the percentage of total CPU time. The
+                "count" field indicates the number of times each TRACE 
+                is invoked.
+
+MONITOR TIME    is a profile of monitor contention obtained by measuring
+                the time spent by a thread waiting to enter a monitor.
+                Entries in this record are TRACEs ranked by the percentage
+                of total monitor contention time and a brief description
+                of the monitor.  The "count" field indicates the number of 
+                times the monitor was contended at that TRACE.
+
+MONITOR DUMP    is a complete snapshot of all the monitors and threads in 
+                the System.
+
+HEAP DUMP, SITES, CPU SAMPLES|TIME and MONITOR DUMP|TIME records are generated 
+at program exit.  They can also be obtained during program execution by typing 
+Ctrl-\ (on Solaris) or by typing Ctrl-Break (on Win32).
+
+--------
+
+THREAD START (obj=5000017e, id = 200001, name="main", group="main")
+THREAD START (obj=5000017e, id = 200004, name="Thread-1", group="main")
+THREAD END (id = 200004)
+THREAD START (obj=5000045c, id = 200005, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200008, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200007, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200015, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200014, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200010, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200013, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200012, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200006, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200011, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200009, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200016, name="OE_Thread:11", group="main")
+THREAD END (id = 200013)
+THREAD END (id = 200016)
+THREAD END (id = 200007)
+THREAD END (id = 200015)
+THREAD END (id = 200005)
+THREAD END (id = 200006)
+THREAD END (id = 200014)
+THREAD END (id = 200012)
+THREAD END (id = 200010)
+THREAD END (id = 200009)
+THREAD END (id = 200011)
+THREAD END (id = 200008)
+THREAD START (obj=5000045c, id = 200020, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200017, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200018, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200027, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200019, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200026, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200025, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200024, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200023, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200022, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200021, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200028, name="OE_Thread:11", group="main")
+THREAD END (id = 200028)
+THREAD END (id = 200026)
+THREAD END (id = 200022)
+THREAD END (id = 200017)
+THREAD END (id = 200027)
+THREAD END (id = 200023)
+THREAD END (id = 200025)
+THREAD END (id = 200019)
+THREAD END (id = 200024)
+THREAD END (id = 200021)
+THREAD END (id = 200018)
+THREAD END (id = 200020)
+THREAD START (obj=5000045c, id = 200029, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200036, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200034, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200033, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200032, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200031, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200038, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200037, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200035, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200030, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200040, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200039, name="OE_Thread:10", group="main")
+THREAD END (id = 200029)
+THREAD END (id = 200036)
+THREAD END (id = 200031)
+THREAD END (id = 200033)
+THREAD END (id = 200038)
+THREAD END (id = 200034)
+THREAD END (id = 200039)
+THREAD END (id = 200035)
+THREAD END (id = 200037)
+THREAD END (id = 200030)
+THREAD END (id = 200032)
+THREAD END (id = 200040)
+THREAD START (obj=5000045c, id = 200041, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200046, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200052, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200045, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200044, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200043, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200051, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200050, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200049, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200048, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200047, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200042, name="OE_Thread:1", group="main")
+THREAD END (id = 200050)
+THREAD END (id = 200043)
+THREAD END (id = 200049)
+THREAD END (id = 200041)
+THREAD END (id = 200051)
+THREAD END (id = 200048)
+THREAD END (id = 200044)
+THREAD END (id = 200052)
+THREAD END (id = 200042)
+THREAD END (id = 200047)
+THREAD END (id = 200046)
+THREAD END (id = 200045)
+THREAD START (obj=5000045c, id = 200057, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200055, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200059, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200058, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200056, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200053, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200063, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200060, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200062, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200064, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200054, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200061, name="OE_Thread:8", group="main")
+THREAD END (id = 200064)
+THREAD END (id = 200060)
+THREAD END (id = 200056)
+THREAD END (id = 200055)
+THREAD END (id = 200057)
+THREAD END (id = 200053)
+THREAD END (id = 200062)
+THREAD END (id = 200063)
+THREAD END (id = 200059)
+THREAD END (id = 200061)
+THREAD END (id = 200054)
+THREAD END (id = 200058)
+THREAD START (obj=5000045c, id = 200065, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200067, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200076, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200066, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200075, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200074, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200068, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200073, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200069, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200072, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200070, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200071, name="OE_Thread:6", group="main")
+THREAD END (id = 200068)
+THREAD END (id = 200076)
+THREAD END (id = 200074)
+THREAD END (id = 200075)
+THREAD END (id = 200073)
+THREAD END (id = 200072)
+THREAD END (id = 200065)
+THREAD END (id = 200071)
+THREAD END (id = 200066)
+THREAD END (id = 200070)
+THREAD END (id = 200069)
+THREAD END (id = 200067)
+THREAD START (obj=5000045c, id = 200078, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200077, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200079, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200087, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200081, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200082, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200080, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200083, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200088, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200086, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200085, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200084, name="OE_Thread:7", group="main")
+THREAD END (id = 200079)
+THREAD END (id = 200086)
+THREAD END (id = 200081)
+THREAD END (id = 200077)
+THREAD END (id = 200088)
+THREAD END (id = 200087)
+THREAD END (id = 200085)
+THREAD END (id = 200084)
+THREAD END (id = 200082)
+THREAD END (id = 200078)
+THREAD END (id = 200080)
+THREAD END (id = 200083)
+THREAD START (obj=5000045c, id = 200090, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200089, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200091, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200095, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200098, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200097, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200094, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200100, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200096, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200093, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200099, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200092, name="OE_Thread:3", group="main")
+THREAD END (id = 200090)
+THREAD END (id = 200097)
+THREAD END (id = 200098)
+THREAD END (id = 200095)
+THREAD END (id = 200089)
+THREAD END (id = 200100)
+THREAD END (id = 200093)
+THREAD END (id = 200092)
+THREAD END (id = 200091)
+THREAD END (id = 200094)
+THREAD END (id = 200099)
+THREAD END (id = 200096)
+THREAD START (obj=5000045c, id = 200102, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200101, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200104, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200105, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200103, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200106, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200111, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200110, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200109, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200107, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200108, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200112, name="OE_Thread:11", group="main")
+THREAD END (id = 200109)
+THREAD END (id = 200102)
+THREAD END (id = 200101)
+THREAD END (id = 200110)
+THREAD END (id = 200107)
+THREAD END (id = 200112)
+THREAD END (id = 200106)
+THREAD END (id = 200103)
+THREAD END (id = 200108)
+THREAD END (id = 200105)
+THREAD END (id = 200111)
+THREAD END (id = 200104)
+THREAD START (obj=5000045c, id = 200113, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200124, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200115, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200114, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200123, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200122, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200121, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200120, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200119, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200118, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200117, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200116, name="OE_Thread:3", group="main")
+THREAD END (id = 200115)
+THREAD END (id = 200117)
+THREAD END (id = 200120)
+THREAD END (id = 200118)
+THREAD END (id = 200114)
+THREAD END (id = 200113)
+THREAD END (id = 200121)
+THREAD END (id = 200116)
+THREAD END (id = 200122)
+THREAD END (id = 200124)
+THREAD END (id = 200119)
+THREAD END (id = 200123)
+THREAD START (obj=5000045c, id = 200125, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200134, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200132, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200131, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200133, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200136, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200127, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200130, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200126, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200129, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200135, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200128, name="OE_Thread:3", group="main")
+THREAD END (id = 200132)
+THREAD END (id = 200126)
+THREAD END (id = 200127)
+THREAD END (id = 200136)
+THREAD END (id = 200125)
+THREAD END (id = 200135)
+THREAD END (id = 200134)
+THREAD END (id = 200130)
+THREAD END (id = 200131)
+THREAD END (id = 200129)
+THREAD END (id = 200128)
+THREAD END (id = 200133)
+THREAD START (obj=5000045c, id = 200138, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200148, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200146, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200147, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200139, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200145, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200144, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200143, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200142, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200141, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200140, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200137, name="OE_Thread:0", group="main")
+THREAD END (id = 200142)
+THREAD END (id = 200137)
+THREAD END (id = 200143)
+THREAD END (id = 200146)
+THREAD END (id = 200139)
+THREAD END (id = 200148)
+THREAD END (id = 200140)
+THREAD END (id = 200144)
+THREAD END (id = 200138)
+THREAD END (id = 200145)
+THREAD END (id = 200147)
+THREAD END (id = 200141)
+THREAD START (obj=5000045c, id = 200152, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200149, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200151, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200159, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200155, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200154, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200160, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200150, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200156, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200158, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200157, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200153, name="OE_Thread:4", group="main")
+THREAD END (id = 200159)
+THREAD END (id = 200150)
+THREAD END (id = 200157)
+THREAD END (id = 200155)
+THREAD END (id = 200160)
+THREAD END (id = 200152)
+THREAD END (id = 200153)
+THREAD END (id = 200151)
+THREAD END (id = 200156)
+THREAD END (id = 200154)
+THREAD END (id = 200149)
+THREAD END (id = 200158)
+THREAD START (obj=5000045c, id = 200168, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200172, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200162, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200163, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200161, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200171, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200170, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200165, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200169, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200164, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200167, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200166, name="OE_Thread:5", group="main")
+THREAD END (id = 200164)
+THREAD END (id = 200161)
+THREAD END (id = 200167)
+THREAD END (id = 200166)
+THREAD END (id = 200163)
+THREAD END (id = 200171)
+THREAD END (id = 200172)
+THREAD END (id = 200170)
+THREAD END (id = 200162)
+THREAD END (id = 200169)
+THREAD END (id = 200165)
+THREAD END (id = 200168)
+THREAD START (obj=5000045c, id = 200182, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200183, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200179, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200175, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200184, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200178, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200177, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200176, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200173, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200180, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200181, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200174, name="OE_Thread:1", group="main")
+THREAD END (id = 200178)
+THREAD END (id = 200175)
+THREAD END (id = 200183)
+THREAD END (id = 200180)
+THREAD END (id = 200174)
+THREAD END (id = 200177)
+THREAD END (id = 200184)
+THREAD END (id = 200179)
+THREAD END (id = 200176)
+THREAD END (id = 200181)
+THREAD END (id = 200182)
+THREAD END (id = 200173)
+THREAD START (obj=5000045c, id = 200188, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200185, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200193, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200189, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200195, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200190, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200196, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200194, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200187, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200191, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200192, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200186, name="OE_Thread:1", group="main")
+THREAD END (id = 200191)
+THREAD END (id = 200195)
+THREAD END (id = 200186)
+THREAD END (id = 200185)
+THREAD END (id = 200190)
+THREAD END (id = 200194)
+THREAD END (id = 200196)
+THREAD END (id = 200193)
+THREAD END (id = 200189)
+THREAD END (id = 200188)
+THREAD END (id = 200187)
+THREAD END (id = 200192)
+THREAD START (obj=5000045c, id = 200204, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200199, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200207, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200206, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200200, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200205, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200208, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200203, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200198, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200201, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200202, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200197, name="OE_Thread:0", group="main")
+THREAD END (id = 200203)
+THREAD END (id = 200201)
+THREAD END (id = 200207)
+THREAD END (id = 200208)
+THREAD END (id = 200204)
+THREAD END (id = 200202)
+THREAD END (id = 200198)
+THREAD END (id = 200205)
+THREAD END (id = 200206)
+THREAD END (id = 200200)
+THREAD END (id = 200197)
+THREAD END (id = 200199)
+THREAD START (obj=5000045c, id = 200210, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200216, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200212, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200217, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200213, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200220, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200215, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200214, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200209, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200219, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200218, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200211, name="OE_Thread:2", group="main")
+THREAD END (id = 200213)
+THREAD END (id = 200209)
+THREAD END (id = 200216)
+THREAD END (id = 200215)
+THREAD END (id = 200212)
+THREAD END (id = 200210)
+THREAD END (id = 200219)
+THREAD END (id = 200214)
+THREAD END (id = 200218)
+THREAD END (id = 200211)
+THREAD END (id = 200220)
+THREAD END (id = 200217)
+THREAD START (obj=5000045c, id = 200221, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200222, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200231, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200227, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200226, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200225, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200228, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200232, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200224, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200223, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200229, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200230, name="OE_Thread:9", group="main")
+THREAD END (id = 200230)
+THREAD END (id = 200222)
+THREAD END (id = 200227)
+THREAD END (id = 200232)
+THREAD END (id = 200223)
+THREAD END (id = 200221)
+THREAD END (id = 200228)
+THREAD END (id = 200225)
+THREAD END (id = 200231)
+THREAD END (id = 200229)
+THREAD END (id = 200226)
+THREAD END (id = 200224)
+THREAD START (obj=5000045c, id = 200239, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200241, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200237, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200236, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200234, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200243, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200244, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200242, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200238, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200235, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200240, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200233, name="OE_Thread:0", group="main")
+THREAD END (id = 200241)
+THREAD END (id = 200243)
+THREAD END (id = 200244)
+THREAD END (id = 200237)
+THREAD END (id = 200234)
+THREAD END (id = 200239)
+THREAD END (id = 200233)
+THREAD END (id = 200238)
+THREAD END (id = 200236)
+THREAD END (id = 200242)
+THREAD END (id = 200235)
+THREAD END (id = 200240)
+THREAD START (obj=5000045c, id = 200247, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200246, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200253, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200249, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200256, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200251, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200250, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200245, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200252, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200255, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200248, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200254, name="OE_Thread:9", group="main")
+THREAD END (id = 200247)
+THREAD END (id = 200255)
+THREAD END (id = 200252)
+THREAD END (id = 200249)
+THREAD END (id = 200248)
+THREAD END (id = 200256)
+THREAD END (id = 200245)
+THREAD END (id = 200251)
+THREAD END (id = 200246)
+THREAD END (id = 200253)
+THREAD END (id = 200250)
+THREAD END (id = 200254)
+THREAD START (obj=5000045c, id = 200264, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200259, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200262, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200261, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200260, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200268, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200257, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200267, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200266, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200263, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200265, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200258, name="OE_Thread:1", group="main")
+THREAD END (id = 200265)
+THREAD END (id = 200257)
+THREAD END (id = 200268)
+THREAD END (id = 200259)
+THREAD END (id = 200262)
+THREAD END (id = 200266)
+THREAD END (id = 200264)
+THREAD END (id = 200260)
+THREAD END (id = 200263)
+THREAD END (id = 200261)
+THREAD END (id = 200258)
+THREAD END (id = 200267)
+THREAD START (obj=5000045c, id = 200271, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200272, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200273, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200274, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200270, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200280, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200279, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200275, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200276, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200278, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200269, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200277, name="OE_Thread:8", group="main")
+THREAD END (id = 200276)
+THREAD END (id = 200279)
+THREAD END (id = 200274)
+THREAD END (id = 200272)
+THREAD END (id = 200280)
+THREAD END (id = 200277)
+THREAD END (id = 200269)
+THREAD END (id = 200270)
+THREAD END (id = 200275)
+THREAD END (id = 200278)
+THREAD END (id = 200271)
+THREAD END (id = 200273)
+THREAD START (obj=5000045c, id = 200288, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200287, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200290, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200284, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200289, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200285, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200292, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200282, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200286, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200281, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200291, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200283, name="OE_Thread:2", group="main")
+THREAD END (id = 200291)
+THREAD END (id = 200289)
+THREAD END (id = 200285)
+THREAD END (id = 200290)
+THREAD END (id = 200286)
+THREAD END (id = 200284)
+THREAD END (id = 200288)
+THREAD END (id = 200287)
+THREAD END (id = 200281)
+THREAD END (id = 200292)
+THREAD END (id = 200283)
+THREAD END (id = 200282)
+THREAD START (obj=5000045c, id = 200294, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200295, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200300, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200293, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200301, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200298, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200296, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200297, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200303, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200304, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200302, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200299, name="OE_Thread:6", group="main")
+THREAD END (id = 200298)
+THREAD END (id = 200293)
+THREAD END (id = 200297)
+THREAD END (id = 200303)
+THREAD END (id = 200296)
+THREAD END (id = 200302)
+THREAD END (id = 200304)
+THREAD END (id = 200295)
+THREAD END (id = 200301)
+THREAD END (id = 200299)
+THREAD END (id = 200300)
+THREAD END (id = 200294)
+THREAD START (obj=5000045c, id = 200311, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200315, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200316, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200307, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200309, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200314, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200308, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200312, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200313, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200306, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200305, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200310, name="OE_Thread:5", group="main")
+THREAD END (id = 200307)
+THREAD END (id = 200309)
+THREAD END (id = 200313)
+THREAD END (id = 200310)
+THREAD END (id = 200312)
+THREAD END (id = 200315)
+THREAD END (id = 200316)
+THREAD END (id = 200308)
+THREAD END (id = 200314)
+THREAD END (id = 200306)
+THREAD END (id = 200311)
+THREAD END (id = 200305)
+THREAD START (obj=5000045c, id = 200317, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200325, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200324, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200323, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200322, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200328, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200321, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200318, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200320, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200319, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200327, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200326, name="OE_Thread:9", group="main")
+THREAD END (id = 200327)
+THREAD END (id = 200325)
+THREAD END (id = 200322)
+THREAD END (id = 200328)
+THREAD END (id = 200317)
+THREAD END (id = 200326)
+THREAD END (id = 200321)
+THREAD END (id = 200323)
+THREAD END (id = 200320)
+THREAD END (id = 200324)
+THREAD END (id = 200319)
+THREAD END (id = 200318)
+THREAD START (obj=5000045c, id = 200338, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200330, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200336, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200337, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200332, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200335, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200333, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200329, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200334, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200339, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200331, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200340, name="OE_Thread:11", group="main")
+THREAD END (id = 200336)
+THREAD END (id = 200339)
+THREAD END (id = 200338)
+THREAD END (id = 200337)
+THREAD END (id = 200340)
+THREAD END (id = 200333)
+THREAD END (id = 200329)
+THREAD END (id = 200334)
+THREAD END (id = 200332)
+THREAD END (id = 200331)
+THREAD END (id = 200330)
+THREAD END (id = 200335)
+THREAD START (obj=5000045c, id = 200343, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200341, name="OE_Thread:0", group="main")
+THREAD START (obj=5000045c, id = 200342, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200345, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200344, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200348, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200347, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200350, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200352, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200351, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200349, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200346, name="OE_Thread:5", group="main")
+THREAD END (id = 200343)
+THREAD END (id = 200349)
+THREAD END (id = 200345)
+THREAD END (id = 200350)
+THREAD END (id = 200341)
+THREAD END (id = 200352)
+THREAD END (id = 200346)
+THREAD END (id = 200347)
+THREAD END (id = 200342)
+THREAD END (id = 200348)
+THREAD END (id = 200344)
+THREAD END (id = 200351)
+THREAD START (obj=5000045c, id = 200363, name="OE_Thread:10", group="main")
+THREAD START (obj=5000045c, id = 200359, name="OE_Thread:6", group="main")
+THREAD START (obj=5000045c, id = 200364, name="OE_Thread:11", group="main")
+THREAD START (obj=5000045c, id = 200358, name="OE_Thread:5", group="main")
+THREAD START (obj=5000045c, id = 200354, name="OE_Thread:1", group="main")
+THREAD START (obj=5000045c, id = 200357, name="OE_Thread:4", group="main")
+THREAD START (obj=5000045c, id = 200356, name="OE_Thread:3", group="main")
+THREAD START (obj=5000045c, id = 200355, name="OE_Thread:2", group="main")
+THREAD START (obj=5000045c, id = 200362, name="OE_Thread:9", group="main")
+THREAD START (obj=5000045c, id = 200360, name="OE_Thread:7", group="main")
+THREAD START (obj=5000045c, id = 200361, name="OE_Thread:8", group="main")
+THREAD START (obj=5000045c, id = 200353, name="OE_Thread:0", group="main")
+THREAD END (id = 200360)
+THREAD END (id = 200358)
+THREAD END (id = 200355)
+THREAD END (id = 200354)
+THREAD END (id = 200357)
+THREAD END (id = 200364)
+THREAD END (id = 200359)
+THREAD END (id = 200363)
+THREAD END (id = 200353)
+THREAD END (id = 200361)
+THREAD END (id = 200356)
+THREAD END (id = 200362)
+THREAD START (obj=50000498, id = 200365, name="Thread-0", group="main")
+THREAD END (id = 200365)
+THREAD END (id = 200001)
+TRACE 300369:
+	org.h2.index.MultiVersionCursor.getSearchRow(MultiVersionCursor.java:96)
+	org.h2.index.IndexCursor.getSearchRow(IndexCursor.java:154)
+	org.h2.table.TableFilter.next(TableFilter.java:280)
+	org.h2.command.dml.Select.queryFlat(Select.java:489)
+TRACE 300367:
+	org.h2.index.MultiVersionCursor.next(MultiVersionCursor.java:105)
+	org.h2.index.IndexCursor.next(IndexCursor.java:165)
+	org.h2.table.TableFilter.next(TableFilter.java:279)
+	org.h2.command.dml.Select.queryFlat(Select.java:489)
+TRACE 300370:
+	org.h2.index.MultiVersionCursor.loadNext(MultiVersionCursor.java:56)
+	org.h2.index.MultiVersionCursor.next(MultiVersionCursor.java:115)
+	org.h2.index.IndexCursor.next(IndexCursor.java:165)
+	org.h2.table.TableFilter.next(TableFilter.java:279)
+TRACE 300371:
+	org.h2.index.MultiVersionIndex.find(MultiVersionIndex.java:71)
+	org.h2.index.IndexCursor.find(IndexCursor.java:109)
+	org.h2.table.TableFilter.next(TableFilter.java:255)
+	org.h2.command.dml.Select.queryFlat(Select.java:489)
+TRACE 300476:
+	org.apache.derbyTesting.system.oe.client.Submitter.runPayment(Submitter.java:448)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC$3.run(<Unknown Source>:Unknown line)
+TRACE 300439:
+	org.h2.index.MultiVersionCursor.getSearchRow(MultiVersionCursor.java:96)
+	org.h2.index.IndexCursor.getSearchRow(IndexCursor.java:154)
+	org.h2.table.TableFilter.next(TableFilter.java:280)
+	org.h2.command.dml.Select.queryGroup(Select.java:307)
+TRACE 300428:
+	java.lang.Throwable.fillInStackTrace(Throwable.java:Unknown line)
+	java.lang.Throwable.fillInStackTrace(Throwable.java:783)
+	java.lang.Throwable.<init>(Throwable.java:265)
+	java.lang.Exception.<init>(Exception.java:66)
+TRACE 300423:
+	org.h2.index.MultiVersionCursor.next(MultiVersionCursor.java:105)
+	org.h2.index.IndexCursor.next(IndexCursor.java:165)
+	org.h2.table.TableFilter.next(TableFilter.java:279)
+	org.h2.command.dml.Update.update(Update.java:87)
+TRACE 300438:
+	org.h2.index.MultiVersionCursor.next(MultiVersionCursor.java:105)
+	org.h2.index.IndexCursor.next(IndexCursor.java:165)
+	org.h2.table.TableFilter.next(TableFilter.java:279)
+	org.h2.command.dml.Select.queryGroup(Select.java:307)
+TRACE 300324:
+	java.lang.Object.hashCode(Object.java:Unknown line)
+	java.util.HashMap.hash(HashMap.java:339)
+	java.util.HashMap.remove(HashMap.java:799)
+	java.util.HashSet.remove(HashSet.java:236)
+TRACE 300468:
+	org.apache.derbyTesting.system.oe.client.Submitter.runPayment(Submitter.java:455)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC$3.run(<Unknown Source>:Unknown line)
+TRACE 300465:
+	org.h2.table.TableData.lock(TableData.java:431)
+	org.h2.command.dml.Update.update(Update.java:82)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+	org.h2.command.Command.executeUpdate(Command.java:209)
+TRACE 300480:
+	org.h2.table.TableData.lock(TableData.java:431)
+	org.h2.command.dml.Insert.insertRows(Insert.java:118)
+	org.h2.command.dml.Insert.update(Insert.java:82)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+TRACE 300444:
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:472)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:397)
+	org.apache.derbyTesting.system.oe.client.Submitter.runPayment(Submitter.java:455)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+TRACE 300546:
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.iteration(<Unknown Source>:Unknown line)
+TRACE 300459:
+	org.h2.index.MultiVersionIndex.remove(MultiVersionIndex.java:148)
+	org.h2.table.TableData.removeRow(TableData.java:371)
+	org.h2.table.Table.updateRows(Table.java:391)
+	org.h2.command.dml.Update.update(Update.java:123)
+TRACE 300383:
+	org.h2.command.dml.Select.queryFlat(Select.java:495)
+	org.h2.command.dml.Select.queryWithoutCache(Select.java:556)
+	org.h2.command.dml.Query.query(Query.java:236)
+	org.h2.command.CommandContainer.query(CommandContainer.java:82)
+TRACE 300483:
+	org.h2.index.MultiVersionIndex.commit(MultiVersionIndex.java:172)
+	org.h2.log.UndoLogRecord.commit(UndoLogRecord.java:223)
+	org.h2.engine.Session.commit(Session.java:462)
+	org.h2.command.dml.TransactionCommand.update(TransactionCommand.java:123)
+TRACE 300443:
+	org.h2.index.MultiVersionIndex.find(MultiVersionIndex.java:71)
+	org.h2.constraint.ConstraintReferential.found(ConstraintReferential.java:335)
+	org.h2.constraint.ConstraintReferential.checkRowOwnTable(ConstraintReferential.java:326)
+	org.h2.constraint.ConstraintReferential.checkRow(ConstraintReferential.java:269)
+TRACE 300400:
+	java.lang.String.valueOf(String.java:3099)
+	org.h2.value.ValueShort.getString(ValueShort.java:106)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300479:
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:398)
+	org.apache.derbyTesting.system.oe.client.Submitter.runPayment(Submitter.java:455)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+TRACE 300445:
+	org.h2.index.MultiVersionIndex.add(MultiVersionIndex.java:49)
+	org.h2.table.TableData.addRow(TableData.java:130)
+	org.h2.command.dml.Insert.insertRows(Insert.java:119)
+	org.h2.command.dml.Insert.update(Insert.java:82)
+TRACE 300478:
+	org.h2.index.MultiVersionIndex.add(MultiVersionIndex.java:49)
+	org.h2.table.TableData.addRow(TableData.java:130)
+	org.h2.table.Table.updateRows(Table.java:401)
+	org.h2.command.dml.Update.update(Update.java:123)
+TRACE 300471:
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:527)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:377)
+	org.apache.derbyTesting.system.oe.client.Submitter.runPayment(Submitter.java:448)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+TRACE 300488:
+	org.h2.index.MultiVersionCursor.next(MultiVersionCursor.java:105)
+	org.h2.index.IndexCursor.next(IndexCursor.java:165)
+	org.h2.table.TableFilter.next(TableFilter.java:279)
+	org.h2.table.TableFilter.next(TableFilter.java:310)
+TRACE 300543:
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.iteration(<Unknown Source>:Unknown line)
+TRACE 300474:
+	org.h2.index.MultiVersionIndex.find(MultiVersionIndex.java:71)
+	org.h2.index.IndexCursor.find(IndexCursor.java:109)
+	org.h2.table.TableFilter.next(TableFilter.java:255)
+	org.h2.command.dml.Update.update(Update.java:87)
+TRACE 300407:
+	java.sql.Timestamp.toString(Timestamp.java:312)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300403:
+	org.h2.index.IndexCursor.next(IndexCursor.java:165)
+	org.h2.table.TableFilter.next(TableFilter.java:279)
+	org.h2.command.dml.Select.queryFlat(Select.java:489)
+	org.h2.command.dml.Select.queryWithoutCache(Select.java:556)
+TRACE 300463:
+	org.h2.index.MultiVersionCursor.next(MultiVersionCursor.java:105)
+	org.h2.constraint.ConstraintReferential.found(ConstraintReferential.java:336)
+	org.h2.constraint.ConstraintReferential.checkRowOwnTable(ConstraintReferential.java:326)
+	org.h2.constraint.ConstraintReferential.checkRow(ConstraintReferential.java:269)
+TRACE 300458:
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:378)
+	org.apache.derbyTesting.system.oe.client.Submitter.runPayment(Submitter.java:448)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+TRACE 300477:
+	org.apache.derbyTesting.system.oe.direct.Standard.newOrder(Standard.java:757)
+	org.apache.derbyTesting.system.oe.client.Submitter.runNewOrder(Submitter.java:429)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+TRACE 300582:
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:527)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:397)
+	org.apache.derbyTesting.system.oe.client.Submitter.runPayment(Submitter.java:455)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+TRACE 300361:
+	org.h2.value.Value.compareTypeSave(Value.java:803)
+	org.h2.table.Table.compareTypeSave(Table.java:933)
+	org.h2.index.BaseIndex.compareValues(BaseIndex.java:299)
+	org.h2.index.BaseIndex.compareRows(BaseIndex.java:247)
+TRACE 300533:
+	org.h2.index.IndexCursor.next(IndexCursor.java:165)
+	org.h2.table.TableFilter.next(TableFilter.java:279)
+	org.h2.command.dml.Update.update(Update.java:87)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+TRACE 300603:
+	org.h2.index.MultiVersionIndex.remove(MultiVersionIndex.java:148)
+	org.h2.table.TableData.removeRow(TableData.java:371)
+	org.h2.log.UndoLogRecord.undo(UndoLogRecord.java:105)
+	org.h2.engine.Session.rollbackTo(Session.java:530)
+TRACE 300372:
+	org.h2.index.MultiVersionCursor.loadNext(MultiVersionCursor.java:56)
+	org.h2.index.MultiVersionCursor.next(MultiVersionCursor.java:111)
+	org.h2.index.IndexCursor.next(IndexCursor.java:165)
+	org.h2.table.TableFilter.next(TableFilter.java:279)
+TRACE 300614:
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.iteration(<Unknown Source>:Unknown line)
+TRACE 300581:
+	org.h2.index.MultiVersionIndex.add(MultiVersionIndex.java:49)
+	org.h2.table.TableData.addRow(TableData.java:130)
+	org.h2.log.UndoLogRecord.undo(UndoLogRecord.java:119)
+	org.h2.engine.Session.rollbackTo(Session.java:530)
+TRACE 300409:
+	java.sql.Timestamp.toString(Timestamp.java:332)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300594:
+	org.apache.derbyTesting.system.oe.client.Submitter.runOrderStatus(Submitter.java:488)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC$3.run(<Unknown Source>:Unknown line)
+TRACE 300489:
+	org.h2.index.MultiVersionCursor.get(MultiVersionCursor.java:78)
+	org.h2.index.IndexCursor.get(IndexCursor.java:146)
+	org.h2.table.TableFilter.get(TableFilter.java:342)
+	org.h2.command.dml.Update.update(Update.java:90)
+TRACE 300527:
+	org.h2.index.IndexCursor.next(IndexCursor.java:165)
+	org.h2.table.TableFilter.next(TableFilter.java:279)
+	org.h2.command.dml.Delete.update(Delete.java:55)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+TRACE 300472:
+	org.h2.index.MultiVersionIndex.find(MultiVersionIndex.java:71)
+	org.h2.index.IndexCursor.find(IndexCursor.java:109)
+	org.h2.table.TableFilter.next(TableFilter.java:255)
+	org.h2.table.TableFilter.next(TableFilter.java:310)
+TRACE 300415:
+	java.sql.Timestamp.toString(Timestamp.java:365)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300493:
+	org.h2.engine.Session.unlockAll(Session.java:641)
+	org.h2.engine.Session.rollback(Session.java:514)
+	org.h2.command.dml.TransactionCommand.update(TransactionCommand.java:126)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+TRACE 300645:
+	org.h2.index.MultiVersionIndex.remove(MultiVersionIndex.java:148)
+	org.h2.table.TableData.removeRow(TableData.java:371)
+	org.h2.command.dml.Delete.update(Delete.java:71)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+TRACE 300616:
+	java.sql.Timestamp.toString(Timestamp.java:279)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300496:
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC$3.run(<Unknown Source>:Unknown line)
+TRACE 300412:
+	java.sql.Timestamp.toString(Timestamp.java:327)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300464:
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:400)
+	org.apache.derbyTesting.system.oe.client.Submitter.runPayment(Submitter.java:455)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+TRACE 300402:
+	java.sql.Timestamp.toString(Timestamp.java:317)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300651:
+	java.sql.Timestamp.toString(Timestamp.java:351)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300849:
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.iteration(<Unknown Source>:Unknown line)
+	sun.reflect.GeneratedMethodAccessor2.invoke(<Unknown Source>:Unknown line)
+TRACE 300542:
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.iteration(<Unknown Source>:Unknown line)
+	sun.reflect.NativeMethodAccessorImpl.invoke0(NativeMethodAccessorImpl.java:Unknown line)
+TRACE 300450:
+	org.h2.index.MultiVersionCursor.loadNext(MultiVersionCursor.java:56)
+	org.h2.index.MultiVersionCursor.next(MultiVersionCursor.java:115)
+	org.h2.constraint.ConstraintReferential.found(ConstraintReferential.java:336)
+	org.h2.constraint.ConstraintReferential.checkRowOwnTable(ConstraintReferential.java:326)
+TRACE 300524:
+	org.h2.index.BaseIndex.compareRows(BaseIndex.java:240)
+	org.h2.index.TreeIndex.findFirstNode(TreeIndex.java:262)
+	org.h2.index.TreeIndex.remove(TreeIndex.java:140)
+	org.h2.index.MultiVersionIndex.remove(MultiVersionIndex.java:149)
+TRACE 300579:
+	org.h2.index.MultiVersionCursor.getSearchRow(MultiVersionCursor.java:96)
+	org.h2.constraint.ConstraintReferential.found(ConstraintReferential.java:338)
+	org.h2.constraint.ConstraintReferential.checkRowOwnTable(ConstraintReferential.java:326)
+	org.h2.constraint.ConstraintReferential.checkRow(ConstraintReferential.java:269)
+TRACE 300589:
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:397)
+	org.apache.derbyTesting.system.oe.client.Submitter.runPayment(Submitter.java:455)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+TRACE 300411:
+	java.sql.Timestamp.toString(Timestamp.java:322)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300523:
+	org.h2.expression.Comparison.getValue(Comparison.java:233)
+	org.h2.expression.Expression.getBooleanValue(Expression.java:188)
+	org.h2.command.dml.Delete.update(Delete.java:57)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+TRACE 300470:
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:380)
+	org.apache.derbyTesting.system.oe.client.Submitter.runPayment(Submitter.java:448)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+TRACE 300539:
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.iteration(<Unknown Source>:Unknown line)
+	sun.reflect.NativeMethodAccessorImpl.invoke0(NativeMethodAccessorImpl.java:Unknown line)
+TRACE 300535:
+	org.h2.index.BaseIndex.compareRows(BaseIndex.java:240)
+	org.h2.index.TreeIndex.findFirstNode(TreeIndex.java:262)
+	org.h2.index.TreeIndex.find(TreeIndex.java:292)
+	org.h2.index.MultiVersionIndex.removeIfExists(MultiVersionIndex.java:132)
+TRACE 300545:
+	java.sql.Timestamp.toString(Timestamp.java:346)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300557:
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.iteration(<Unknown Source>:Unknown line)
+TRACE 300617:
+	java.sql.Timestamp.toString(Timestamp.java:355)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300732:
+	org.h2.table.Table.updateRows(Table.java:391)
+	org.h2.command.dml.Update.update(Update.java:123)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+	org.h2.command.Command.executeUpdate(Command.java:209)
+TRACE 300351:
+	org.h2.index.MultiVersionIndex.add(MultiVersionIndex.java:49)
+	org.h2.table.TableData.addRowsToIndex(TableData.java:337)
+	org.h2.table.TableData.addIndex(TableData.java:245)
+	org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:142)
+TRACE 300544:
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.iteration(<Unknown Source>:Unknown line)
+TRACE 300628:
+	org.apache.derbyTesting.system.oe.direct.Standard.newOrder(Standard.java:622)
+	org.apache.derbyTesting.system.oe.client.Submitter.runNewOrder(Submitter.java:429)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+TRACE 300347:
+	java.math.BigInteger.smallToString(BigInteger.java:3737)
+	java.math.BigInteger.toString(BigInteger.java:3697)
+	java.math.BigInteger.toString(BigInteger.java:3858)
+	org.h2.value.ValueDecimal.getPrecision(ValueDecimal.java:138)
+TRACE 300554:
+	java.sql.Timestamp.toString(Timestamp.java:356)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300555:
+	java.sql.Timestamp.toString(Timestamp.java:353)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300653:
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.iteration(<Unknown Source>:Unknown line)
+	sun.reflect.NativeMethodAccessorImpl.invoke0(NativeMethodAccessorImpl.java:Unknown line)
+TRACE 300556:
+	java.sql.Timestamp.toString(Timestamp.java:358)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300615:
+	java.sql.Timestamp.toString(Timestamp.java:360)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300619:
+	java.sql.Timestamp.toString(Timestamp.java:335)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300549:
+	java.sql.Timestamp.toString(Timestamp.java:354)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300620:
+	java.sql.Timestamp.toString(Timestamp.java:357)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300630:
+	org.h2.table.TableData.unlock(TableData.java:650)
+	org.h2.engine.Session.unlockAll(Session.java:643)
+	org.h2.engine.Session.rollback(Session.java:514)
+	org.h2.command.dml.TransactionCommand.update(TransactionCommand.java:126)
+TRACE 300659:
+	org.apache.derbyTesting.system.oe.client.Submitter.runOrderStatus(Submitter.java:493)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC$3.run(<Unknown Source>:Unknown line)
+TRACE 300846:
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.iteration(<Unknown Source>:Unknown line)
+	sun.reflect.GeneratedMethodAccessor2.invoke(<Unknown Source>:Unknown line)
+TRACE 300847:
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.iteration(<Unknown Source>:Unknown line)
+	sun.reflect.GeneratedMethodAccessor2.invoke(<Unknown Source>:Unknown line)
+TRACE 300441:
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC$3.run(<Unknown Source>:Unknown line)
+TRACE 300540:
+	java.sql.Timestamp.toString(Timestamp.java:359)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300586:
+	org.h2.table.Column.validateConvertUpdateSequence(Column.java:311)
+	org.h2.table.Table.validateConvertUpdateSequence(Table.java:599)
+	org.h2.command.dml.Update.update(Update.java:106)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+TRACE 300605:
+	java.io.FileOutputStream.write(FileOutputStream.java:Unknown line)
+	java.io.FileOutputStream.write(FileOutputStream.java:290)
+	org.dacapo.harness.TeeOutputStream.write(TeeOutputStream.java:105)
+	java.io.FilterOutputStream.write(FilterOutputStream.java:125)
+TRACE 300613:
+	java.sql.Timestamp.toString(Timestamp.java:350)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300553:
+	java.sql.Timestamp.toString(Timestamp.java:335)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300575:
+	java.io.FileOutputStream.writeBytes(FileOutputStream.java:Unknown line)
+	java.io.FileOutputStream.write(FileOutputStream.java:326)
+	java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	java.io.BufferedOutputStream.flush(BufferedOutputStream.java:140)
+TRACE 300625:
+	java.math.MutableBigInteger.divideKnuth(MutableBigInteger.java:1227)
+	java.math.MutableBigInteger.divide(MutableBigInteger.java:1153)
+	java.math.MutableBigInteger.divide(MutableBigInteger.java:1147)
+	java.math.BigDecimal.divideAndRound(BigDecimal.java:4326)
+TRACE 300475:
+	org.h2.engine.Session.commit(Session.java:459)
+	org.h2.command.dml.TransactionCommand.update(TransactionCommand.java:123)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+	org.h2.command.Command.executeUpdate(Command.java:209)
+TRACE 300495:
+	org.h2.table.TableData.unlock(TableData.java:650)
+	org.h2.engine.Session.unlockAll(Session.java:643)
+	org.h2.engine.Session.commit(Session.java:490)
+	org.h2.command.dml.TransactionCommand.update(TransactionCommand.java:123)
+TRACE 300551:
+	java.sql.Timestamp.toString(Timestamp.java:361)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300621:
+	java.sql.Timestamp.toString(Timestamp.java:363)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300498:
+	org.apache.derbyTesting.system.oe.direct.Standard.orderStatus(Standard.java:220)
+	org.apache.derbyTesting.system.oe.client.Submitter.runOrderStatus(Submitter.java:488)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+TRACE 300643:
+	java.math.BigDecimal.toString(BigDecimal.java:2884)
+	org.h2.value.ValueDecimal.getString(ValueDecimal.java:131)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:282)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:475)
+TRACE 300494:
+	org.h2.index.MultiVersionIndex.find(MultiVersionIndex.java:71)
+	org.h2.index.IndexCursor.find(IndexCursor.java:109)
+	org.h2.table.TableFilter.next(TableFilter.java:255)
+	org.h2.command.dml.Select.queryGroup(Select.java:307)
+TRACE 300541:
+	java.sql.Timestamp.toString(Timestamp.java:362)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300548:
+	java.sql.Timestamp.toString(Timestamp.java:335)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300482:
+	org.h2.index.MultiVersionCursor.getSearchRow(MultiVersionCursor.java:96)
+	org.h2.index.IndexCursor.getSearchRow(IndexCursor.java:154)
+	org.h2.table.TableFilter.next(TableFilter.java:280)
+	org.h2.command.dml.Update.update(Update.java:87)
+TRACE 300497:
+	org.apache.derbyTesting.system.oe.client.Submitter.runStockLevel(Submitter.java:477)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC$3.run(<Unknown Source>:Unknown line)
+TRACE 300547:
+	java.sql.Timestamp.toString(Timestamp.java:340)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300592:
+	org.apache.derbyTesting.system.oe.direct.Standard.orderStatus(Standard.java:257)
+	org.apache.derbyTesting.system.oe.client.Submitter.runOrderStatus(Submitter.java:493)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+TRACE 300656:
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:377)
+	org.apache.derbyTesting.system.oe.client.Submitter.runPayment(Submitter.java:448)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+TRACE 300353:
+	org.h2.index.BaseIndex.compareRows(BaseIndex.java:240)
+	org.h2.index.MultiVersionIndex.compareRows(MultiVersionIndex.java:182)
+	org.h2.table.TableData$1.compare(TableData.java:327)
+	org.h2.table.TableData$1.compare(TableData.java:325)
+TRACE 300376:
+	org.h2.index.MultiVersionIndex.add(MultiVersionIndex.java:49)
+	org.h2.table.TableData.addRowsToIndex(TableData.java:337)
+	org.h2.table.TableData.addIndex(TableData.java:245)
+	org.h2.command.ddl.AlterTableAddConstraint.createIndex(AlterTableAddConstraint.java:275)
+TRACE 300467:
+	org.h2.value.Value.checkPrecision(Value.java:974)
+	org.h2.table.Column.validateConvertUpdateSequence(Column.java:313)
+	org.h2.table.Table.validateConvertUpdateSequence(Table.java:599)
+	org.h2.command.dml.Update.update(Update.java:106)
+TRACE 300538:
+	org.h2.expression.Comparison.getValue(Comparison.java:233)
+	org.h2.expression.Expression.getBooleanValue(Expression.java:188)
+	org.h2.command.dml.Update.update(Update.java:89)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+TRACE 300595:
+	org.h2.command.Command.executeUpdate(Command.java:202)
+	org.h2.jdbc.JdbcConnection.rollbackInternal(JdbcConnection.java:1366)
+	org.h2.jdbc.JdbcConnection.rollback(JdbcConnection.java:422)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:379)
+TRACE 300719:
+	org.h2.value.Value.convertTo(Value.java:490)
+	org.h2.table.Column.convert(Column.java:148)
+	org.h2.index.IndexCursor.find(IndexCursor.java:88)
+	org.h2.table.TableFilter.next(TableFilter.java:255)
+TRACE 300487:
+	org.apache.derbyTesting.system.oe.direct.Standard.stockLevel(Standard.java:156)
+	org.apache.derbyTesting.system.oe.client.Submitter.runStockLevel(Submitter.java:477)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+TRACE 300685:
+	org.apache.derbyTesting.system.oe.direct.Standard.orderStatus(Standard.java:256)
+	org.apache.derbyTesting.system.oe.client.Submitter.runOrderStatus(Submitter.java:493)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+TRACE 300751:
+	java.sql.Timestamp.toString(Timestamp.java:352)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300491:
+	org.h2.index.MultiVersionCursor.next(MultiVersionCursor.java:105)
+	org.h2.index.IndexCursor.next(IndexCursor.java:165)
+	org.h2.table.TableFilter.next(TableFilter.java:279)
+	org.h2.table.TableFilter.next(TableFilter.java:264)
+TRACE 300693:
+	org.h2.index.TreeIndex.findFirstNode(TreeIndex.java:262)
+	org.h2.index.TreeIndex.remove(TreeIndex.java:140)
+	org.h2.index.MultiVersionIndex.remove(MultiVersionIndex.java:149)
+	org.h2.table.TableData.removeRow(TableData.java:371)
+TRACE 300697:
+	java.sql.Timestamp.toString(Timestamp.java:340)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300552:
+	java.sql.Timestamp.toString(Timestamp.java:335)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300652:
+	org.h2.index.IndexCursor.getSearchRow(IndexCursor.java:154)
+	org.h2.table.TableFilter.next(TableFilter.java:280)
+	org.h2.command.dml.Select.queryFlat(Select.java:489)
+	org.h2.command.dml.Select.queryWithoutCache(Select.java:556)
+TRACE 300723:
+	org.h2.command.CommandContainer.recompileIfRequired(CommandContainer.java:44)
+	org.h2.command.CommandContainer.update(CommandContainer.java:68)
+	org.h2.command.Command.executeUpdate(Command.java:209)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:139)
+TRACE 300526:
+	org.h2.index.TreeIndex.findFirstNode(TreeIndex.java:262)
+	org.h2.index.TreeIndex.find(TreeIndex.java:292)
+	org.h2.index.MultiVersionIndex.removeIfExists(MultiVersionIndex.java:132)
+	org.h2.index.MultiVersionIndex.remove(MultiVersionIndex.java:150)
+TRACE 300638:
+	org.h2.command.dml.Update.update(Update.java:135)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+	org.h2.command.Command.executeUpdate(Command.java:209)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:139)
+TRACE 300796:
+	java.sql.Timestamp.toString(Timestamp.java:335)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300455:
+	org.h2.engine.Session.unlockAll(Session.java:641)
+	org.h2.engine.Session.commit(Session.java:490)
+	org.h2.command.dml.TransactionCommand.update(TransactionCommand.java:123)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+TRACE 300583:
+	org.h2.index.MultiVersionCursor.loadNext(MultiVersionCursor.java:56)
+	org.h2.index.MultiVersionCursor.next(MultiVersionCursor.java:111)
+	org.h2.constraint.ConstraintReferential.found(ConstraintReferential.java:336)
+	org.h2.constraint.ConstraintReferential.checkRowOwnTable(ConstraintReferential.java:326)
+TRACE 300590:
+	org.h2.index.MultiVersionCursor.getSearchRow(MultiVersionCursor.java:96)
+	org.h2.index.IndexCursor.getSearchRow(IndexCursor.java:154)
+	org.h2.table.TableFilter.next(TableFilter.java:280)
+	org.h2.table.TableFilter.next(TableFilter.java:310)
+TRACE 300591:
+	org.h2.command.Command.executeUpdate(Command.java:202)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:139)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:128)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:519)
+TRACE 300626:
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC$3.run(<Unknown Source>:Unknown line)
+TRACE 300449:
+	org.h2.command.Command.executeQueryLocal(Command.java:138)
+	org.h2.command.Command.executeQuery(Command.java:123)
+	org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:98)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:469)
+TRACE 300454:
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC$3.run(<Unknown Source>:Unknown line)
+TRACE 300481:
+	org.h2.command.Command.executeQueryLocal(Command.java:138)
+	org.h2.command.Command.executeQuery(Command.java:123)
+	org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:98)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:356)
+TRACE 300529:
+	org.h2.index.TreeIndex.findFirstNode(TreeIndex.java:262)
+	org.h2.index.TreeIndex.remove(TreeIndex.java:140)
+	org.h2.index.MultiVersionIndex.removeIfExists(MultiVersionIndex.java:139)
+	org.h2.index.MultiVersionIndex.commit(MultiVersionIndex.java:173)
+TRACE 300531:
+	org.h2.expression.Comparison.getValue(Comparison.java:233)
+	org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:86)
+	org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:109)
+	org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:109)
+TRACE 300558:
+	java.sql.Timestamp.toString(Timestamp.java:280)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300609:
+	org.h2.expression.Comparison.getValue(Comparison.java:233)
+	org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:86)
+	org.h2.expression.Expression.getBooleanValue(Expression.java:188)
+	org.h2.command.dml.Update.update(Update.java:89)
+TRACE 300636:
+	org.h2.util.StringUtils.toUpperEnglish(StringUtils.java:54)
+	org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:2960)
+	org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3038)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:282)
+TRACE 300739:
+	org.h2.command.Command.executeUpdate(Command.java:202)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:139)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:128)
+	org.apache.derbyTesting.system.oe.direct.Standard.newOrder(Standard.java:731)
+TRACE 300461:
+	org.h2.command.Command.executeQueryLocal(Command.java:138)
+	org.h2.command.Command.executeQuery(Command.java:123)
+	org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:98)
+	org.apache.derbyTesting.system.oe.direct.Standard.newOrder(Standard.java:693)
+TRACE 300584:
+	java.lang.System.identityHashCode(System.java:Unknown line)
+	java.util.IdentityHashMap.hash(IdentityHashMap.java:295)
+	java.util.IdentityHashMap.put(IdentityHashMap.java:426)
+	org.apache.derbyTesting.system.oe.direct.StatementHelper.prepareStatement(StatementHelper.java:80)
+TRACE 300627:
+	org.h2.command.Command.executeQueryLocal(Command.java:138)
+	org.h2.command.Command.executeQuery(Command.java:123)
+	org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:98)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:525)
+TRACE 300635:
+	org.h2.command.Command.executeQueryLocal(Command.java:138)
+	org.h2.command.Command.executeQuery(Command.java:123)
+	org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:98)
+	org.apache.derbyTesting.system.oe.direct.Standard.newOrder(Standard.java:704)
+TRACE 300696:
+	org.h2.expression.Expression.getBooleanValue(Expression.java:188)
+	org.h2.command.dml.Update.update(Update.java:89)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+	org.h2.command.Command.executeUpdate(Command.java:209)
+TRACE 300712:
+	java.math.BigInteger.toString(BigInteger.java:3858)
+	org.h2.value.ValueDecimal.getPrecision(ValueDecimal.java:138)
+	org.h2.value.ValueDecimal.checkPrecision(ValueDecimal.java:147)
+	org.h2.table.Column.validateConvertUpdateSequence(Column.java:313)
+TRACE 300404:
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.preIterationMemoryDB(<Unknown Source>:Unknown line)
+TRACE 300486:
+	sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	java.lang.Double.parseDouble(Double.java:538)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:455)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:377)
+TRACE 300550:
+	java.sql.Timestamp.toString(Timestamp.java:350)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300668:
+	java.math.BigDecimal.<init>(BigDecimal.java:383)
+	java.math.BigDecimal.<init>(BigDecimal.java:806)
+	org.h2.value.ValueTimestamp.convertScale(ValueTimestamp.java:149)
+	org.h2.table.Column.validateConvertUpdateSequence(Column.java:311)
+TRACE 300673:
+	org.h2.index.BaseIndex.compareRows(BaseIndex.java:240)
+	org.h2.index.TreeCursor.next(TreeCursor.java:56)
+	org.h2.index.MultiVersionIndex.removeIfExists(MultiVersionIndex.java:133)
+	org.h2.index.MultiVersionIndex.remove(MultiVersionIndex.java:150)
+TRACE 300698:
+	java.sql.Timestamp.toString(Timestamp.java:335)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300722:
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+	org.h2.command.Command.executeUpdate(Command.java:209)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:139)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:128)
+TRACE 300730:
+	org.h2.value.Value.convertTo(Value.java:490)
+	org.h2.expression.Comparison.getValue(Comparison.java:237)
+	org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:86)
+	org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:109)
+TRACE 300749:
+	org.h2.index.TreeIndex.findFirstNode(TreeIndex.java:262)
+	org.h2.index.TreeIndex.find(TreeIndex.java:292)
+	org.h2.index.MultiVersionIndex.removeIfExists(MultiVersionIndex.java:132)
+	org.h2.index.MultiVersionIndex.commit(MultiVersionIndex.java:173)
+TRACE 300758:
+	org.h2.util.StringUtils.toUpperEnglish(StringUtils.java:54)
+	org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:2954)
+	org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3038)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:282)
+TRACE 300336:
+	org.h2.value.Value.checkPrecision(Value.java:974)
+	org.h2.table.Column.validateConvertUpdateSequence(Column.java:313)
+	org.h2.table.Table.validateConvertUpdateSequence(Table.java:599)
+	org.h2.command.dml.Insert.insertRows(Insert.java:116)
+TRACE 300405:
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300499:
+	org.h2.table.Table.fireConstraints(Table.java:774)
+	org.h2.table.Table.fireBeforeRow(Table.java:767)
+	org.h2.command.dml.Update.update(Update.java:108)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+TRACE 300528:
+	org.h2.index.BaseIndex.compareRows(BaseIndex.java:240)
+	org.h2.index.TreeIndex.findFirstNode(TreeIndex.java:262)
+	org.h2.index.TreeIndex.remove(TreeIndex.java:140)
+	org.h2.index.MultiVersionIndex.removeIfExists(MultiVersionIndex.java:139)
+TRACE 300600:
+	org.h2.command.Command.executeUpdate(Command.java:210)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:139)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:128)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:519)
+TRACE 300664:
+	org.h2.command.Command.executeUpdate(Command.java:202)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:139)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:128)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:463)
+TRACE 300669:
+	org.h2.expression.ConditionAndOr.isEverything(ConditionAndOr.java:252)
+	org.h2.command.dml.Select.isEverything(Select.java:1083)
+	org.h2.command.dml.Query.isEverything(Query.java:418)
+	org.h2.command.dml.Query.query(Query.java:223)
+TRACE 300686:
+	org.h2.command.dml.Insert.insertRows(Insert.java:106)
+	org.h2.command.dml.Insert.update(Insert.java:82)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+	org.h2.command.Command.executeUpdate(Command.java:209)
+TRACE 300691:
+	org.h2.util.MathUtils.setScale(MathUtils.java:116)
+	org.h2.value.ValueTimestamp.convertScale(ValueTimestamp.java:151)
+	org.h2.table.Column.validateConvertUpdateSequence(Column.java:311)
+	org.h2.table.Table.validateConvertUpdateSequence(Table.java:599)
+TRACE 300733:
+	org.h2.command.Command.executeUpdate(Command.java:202)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:139)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:128)
+	org.apache.derbyTesting.system.oe.direct.Standard.newOrder(Standard.java:721)
+TRACE 300764:
+	org.h2.value.Value.convertTo(Value.java:490)
+	org.h2.expression.Comparison.getValue(Comparison.java:237)
+	org.h2.expression.Expression.getBooleanValue(Expression.java:188)
+	org.h2.command.dml.Delete.update(Delete.java:57)
+TRACE 300431:
+	java.lang.System.identityHashCode(System.java:Unknown line)
+	java.util.IdentityHashMap.hash(IdentityHashMap.java:295)
+	java.util.IdentityHashMap.get(IdentityHashMap.java:329)
+	org.apache.derbyTesting.system.oe.direct.StatementHelper.prepareStatement(StatementHelper.java:71)
+TRACE 300447:
+	java.lang.Object.clone(Object.java:Unknown line)
+	java.util.Date.clone(Date.java:283)
+	org.h2.value.ValueTimestamp.getTimestamp(ValueTimestamp.java:55)
+	org.h2.jdbc.JdbcResultSet.getTimestamp(JdbcResultSet.java:442)
+TRACE 300500:
+	org.apache.derbyTesting.system.oe.direct.Standard.getOrderStatusForCustomer(Standard.java:301)
+	org.apache.derbyTesting.system.oe.direct.Standard.orderStatus(Standard.java:220)
+	org.apache.derbyTesting.system.oe.client.Submitter.runOrderStatus(Submitter.java:488)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+TRACE 300522:
+	org.h2.value.Value.compareTo(Value.java:843)
+	org.h2.engine.Database.areEqual(Database.java:293)
+	org.h2.expression.Comparison.compareNotNull(Comparison.java:257)
+	org.h2.expression.Comparison.getValue(Comparison.java:239)
+TRACE 300577:
+	org.apache.derbyTesting.system.oe.direct.Standard.orderStatus(Standard.java:206)
+	org.apache.derbyTesting.system.oe.client.Submitter.runOrderStatus(Submitter.java:488)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+TRACE 300593:
+	org.apache.derbyTesting.system.oe.direct.Standard.orderStatus(Standard.java:221)
+	org.apache.derbyTesting.system.oe.client.Submitter.runOrderStatus(Submitter.java:488)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+TRACE 300612:
+	java.util.HashMap.put(HashMap.java:612)
+	org.h2.index.ScanIndex.incrementRowCount(ScanIndex.java:164)
+	org.h2.index.ScanIndex.remove(ScanIndex.java:204)
+	org.h2.table.TableData.removeRow(TableData.java:371)
+TRACE 300629:
+	org.h2.command.CommandContainer.recompileIfRequired(CommandContainer.java:44)
+	org.h2.command.CommandContainer.query(CommandContainer.java:78)
+	org.h2.command.Command.executeQueryLocal(Command.java:142)
+	org.h2.command.Command.executeQuery(Command.java:123)
+TRACE 300633:
+	java.text.MessageFormat.applyPattern(MessageFormat.java:436)
+	java.text.MessageFormat.<init>(MessageFormat.java:362)
+	java.text.MessageFormat.format(MessageFormat.java:840)
+	org.h2.message.Message.translate(Message.java:95)
+TRACE 300649:
+	org.h2.index.IndexCursor.getSearchRow(IndexCursor.java:154)
+	org.h2.table.TableFilter.next(TableFilter.java:280)
+	org.h2.command.dml.Update.update(Update.java:87)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+TRACE 300650:
+	org.h2.command.dml.Update.update(Update.java:87)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+	org.h2.command.Command.executeUpdate(Command.java:209)
+	org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:176)
+TRACE 300654:
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.iteration(<Unknown Source>:Unknown line)
+TRACE 300661:
+	org.apache.derbyTesting.system.oe.direct.Standard.orderStatus(Standard.java:259)
+	org.apache.derbyTesting.system.oe.client.Submitter.runOrderStatus(Submitter.java:493)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+TRACE 300672:
+	org.h2.index.IndexCursor.getSearchRow(IndexCursor.java:154)
+	org.h2.table.TableFilter.next(TableFilter.java:280)
+	org.h2.command.dml.Delete.update(Delete.java:55)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+TRACE 300674:
+	java.util.HashMap.put(HashMap.java:612)
+	org.h2.index.ScanIndex.incrementRowCount(ScanIndex.java:164)
+	org.h2.index.ScanIndex.commit(ScanIndex.java:155)
+	org.h2.log.UndoLogRecord.commit(UndoLogRecord.java:223)
+TRACE 300740:
+	org.apache.derbyTesting.system.oe.direct.Standard.stockLevel(Standard.java:143)
+	org.apache.derbyTesting.system.oe.client.Submitter.runStockLevel(Submitter.java:477)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+TRACE 300394:
+	org.h2.command.dml.Select.queryFlat(Select.java:493)
+	org.h2.command.dml.Select.queryWithoutCache(Select.java:556)
+	org.h2.command.dml.Query.query(Query.java:236)
+	org.h2.command.CommandContainer.query(CommandContainer.java:82)
+TRACE 300530:
+	org.h2.value.Value.cache(Value.java:343)
+	org.h2.value.ValueDecimal.get(ValueDecimal.java:198)
+	org.h2.value.ValueDecimal.convertScale(ValueDecimal.java:176)
+	org.h2.table.Column.validateConvertUpdateSequence(Column.java:311)
+TRACE 300596:
+	org.h2.value.ValueDecimal.equals(ValueDecimal.java:207)
+	org.h2.value.Value.cache(Value.java:343)
+	org.h2.value.ValueDecimal.get(ValueDecimal.java:198)
+	org.h2.value.ValueDecimal.convertScale(ValueDecimal.java:176)
+TRACE 300604:
+	org.h2.value.Value.compareTo(Value.java:844)
+	org.h2.engine.Database.areEqual(Database.java:293)
+	org.h2.expression.Comparison.compareNotNull(Comparison.java:257)
+	org.h2.expression.Comparison.getValue(Comparison.java:239)
+TRACE 300670:
+	org.h2.value.Value.cache(Value.java:343)
+	org.h2.value.ValueDouble.get(ValueDouble.java:136)
+	org.h2.jdbc.JdbcPreparedStatement.setDouble(JdbcPreparedStatement.java:568)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:516)
+TRACE 300681:
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.apache.derbyTesting.system.oe.direct.StatementHelper.getAddress(StatementHelper.java:130)
+	org.apache.derbyTesting.system.oe.direct.StatementHelper.getAddress(StatementHelper.java:112)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:477)
+TRACE 300703:
+	org.apache.derbyTesting.system.oe.direct.Standard.orderStatus(Standard.java:250)
+	org.apache.derbyTesting.system.oe.client.Submitter.runOrderStatus(Submitter.java:493)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+TRACE 300705:
+	java.util.HashMap.put(HashMap.java:612)
+	org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:2947)
+	org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3038)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:282)
+TRACE 300718:
+	java.util.HashMap.put(HashMap.java:612)
+	java.util.HashSet.add(HashSet.java:220)
+	org.h2.index.ScanIndex.remove(ScanIndex.java:202)
+	org.h2.table.TableData.removeRow(TableData.java:371)
+TRACE 300737:
+	org.apache.derbyTesting.system.oe.direct.Standard.stockLevel(Standard.java:159)
+	org.apache.derbyTesting.system.oe.client.Submitter.runStockLevel(Submitter.java:477)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+TRACE 300770:
+	java.util.HashMap.put(HashMap.java:612)
+	org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:2955)
+	org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3038)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:282)
+TRACE 300777:
+	org.h2.expression.Comparison.getValue(Comparison.java:233)
+	org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:86)
+	org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:109)
+	org.h2.expression.Expression.getBooleanValue(Expression.java:188)
+TRACE 300788:
+	java.lang.Object.wait(Object.java:Unknown line)
+	org.h2.command.Command.executeUpdate(Command.java:218)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:139)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:128)
+TRACE 300323:
+	org.h2.table.Column.validateConvertUpdateSequence(Column.java:311)
+	org.h2.table.Table.validateConvertUpdateSequence(Table.java:599)
+	org.h2.command.dml.Insert.insertRows(Insert.java:116)
+	org.h2.command.dml.Insert.update(Insert.java:82)
+TRACE 300357:
+	org.h2.index.MultiVersionIndex.compareRows(MultiVersionIndex.java:182)
+	org.h2.table.TableData$1.compare(TableData.java:327)
+	org.h2.table.TableData$1.compare(TableData.java:325)
+	org.h2.util.ObjectArray.sort(ObjectArray.java:317)
+TRACE 300359:
+	org.h2.index.MultiVersionIndex.compareRows(MultiVersionIndex.java:182)
+	org.h2.table.TableData$1.compare(TableData.java:327)
+	org.h2.table.TableData$1.compare(TableData.java:325)
+	org.h2.util.ObjectArray.sort(ObjectArray.java:320)
+TRACE 300395:
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.preIterationMemoryDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.preIteration(<Unknown Source>:Unknown line)
+TRACE 300408:
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.preIterationMemoryDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.preIteration(<Unknown Source>:Unknown line)
+TRACE 300451:
+	org.h2.table.TableData.lock(TableData.java:431)
+	org.h2.engine.Database.addMeta(Database.java:864)
+	org.h2.engine.Database.update(Database.java:1523)
+	org.h2.command.dml.Set.addOrUpdateSetting(Set.java:365)
+TRACE 300460:
+	org.h2.command.Command.executeUpdate(Command.java:202)
+	org.h2.jdbc.JdbcConnection.commit(JdbcConnection.java:405)
+	org.apache.derbyTesting.system.oe.direct.Standard.newOrder(Standard.java:756)
+	org.apache.derbyTesting.system.oe.client.Submitter.runNewOrder(Submitter.java:429)
+TRACE 300469:
+	org.h2.command.Command.executeQueryLocal(Command.java:138)
+	org.h2.command.Command.executeQuery(Command.java:123)
+	org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:98)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:542)
+TRACE 300559:
+	java.io.FileOutputStream.close0(FileOutputStream.java:Unknown line)
+	java.io.FileOutputStream.access$000(FileOutputStream.java:53)
+	java.io.FileOutputStream$1.close(FileOutputStream.java:356)
+	java.io.FileDescriptor.closeAll(FileDescriptor.java:212)
+TRACE 300631:
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.apache.derbyTesting.system.oe.direct.StatementHelper.getAddress(StatementHelper.java:134)
+	org.apache.derbyTesting.system.oe.direct.StatementHelper.getAddress(StatementHelper.java:112)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:477)
+TRACE 300634:
+	org.apache.derbyTesting.system.oe.direct.Standard.getOrderStatusForCustomer(Standard.java:301)
+	org.apache.derbyTesting.system.oe.direct.Standard.orderStatus(Standard.java:256)
+	org.apache.derbyTesting.system.oe.client.Submitter.runOrderStatus(Submitter.java:493)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+TRACE 300641:
+	org.h2.value.Value.cache(Value.java:343)
+	org.h2.value.ValueDouble.get(ValueDouble.java:136)
+	org.h2.jdbc.JdbcPreparedStatement.setDouble(JdbcPreparedStatement.java:568)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:458)
+TRACE 300646:
+	org.h2.index.MultiVersionCursor.next(MultiVersionCursor.java:105)
+	org.h2.constraint.ConstraintReferential.found(ConstraintReferential.java:336)
+	org.h2.constraint.ConstraintReferential.checkRow(ConstraintReferential.java:375)
+	org.h2.constraint.ConstraintReferential.checkRowRefTable(ConstraintReferential.java:393)
+TRACE 300657:
+	java.util.IdentityHashMap.get(IdentityHashMap.java:337)
+	org.apache.derbyTesting.system.oe.direct.StatementHelper.prepareStatement(StatementHelper.java:71)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:441)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:377)
+TRACE 300660:
+	org.h2.command.CommandContainer.update(CommandContainer.java:71)
+	org.h2.command.Command.executeUpdate(Command.java:209)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:139)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:128)
+TRACE 300676:
+	org.h2.value.Value.convertTo(Value.java:490)
+	org.h2.table.Column.convert(Column.java:148)
+	org.h2.command.dml.Update.update(Update.java:102)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+TRACE 300684:
+	org.h2.command.Command.executeQueryLocal(Command.java:138)
+	org.h2.command.Command.executeQuery(Command.java:123)
+	org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:98)
+	org.apache.derbyTesting.system.oe.direct.Standard.newOrder(Standard.java:601)
+TRACE 300688:
+	org.h2.command.dml.Select.isEverything(Select.java:1047)
+	org.h2.command.dml.Query.isEverything(Query.java:418)
+	org.h2.command.dml.Query.query(Query.java:223)
+	org.h2.command.CommandContainer.query(CommandContainer.java:82)
+TRACE 300689:
+	org.h2.command.dml.Select.isEverything(Select.java:1078)
+	org.h2.command.dml.Query.isEverything(Query.java:418)
+	org.h2.command.dml.Query.query(Query.java:223)
+	org.h2.command.CommandContainer.query(CommandContainer.java:82)
+TRACE 300692:
+	org.h2.index.BaseIndex.compareRows(BaseIndex.java:240)
+	org.h2.index.TreeIndex.add(TreeIndex.java:54)
+	org.h2.index.MultiVersionIndex.remove(MultiVersionIndex.java:153)
+	org.h2.table.TableData.removeRow(TableData.java:371)
+TRACE 300695:
+	org.h2.index.BaseIndex.compareRows(BaseIndex.java:240)
+	org.h2.index.TreeCursor.next(TreeCursor.java:49)
+	org.h2.index.MultiVersionIndex.removeIfExists(MultiVersionIndex.java:133)
+	org.h2.index.MultiVersionIndex.remove(MultiVersionIndex.java:150)
+TRACE 300701:
+	org.h2.command.dml.Select.queryWithoutCache(Select.java:544)
+	org.h2.command.dml.Query.query(Query.java:236)
+	org.h2.command.CommandContainer.query(CommandContainer.java:82)
+	org.h2.command.Command.executeQueryLocal(Command.java:142)
+TRACE 300727:
+	org.h2.command.dml.Delete.update(Delete.java:55)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+	org.h2.command.Command.executeUpdate(Command.java:209)
+	org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:176)
+TRACE 300742:
+	org.h2.command.Command.executeUpdate(Command.java:210)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:139)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:128)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:537)
+TRACE 300756:
+	org.h2.index.IndexCursor.find(IndexCursor.java:107)
+	org.h2.table.TableFilter.next(TableFilter.java:255)
+	org.h2.command.dml.Select.queryFlat(Select.java:489)
+	org.h2.command.dml.Select.queryWithoutCache(Select.java:556)
+TRACE 300858:
+	org.h2.value.Value.cache(Value.java:343)
+	org.h2.value.ValueShort.get(ValueShort.java:132)
+	org.h2.jdbc.JdbcPreparedStatement.setShort(JdbcPreparedStatement.java:514)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:517)
+TRACE 300062:
+	java.lang.ClassLoader.defineClass1(ClassLoader.java:Unknown line)
+	java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	java.net.URLClassLoader.defineClass(URLClassLoader.java:467)
+TRACE 300123:
+	java.util.zip.Inflater.inflateBytes(Inflater.java:Unknown line)
+	java.util.zip.Inflater.inflate(Inflater.java:259)
+	java.util.zip.InflaterInputStream.read(InflaterInputStream.java:152)
+	java.io.FilterInputStream.read(FilterInputStream.java:133)
+TRACE 300334:
+	java.lang.Object.clone(Object.java:Unknown line)
+	java.util.Date.clone(Date.java:283)
+	org.h2.value.ValueTimestamp.get(ValueTimestamp.java:128)
+	org.h2.jdbc.JdbcPreparedStatement.setTimestamp(JdbcPreparedStatement.java:389)
+TRACE 300380:
+	org.h2.table.TableData.addIndex(TableData.java:248)
+	org.h2.command.ddl.AlterTableAddConstraint.createIndex(AlterTableAddConstraint.java:275)
+	org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:203)
+	org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:89)
+TRACE 300386:
+	java.sql.Timestamp.toString(Timestamp.java:339)
+	org.h2.value.ValueTimestamp.getString(ValueTimestamp.java:86)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+TRACE 300397:
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.preIterationMemoryDB(<Unknown Source>:Unknown line)
+TRACE 300456:
+	org.h2.command.Parser.initialize(Parser.java:2807)
+	org.h2.command.Parser.parse(Parser.java:278)
+	org.h2.command.Parser.parse(Parser.java:263)
+	org.h2.command.Parser.prepareCommand(Parser.java:235)
+TRACE 300457:
+	org.h2.command.Command.executeUpdate(Command.java:259)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:139)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:128)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:519)
+TRACE 300597:
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:485)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:377)
+	org.apache.derbyTesting.system.oe.client.Submitter.runPayment(Submitter.java:448)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+TRACE 300601:
+	org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3038)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:282)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:479)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:377)
+TRACE 300602:
+	org.apache.derbyTesting.system.oe.direct.Standard.stockLevel(Standard.java:163)
+	org.apache.derbyTesting.system.oe.client.Submitter.runStockLevel(Submitter.java:477)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+TRACE 300608:
+	org.h2.index.BaseIndex.compareRows(BaseIndex.java:240)
+	org.h2.index.TreeCursor.next(TreeCursor.java:56)
+	org.h2.index.MultiVersionIndex.removeIfExists(MultiVersionIndex.java:133)
+	org.h2.index.MultiVersionIndex.commit(MultiVersionIndex.java:173)
+TRACE 300622:
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.iteration(<Unknown Source>:Unknown line)
+	sun.reflect.NativeMethodAccessorImpl.invoke0(NativeMethodAccessorImpl.java:Unknown line)
+TRACE 300647:
+	org.h2.expression.Comparison.getValue(Comparison.java:233)
+	org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:109)
+	org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:109)
+	org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:109)
+TRACE 300655:
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.iteration(<Unknown Source>:Unknown line)
+TRACE 300658:
+	org.h2.expression.ConditionAndOr.isEverything(ConditionAndOr.java:252)
+	org.h2.expression.ConditionAndOr.isEverything(ConditionAndOr.java:252)
+	org.h2.command.dml.Select.isEverything(Select.java:1083)
+	org.h2.command.dml.Query.isEverything(Query.java:418)
+TRACE 300662:
+	org.h2.util.StringUtils.toUpperEnglish(StringUtils.java:54)
+	org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:2946)
+	org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3038)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:282)
+TRACE 300710:
+	org.h2.command.Command.executeQueryLocal(Command.java:138)
+	org.h2.command.Command.executeQuery(Command.java:123)
+	org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:98)
+	org.apache.derbyTesting.system.oe.direct.Standard.newOrder(Standard.java:620)
+TRACE 300720:
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:516)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:377)
+	org.apache.derbyTesting.system.oe.client.Submitter.runPayment(Submitter.java:448)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+TRACE 300734:
+	org.h2.table.Table.validateConvertUpdateSequence(Table.java:590)
+	org.h2.command.dml.Update.update(Update.java:106)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+	org.h2.command.Command.executeUpdate(Command.java:209)
+TRACE 300736:
+	org.h2.command.Command.executeUpdate(Command.java:202)
+	org.h2.jdbc.JdbcConnection.commit(JdbcConnection.java:405)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:566)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:377)
+TRACE 300745:
+	org.h2.table.Table.fireConstraints(Table.java:774)
+	org.h2.table.Table.fireAfterRow(Table.java:789)
+	org.h2.command.dml.Delete.update(Delete.java:77)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+TRACE 300778:
+	org.h2.util.ObjectArray.ensureCapacity(ObjectArray.java:168)
+	org.h2.util.ObjectArray.add(ObjectArray.java:98)
+	org.h2.result.LocalResult.addRow(LocalResult.java:274)
+	org.h2.command.dml.Select.queryFlat(Select.java:497)
+TRACE 300780:
+	java.lang.AbstractStringBuilder.<init>(AbstractStringBuilder.java:68)
+	java.lang.StringBuilder.<init>(StringBuilder.java:89)
+	org.dacapo.harness.Callback.start(Callback.java:161)
+	org.dacapo.harness.Callback.start(Callback.java:157)
+TRACE 300783:
+	org.h2.command.Command.executeUpdate(Command.java:202)
+	org.h2.jdbc.JdbcConnection.rollbackInternal(JdbcConnection.java:1366)
+	org.h2.jdbc.JdbcConnection.rollback(JdbcConnection.java:422)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:399)
+TRACE 300790:
+	org.h2.value.Value.convertTo(Value.java:490)
+	org.h2.expression.Comparison.getValue(Comparison.java:238)
+	org.h2.expression.Expression.getBooleanValue(Expression.java:188)
+	org.h2.command.dml.Delete.update(Delete.java:57)
+TRACE 300793:
+	org.h2.constraint.ConstraintReferential.checkRowOwnTable(ConstraintReferential.java:290)
+	org.h2.constraint.ConstraintReferential.checkRow(ConstraintReferential.java:269)
+	org.h2.table.Table.fireConstraints(Table.java:774)
+	org.h2.table.Table.fireAfterRow(Table.java:789)
+TRACE 300814:
+	org.h2.value.Value.compareTo(Value.java:843)
+	org.h2.engine.Database.areEqual(Database.java:293)
+	org.h2.command.dml.Query.sameResultAsLast(Query.java:191)
+	org.h2.command.dml.Query.query(Query.java:225)
+TRACE 300816:
+	org.h2.value.Value.convertTo(Value.java:490)
+	org.h2.expression.Comparison.getValue(Comparison.java:237)
+	org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:109)
+	org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:109)
+TRACE 300850:
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:458)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:377)
+	org.apache.derbyTesting.system.oe.client.Submitter.runPayment(Submitter.java:448)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+TRACE 300869:
+	sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	java.lang.Double.parseDouble(Double.java:538)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:455)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:377)
+TRACE 300065:
+	java.lang.ClassLoader.findBootstrapClass(ClassLoader.java:Unknown line)
+	java.lang.ClassLoader.findBootstrapClassOrNull(ClassLoader.java:1015)
+	java.lang.ClassLoader.loadClass(ClassLoader.java:413)
+	java.lang.ClassLoader.loadClass(ClassLoader.java:411)
+TRACE 300117:
+	java.io.UnixFileSystem.delete0(UnixFileSystem.java:Unknown line)
+	java.io.UnixFileSystem.delete(UnixFileSystem.java:265)
+	java.io.File.delete(File.java:1041)
+	org.dacapo.harness.TestHarness.rmdir(TestHarness.java:217)
+TRACE 300124:
+	sun.net.www.ParseUtil.canonizeString(ParseUtil.java:230)
+	sun.net.www.protocol.jar.Handler.parseURL(Handler.java:160)
+	java.net.URL.<init>(URL.java:622)
+	java.net.URL.<init>(URL.java:490)
+TRACE 300315:
+	org.h2.value.Value.convertTo(Value.java:490)
+	org.h2.table.Column.convert(Column.java:148)
+	org.h2.command.dml.Insert.insertRows(Insert.java:108)
+	org.h2.command.dml.Insert.update(Insert.java:82)
+TRACE 300327:
+	org.h2.engine.Session.commit(Session.java:464)
+	org.h2.command.dml.TransactionCommand.update(TransactionCommand.java:123)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+	org.h2.command.Command.executeUpdate(Command.java:209)
+TRACE 300333:
+	java.lang.System.currentTimeMillis(System.java:Unknown line)
+	org.h2.expression.Function.getSimpleValue(Function.java:674)
+	org.h2.expression.Function.getValueWithArgs(Function.java:860)
+	org.h2.expression.Function.getValue(Function.java:419)
+TRACE 300338:
+	org.h2.table.TableData.lock(TableData.java:433)
+	org.h2.command.dml.Insert.insertRows(Insert.java:118)
+	org.h2.command.dml.Insert.update(Insert.java:82)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+TRACE 300340:
+	org.h2.index.ScanIndex.commit(ScanIndex.java:155)
+	org.h2.log.UndoLogRecord.commit(UndoLogRecord.java:223)
+	org.h2.engine.Session.commit(Session.java:462)
+	org.h2.command.dml.TransactionCommand.update(TransactionCommand.java:123)
+TRACE 300343:
+	org.h2.log.UndoLog.clear(UndoLog.java:58)
+	org.h2.engine.Session.commit(Session.java:470)
+	org.h2.command.dml.TransactionCommand.update(TransactionCommand.java:123)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+TRACE 300352:
+	org.h2.util.ObjectArray.sort(ObjectArray.java:320)
+	org.h2.util.ObjectArray.sort(ObjectArray.java:327)
+	org.h2.util.ObjectArray.sort(ObjectArray.java:286)
+	org.h2.table.TableData.addRowsToIndex(TableData.java:324)
+TRACE 300358:
+	org.h2.table.TableData.addIndex(TableData.java:248)
+	org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:142)
+	org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:89)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+TRACE 300365:
+	org.h2.index.MultiVersionCursor.next(MultiVersionCursor.java:106)
+	org.h2.index.IndexCursor.next(IndexCursor.java:165)
+	org.h2.table.TableFilter.next(TableFilter.java:279)
+	org.h2.command.dml.Select.queryFlat(Select.java:489)
+TRACE 300368:
+	org.h2.result.LocalResult.getList(LocalResult.java:160)
+	org.h2.result.LocalResult.<init>(LocalResult.java:84)
+	org.h2.command.dml.Select.queryWithoutCache(Select.java:535)
+	org.h2.command.dml.Query.query(Query.java:236)
+TRACE 300374:
+	org.h2.value.ValueInt.compareSecure(ValueInt.java:135)
+	org.h2.value.Value.compareTypeSave(Value.java:803)
+	org.h2.table.Table.compareTypeSave(Table.java:933)
+	org.h2.index.BaseIndex.compareValues(BaseIndex.java:299)
+TRACE 300379:
+	org.h2.util.ObjectArray.sort(ObjectArray.java:320)
+	org.h2.util.ObjectArray.sort(ObjectArray.java:327)
+	org.h2.util.ObjectArray.sort(ObjectArray.java:327)
+	org.h2.util.ObjectArray.sort(ObjectArray.java:327)
+TRACE 300390:
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.preIterationMemoryDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.preIteration(<Unknown Source>:Unknown line)
+TRACE 300391:
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:266)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.preIterationMemoryDB(<Unknown Source>:Unknown line)
+TRACE 300426:
+	org.h2.table.TableFilter.getBestPlanItem(TableFilter.java:140)
+	org.h2.table.Plan.calculateCost(Plan.java:110)
+	org.h2.command.dml.Optimizer.testPlan(Optimizer.java:180)
+	org.h2.command.dml.Optimizer.calculateBestPlan(Optimizer.java:84)
+TRACE 300587:
+	org.h2.value.Value.cache(Value.java:343)
+	org.h2.value.ValueStringFixed.get(ValueStringFixed.java:70)
+	org.h2.value.Value.convertTo(Value.java:761)
+	org.h2.table.Column.convert(Column.java:148)
+TRACE 300588:
+	org.apache.derbyTesting.system.oe.direct.Standard.orderStatus(Standard.java:223)
+	org.apache.derbyTesting.system.oe.client.Submitter.runOrderStatus(Submitter.java:488)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+TRACE 300611:
+	org.h2.value.Value.convertTo(Value.java:490)
+	org.h2.expression.Comparison.getValue(Comparison.java:237)
+	org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:86)
+	org.h2.expression.Expression.getBooleanValue(Expression.java:188)
+TRACE 300632:
+	org.h2.util.StringUtils.toUpperEnglish(StringUtils.java:54)
+	org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:2942)
+	org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3038)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:282)
+TRACE 300637:
+	org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3038)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:282)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:472)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:397)
+TRACE 300642:
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC$3.run(<Unknown Source>:Unknown line)
+TRACE 300644:
+	org.h2.command.Command.executeUpdate(Command.java:202)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:139)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:128)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:537)
+TRACE 300665:
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:459)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:377)
+	org.apache.derbyTesting.system.oe.client.Submitter.runPayment(Submitter.java:448)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+TRACE 300667:
+	org.h2.table.Column.validateConvertUpdateSequence(Column.java:313)
+	org.h2.table.Table.validateConvertUpdateSequence(Table.java:599)
+	org.h2.command.dml.Update.update(Update.java:106)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+TRACE 300675:
+	org.h2.index.TreeIndex.next(TreeIndex.java:325)
+	org.h2.index.TreeCursor.next(TreeCursor.java:53)
+	org.h2.index.MultiVersionIndex.removeIfExists(MultiVersionIndex.java:133)
+	org.h2.index.MultiVersionIndex.commit(MultiVersionIndex.java:173)
+TRACE 300678:
+	org.h2.index.MultiVersionIndex.remove(MultiVersionIndex.java:149)
+	org.h2.table.TableData.removeRow(TableData.java:371)
+	org.h2.table.Table.updateRows(Table.java:391)
+	org.h2.command.dml.Update.update(Update.java:123)
+TRACE 300679:
+	org.h2.index.TreeIndex.findFirstNode(TreeIndex.java:276)
+	org.h2.index.TreeIndex.remove(TreeIndex.java:140)
+	org.h2.index.MultiVersionIndex.removeIfExists(MultiVersionIndex.java:139)
+	org.h2.index.MultiVersionIndex.commit(MultiVersionIndex.java:173)
+TRACE 300694:
+	org.h2.index.MultiVersionIndex.removeIfExists(MultiVersionIndex.java:139)
+	org.h2.index.MultiVersionIndex.commit(MultiVersionIndex.java:173)
+	org.h2.log.UndoLogRecord.commit(UndoLogRecord.java:223)
+	org.h2.engine.Session.commit(Session.java:462)
+TRACE 300700:
+	org.h2.command.Parser.readFactor(Parser.java:1850)
+	org.h2.command.Parser.readSum(Parser.java:1837)
+	org.h2.command.Parser.readConcat(Parser.java:1810)
+	org.h2.command.Parser.readCondition(Parser.java:1681)
+TRACE 300704:
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:480)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:377)
+	org.apache.derbyTesting.system.oe.client.Submitter.runPayment(Submitter.java:448)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+TRACE 300706:
+	org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3038)
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:282)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:484)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:377)
+TRACE 300707:
+	org.h2.engine.Database.update(Database.java:1521)
+	org.h2.command.dml.Set.addOrUpdateSetting(Set.java:365)
+	org.h2.command.dml.Set.update(Set.java:169)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+TRACE 300708:
+	org.h2.index.MultiVersionIndex.remove(MultiVersionIndex.java:148)
+	org.h2.table.TableData.removeRow(TableData.java:371)
+	org.h2.engine.Database.removeMeta(Database.java:887)
+	org.h2.engine.Database.update(Database.java:1522)
+TRACE 300716:
+	org.h2.command.dml.Update.update(Update.java:102)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+	org.h2.command.Command.executeUpdate(Command.java:209)
+	org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:176)
+TRACE 300717:
+	java.math.BigDecimal.toBigInteger(BigDecimal.java:3025)
+	java.math.BigDecimal.intValue(BigDecimal.java:3130)
+	org.h2.value.ValueTimestamp.convertScale(ValueTimestamp.java:153)
+	org.h2.table.Column.validateConvertUpdateSequence(Column.java:311)
+TRACE 300721:
+	org.h2.value.Value.cache(Value.java:343)
+	org.h2.value.ValueString.get(ValueString.java:91)
+	org.h2.jdbc.JdbcPreparedStatement.setString(JdbcPreparedStatement.java:313)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:561)
+TRACE 300728:
+	org.h2.index.TreeIndex.add(TreeIndex.java:66)
+	org.h2.index.MultiVersionIndex.remove(MultiVersionIndex.java:153)
+	org.h2.table.TableData.removeRow(TableData.java:371)
+	org.h2.command.dml.Delete.update(Delete.java:71)
+TRACE 300747:
+	org.h2.index.BaseIndex.compareRows(BaseIndex.java:240)
+	org.h2.index.TreeCursor.next(TreeCursor.java:49)
+	org.h2.index.MultiVersionIndex.removeIfExists(MultiVersionIndex.java:133)
+	org.h2.index.MultiVersionIndex.commit(MultiVersionIndex.java:173)
+TRACE 300748:
+	org.h2.expression.Comparison.getValue(Comparison.java:237)
+	org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:86)
+	org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:109)
+	org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:109)
+TRACE 300759:
+	java.math.BigInteger.abs(BigInteger.java:2422)
+	org.h2.value.ValueDecimal.getPrecision(ValueDecimal.java:138)
+	org.h2.value.ValueDecimal.checkPrecision(ValueDecimal.java:147)
+	org.h2.table.Column.validateConvertUpdateSequence(Column.java:313)
+TRACE 300760:
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC$3.run(<Unknown Source>:Unknown line)
+TRACE 300762:
+	java.util.HashMap.resize(HashMap.java:735)
+	java.util.HashMap.putVal(HashMap.java:663)
+	java.util.HashMap.put(HashMap.java:612)
+	org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:2943)
+TRACE 300763:
+	org.h2.expression.Function.getNullOrValue(Function.java:426)
+	org.h2.expression.Function.getValueWithArgs(Function.java:859)
+	org.h2.expression.Function.getValue(Function.java:419)
+	org.h2.expression.Operation.getValue(Operation.java:96)
+TRACE 300772:
+	org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:282)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:472)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:397)
+	org.apache.derbyTesting.system.oe.client.Submitter.runPayment(Submitter.java:455)
+TRACE 300773:
+	org.h2.value.Value.cache(Value.java:343)
+	org.h2.value.ValueShort.get(ValueShort.java:132)
+	org.h2.jdbc.JdbcPreparedStatement.setShort(JdbcPreparedStatement.java:514)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:460)
+TRACE 300774:
+	org.h2.value.Value.compareTo(Value.java:843)
+	org.h2.engine.Database.areEqual(Database.java:293)
+	org.h2.expression.Comparison.compareNotNull(Comparison.java:257)
+	org.h2.expression.Comparison.getValue(Comparison.java:239)
+TRACE 300776:
+	org.h2.value.Value.compareTo(Value.java:843)
+	org.h2.engine.Database.areEqual(Database.java:293)
+	org.h2.expression.Comparison.compareNotNull(Comparison.java:260)
+	org.h2.expression.Comparison.getValue(Comparison.java:239)
+TRACE 300785:
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:562)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:377)
+	org.apache.derbyTesting.system.oe.client.Submitter.runPayment(Submitter.java:448)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+TRACE 300786:
+	java.math.BigDecimal.divideAndRound(BigDecimal.java:4331)
+	java.math.BigDecimal.setScale(BigDecimal.java:2470)
+	org.h2.util.MathUtils.setScale(MathUtils.java:116)
+	org.h2.value.ValueDecimal.convertScale(ValueDecimal.java:175)
+TRACE 300787:
+	org.h2.command.dml.Update.update(Update.java:123)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+	org.h2.command.Command.executeUpdate(Command.java:209)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:139)
+TRACE 300797:
+	java.lang.Runtime.gc(Runtime.java:Unknown line)
+	java.lang.System.gc(System.java:993)
+	org.dacapo.harness.Benchmark.run(Benchmark.java:178)
+	org.dacapo.harness.TestHarness.runBenchmark(TestHarness.java:199)
+TRACE 300799:
+	org.h2.command.Command.executeUpdate(Command.java:259)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:139)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:128)
+	org.apache.derbyTesting.system.oe.direct.Standard.newOrder(Standard.java:612)
+TRACE 300801:
+	org.h2.table.Table.fireConstraints(Table.java:774)
+	org.h2.table.Table.fireBeforeRow(Table.java:767)
+	org.h2.command.dml.Delete.update(Delete.java:60)
+	org.h2.command.CommandContainer.update(CommandContainer.java:72)
+TRACE 300802:
+	org.h2.value.Value.convertTo(Value.java:490)
+	org.h2.expression.Comparison.getValue(Comparison.java:238)
+	org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:86)
+	org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:109)
+TRACE 300803:
+	org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:86)
+	org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:109)
+	org.h2.expression.Expression.getBooleanValue(Expression.java:188)
+	org.h2.command.dml.Update.update(Update.java:89)
+TRACE 300804:
+	org.h2.command.dml.Select.queryFlat(Select.java:489)
+	org.h2.command.dml.Select.queryWithoutCache(Select.java:556)
+	org.h2.command.dml.Query.query(Query.java:236)
+	org.h2.command.CommandContainer.query(CommandContainer.java:82)
+TRACE 300807:
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:485)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:397)
+	org.apache.derbyTesting.system.oe.client.Submitter.runPayment(Submitter.java:455)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+TRACE 300809:
+	java.math.BigInteger.toString(BigInteger.java:3858)
+	org.h2.value.ValueDecimal.getPrecision(ValueDecimal.java:138)
+	org.h2.value.ValueDecimal.convertPrecision(ValueDecimal.java:180)
+	org.h2.expression.Function.getSimpleValue(Function.java:714)
+TRACE 300810:
+	java.util.HashMap.resize(HashMap.java:735)
+	java.util.HashMap.putVal(HashMap.java:663)
+	java.util.HashMap.put(HashMap.java:612)
+	org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:2947)
+TRACE 300818:
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC$3.run(<Unknown Source>:Unknown line)
+TRACE 300836:
+	org.h2.command.Command.executeUpdate(Command.java:202)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:139)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:128)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:563)
+TRACE 300838:
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:139)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:128)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:463)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:397)
+TRACE 300841:
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC$3.run(<Unknown Source>:Unknown line)
+TRACE 300845:
+	org.h2.expression.Comparison.compareNotNull(Comparison.java:260)
+	org.h2.expression.Comparison.getValue(Comparison.java:239)
+	org.h2.expression.Expression.getBooleanValue(Expression.java:188)
+	org.h2.command.dml.Update.update(Update.java:89)
+TRACE 300851:
+	java.text.MessageFormat.<init>(MessageFormat.java:362)
+	java.text.MessageFormat.format(MessageFormat.java:840)
+	org.h2.message.Message.translate(Message.java:95)
+	org.h2.message.Message.getSQLException(Message.java:110)
+TRACE 300861:
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.iteration(<Unknown Source>:Unknown line)
+	sun.reflect.GeneratedMethodAccessor2.invoke(<Unknown Source>:Unknown line)
+TRACE 300862:
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.iteration(<Unknown Source>:Unknown line)
+	sun.reflect.GeneratedMethodAccessor2.invoke(<Unknown Source>:Unknown line)
+TRACE 300868:
+	org.h2.util.MathUtils.setScale(MathUtils.java:116)
+	org.h2.value.ValueDecimal.convertScale(ValueDecimal.java:175)
+	org.h2.table.Column.validateConvertUpdateSequence(Column.java:311)
+	org.h2.table.Table.validateConvertUpdateSequence(Table.java:599)
+TRACE 300874:
+	org.dacapo.h2.TPCC.report(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.iteration(<Unknown Source>:Unknown line)
+	sun.reflect.GeneratedMethodAccessor2.invoke(<Unknown Source>:Unknown line)
+	sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+TRACE 300878:
+	org.h2.command.Command.executeUpdate(Command.java:202)
+	org.h2.jdbc.JdbcConnection.commit(JdbcConnection.java:405)
+	org.apache.derbyTesting.system.oe.direct.Standard.paymentById(Standard.java:566)
+	org.apache.derbyTesting.system.oe.direct.Standard.payment(Standard.java:397)
+TRACE 300879:
+	org.h2.value.Value.compareTo(Value.java:844)
+	org.h2.engine.Database.areEqual(Database.java:293)
+	org.h2.command.dml.Query.sameResultAsLast(Query.java:191)
+	org.h2.command.dml.Query.query(Query.java:225)
+TRACE 300883:
+	org.h2.command.Command.executeUpdate(Command.java:202)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:139)
+	org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:128)
+	org.apache.derbyTesting.system.oe.direct.Standard.newOrder(Standard.java:612)
+TRACE 300884:
+	org.apache.derbyTesting.system.oe.direct.Standard.newOrder(Standard.java:757)
+	org.apache.derbyTesting.system.oe.client.Submitter.runNewOrder(Submitter.java:429)
+	org.dacapo.h2.TPCCSubmitter.runTransaction(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCCSubmitter.runTransactions(<Unknown Source>:Unknown line)
+TRACE 300890:
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.calculateSumDB(<Unknown Source>:Unknown line)
+	org.dacapo.h2.TPCC.iteration(<Unknown Source>:Unknown line)
+	sun.reflect.GeneratedMethodAccessor2.invoke(<Unknown Source>:Unknown line)
+TRACE 300905:
+	org.h2.util.StringUtils.toUpperEnglish(StringUtils.java:54)
+	org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:2960)
+	org.h2.jdbc.JdbcResultSet.findColumn(JdbcResultSet.java:168)
+	org.apache.derbyTesting.system.oe.direct.StatementHelper.getAddress(StatementHelper.java:129)
+CPU SAMPLES BEGIN (total = 19607) Thu Sep 27 22:45:58 2018
+rank   self  accum   count trace method
+   1 16,96% 16,96%    3326 300369 org.h2.index.MultiVersionCursor.getSearchRow
+   2 16,37% 33,33%    3209 300367 org.h2.index.MultiVersionCursor.next
+   3  5,41% 38,74%    1061 300370 org.h2.index.MultiVersionCursor.loadNext
+   4  3,99% 42,73%     782 300371 org.h2.index.MultiVersionIndex.find
+   5  3,14% 45,87%     615 300476 org.apache.derbyTesting.system.oe.client.Submitter.runPayment
+   6  3,00% 48,87%     589 300439 org.h2.index.MultiVersionCursor.getSearchRow
+   7  2,92% 51,79%     573 300428 java.lang.Throwable.fillInStackTrace
+   8  2,68% 54,47%     525 300423 org.h2.index.MultiVersionCursor.next
+   9  2,26% 56,73%     444 300438 org.h2.index.MultiVersionCursor.next
+  10  2,25% 58,99%     442 300324 java.lang.Object.hashCode
+  11  1,59% 60,58%     312 300468 org.apache.derbyTesting.system.oe.client.Submitter.runPayment
+  12  1,39% 61,97%     272 300465 org.h2.table.TableData.lock
+  13  1,34% 63,31%     263 300480 org.h2.table.TableData.lock
+  14  1,34% 64,65%     262 300444 org.apache.derbyTesting.system.oe.direct.Standard.paymentById
+  15  1,29% 65,93%     252 300546 org.h2.jdbc.JdbcResultSet.getString
+  16  1,28% 67,21%     250 300459 org.h2.index.MultiVersionIndex.remove
+  17  1,24% 68,45%     244 300383 org.h2.command.dml.Select.queryFlat
+  18  1,23% 69,68%     242 300483 org.h2.index.MultiVersionIndex.commit
+  19  1,14% 70,82%     223 300443 org.h2.index.MultiVersionIndex.find
+  20  1,06% 71,88%     208 300400 java.lang.String.valueOf
+  21  1,02% 72,90%     200 300479 org.apache.derbyTesting.system.oe.direct.Standard.payment
+  22  0,84% 73,74%     165 300445 org.h2.index.MultiVersionIndex.add
+  23  0,82% 74,56%     160 300478 org.h2.index.MultiVersionIndex.add
+  24  0,80% 75,36%     156 300471 org.apache.derbyTesting.system.oe.direct.Standard.paymentById
+  25  0,66% 76,02%     130 300488 org.h2.index.MultiVersionCursor.next
+  26  0,66% 76,68%     130 300543 org.h2.jdbc.JdbcResultSet.getString
+  27  0,64% 77,32%     126 300474 org.h2.index.MultiVersionIndex.find
+  28  0,56% 77,88%     109 300407 java.sql.Timestamp.toString
+  29  0,55% 78,43%     107 300403 org.h2.index.IndexCursor.next
+  30  0,54% 78,96%     105 300463 org.h2.index.MultiVersionCursor.next
+  31  0,51% 79,47%     100 300458 org.apache.derbyTesting.system.oe.direct.Standard.payment
+  32  0,49% 79,96%      96 300477 org.apache.derbyTesting.system.oe.direct.Standard.newOrder
+  33  0,49% 80,45%      96 300582 org.apache.derbyTesting.system.oe.direct.Standard.paymentById
+  34  0,44% 80,89%      87 300361 org.h2.value.Value.compareTypeSave
+  35  0,43% 81,33%      85 300533 org.h2.index.IndexCursor.next
+  36  0,36% 81,69%      71 300603 org.h2.index.MultiVersionIndex.remove
+  37  0,33% 82,02%      65 300372 org.h2.index.MultiVersionCursor.loadNext
+  38  0,33% 82,35%      65 300614 org.h2.jdbc.JdbcResultSet.getString
+  39  0,32% 82,67%      63 300581 org.h2.index.MultiVersionIndex.add
+  40  0,32% 82,99%      62 300409 java.sql.Timestamp.toString
+  41  0,32% 83,31%      62 300594 org.apache.derbyTesting.system.oe.client.Submitter.runOrderStatus
+  42  0,30% 83,60%      58 300489 org.h2.index.MultiVersionCursor.get
+  43  0,30% 83,90%      58 300527 org.h2.index.IndexCursor.next
+  44  0,29% 84,18%      56 300472 org.h2.index.MultiVersionIndex.find
+  45  0,28% 84,46%      54 300415 java.sql.Timestamp.toString
+  46  0,27% 84,72%      52 300493 org.h2.engine.Session.unlockAll
+  47  0,26% 84,98%      50 300645 org.h2.index.MultiVersionIndex.remove
+  48  0,24% 85,22%      48 300616 java.sql.Timestamp.toString
+  49  0,23% 85,46%      46 300496 org.dacapo.h2.TPCCSubmitter.runTransactions
+  50  0,22% 85,68%      44 300412 java.sql.Timestamp.toString
+  51  0,22% 85,91%      44 300464 org.apache.derbyTesting.system.oe.direct.Standard.payment
+  52  0,20% 86,11%      39 300402 java.sql.Timestamp.toString
+  53  0,20% 86,31%      39 300651 java.sql.Timestamp.toString
+  54  0,19% 86,50%      38 300849 org.dacapo.h2.TPCC.calculateSumDB
+  55  0,19% 86,69%      37 300542 org.dacapo.h2.TPCC.calculateSumDB
+  56  0,18% 86,87%      35 300450 org.h2.index.MultiVersionCursor.loadNext
+  57  0,17% 87,04%      34 300524 org.h2.index.BaseIndex.compareRows
+  58  0,17% 87,21%      34 300579 org.h2.index.MultiVersionCursor.getSearchRow
+  59  0,17% 87,39%      34 300589 org.apache.derbyTesting.system.oe.direct.Standard.payment
+  60  0,17% 87,56%      33 300411 java.sql.Timestamp.toString
+  61  0,17% 87,72%      33 300523 org.h2.expression.Comparison.getValue
+  62  0,16% 87,88%      31 300470 org.apache.derbyTesting.system.oe.direct.Standard.payment
+  63  0,15% 88,03%      30 300539 org.dacapo.h2.TPCC.calculateSumDB
+  64  0,14% 88,17%      27 300535 org.h2.index.BaseIndex.compareRows
+  65  0,14% 88,31%      27 300545 java.sql.Timestamp.toString
+  66  0,14% 88,45%      27 300557 org.h2.jdbc.JdbcResultSet.getString
+  67  0,14% 88,59%      27 300617 java.sql.Timestamp.toString
+  68  0,14% 88,72%      27 300732 org.h2.table.Table.updateRows
+  69  0,13% 88,86%      26 300351 org.h2.index.MultiVersionIndex.add
+  70  0,13% 88,99%      26 300544 org.h2.jdbc.JdbcResultSet.getString
+  71  0,13% 89,12%      26 300628 org.apache.derbyTesting.system.oe.direct.Standard.newOrder
+  72  0,13% 89,25%      25 300347 java.math.BigInteger.smallToString
+  73  0,13% 89,38%      25 300554 java.sql.Timestamp.toString
+  74  0,13% 89,50%      25 300555 java.sql.Timestamp.toString
+  75  0,13% 89,63%      25 300653 org.dacapo.h2.TPCC.calculateSumDB
+  76  0,12% 89,75%      24 300556 java.sql.Timestamp.toString
+  77  0,12% 89,88%      24 300615 java.sql.Timestamp.toString
+  78  0,12% 90,00%      24 300619 java.sql.Timestamp.toString
+  79  0,12% 90,12%      23 300549 java.sql.Timestamp.toString
+  80  0,12% 90,23%      23 300620 java.sql.Timestamp.toString
+  81  0,12% 90,35%      23 300630 org.h2.table.TableData.unlock
+  82  0,12% 90,47%      23 300659 org.apache.derbyTesting.system.oe.client.Submitter.runOrderStatus
+  83  0,12% 90,58%      23 300846 org.dacapo.h2.TPCC.calculateSumDB
+  84  0,12% 90,70%      23 300847 org.dacapo.h2.TPCC.calculateSumDB
+  85  0,11% 90,81%      22 300441 org.dacapo.h2.TPCCSubmitter.runTransaction
+  86  0,11% 90,93%      22 300540 java.sql.Timestamp.toString
+  87  0,11% 91,04%      22 300586 org.h2.table.Column.validateConvertUpdateSequence
+  88  0,11% 91,15%      22 300605 java.io.FileOutputStream.write
+  89  0,11% 91,26%      22 300613 java.sql.Timestamp.toString
+  90  0,11% 91,37%      21 300553 java.sql.Timestamp.toString
+  91  0,11% 91,48%      21 300575 java.io.FileOutputStream.writeBytes
+  92  0,11% 91,58%      21 300625 java.math.MutableBigInteger.divideKnuth
+  93  0,10% 91,69%      20 300475 org.h2.engine.Session.commit
+  94  0,10% 91,79%      20 300495 org.h2.table.TableData.unlock
+  95  0,10% 91,89%      20 300551 java.sql.Timestamp.toString
+  96  0,10% 91,99%      20 300621 java.sql.Timestamp.toString
+  97  0,10% 92,09%      19 300498 org.apache.derbyTesting.system.oe.direct.Standard.orderStatus
+  98  0,10% 92,19%      19 300643 java.math.BigDecimal.toString
+  99  0,09% 92,28%      18 300494 org.h2.index.MultiVersionIndex.find
+ 100  0,09% 92,37%      18 300541 java.sql.Timestamp.toString
+ 101  0,09% 92,46%      18 300548 java.sql.Timestamp.toString
+ 102  0,09% 92,55%      17 300482 org.h2.index.MultiVersionCursor.getSearchRow
+ 103  0,09% 92,64%      17 300497 org.apache.derbyTesting.system.oe.client.Submitter.runStockLevel
+ 104  0,09% 92,72%      17 300547 java.sql.Timestamp.toString
+ 105  0,09% 92,81%      17 300592 org.apache.derbyTesting.system.oe.direct.Standard.orderStatus
+ 106  0,09% 92,90%      17 300656 org.apache.derbyTesting.system.oe.direct.Standard.payment
+ 107  0,08% 92,98%      16 300353 org.h2.index.BaseIndex.compareRows
+ 108  0,08% 93,06%      16 300376 org.h2.index.MultiVersionIndex.add
+ 109  0,08% 93,14%      16 300467 org.h2.value.Value.checkPrecision
+ 110  0,08% 93,22%      16 300538 org.h2.expression.Comparison.getValue
+ 111  0,08% 93,30%      16 300595 org.h2.command.Command.executeUpdate
+ 112  0,08% 93,39%      16 300719 org.h2.value.Value.convertTo
+ 113  0,08% 93,46%      15 300487 org.apache.derbyTesting.system.oe.direct.Standard.stockLevel
+ 114  0,08% 93,54%      15 300685 org.apache.derbyTesting.system.oe.direct.Standard.orderStatus
+ 115  0,08% 93,61%      15 300751 java.sql.Timestamp.toString
+ 116  0,07% 93,69%      14 300491 org.h2.index.MultiVersionCursor.next
+ 117  0,07% 93,76%      14 300693 org.h2.index.TreeIndex.findFirstNode
+ 118  0,07% 93,83%      14 300697 java.sql.Timestamp.toString
+ 119  0,07% 93,90%      13 300552 java.sql.Timestamp.toString
+ 120  0,07% 93,96%      13 300652 org.h2.index.IndexCursor.getSearchRow
+ 121  0,07% 94,03%      13 300723 org.h2.command.CommandContainer.recompileIfRequired
+ 122  0,06% 94,09%      12 300526 org.h2.index.TreeIndex.findFirstNode
+ 123  0,06% 94,15%      12 300638 org.h2.command.dml.Update.update
+ 124  0,06% 94,21%      12 300796 java.sql.Timestamp.toString
+ 125  0,06% 94,27%      11 300455 org.h2.engine.Session.unlockAll
+ 126  0,06% 94,32%      11 300583 org.h2.index.MultiVersionCursor.loadNext
+ 127  0,06% 94,38%      11 300590 org.h2.index.MultiVersionCursor.getSearchRow
+ 128  0,06% 94,44%      11 300591 org.h2.command.Command.executeUpdate
+ 129  0,06% 94,49%      11 300626 org.dacapo.h2.TPCCSubmitter.runTransaction
+ 130  0,05% 94,54%      10 300449 org.h2.command.Command.executeQueryLocal
+ 131  0,05% 94,59%      10 300454 org.dacapo.h2.TPCCSubmitter.runTransaction
+ 132  0,05% 94,64%      10 300481 org.h2.command.Command.executeQueryLocal
+ 133  0,05% 94,70%      10 300529 org.h2.index.TreeIndex.findFirstNode
+ 134  0,05% 94,75%      10 300531 org.h2.expression.Comparison.getValue
+ 135  0,05% 94,80%      10 300558 java.sql.Timestamp.toString
+ 136  0,05% 94,85%      10 300609 org.h2.expression.Comparison.getValue
+ 137  0,05% 94,90%      10 300636 org.h2.util.StringUtils.toUpperEnglish
+ 138  0,05% 94,95%      10 300739 org.h2.command.Command.executeUpdate
+ 139  0,05% 95,00%       9 300461 org.h2.command.Command.executeQueryLocal
+ 140  0,05% 95,04%       9 300584 java.lang.System.identityHashCode
+ 141  0,05% 95,09%       9 300627 org.h2.command.Command.executeQueryLocal
+ 142  0,05% 95,13%       9 300635 org.h2.command.Command.executeQueryLocal
+ 143  0,05% 95,18%       9 300696 org.h2.expression.Expression.getBooleanValue
+ 144  0,05% 95,23%       9 300712 java.math.BigInteger.toString
+ 145  0,04% 95,27%       8 300404 org.h2.jdbc.JdbcResultSet.getString
+ 146  0,04% 95,31%       8 300486 sun.misc.FloatingDecimal.parseDouble
+ 147  0,04% 95,35%       8 300550 java.sql.Timestamp.toString
+ 148  0,04% 95,39%       8 300668 java.math.BigDecimal.<init>
+ 149  0,04% 95,43%       8 300673 org.h2.index.BaseIndex.compareRows
+ 150  0,04% 95,47%       8 300698 java.sql.Timestamp.toString
+ 151  0,04% 95,51%       8 300722 org.h2.command.CommandContainer.update
+ 152  0,04% 95,55%       8 300730 org.h2.value.Value.convertTo
+ 153  0,04% 95,59%       8 300749 org.h2.index.TreeIndex.findFirstNode
+ 154  0,04% 95,63%       8 300758 org.h2.util.StringUtils.toUpperEnglish
+ 155  0,04% 95,67%       7 300336 org.h2.value.Value.checkPrecision
+ 156  0,04% 95,71%       7 300405 org.h2.value.ValueTimestamp.getString
+ 157  0,04% 95,74%       7 300499 org.h2.table.Table.fireConstraints
+ 158  0,04% 95,78%       7 300528 org.h2.index.BaseIndex.compareRows
+ 159  0,04% 95,81%       7 300600 org.h2.command.Command.executeUpdate
+ 160  0,04% 95,85%       7 300664 org.h2.command.Command.executeUpdate
+ 161  0,04% 95,88%       7 300669 org.h2.expression.ConditionAndOr.isEverything
+ 162  0,04% 95,92%       7 300686 org.h2.command.dml.Insert.insertRows
+ 163  0,04% 95,96%       7 300691 org.h2.util.MathUtils.setScale
+ 164  0,04% 95,99%       7 300733 org.h2.command.Command.executeUpdate
+ 165  0,04% 96,03%       7 300764 org.h2.value.Value.convertTo
+ 166  0,03% 96,06%       6 300431 java.lang.System.identityHashCode
+ 167  0,03% 96,09%       6 300447 java.lang.Object.clone
+ 168  0,03% 96,12%       6 300500 org.apache.derbyTesting.system.oe.direct.Standard.getOrderStatusForCustomer
+ 169  0,03% 96,15%       6 300522 org.h2.value.Value.compareTo
+ 170  0,03% 96,18%       6 300577 org.apache.derbyTesting.system.oe.direct.Standard.orderStatus
+ 171  0,03% 96,21%       6 300593 org.apache.derbyTesting.system.oe.direct.Standard.orderStatus
+ 172  0,03% 96,24%       6 300612 java.util.HashMap.put
+ 173  0,03% 96,27%       6 300629 org.h2.command.CommandContainer.recompileIfRequired
+ 174  0,03% 96,30%       6 300633 java.text.MessageFormat.applyPattern
+ 175  0,03% 96,33%       6 300649 org.h2.index.IndexCursor.getSearchRow
+ 176  0,03% 96,36%       6 300650 org.h2.command.dml.Update.update
+ 177  0,03% 96,39%       6 300654 org.h2.jdbc.JdbcResultSet.getString
+ 178  0,03% 96,42%       6 300661 org.apache.derbyTesting.system.oe.direct.Standard.orderStatus
+ 179  0,03% 96,46%       6 300672 org.h2.index.IndexCursor.getSearchRow
+ 180  0,03% 96,49%       6 300674 java.util.HashMap.put
+ 181  0,03% 96,52%       6 300740 org.apache.derbyTesting.system.oe.direct.Standard.stockLevel
+ 182  0,03% 96,54%       5 300394 org.h2.command.dml.Select.queryFlat
+ 183  0,03% 96,57%       5 300530 org.h2.value.Value.cache
+ 184  0,03% 96,59%       5 300596 org.h2.value.ValueDecimal.equals
+ 185  0,03% 96,62%       5 300604 org.h2.value.Value.compareTo
+ 186  0,03% 96,64%       5 300670 org.h2.value.Value.cache
+ 187  0,03% 96,67%       5 300681 org.h2.jdbc.JdbcResultSet.getString
+ 188  0,03% 96,70%       5 300703 org.apache.derbyTesting.system.oe.direct.Standard.orderStatus
+ 189  0,03% 96,72%       5 300705 java.util.HashMap.put
+ 190  0,03% 96,75%       5 300718 java.util.HashMap.put
+ 191  0,03% 96,77%       5 300737 org.apache.derbyTesting.system.oe.direct.Standard.stockLevel
+ 192  0,03% 96,80%       5 300770 java.util.HashMap.put
+ 193  0,03% 96,82%       5 300777 org.h2.expression.Comparison.getValue
+ 194  0,03% 96,85%       5 300788 java.lang.Object.wait
+ 195  0,02% 96,87%       4 300323 org.h2.table.Column.validateConvertUpdateSequence
+ 196  0,02% 96,89%       4 300357 org.h2.index.MultiVersionIndex.compareRows
+ 197  0,02% 96,91%       4 300359 org.h2.index.MultiVersionIndex.compareRows
+ 198  0,02% 96,93%       4 300395 org.dacapo.h2.TPCC.calculateSumDB
+ 199  0,02% 96,95%       4 300408 org.dacapo.h2.TPCC.calculateSumDB
+ 200  0,02% 96,97%       4 300451 org.h2.table.TableData.lock
+ 201  0,02% 96,99%       4 300460 org.h2.command.Command.executeUpdate
+ 202  0,02% 97,01%       4 300469 org.h2.command.Command.executeQueryLocal
+ 203  0,02% 97,03%       4 300559 java.io.FileOutputStream.close0
+ 204  0,02% 97,05%       4 300631 org.h2.jdbc.JdbcResultSet.getString
+ 205  0,02% 97,07%       4 300634 org.apache.derbyTesting.system.oe.direct.Standard.getOrderStatusForCustomer
+ 206  0,02% 97,09%       4 300641 org.h2.value.Value.cache
+ 207  0,02% 97,11%       4 300646 org.h2.index.MultiVersionCursor.next
+ 208  0,02% 97,13%       4 300657 java.util.IdentityHashMap.get
+ 209  0,02% 97,15%       4 300660 org.h2.command.CommandContainer.update
+ 210  0,02% 97,17%       4 300676 org.h2.value.Value.convertTo
+ 211  0,02% 97,19%       4 300684 org.h2.command.Command.executeQueryLocal
+ 212  0,02% 97,22%       4 300688 org.h2.command.dml.Select.isEverything
+ 213  0,02% 97,24%       4 300689 org.h2.command.dml.Select.isEverything
+ 214  0,02% 97,26%       4 300692 org.h2.index.BaseIndex.compareRows
+ 215  0,02% 97,28%       4 300695 org.h2.index.BaseIndex.compareRows
+ 216  0,02% 97,30%       4 300701 org.h2.command.dml.Select.queryWithoutCache
+ 217  0,02% 97,32%       4 300727 org.h2.command.dml.Delete.update
+ 218  0,02% 97,34%       4 300742 org.h2.command.Command.executeUpdate
+ 219  0,02% 97,36%       4 300756 org.h2.index.IndexCursor.find
+ 220  0,02% 97,38%       4 300858 org.h2.value.Value.cache
+ 221  0,02% 97,39%       3 300062 java.lang.ClassLoader.defineClass1
+ 222  0,02% 97,41%       3 300123 java.util.zip.Inflater.inflateBytes
+ 223  0,02% 97,42%       3 300334 java.lang.Object.clone
+ 224  0,02% 97,44%       3 300380 org.h2.table.TableData.addIndex
+ 225  0,02% 97,45%       3 300386 java.sql.Timestamp.toString
+ 226  0,02% 97,47%       3 300397 org.h2.jdbc.JdbcResultSet.getString
+ 227  0,02% 97,49%       3 300456 org.h2.command.Parser.initialize
+ 228  0,02% 97,50%       3 300457 org.h2.command.Command.executeUpdate
+ 229  0,02% 97,52%       3 300597 org.apache.derbyTesting.system.oe.direct.Standard.paymentById
+ 230  0,02% 97,53%       3 300601 org.h2.jdbc.JdbcResultSet.get
+ 231  0,02% 97,55%       3 300602 org.apache.derbyTesting.system.oe.direct.Standard.stockLevel
+ 232  0,02% 97,56%       3 300608 org.h2.index.BaseIndex.compareRows
+ 233  0,02% 97,58%       3 300622 org.dacapo.h2.TPCC.calculateSumDB
+ 234  0,02% 97,59%       3 300647 org.h2.expression.Comparison.getValue
+ 235  0,02% 97,61%       3 300655 org.h2.jdbc.JdbcResultSet.getString
+ 236  0,02% 97,62%       3 300658 org.h2.expression.ConditionAndOr.isEverything
+ 237  0,02% 97,64%       3 300662 org.h2.util.StringUtils.toUpperEnglish
+ 238  0,02% 97,65%       3 300710 org.h2.command.Command.executeQueryLocal
+ 239  0,02% 97,67%       3 300720 org.apache.derbyTesting.system.oe.direct.Standard.paymentById
+ 240  0,02% 97,68%       3 300734 org.h2.table.Table.validateConvertUpdateSequence
+ 241  0,02% 97,70%       3 300736 org.h2.command.Command.executeUpdate
+ 242  0,02% 97,72%       3 300745 org.h2.table.Table.fireConstraints
+ 243  0,02% 97,73%       3 300778 org.h2.util.ObjectArray.ensureCapacity
+ 244  0,02% 97,75%       3 300780 java.lang.AbstractStringBuilder.<init>
+ 245  0,02% 97,76%       3 300783 org.h2.command.Command.executeUpdate
+ 246  0,02% 97,78%       3 300790 org.h2.value.Value.convertTo
+ 247  0,02% 97,79%       3 300793 org.h2.constraint.ConstraintReferential.checkRowOwnTable
+ 248  0,02% 97,81%       3 300814 org.h2.value.Value.compareTo
+ 249  0,02% 97,82%       3 300816 org.h2.value.Value.convertTo
+ 250  0,02% 97,84%       3 300850 org.apache.derbyTesting.system.oe.direct.Standard.paymentById
+ 251  0,02% 97,85%       3 300869 sun.misc.FloatingDecimal.parseDouble
+ 252  0,01% 97,86%       2 300065 java.lang.ClassLoader.findBootstrapClass
+ 253  0,01% 97,87%       2 300117 java.io.UnixFileSystem.delete0
+ 254  0,01% 97,88%       2 300124 sun.net.www.ParseUtil.canonizeString
+ 255  0,01% 97,89%       2 300315 org.h2.value.Value.convertTo
+ 256  0,01% 97,90%       2 300327 org.h2.engine.Session.commit
+ 257  0,01% 97,91%       2 300333 java.lang.System.currentTimeMillis
+ 258  0,01% 97,92%       2 300338 org.h2.table.TableData.lock
+ 259  0,01% 97,93%       2 300340 org.h2.index.ScanIndex.commit
+ 260  0,01% 97,94%       2 300343 org.h2.log.UndoLog.clear
+ 261  0,01% 97,95%       2 300352 org.h2.util.ObjectArray.sort
+ 262  0,01% 97,97%       2 300358 org.h2.table.TableData.addIndex
+ 263  0,01% 97,98%       2 300365 org.h2.index.MultiVersionCursor.next
+ 264  0,01% 97,99%       2 300368 org.h2.result.LocalResult.getList
+ 265  0,01% 98,00%       2 300374 org.h2.value.ValueInt.compareSecure
+ 266  0,01% 98,01%       2 300379 org.h2.util.ObjectArray.sort
+ 267  0,01% 98,02%       2 300390 org.dacapo.h2.TPCC.calculateSumDB
+ 268  0,01% 98,03%       2 300391 org.h2.jdbc.JdbcResultSet.getString
+ 269  0,01% 98,04%       2 300426 org.h2.table.TableFilter.getBestPlanItem
+ 270  0,01% 98,05%       2 300587 org.h2.value.Value.cache
+ 271  0,01% 98,06%       2 300588 org.apache.derbyTesting.system.oe.direct.Standard.orderStatus
+ 272  0,01% 98,07%       2 300611 org.h2.value.Value.convertTo
+ 273  0,01% 98,08%       2 300632 org.h2.util.StringUtils.toUpperEnglish
+ 274  0,01% 98,09%       2 300637 org.h2.jdbc.JdbcResultSet.get
+ 275  0,01% 98,10%       2 300642 org.dacapo.h2.TPCCSubmitter.runTransactions
+ 276  0,01% 98,11%       2 300644 org.h2.command.Command.executeUpdate
+ 277  0,01% 98,12%       2 300665 org.apache.derbyTesting.system.oe.direct.Standard.paymentById
+ 278  0,01% 98,13%       2 300667 org.h2.table.Column.validateConvertUpdateSequence
+ 279  0,01% 98,14%       2 300675 org.h2.index.TreeIndex.next
+ 280  0,01% 98,15%       2 300678 org.h2.index.MultiVersionIndex.remove
+ 281  0,01% 98,16%       2 300679 org.h2.index.TreeIndex.findFirstNode
+ 282  0,01% 98,17%       2 300694 org.h2.index.MultiVersionIndex.removeIfExists
+ 283  0,01% 98,18%       2 300700 org.h2.command.Parser.readFactor
+ 284  0,01% 98,19%       2 300704 org.apache.derbyTesting.system.oe.direct.Standard.paymentById
+ 285  0,01% 98,20%       2 300706 org.h2.jdbc.JdbcResultSet.get
+ 286  0,01% 98,21%       2 300707 org.h2.engine.Database.update
+ 287  0,01% 98,22%       2 300708 org.h2.index.MultiVersionIndex.remove
+ 288  0,01% 98,23%       2 300716 org.h2.command.dml.Update.update
+ 289  0,01% 98,24%       2 300717 java.math.BigDecimal.toBigInteger
+ 290  0,01% 98,25%       2 300721 org.h2.value.Value.cache
+ 291  0,01% 98,26%       2 300728 org.h2.index.TreeIndex.add
+ 292  0,01% 98,27%       2 300747 org.h2.index.BaseIndex.compareRows
+ 293  0,01% 98,28%       2 300748 org.h2.expression.Comparison.getValue
+ 294  0,01% 98,29%       2 300759 java.math.BigInteger.abs
+ 295  0,01% 98,30%       2 300760 org.dacapo.h2.TPCCSubmitter.runTransactions
+ 296  0,01% 98,31%       2 300762 java.util.HashMap.resize
+ 297  0,01% 98,32%       2 300763 org.h2.expression.Function.getNullOrValue
+ 298  0,01% 98,33%       2 300772 org.h2.jdbc.JdbcResultSet.getString
+ 299  0,01% 98,34%       2 300773 org.h2.value.Value.cache
+ 300  0,01% 98,35%       2 300774 org.h2.value.Value.compareTo
+ 301  0,01% 98,36%       2 300776 org.h2.value.Value.compareTo
+ 302  0,01% 98,37%       2 300785 org.apache.derbyTesting.system.oe.direct.Standard.paymentById
+ 303  0,01% 98,38%       2 300786 java.math.BigDecimal.divideAndRound
+ 304  0,01% 98,39%       2 300787 org.h2.command.dml.Update.update
+ 305  0,01% 98,40%       2 300797 java.lang.Runtime.gc
+ 306  0,01% 98,41%       2 300799 org.h2.command.Command.executeUpdate
+ 307  0,01% 98,42%       2 300801 org.h2.table.Table.fireConstraints
+ 308  0,01% 98,43%       2 300802 org.h2.value.Value.convertTo
+ 309  0,01% 98,44%       2 300803 org.h2.expression.ConditionAndOr.getValue
+ 310  0,01% 98,45%       2 300804 org.h2.command.dml.Select.queryFlat
+ 311  0,01% 98,46%       2 300807 org.apache.derbyTesting.system.oe.direct.Standard.paymentById
+ 312  0,01% 98,48%       2 300809 java.math.BigInteger.toString
+ 313  0,01% 98,49%       2 300810 java.util.HashMap.resize
+ 314  0,01% 98,50%       2 300818 org.dacapo.h2.TPCCSubmitter.runTransactions
+ 315  0,01% 98,51%       2 300836 org.h2.command.Command.executeUpdate
+ 316  0,01% 98,52%       2 300838 org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal
+ 317  0,01% 98,53%       2 300841 org.dacapo.h2.TPCCSubmitter.runTransactions
+ 318  0,01% 98,54%       2 300845 org.h2.expression.Comparison.compareNotNull
+ 319  0,01% 98,55%       2 300851 java.text.MessageFormat.<init>
+ 320  0,01% 98,56%       2 300861 org.dacapo.h2.TPCC.calculateSumDB
+ 321  0,01% 98,57%       2 300862 org.dacapo.h2.TPCC.calculateSumDB
+ 322  0,01% 98,58%       2 300868 org.h2.util.MathUtils.setScale
+ 323  0,01% 98,59%       2 300874 org.dacapo.h2.TPCC.report
+ 324  0,01% 98,60%       2 300878 org.h2.command.Command.executeUpdate
+ 325  0,01% 98,61%       2 300879 org.h2.value.Value.compareTo
+ 326  0,01% 98,62%       2 300883 org.h2.command.Command.executeUpdate
+ 327  0,01% 98,63%       2 300884 org.apache.derbyTesting.system.oe.direct.Standard.newOrder
+ 328  0,01% 98,64%       2 300890 org.dacapo.h2.TPCC.calculateSumDB
+ 329  0,01% 98,65%       2 300905 org.h2.util.StringUtils.toUpperEnglish
+CPU SAMPLES END

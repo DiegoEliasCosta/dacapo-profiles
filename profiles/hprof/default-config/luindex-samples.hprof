@@ -1,0 +1,1480 @@
+JAVA PROFILE 1.0.1, created Thu Sep 27 22:47:37 2018
+
+Copyright (c) 2003, 2005, Oracle and/or its affiliates. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+
+  - Neither the name of Oracle nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+Header for -agentlib:hprof (or -Xrunhprof) ASCII Output (JDK 5.0 JVMTI based)
+
+WARNING!  This file format is under development, and is subject to
+change without notice.
+
+This file contains the following types of records:
+
+THREAD START
+THREAD END      mark the lifetime of Java threads
+
+TRACE           represents a Java stack trace.  Each trace consists
+                of a series of stack frames.  Other records refer to
+                TRACEs to identify (1) where object allocations have
+                taken place, (2) the frames in which GC roots were
+                found, and (3) frequently executed methods.
+
+HEAP DUMP       is a complete snapshot of all live objects in the Java
+                heap.  Following distinctions are made:
+
+                ROOT    root set as determined by GC
+                CLS     classes 
+                OBJ     instances
+                ARR     arrays
+
+SITES           is a sorted list of allocation sites.  This identifies
+                the most heavily allocated object types, and the TRACE
+                at which those allocations occurred.
+
+CPU SAMPLES     is a statistical profile of program execution.  The VM
+                periodically samples all running threads, and assigns
+                a quantum to active TRACEs in those threads.  Entries
+                in this record are TRACEs ranked by the percentage of
+                total quanta they consumed; top-ranked TRACEs are
+                typically hot spots in the program.
+
+CPU TIME        is a profile of program execution obtained by measuring
+                the time spent in individual methods (excluding the time
+                spent in callees), as well as by counting the number of
+                times each method is called. Entries in this record are
+                TRACEs ranked by the percentage of total CPU time. The
+                "count" field indicates the number of times each TRACE 
+                is invoked.
+
+MONITOR TIME    is a profile of monitor contention obtained by measuring
+                the time spent by a thread waiting to enter a monitor.
+                Entries in this record are TRACEs ranked by the percentage
+                of total monitor contention time and a brief description
+                of the monitor.  The "count" field indicates the number of 
+                times the monitor was contended at that TRACE.
+
+MONITOR DUMP    is a complete snapshot of all the monitors and threads in 
+                the System.
+
+HEAP DUMP, SITES, CPU SAMPLES|TIME and MONITOR DUMP|TIME records are generated 
+at program exit.  They can also be obtained during program execution by typing 
+Ctrl-\ (on Solaris) or by typing Ctrl-Break (on Win32).
+
+--------
+
+THREAD START (obj=5000017e, id = 200001, name="main", group="main")
+THREAD START (obj=500003bb, id = 200004, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200004)
+THREAD START (obj=500003bb, id = 200005, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200005)
+THREAD START (obj=500003bb, id = 200006, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200006)
+THREAD START (obj=500003bb, id = 200007, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200007)
+THREAD START (obj=500003bb, id = 200008, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200008)
+THREAD START (obj=500003bb, id = 200009, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200009)
+THREAD START (obj=500003bb, id = 200010, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200010)
+THREAD START (obj=500003bb, id = 200011, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200011)
+THREAD START (obj=500003bb, id = 200012, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200012)
+THREAD START (obj=500003bb, id = 200013, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200013)
+THREAD START (obj=500003bb, id = 200014, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200014)
+THREAD START (obj=500003bb, id = 200015, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200015)
+THREAD START (obj=500003bb, id = 200016, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200016)
+THREAD START (obj=500003bb, id = 200017, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200017)
+THREAD START (obj=500003bb, id = 200018, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200018)
+THREAD START (obj=500003bb, id = 200019, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200019)
+THREAD START (obj=500003bb, id = 200020, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200020)
+THREAD START (obj=500003bb, id = 200021, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200021)
+THREAD START (obj=500003bb, id = 200022, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200022)
+THREAD START (obj=500003bb, id = 200023, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200023)
+THREAD START (obj=500003bb, id = 200024, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200024)
+THREAD START (obj=500003bb, id = 200025, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200025)
+THREAD START (obj=500003bb, id = 200026, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200026)
+THREAD START (obj=500003bb, id = 200027, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200027)
+THREAD START (obj=500003bb, id = 200028, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200028)
+THREAD START (obj=500003bb, id = 200029, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200029)
+THREAD START (obj=500003bb, id = 200030, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200030)
+THREAD START (obj=500003bb, id = 200031, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200031)
+THREAD START (obj=500003bb, id = 200032, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200032)
+THREAD START (obj=500003bb, id = 200033, name="Lucene Merge Thread #0", group="main")
+THREAD END (id = 200033)
+THREAD END (id = 200001)
+TRACE 300360:
+	java.io.FileDescriptor.sync(FileDescriptor.java:Unknown line)
+	org.apache.lucene.store.FSDirectory.sync(FSDirectory.java:457)
+	org.apache.lucene.index.IndexWriter.startCommit(IndexWriter.java:4590)
+	org.apache.lucene.index.IndexWriter.commit(IndexWriter.java:3369)
+TRACE 300328:
+	java.io.FileOutputStream.write(FileOutputStream.java:Unknown line)
+	java.io.FileOutputStream.write(FileOutputStream.java:290)
+	org.dacapo.harness.TeeOutputStream.write(TeeOutputStream.java:105)
+	java.io.FilterOutputStream.write(FilterOutputStream.java:125)
+TRACE 300307:
+	org.apache.lucene.analysis.standard.StandardTokenizerImpl.getNextToken(StandardTokenizerImpl.java:654)
+	org.apache.lucene.analysis.standard.StandardTokenizer.next(StandardTokenizer.java:140)
+	org.apache.lucene.analysis.standard.StandardFilter.next(StandardFilter.java:43)
+	org.apache.lucene.analysis.LowerCaseFilter.next(LowerCaseFilter.java:34)
+TRACE 300361:
+	java.io.FileDescriptor.sync(FileDescriptor.java:Unknown line)
+	org.apache.lucene.store.FSDirectory.sync(FSDirectory.java:457)
+	org.apache.lucene.index.SegmentInfos.finishCommit(SegmentInfos.java:793)
+	org.apache.lucene.index.IndexWriter.finishCommit(IndexWriter.java:3420)
+TRACE 300197:
+	java.io.FileDescriptor.sync(FileDescriptor.java:Unknown line)
+	org.apache.lucene.store.FSDirectory.sync(FSDirectory.java:457)
+	org.apache.lucene.index.SegmentInfos.finishCommit(SegmentInfos.java:793)
+	org.apache.lucene.index.SegmentInfos.commit(SegmentInfos.java:826)
+TRACE 300305:
+	org.apache.lucene.analysis.standard.StandardTokenizerImpl.getNextToken(StandardTokenizerImpl.java:676)
+	org.apache.lucene.analysis.standard.StandardTokenizer.next(StandardTokenizer.java:140)
+	org.apache.lucene.analysis.standard.StandardFilter.next(StandardFilter.java:43)
+	org.apache.lucene.analysis.LowerCaseFilter.next(LowerCaseFilter.java:34)
+TRACE 300376:
+	org.apache.lucene.index.FreqProxTermsWriterPerField.writeProx(FreqProxTermsWriterPerField.java:77)
+	org.apache.lucene.index.FreqProxTermsWriterPerField.addTerm(FreqProxTermsWriterPerField.java:138)
+	org.apache.lucene.index.TermsHashPerField.add(TermsHashPerField.java:458)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:146)
+TRACE 300302:
+	org.apache.lucene.analysis.StopFilter.next(StopFilter.java:120)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:134)
+	org.apache.lucene.index.DocFieldConsumersPerField.processFields(DocFieldConsumersPerField.java:36)
+	org.apache.lucene.index.DocFieldProcessorPerThread.processDocument(DocFieldProcessorPerThread.java:234)
+TRACE 300325:
+	org.apache.lucene.analysis.StopFilter.next(StopFilter.java:121)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:134)
+	org.apache.lucene.index.DocFieldConsumersPerField.processFields(DocFieldConsumersPerField.java:36)
+	org.apache.lucene.index.DocFieldProcessorPerThread.processDocument(DocFieldProcessorPerThread.java:234)
+TRACE 300308:
+	org.apache.lucene.index.FreqProxTermsWriterPerField.addTerm(FreqProxTermsWriterPerField.java:127)
+	org.apache.lucene.index.TermsHashPerField.add(TermsHashPerField.java:458)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:146)
+	org.apache.lucene.index.DocFieldConsumersPerField.processFields(DocFieldConsumersPerField.java:36)
+TRACE 300306:
+	java.io.FileInputStream.readBytes(FileInputStream.java:Unknown line)
+	java.io.FileInputStream.read(FileInputStream.java:255)
+	sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+TRACE 300372:
+	java.io.UnixFileSystem.canonicalize0(UnixFileSystem.java:Unknown line)
+	java.io.UnixFileSystem.canonicalize(UnixFileSystem.java:172)
+	java.io.File.getCanonicalPath(File.java:618)
+	org.dacapo.luindex.Index.indexDocs(Index.java:103)
+TRACE 300366:
+	org.apache.lucene.index.FreqProxTermsWriterPerField.addTerm(FreqProxTermsWriterPerField.java:129)
+	org.apache.lucene.index.TermsHashPerField.add(TermsHashPerField.java:458)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:146)
+	org.apache.lucene.index.DocFieldConsumersPerField.processFields(DocFieldConsumersPerField.java:36)
+TRACE 300334:
+	org.apache.lucene.analysis.standard.StandardTokenizer.next(StandardTokenizer.java:140)
+	org.apache.lucene.analysis.standard.StandardFilter.next(StandardFilter.java:43)
+	org.apache.lucene.analysis.LowerCaseFilter.next(LowerCaseFilter.java:34)
+	org.apache.lucene.analysis.StopFilter.next(StopFilter.java:120)
+TRACE 300359:
+	org.apache.lucene.store.IndexInput.readVInt(IndexInput.java:78)
+	org.apache.lucene.index.SegmentTermPositions.readDeltaPosition(SegmentTermPositions.java:73)
+	org.apache.lucene.index.SegmentTermPositions.nextPosition(SegmentTermPositions.java:69)
+	org.apache.lucene.index.SegmentMerger.appendPostings(SegmentMerger.java:667)
+TRACE 300369:
+	org.apache.lucene.store.IndexInput.readVInt(IndexInput.java:80)
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:285)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+	org.apache.lucene.index.TermsHash.flush(TermsHash.java:145)
+TRACE 300364:
+	org.apache.lucene.analysis.CharArraySet.getSlot(CharArraySet.java:78)
+	org.apache.lucene.analysis.CharArraySet.contains(CharArraySet.java:60)
+	org.apache.lucene.analysis.StopFilter.next(StopFilter.java:121)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:134)
+TRACE 300333:
+	java.io.UnixFileSystem.checkAccess(UnixFileSystem.java:Unknown line)
+	java.io.File.canRead(File.java:768)
+	org.dacapo.luindex.Index.indexDocs(Index.java:92)
+	org.dacapo.luindex.Index.indexDocs(Index.java:99)
+TRACE 300336:
+	org.apache.lucene.analysis.StopFilter.next(StopFilter.java:120)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:134)
+	org.apache.lucene.index.DocFieldConsumersPerField.processFields(DocFieldConsumersPerField.java:36)
+	org.apache.lucene.index.DocFieldProcessorPerThread.processDocument(DocFieldProcessorPerThread.java:234)
+TRACE 300312:
+	org.apache.lucene.index.TermsHashPerField.writeVInt(TermsHashPerField.java:494)
+	org.apache.lucene.index.FreqProxTermsWriterPerField.writeProx(FreqProxTermsWriterPerField.java:84)
+	org.apache.lucene.index.FreqProxTermsWriterPerField.addTerm(FreqProxTermsWriterPerField.java:138)
+	org.apache.lucene.index.TermsHashPerField.add(TermsHashPerField.java:458)
+TRACE 300344:
+	java.io.RandomAccessFile.writeBytes(RandomAccessFile.java:Unknown line)
+	java.io.RandomAccessFile.write(RandomAccessFile.java:525)
+	org.apache.lucene.store.FSDirectory$FSIndexOutput.flushBuffer(FSDirectory.java:645)
+	org.apache.lucene.store.BufferedIndexOutput.flushBuffer(BufferedIndexOutput.java:96)
+TRACE 300122:
+	java.io.FileOutputStream.writeBytes(FileOutputStream.java:Unknown line)
+	java.io.FileOutputStream.write(FileOutputStream.java:326)
+	java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	java.io.BufferedOutputStream.flush(BufferedOutputStream.java:140)
+TRACE 300365:
+	org.apache.lucene.index.FreqProxTermsWriterPerField.writeProx(FreqProxTermsWriterPerField.java:84)
+	org.apache.lucene.index.FreqProxTermsWriterPerField.addTerm(FreqProxTermsWriterPerField.java:138)
+	org.apache.lucene.index.TermsHashPerField.add(TermsHashPerField.java:458)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:146)
+TRACE 300330:
+	java.io.FileInputStream.open0(FileInputStream.java:Unknown line)
+	java.io.FileInputStream.open(FileInputStream.java:195)
+	java.io.FileInputStream.<init>(FileInputStream.java:138)
+	java.io.FileReader.<init>(FileReader.java:72)
+TRACE 300335:
+	java.io.UnixFileSystem.getBooleanAttributes0(UnixFileSystem.java:Unknown line)
+	java.io.UnixFileSystem.getBooleanAttributes(UnixFileSystem.java:242)
+	java.io.File.isDirectory(File.java:849)
+	org.dacapo.luindex.Index.indexDocs(Index.java:93)
+TRACE 300393:
+	org.apache.lucene.analysis.standard.StandardTokenizer.next(StandardTokenizer.java:140)
+	org.apache.lucene.analysis.standard.StandardFilter.next(StandardFilter.java:43)
+	org.apache.lucene.analysis.LowerCaseFilter.next(LowerCaseFilter.java:34)
+	org.apache.lucene.analysis.StopFilter.next(StopFilter.java:120)
+TRACE 300311:
+	org.apache.lucene.index.TermsHashPerField.add(TermsHashPerField.java:387)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:146)
+	org.apache.lucene.index.DocFieldConsumersPerField.processFields(DocFieldConsumersPerField.java:36)
+	org.apache.lucene.index.DocFieldProcessorPerThread.processDocument(DocFieldProcessorPerThread.java:234)
+TRACE 300414:
+	java.io.RandomAccessFile.readBytes(RandomAccessFile.java:Unknown line)
+	java.io.RandomAccessFile.read(RandomAccessFile.java:377)
+	org.apache.lucene.store.FSDirectory$FSIndexInput.readInternal(FSDirectory.java:596)
+	org.apache.lucene.store.BufferedIndexInput.readBytes(BufferedIndexInput.java:136)
+TRACE 300373:
+	java.io.FileInputStream.available0(FileInputStream.java:Unknown line)
+	java.io.FileInputStream.available(FileInputStream.java:306)
+	sun.nio.cs.StreamDecoder.inReady(StreamDecoder.java:363)
+	sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:324)
+TRACE 300410:
+	org.apache.lucene.index.FreqProxTermsWriterPerField.writeProx(FreqProxTermsWriterPerField.java:77)
+	org.apache.lucene.index.FreqProxTermsWriterPerField.newTerm(FreqProxTermsWriterPerField.java:99)
+	org.apache.lucene.index.TermsHashPerField.add(TermsHashPerField.java:453)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:146)
+TRACE 300421:
+	java.lang.Object.notifyAll(Object.java:Unknown line)
+	org.apache.lucene.index.DocumentsWriter.finishDocument(DocumentsWriter.java:1077)
+	org.apache.lucene.index.DocumentsWriter.updateDocument(DocumentsWriter.java:768)
+	org.apache.lucene.index.DocumentsWriter.addDocument(DocumentsWriter.java:743)
+TRACE 300374:
+	java.io.UnixFileSystem.list(UnixFileSystem.java:Unknown line)
+	java.io.File.list(File.java:1122)
+	org.dacapo.luindex.Index.indexDocs(Index.java:94)
+	org.dacapo.luindex.Index.indexDocs(Index.java:99)
+TRACE 300379:
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:323)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+	org.apache.lucene.index.TermsHash.flush(TermsHash.java:145)
+	org.apache.lucene.index.DocInverter.flush(DocInverter.java:74)
+TRACE 300396:
+	java.io.UnixFileSystem.getLastModifiedTime(UnixFileSystem.java:Unknown line)
+	java.io.File.lastModified(File.java:943)
+	org.apache.lucene.demo.FileDocument.Document(FileDocument.java:56)
+	org.dacapo.luindex.Index.indexDocs(Index.java:105)
+TRACE 300352:
+	java.io.RandomAccessFile.seek0(RandomAccessFile.java:Unknown line)
+	java.io.RandomAccessFile.seek(RandomAccessFile.java:557)
+	org.apache.lucene.store.FSDirectory$FSIndexInput.readInternal(FSDirectory.java:591)
+	org.apache.lucene.store.BufferedIndexInput.readBytes(BufferedIndexInput.java:136)
+TRACE 300412:
+	org.apache.lucene.index.TermsHashPerField.writeVInt(TermsHashPerField.java:494)
+	org.apache.lucene.index.FreqProxTermsWriterPerField.writeProx(FreqProxTermsWriterPerField.java:84)
+	org.apache.lucene.index.FreqProxTermsWriterPerField.addTerm(FreqProxTermsWriterPerField.java:135)
+	org.apache.lucene.index.TermsHashPerField.add(TermsHashPerField.java:458)
+TRACE 300321:
+	org.apache.lucene.index.FreqProxFieldMergeState.nextTerm(FreqProxFieldMergeState.java:70)
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:335)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+	org.apache.lucene.index.TermsHash.flush(TermsHash.java:145)
+TRACE 300371:
+	org.apache.lucene.index.TermsHashPerField.writeVInt(TermsHashPerField.java:494)
+	org.apache.lucene.index.FreqProxTermsWriterPerField.addTerm(FreqProxTermsWriterPerField.java:127)
+	org.apache.lucene.index.TermsHashPerField.add(TermsHashPerField.java:458)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:146)
+TRACE 300380:
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:285)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+	org.apache.lucene.index.TermsHash.flush(TermsHash.java:145)
+	org.apache.lucene.index.DocInverter.flush(DocInverter.java:74)
+TRACE 300397:
+	java.io.FileInputStream.close0(FileInputStream.java:Unknown line)
+	java.io.FileInputStream.access$000(FileInputStream.java:49)
+	java.io.FileInputStream$1.close(FileInputStream.java:336)
+	java.io.FileDescriptor.closeAll(FileDescriptor.java:212)
+TRACE 300402:
+	org.apache.lucene.store.IndexInput.readVInt(IndexInput.java:80)
+	org.apache.lucene.index.SegmentTermPositions.readDeltaPosition(SegmentTermPositions.java:73)
+	org.apache.lucene.index.SegmentTermPositions.nextPosition(SegmentTermPositions.java:69)
+	org.apache.lucene.index.SegmentMerger.appendPostings(SegmentMerger.java:667)
+TRACE 300430:
+	org.apache.lucene.store.IndexOutput.writeVInt(IndexOutput.java:72)
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:303)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+	org.apache.lucene.index.TermsHash.flush(TermsHash.java:145)
+TRACE 300450:
+	org.apache.lucene.index.SegmentMerger.appendPostings(SegmentMerger.java:690)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:586)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:547)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+TRACE 300124:
+	java.util.zip.Inflater.inflateBytes(Inflater.java:Unknown line)
+	java.util.zip.Inflater.inflate(Inflater.java:259)
+	java.util.zip.InflaterInputStream.read(InflaterInputStream.java:152)
+	java.util.zip.ZipInputStream.read(ZipInputStream.java:194)
+TRACE 300332:
+	java.lang.String.intern(String.java:Unknown line)
+	org.apache.lucene.document.Field.<init>(Field.java:360)
+	org.apache.lucene.document.Field.<init>(Field.java:340)
+	org.apache.lucene.demo.FileDocument.Document(FileDocument.java:63)
+TRACE 300385:
+	org.apache.lucene.index.TermInfosWriter.add(TermInfosWriter.java:171)
+	org.apache.lucene.index.TermInfosWriter.add(TermInfosWriter.java:109)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:594)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:547)
+TRACE 300425:
+	org.apache.lucene.index.FreqProxTermsWriterPerField.writeProx(FreqProxTermsWriterPerField.java:84)
+	org.apache.lucene.index.FreqProxTermsWriterPerField.addTerm(FreqProxTermsWriterPerField.java:135)
+	org.apache.lucene.index.TermsHashPerField.add(TermsHashPerField.java:458)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:146)
+TRACE 300358:
+	org.apache.lucene.store.IndexOutput.writeVInt(IndexOutput.java:72)
+	org.apache.lucene.index.SegmentMerger.appendPostings(SegmentMerger.java:686)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:586)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:547)
+TRACE 300378:
+	java.lang.String.intern(String.java:Unknown line)
+	org.apache.lucene.document.Field.<init>(Field.java:285)
+	org.apache.lucene.document.Field.<init>(Field.java:251)
+	org.apache.lucene.demo.FileDocument.Document(FileDocument.java:56)
+TRACE 300408:
+	java.io.UnixFileSystem.delete0(UnixFileSystem.java:Unknown line)
+	java.io.UnixFileSystem.delete(UnixFileSystem.java:265)
+	java.io.File.delete(File.java:1041)
+	org.apache.lucene.store.FSDirectory.deleteFile(FSDirectory.java:362)
+TRACE 300415:
+	org.apache.lucene.store.IndexInput.readVInt(IndexInput.java:78)
+	org.apache.lucene.index.TermBuffer.read(TermBuffer.java:64)
+	org.apache.lucene.index.SegmentTermEnum.next(SegmentTermEnum.java:127)
+	org.apache.lucene.index.SegmentMergeInfo.next(SegmentMergeInfo.java:65)
+TRACE 300486:
+	org.apache.lucene.index.TermsHashPerField.comparePostings(TermsHashPerField.java:229)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:181)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+TRACE 300488:
+	org.apache.lucene.index.TermsHashPerField.comparePostings(TermsHashPerField.java:229)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:184)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+TRACE 300322:
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:286)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+	org.apache.lucene.index.TermsHash.flush(TermsHash.java:145)
+	org.apache.lucene.index.DocInverter.flush(DocInverter.java:74)
+TRACE 300403:
+	org.apache.lucene.index.TermsHashPerField.comparePostings(TermsHashPerField.java:229)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:154)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+TRACE 300407:
+	org.apache.lucene.store.IndexInput.readVInt(IndexInput.java:78)
+	org.apache.lucene.index.SegmentTermDocs.next(SegmentTermDocs.java:110)
+	org.apache.lucene.index.SegmentTermPositions.next(SegmentTermPositions.java:98)
+	org.apache.lucene.index.SegmentMerger.appendPostings(SegmentMerger.java:634)
+TRACE 300419:
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:146)
+	org.apache.lucene.index.DocFieldConsumersPerField.processFields(DocFieldConsumersPerField.java:36)
+	org.apache.lucene.index.DocFieldProcessorPerThread.processDocument(DocFieldProcessorPerThread.java:234)
+	org.apache.lucene.index.DocumentsWriter.updateDocument(DocumentsWriter.java:765)
+TRACE 300429:
+	java.io.BufferedReader.readLine(BufferedReader.java:389)
+	org.dacapo.harness.FileDigest.getText(FileDigest.java:88)
+	org.dacapo.harness.FileDigest.get(FileDigest.java:47)
+	org.dacapo.harness.Benchmark.validate(Benchmark.java:412)
+TRACE 300446:
+	org.apache.lucene.index.TermBuffer.read(TermBuffer.java:83)
+	org.apache.lucene.index.SegmentTermEnum.next(SegmentTermEnum.java:127)
+	org.apache.lucene.index.SegmentMergeInfo.next(SegmentMergeInfo.java:65)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:554)
+TRACE 300448:
+	org.apache.lucene.index.FreqProxTermsWriterPerField.writeProx(FreqProxTermsWriterPerField.java:77)
+	org.apache.lucene.index.FreqProxTermsWriterPerField.addTerm(FreqProxTermsWriterPerField.java:135)
+	org.apache.lucene.index.TermsHashPerField.add(TermsHashPerField.java:458)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:146)
+TRACE 300452:
+	org.apache.lucene.index.TermsHashPerField.rehashPostings(TermsHashPerField.java:535)
+	org.apache.lucene.index.TermsHashPerField.add(TermsHashPerField.java:432)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:146)
+	org.apache.lucene.index.DocFieldConsumersPerField.processFields(DocFieldConsumersPerField.java:36)
+TRACE 300457:
+	java.lang.String.intern(String.java:Unknown line)
+	org.apache.lucene.document.Field.<init>(Field.java:285)
+	org.apache.lucene.document.Field.<init>(Field.java:251)
+	org.apache.lucene.demo.FileDocument.Document(FileDocument.java:50)
+TRACE 300459:
+	org.apache.lucene.index.TermInfosWriter.add(TermInfosWriter.java:171)
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:363)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+	org.apache.lucene.index.TermsHash.flush(TermsHash.java:145)
+TRACE 300489:
+	org.apache.lucene.index.MultiLevelSkipListWriter.writeSkip(MultiLevelSkipListWriter.java:146)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:589)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:547)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+TRACE 300496:
+	java.io.UnixFileSystem.delete0(UnixFileSystem.java:Unknown line)
+	java.io.UnixFileSystem.delete(UnixFileSystem.java:265)
+	java.io.File.delete(File.java:1041)
+	org.dacapo.harness.Benchmark.deleteTree(Benchmark.java:633)
+TRACE 300339:
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:321)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+	org.apache.lucene.index.TermsHash.flush(TermsHash.java:145)
+	org.apache.lucene.index.DocInverter.flush(DocInverter.java:74)
+TRACE 300341:
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:258)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+	org.apache.lucene.index.TermsHash.flush(TermsHash.java:145)
+	org.apache.lucene.index.DocInverter.flush(DocInverter.java:74)
+TRACE 300367:
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:192)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+TRACE 300387:
+	org.apache.lucene.index.MultiLevelSkipListWriter.resetSkip(MultiLevelSkipListWriter.java:83)
+	org.apache.lucene.index.DefaultSkipListWriter.resetSkip(DefaultSkipListWriter.java:70)
+	org.apache.lucene.index.SegmentMerger.appendPostings(SegmentMerger.java:624)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:586)
+TRACE 300395:
+	org.apache.lucene.store.RAMOutputStream.writeTo(RAMOutputStream.java:68)
+	org.apache.lucene.index.MultiLevelSkipListWriter.writeSkip(MultiLevelSkipListWriter.java:146)
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:352)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+TRACE 300399:
+	org.apache.lucene.store.IndexInput.readVInt(IndexInput.java:80)
+	org.apache.lucene.index.FreqProxFieldMergeState.nextDoc(FreqProxFieldMergeState.java:90)
+	org.apache.lucene.index.FreqProxFieldMergeState.nextTerm(FreqProxFieldMergeState.java:70)
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:335)
+TRACE 300405:
+	org.apache.lucene.index.MultiLevelSkipListWriter.resetSkip(MultiLevelSkipListWriter.java:83)
+	org.apache.lucene.index.DefaultSkipListWriter.resetSkip(DefaultSkipListWriter.java:70)
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:253)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+TRACE 300406:
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:554)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+	org.apache.lucene.index.SegmentMerger.merge(SegmentMerger.java:140)
+	org.apache.lucene.index.IndexWriter.mergeMiddle(IndexWriter.java:4231)
+TRACE 300413:
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:192)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+TRACE 300424:
+	org.apache.lucene.index.SegmentMerger.appendPostings(SegmentMerger.java:633)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:586)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:547)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+TRACE 300427:
+	org.apache.lucene.index.SegmentTermPositions.readDeltaPosition(SegmentTermPositions.java:73)
+	org.apache.lucene.index.SegmentTermPositions.nextPosition(SegmentTermPositions.java:69)
+	org.apache.lucene.index.SegmentMerger.appendPostings(SegmentMerger.java:667)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:586)
+TRACE 300462:
+	org.apache.lucene.index.TermsHashPerField.comparePostings(TermsHashPerField.java:229)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:181)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+TRACE 300465:
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:586)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:547)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+	org.apache.lucene.index.SegmentMerger.merge(SegmentMerger.java:140)
+TRACE 300471:
+	sun.nio.cs.UTF_8$Decoder.decodeArrayLoop(UTF_8.java:223)
+	sun.nio.cs.UTF_8$Decoder.decodeLoop(UTF_8.java:412)
+	java.nio.charset.CharsetDecoder.decode(CharsetDecoder.java:579)
+	sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:318)
+TRACE 300472:
+	org.apache.lucene.index.TermsHashPerField.comparePostings(TermsHashPerField.java:229)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:181)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+TRACE 300478:
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:192)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+TRACE 300483:
+	java.lang.System.currentTimeMillis(System.java:Unknown line)
+	org.dacapo.harness.Benchmark.run(Benchmark.java:183)
+	org.dacapo.harness.TestHarness.runBenchmark(TestHarness.java:199)
+	org.dacapo.harness.TestHarness.main(TestHarness.java:152)
+TRACE 300062:
+	java.lang.ClassLoader.defineClass1(ClassLoader.java:Unknown line)
+	java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	java.net.URLClassLoader.defineClass(URLClassLoader.java:467)
+TRACE 300296:
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:148)
+	org.apache.lucene.index.DocFieldConsumersPerField.processFields(DocFieldConsumersPerField.java:36)
+	org.apache.lucene.index.DocFieldProcessorPerThread.processDocument(DocFieldProcessorPerThread.java:234)
+	org.apache.lucene.index.DocumentsWriter.updateDocument(DocumentsWriter.java:765)
+TRACE 300323:
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:284)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+	org.apache.lucene.index.TermsHash.flush(TermsHash.java:145)
+	org.apache.lucene.index.DocInverter.flush(DocInverter.java:74)
+TRACE 300353:
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:552)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+	org.apache.lucene.index.SegmentMerger.merge(SegmentMerger.java:140)
+	org.apache.lucene.index.IndexWriter.mergeMiddle(IndexWriter.java:4231)
+TRACE 300354:
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:575)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:547)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+	org.apache.lucene.index.SegmentMerger.merge(SegmentMerger.java:140)
+TRACE 300388:
+	org.apache.lucene.index.SegmentMerger.appendPostings(SegmentMerger.java:624)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:586)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:547)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+TRACE 300394:
+	org.apache.lucene.index.TermsHashPerField.sortPostings(TermsHashPerField.java:135)
+	org.apache.lucene.index.FreqProxFieldMergeState.<init>(FreqProxFieldMergeState.java:51)
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:202)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+TRACE 300398:
+	org.apache.lucene.index.TermsHashPerField.comparePostings(TermsHashPerField.java:229)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:184)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+TRACE 300401:
+	org.apache.lucene.util.PriorityQueue.put(PriorityQueue.java:53)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:555)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+	org.apache.lucene.index.SegmentMerger.merge(SegmentMerger.java:140)
+TRACE 300404:
+	org.apache.lucene.index.MultiLevelSkipListWriter.writeSkip(MultiLevelSkipListWriter.java:146)
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:352)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+	org.apache.lucene.index.TermsHash.flush(TermsHash.java:145)
+TRACE 300422:
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:346)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+	org.apache.lucene.index.TermsHash.flush(TermsHash.java:145)
+	org.apache.lucene.index.DocInverter.flush(DocInverter.java:74)
+TRACE 300426:
+	org.apache.lucene.index.TermsHashPerField.comparePostings(TermsHashPerField.java:229)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:184)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+TRACE 300431:
+	org.apache.lucene.util.UnicodeUtil.UTF16toUTF8(UnicodeUtil.java:162)
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:358)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+	org.apache.lucene.index.TermsHash.flush(TermsHash.java:145)
+TRACE 300444:
+	org.apache.lucene.store.RAMOutputStream.writeTo(RAMOutputStream.java:68)
+	org.apache.lucene.index.MultiLevelSkipListWriter.writeSkip(MultiLevelSkipListWriter.java:143)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:589)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:547)
+TRACE 300447:
+	org.apache.lucene.index.TermInfosWriter.add(TermInfosWriter.java:108)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:594)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:547)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+TRACE 300468:
+	java.io.UnixFileSystem.getBooleanAttributes0(UnixFileSystem.java:Unknown line)
+	java.io.UnixFileSystem.getBooleanAttributes(UnixFileSystem.java:242)
+	java.io.File.exists(File.java:819)
+	org.apache.lucene.store.FSDirectory.createOutput(FSDirectory.java:439)
+TRACE 300470:
+	org.apache.lucene.index.FreqProxTermsWriterPerField.addTerm(FreqProxTermsWriterPerField.java:130)
+	org.apache.lucene.index.TermsHashPerField.add(TermsHashPerField.java:458)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:146)
+	org.apache.lucene.index.DocFieldConsumersPerField.processFields(DocFieldConsumersPerField.java:36)
+TRACE 300473:
+	java.io.UnixFileSystem.getBooleanAttributes0(UnixFileSystem.java:Unknown line)
+	java.io.UnixFileSystem.getBooleanAttributes(UnixFileSystem.java:242)
+	java.io.File.isDirectory(File.java:849)
+	org.dacapo.harness.Benchmark.deleteTree(Benchmark.java:632)
+TRACE 300477:
+	java.lang.Runtime.gc(Runtime.java:Unknown line)
+	java.lang.System.gc(System.java:993)
+	org.dacapo.harness.Benchmark.run(Benchmark.java:178)
+	org.dacapo.harness.TestHarness.runBenchmark(TestHarness.java:199)
+TRACE 300479:
+	java.lang.Object.<init>(Object.java:37)
+	java.io.InputStream.<init>(InputStream.java:45)
+	java.io.FileInputStream.<init>(FileInputStream.java:123)
+	java.io.FileReader.<init>(FileReader.java:72)
+TRACE 300482:
+	java.io.UnixFileSystem.getBooleanAttributes0(UnixFileSystem.java:Unknown line)
+	java.io.UnixFileSystem.getBooleanAttributes(UnixFileSystem.java:242)
+	java.io.File.exists(File.java:819)
+	org.apache.lucene.store.FSDirectory.fileExists(FSDirectory.java:328)
+TRACE 300485:
+	org.apache.lucene.index.TermsHashPerField.comparePostings(TermsHashPerField.java:229)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:184)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+TRACE 300503:
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:192)
+	org.apache.lucene.index.TermsHashPerField.sortPostings(TermsHashPerField.java:136)
+	org.apache.lucene.index.FreqProxFieldMergeState.<init>(FreqProxFieldMergeState.java:51)
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:202)
+TRACE 300049:
+	java.util.zip.ZipFile.open(ZipFile.java:Unknown line)
+	java.util.zip.ZipFile.<init>(ZipFile.java:225)
+	java.util.zip.ZipFile.<init>(ZipFile.java:155)
+	java.util.jar.JarFile.<init>(JarFile.java:166)
+TRACE 300085:
+	sun.net.www.protocol.jar.JarURLConnection.<clinit>(JarURLConnection.java:54)
+	sun.net.www.protocol.jar.Handler.openConnection(Handler.java:41)
+	java.net.URL.openConnection(URL.java:979)
+	sun.misc.URLClassPath$Loader.getResource(URLClassPath.java:736)
+TRACE 300095:
+	java.lang.String.indexOf(String.java:1779)
+	java.lang.String.indexOf(String.java:1718)
+	java.lang.String.indexOf(String.java:1698)
+	sun.net.www.protocol.jar.Handler.sameFile(Handler.java:67)
+TRACE 300113:
+	java.util.zip.ZipFile.getEntryCrc(ZipFile.java:Unknown line)
+	java.util.zip.ZipFile.getZipEntry(ZipFile.java:587)
+	java.util.zip.ZipFile.access$900(ZipFile.java:60)
+	java.util.zip.ZipFile$ZipEntryIterator.next(ZipFile.java:539)
+TRACE 300118:
+	java.io.FileOutputStream.writeBytes(FileOutputStream.java:Unknown line)
+	java.io.FileOutputStream.write(FileOutputStream.java:326)
+	java.io.BufferedOutputStream.write(BufferedOutputStream.java:122)
+	org.dacapo.harness.Benchmark.fileFromInputStream(Benchmark.java:623)
+TRACE 300123:
+	java.util.zip.ZipInputStream.readLOC(ZipInputStream.java:320)
+	java.util.zip.ZipInputStream.getNextEntry(ZipInputStream.java:122)
+	org.dacapo.harness.Benchmark.unpackZipStream(Benchmark.java:603)
+	org.dacapo.harness.Benchmark.unpackZipFileResource(Benchmark.java:582)
+TRACE 300125:
+	java.lang.String.startsWith(String.java:1413)
+	java.lang.String.endsWith(String.java:1449)
+	java.util.zip.ZipEntry.isDirectory(ZipEntry.java:564)
+	org.dacapo.harness.Benchmark.unpackZipStream(Benchmark.java:607)
+TRACE 300126:
+	java.io.FileOutputStream.open0(FileOutputStream.java:Unknown line)
+	java.io.FileOutputStream.open(FileOutputStream.java:270)
+	java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	java.io.FileOutputStream.<init>(FileOutputStream.java:162)
+TRACE 300127:
+	java.util.zip.ZipFile.read(ZipFile.java:Unknown line)
+	java.util.zip.ZipFile.access$1400(ZipFile.java:60)
+	java.util.zip.ZipFile$ZipFileInputStream.read(ZipFile.java:734)
+	java.util.zip.ZipFile$ZipFileInflaterInputStream.fill(ZipFile.java:434)
+TRACE 300128:
+	java.lang.Object.<init>(Object.java:37)
+	java.io.OutputStream.<init>(OutputStream.java:46)
+	java.io.FileOutputStream.<init>(FileOutputStream.java:196)
+	java.io.FileOutputStream.<init>(FileOutputStream.java:162)
+TRACE 300129:
+	java.util.zip.Inflater.reset(Inflater.java:Unknown line)
+	java.util.zip.Inflater.reset(Inflater.java:352)
+	java.util.zip.ZipInputStream.getNextEntry(ZipInputStream.java:121)
+	org.dacapo.harness.Benchmark.unpackZipStream(Benchmark.java:603)
+TRACE 300130:
+	java.io.FileOutputStream.writeBytes(FileOutputStream.java:Unknown line)
+	java.io.FileOutputStream.write(FileOutputStream.java:326)
+	java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	java.io.BufferedOutputStream.write(BufferedOutputStream.java:126)
+TRACE 300136:
+	java.util.regex.Pattern.compile(Pattern.java:1715)
+	java.util.regex.Pattern.<init>(Pattern.java:1351)
+	java.util.regex.Pattern.compile(Pattern.java:1028)
+	sun.security.util.AlgorithmDecomposer.<clinit>(AlgorithmDecomposer.java:39)
+TRACE 300155:
+	org.dacapo.harness.Callback.start(Callback.java:157)
+	org.dacapo.harness.Benchmark.run(Benchmark.java:181)
+	org.dacapo.harness.TestHarness.runBenchmark(TestHarness.java:199)
+	org.dacapo.harness.TestHarness.main(TestHarness.java:152)
+TRACE 300156:
+	org.dacapo.luindex.Index.main(Index.java:64)
+	sun.reflect.NativeMethodAccessorImpl.invoke0(NativeMethodAccessorImpl.java:Unknown line)
+	sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+TRACE 300157:
+	org.apache.lucene.index.IndexWriter.<init>(IndexWriter.java:341)
+	org.dacapo.luindex.Index.main(Index.java:64)
+	sun.reflect.NativeMethodAccessorImpl.invoke0(NativeMethodAccessorImpl.java:Unknown line)
+	sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+TRACE 300191:
+	java.lang.String.intern(String.java:Unknown line)
+	java.security.Provider$ServiceKey.<init>(Provider.java:873)
+	java.security.Provider$ServiceKey.<init>(Provider.java:865)
+	java.security.Provider.parseLegacyPut(Provider.java:959)
+TRACE 300192:
+	java.lang.Class.forName0(Class.java:Unknown line)
+	java.lang.Class.forName(Class.java:264)
+	java.security.Provider$Service.getImplClass(Provider.java:1634)
+	java.security.Provider$Service.newInstance(Provider.java:1592)
+TRACE 300198:
+	java.util.zip.Inflater.inflateBytes(Inflater.java:Unknown line)
+	java.util.zip.Inflater.inflate(Inflater.java:259)
+	java.util.zip.InflaterInputStream.read(InflaterInputStream.java:152)
+	sun.misc.Resource.getBytes(Resource.java:124)
+TRACE 300235:
+	java.lang.Class.getDeclaredConstructors0(Class.java:Unknown line)
+	java.lang.Class.privateGetDeclaredConstructors(Class.java:2671)
+	java.lang.Class.getConstructor0(Class.java:3075)
+	java.lang.Class.newInstance(Class.java:412)
+TRACE 300263:
+	java.net.URLStreamHandler.setURL(URLStreamHandler.java:538)
+	java.net.URLStreamHandler.setURL(URLStreamHandler.java:593)
+	sun.net.www.protocol.jar.Handler.parseURL(Handler.java:163)
+	java.net.URL.<init>(URL.java:622)
+TRACE 300268:
+	java.util.TimeZone.getTimeZone(TimeZone.java:560)
+	java.util.TimeZone.getTimeZone(TimeZone.java:516)
+	org.apache.lucene.document.DateTools.<clinit>(DateTools.java:42)
+	org.apache.lucene.demo.FileDocument.Document(FileDocument.java:56)
+TRACE 300292:
+	org.apache.lucene.index.DocFieldProcessor.addThread(DocFieldProcessor.java:78)
+	org.apache.lucene.index.DocumentsWriterThreadState.<init>(DocumentsWriterThreadState.java:43)
+	org.apache.lucene.index.DocumentsWriter.getThreadState(DocumentsWriter.java:680)
+	org.apache.lucene.index.DocumentsWriter.updateDocument(DocumentsWriter.java:755)
+TRACE 300293:
+	org.apache.lucene.analysis.standard.StandardTokenizer.<init>(StandardTokenizer.java:112)
+	org.apache.lucene.analysis.standard.StandardAnalyzer.reusableTokenStream(StandardAnalyzer.java:229)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:117)
+	org.apache.lucene.index.DocFieldConsumersPerField.processFields(DocFieldConsumersPerField.java:36)
+TRACE 300294:
+	java.lang.System.arraycopy(System.java:Unknown line)
+	org.apache.lucene.analysis.Token.setTermBuffer(Token.java:378)
+	org.apache.lucene.analysis.standard.StandardTokenizerImpl.getText(StandardTokenizerImpl.java:368)
+	org.apache.lucene.analysis.standard.StandardTokenizer.next(StandardTokenizer.java:149)
+TRACE 300295:
+	org.apache.lucene.index.TermsHashPerField.rehashPostings(TermsHashPerField.java:523)
+	org.apache.lucene.index.TermsHashPerField.add(TermsHashPerField.java:432)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:146)
+	org.apache.lucene.index.DocFieldConsumersPerField.processFields(DocFieldConsumersPerField.java:36)
+TRACE 300297:
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:154)
+	org.apache.lucene.index.DocFieldConsumersPerField.processFields(DocFieldConsumersPerField.java:36)
+	org.apache.lucene.index.DocFieldProcessorPerThread.processDocument(DocFieldProcessorPerThread.java:234)
+	org.apache.lucene.index.DocumentsWriter.updateDocument(DocumentsWriter.java:765)
+TRACE 300298:
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:134)
+	org.apache.lucene.index.DocFieldConsumersPerField.processFields(DocFieldConsumersPerField.java:36)
+	org.apache.lucene.index.DocFieldProcessorPerThread.processDocument(DocFieldProcessorPerThread.java:234)
+	org.apache.lucene.index.DocumentsWriter.updateDocument(DocumentsWriter.java:765)
+TRACE 300299:
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:171)
+	org.apache.lucene.index.DocFieldConsumersPerField.processFields(DocFieldConsumersPerField.java:36)
+	org.apache.lucene.index.DocFieldProcessorPerThread.processDocument(DocFieldProcessorPerThread.java:234)
+	org.apache.lucene.index.DocumentsWriter.updateDocument(DocumentsWriter.java:765)
+TRACE 300300:
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:159)
+	org.apache.lucene.index.DocFieldConsumersPerField.processFields(DocFieldConsumersPerField.java:36)
+	org.apache.lucene.index.DocFieldProcessorPerThread.processDocument(DocFieldProcessorPerThread.java:234)
+	org.apache.lucene.index.DocumentsWriter.updateDocument(DocumentsWriter.java:765)
+TRACE 300301:
+	org.apache.lucene.index.TermsHashPerField.add(TermsHashPerField.java:387)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:146)
+	org.apache.lucene.index.DocFieldConsumersPerField.processFields(DocFieldConsumersPerField.java:36)
+	org.apache.lucene.index.DocFieldProcessorPerThread.processDocument(DocFieldProcessorPerThread.java:234)
+TRACE 300303:
+	org.apache.lucene.index.TermsHashPerField.add(TermsHashPerField.java:448)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:146)
+	org.apache.lucene.index.DocFieldConsumersPerField.processFields(DocFieldConsumersPerField.java:36)
+	org.apache.lucene.index.DocFieldProcessorPerThread.processDocument(DocFieldProcessorPerThread.java:234)
+TRACE 300304:
+	org.apache.lucene.analysis.Token.termBuffer(Token.java:422)
+	org.apache.lucene.analysis.LowerCaseFilter.next(LowerCaseFilter.java:37)
+	org.apache.lucene.analysis.StopFilter.next(StopFilter.java:120)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:134)
+TRACE 300309:
+	org.apache.lucene.index.DocumentsWriter$ByteBlockAllocator.getByteBlock(DocumentsWriter.java:1159)
+	org.apache.lucene.index.ByteBlockPool.nextBuffer(ByteBlockPool.java:90)
+	org.apache.lucene.index.ByteBlockPool.allocSlice(ByteBlockPool.java:123)
+	org.apache.lucene.index.TermsHashPerField.writeByte(TermsHashPerField.java:475)
+TRACE 300310:
+	org.apache.lucene.index.DocumentsWriter.bytesAllocated(DocumentsWriter.java:1208)
+	org.apache.lucene.index.TermsHash.getPostings(TermsHash.java:220)
+	org.apache.lucene.index.TermsHashPerThread.morePostings(TermsHashPerThread.java:75)
+	org.apache.lucene.index.TermsHashPerField.add(TermsHashPerField.java:414)
+TRACE 300316:
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:181)
+	org.apache.lucene.index.TermsHashPerField.sortPostings(TermsHashPerField.java:136)
+	org.apache.lucene.index.FreqProxFieldMergeState.<init>(FreqProxFieldMergeState.java:51)
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:202)
+TRACE 300317:
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:184)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+TRACE 300318:
+	org.apache.lucene.index.FreqProxFieldMergeState.nextDoc(FreqProxFieldMergeState.java:77)
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:323)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+	org.apache.lucene.index.TermsHash.flush(TermsHash.java:145)
+TRACE 300319:
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:260)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+	org.apache.lucene.index.TermsHash.flush(TermsHash.java:145)
+	org.apache.lucene.index.DocInverter.flush(DocInverter.java:74)
+TRACE 300320:
+	org.apache.lucene.index.DefaultSkipListWriter.writeSkipData(DefaultSkipListWriter.java:99)
+	org.apache.lucene.index.MultiLevelSkipListWriter.bufferSkip(MultiLevelSkipListWriter.java:115)
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:262)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+TRACE 300324:
+	java.util.Arrays.fill(Arrays.java:2986)
+	org.apache.lucene.index.ByteBlockPool.reset(ByteBlockPool.java:67)
+	org.apache.lucene.index.TermsHashPerThread.reset(TermsHashPerThread.java:111)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:149)
+TRACE 300329:
+	java.util.Calendar.getTime(Calendar.java:1755)
+	org.apache.lucene.document.DateTools.timeToString(DateTools.java:115)
+	org.apache.lucene.demo.FileDocument.Document(FileDocument.java:56)
+	org.dacapo.luindex.Index.indexDocs(Index.java:105)
+TRACE 300331:
+	java.nio.Buffer.<init>(Buffer.java:201)
+	java.nio.CharBuffer.<init>(CharBuffer.java:281)
+	java.nio.HeapCharBuffer.<init>(HeapCharBuffer.java:70)
+	java.nio.CharBuffer.wrap(CharBuffer.java:373)
+TRACE 300337:
+	java.nio.Buffer.<init>(Buffer.java:197)
+	java.nio.ByteBuffer.<init>(ByteBuffer.java:281)
+	java.nio.HeapByteBuffer.<init>(HeapByteBuffer.java:57)
+	java.nio.ByteBuffer.allocate(ByteBuffer.java:335)
+TRACE 300338:
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:192)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+TRACE 300340:
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:226)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+	org.apache.lucene.index.TermsHash.flush(TermsHash.java:145)
+	org.apache.lucene.index.DocInverter.flush(DocInverter.java:74)
+TRACE 300342:
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:284)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+	org.apache.lucene.index.TermsHash.flush(TermsHash.java:145)
+	org.apache.lucene.index.DocInverter.flush(DocInverter.java:74)
+TRACE 300343:
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:355)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+	org.apache.lucene.index.TermsHash.flush(TermsHash.java:145)
+	org.apache.lucene.index.DocInverter.flush(DocInverter.java:74)
+TRACE 300349:
+	org.apache.lucene.index.SegmentReader.initialize(SegmentReader.java:321)
+	org.apache.lucene.index.SegmentReader.get(SegmentReader.java:306)
+	org.apache.lucene.index.SegmentReader.get(SegmentReader.java:260)
+	org.apache.lucene.index.IndexWriter.mergeMiddle(IndexWriter.java:4220)
+TRACE 300350:
+	org.apache.lucene.store.IndexInput.readVInt(IndexInput.java:78)
+	org.apache.lucene.index.SegmentTermDocs.next(SegmentTermDocs.java:110)
+	org.apache.lucene.index.SegmentTermPositions.next(SegmentTermPositions.java:98)
+	org.apache.lucene.index.SegmentMerger.appendPostings(SegmentMerger.java:634)
+TRACE 300351:
+	java.lang.System.arraycopy(System.java:Unknown line)
+	org.apache.lucene.util.UnicodeUtil$UTF16Result.copyText(UnicodeUtil.java:105)
+	org.apache.lucene.index.TermBuffer.set(TermBuffer.java:104)
+	org.apache.lucene.index.SegmentTermEnum.next(SegmentTermEnum.java:126)
+TRACE 300355:
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:555)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+	org.apache.lucene.index.SegmentMerger.merge(SegmentMerger.java:140)
+	org.apache.lucene.index.IndexWriter.mergeMiddle(IndexWriter.java:4231)
+TRACE 300356:
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:550)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+	org.apache.lucene.index.SegmentMerger.merge(SegmentMerger.java:140)
+	org.apache.lucene.index.IndexWriter.mergeMiddle(IndexWriter.java:4231)
+TRACE 300357:
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:549)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+	org.apache.lucene.index.SegmentMerger.merge(SegmentMerger.java:140)
+	org.apache.lucene.index.IndexWriter.mergeMiddle(IndexWriter.java:4231)
+TRACE 300362:
+	java.lang.Integer.toUnsignedString0(Integer.java:311)
+	java.lang.Integer.toHexString(Integer.java:233)
+	org.dacapo.harness.Digest.toString(Digest.java:46)
+	org.dacapo.harness.Benchmark.validate(Benchmark.java:412)
+TRACE 300363:
+	org.apache.lucene.analysis.Token.termBuffer(Token.java:422)
+	org.apache.lucene.analysis.LowerCaseFilter.next(LowerCaseFilter.java:37)
+	org.apache.lucene.analysis.StopFilter.next(StopFilter.java:120)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:134)
+TRACE 300368:
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:303)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+	org.apache.lucene.index.TermsHash.flush(TermsHash.java:145)
+	org.apache.lucene.index.DocInverter.flush(DocInverter.java:74)
+TRACE 300370:
+	org.apache.lucene.store.IndexOutput.writeInt(IndexOutput.java:58)
+	org.apache.lucene.store.IndexOutput.writeLong(IndexOutput.java:81)
+	org.apache.lucene.index.FieldsWriter.flushDocument(FieldsWriter.java:124)
+	org.apache.lucene.index.StoredFieldsWriter.finishDocument(StoredFieldsWriter.java:146)
+TRACE 300375:
+	org.apache.lucene.index.FreqProxTermsWriterPerField.writeProx(FreqProxTermsWriterPerField.java:84)
+	org.apache.lucene.index.FreqProxTermsWriterPerField.newTerm(FreqProxTermsWriterPerField.java:99)
+	org.apache.lucene.index.TermsHashPerField.add(TermsHashPerField.java:453)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:146)
+TRACE 300377:
+	java.nio.HeapByteBuffer.compact(HeapByteBuffer.java:229)
+	sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:270)
+	sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+TRACE 300381:
+	java.lang.System.arraycopy(System.java:Unknown line)
+	org.apache.lucene.index.TermsHash.recyclePostings(TermsHash.java:187)
+	org.apache.lucene.index.TermsHashPerField.reset(TermsHashPerField.java:93)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:137)
+TRACE 300382:
+	org.apache.lucene.index.SegmentTermPositions.lazySkip(SegmentTermPositions.java:156)
+	org.apache.lucene.index.SegmentTermPositions.nextPosition(SegmentTermPositions.java:67)
+	org.apache.lucene.index.SegmentMerger.appendPostings(SegmentMerger.java:667)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:586)
+TRACE 300383:
+	org.apache.lucene.index.SegmentMerger.appendPostings(SegmentMerger.java:632)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:586)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:547)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+TRACE 300384:
+	org.apache.lucene.index.SegmentMerger.appendPostings(SegmentMerger.java:656)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:586)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:547)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+TRACE 300386:
+	org.apache.lucene.index.SegmentMergeInfo.next(SegmentMergeInfo.java:66)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:554)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+	org.apache.lucene.index.SegmentMerger.merge(SegmentMerger.java:140)
+TRACE 300389:
+	org.apache.lucene.index.SegmentMerger.appendPostings(SegmentMerger.java:659)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:586)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:547)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+TRACE 300390:
+	org.apache.lucene.index.SegmentMerger.appendPostings(SegmentMerger.java:686)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:586)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:547)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+TRACE 300391:
+	java.io.UnixFileSystem.getBooleanAttributes0(UnixFileSystem.java:Unknown line)
+	java.io.UnixFileSystem.getBooleanAttributes(UnixFileSystem.java:242)
+	java.io.File.exists(File.java:819)
+	org.apache.lucene.store.SimpleFSLock.release(SimpleFSLockFactory.java:148)
+TRACE 300392:
+	java.util.Hashtable$Entry.clone(Hashtable.java:1270)
+	java.util.Hashtable$Entry.clone(Hashtable.java:1271)
+	java.util.Hashtable.clone(Hashtable.java:551)
+	org.dacapo.harness.Benchmark.startIteration(Benchmark.java:311)
+TRACE 300400:
+	org.apache.lucene.index.SegmentMergeInfo.next(SegmentMergeInfo.java:65)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:554)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+	org.apache.lucene.index.SegmentMerger.merge(SegmentMerger.java:140)
+TRACE 300409:
+	java.security.MessageDigest.update(MessageDigest.java:303)
+	org.dacapo.harness.FileDigest.getText(FileDigest.java:98)
+	org.dacapo.harness.FileDigest.get(FileDigest.java:47)
+	org.dacapo.harness.Benchmark.validate(Benchmark.java:412)
+TRACE 300411:
+	org.apache.lucene.index.TermsHashPerField.comparePostings(TermsHashPerField.java:229)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:154)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+TRACE 300416:
+	org.apache.lucene.index.SegmentTermEnum.close(SegmentTermEnum.java:207)
+	org.apache.lucene.index.SegmentMergeInfo.close(SegmentMergeInfo.java:75)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:557)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+TRACE 300417:
+	java.util.Hashtable.get(Hashtable.java:366)
+	java.util.Properties.getProperty(Properties.java:969)
+	java.lang.System.getProperty(System.java:720)
+	java.io.UnixFileSystem.resolve(UnixFileSystem.java:133)
+TRACE 300418:
+	java.util.Hashtable$Entry.clone(Hashtable.java:1271)
+	java.util.Hashtable.clone(Hashtable.java:551)
+	org.dacapo.harness.Benchmark.startIteration(Benchmark.java:311)
+	org.dacapo.harness.Benchmark.run(Benchmark.java:185)
+TRACE 300423:
+	org.apache.lucene.index.TermsHashPerField.comparePostings(TermsHashPerField.java:229)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:184)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+	org.apache.lucene.index.TermsHashPerField.sortPostings(TermsHashPerField.java:136)
+TRACE 300428:
+	java.lang.Object.notifyAll(Object.java:Unknown line)
+	org.apache.lucene.index.DocumentsWriter.close(DocumentsWriter.java:637)
+	org.apache.lucene.index.IndexWriter.closeInternal(IndexWriter.java:1634)
+	org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1602)
+TRACE 300445:
+	org.apache.lucene.index.TermBuffer.read(TermBuffer.java:65)
+	org.apache.lucene.index.SegmentTermEnum.next(SegmentTermEnum.java:127)
+	org.apache.lucene.index.SegmentMergeInfo.next(SegmentMergeInfo.java:65)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:554)
+TRACE 300449:
+	org.apache.lucene.index.TermsHashPerField.comparePostings(TermsHashPerField.java:229)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:154)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+TRACE 300451:
+	org.apache.lucene.index.SegmentTermEnum.next(SegmentTermEnum.java:127)
+	org.apache.lucene.index.SegmentMergeInfo.next(SegmentMergeInfo.java:65)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:554)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+TRACE 300453:
+	org.apache.lucene.store.BufferedIndexOutput.close(BufferedIndexOutput.java:109)
+	org.apache.lucene.store.FSDirectory$FSIndexOutput.close(FSDirectory.java:652)
+	org.apache.lucene.index.CompoundFileWriter.close(CompoundFileWriter.java:203)
+	org.apache.lucene.index.DocumentsWriter.createCompoundFile(DocumentsWriter.java:611)
+TRACE 300454:
+	org.apache.lucene.index.TermsHashPerField.comparePostings(TermsHashPerField.java:229)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:160)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+TRACE 300455:
+	java.lang.String.indexOf(String.java:1769)
+	java.lang.String.indexOf(String.java:1718)
+	org.dacapo.harness.FileDigest.replaceAllFixed(FileDigest.java:69)
+	org.dacapo.harness.FileDigest.getText(FileDigest.java:93)
+TRACE 300456:
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:192)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+	org.apache.lucene.index.TermsHashPerField.sortPostings(TermsHashPerField.java:136)
+	org.apache.lucene.index.FreqProxFieldMergeState.<init>(FreqProxFieldMergeState.java:51)
+TRACE 300458:
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:192)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+	org.apache.lucene.index.TermsHashPerField.sortPostings(TermsHashPerField.java:136)
+TRACE 300460:
+	org.apache.lucene.index.TermsHash.getPostings(TermsHash.java:231)
+	org.apache.lucene.index.TermsHashPerThread.morePostings(TermsHashPerThread.java:75)
+	org.apache.lucene.index.TermsHashPerField.add(TermsHashPerField.java:414)
+	org.apache.lucene.index.DocInverterPerField.processFields(DocInverterPerField.java:146)
+TRACE 300461:
+	org.apache.lucene.store.IndexOutput.writeVInt(IndexOutput.java:72)
+	org.apache.lucene.index.DefaultSkipListWriter.writeSkipData(DefaultSkipListWriter.java:117)
+	org.apache.lucene.index.MultiLevelSkipListWriter.bufferSkip(MultiLevelSkipListWriter.java:115)
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:262)
+TRACE 300463:
+	java.lang.Thread.setPriority0(Thread.java:Unknown line)
+	java.lang.Thread.setPriority(Thread.java:1095)
+	java.lang.Thread.init(Thread.java:417)
+	java.lang.Thread.init(Thread.java:349)
+TRACE 300464:
+	org.apache.lucene.store.RAMOutputStream.writeTo(RAMOutputStream.java:68)
+	org.apache.lucene.index.MultiLevelSkipListWriter.writeSkip(MultiLevelSkipListWriter.java:146)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:589)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:547)
+TRACE 300466:
+	org.apache.lucene.index.TermsHashPerField.comparePostings(TermsHashPerField.java:229)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:160)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+TRACE 300467:
+	org.apache.lucene.index.TermsHashPerField.comparePostings(TermsHashPerField.java:229)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:181)
+	org.apache.lucene.index.TermsHashPerField.sortPostings(TermsHashPerField.java:136)
+	org.apache.lucene.index.FreqProxFieldMergeState.<init>(FreqProxFieldMergeState.java:51)
+TRACE 300469:
+	org.apache.lucene.index.TermsHashPerField.comparePostings(TermsHashPerField.java:229)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:144)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+TRACE 300474:
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:192)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+TRACE 300475:
+	org.apache.lucene.index.NormsWriter.flush(NormsWriter.java:128)
+	org.apache.lucene.index.DocInverter.flush(DocInverter.java:75)
+	org.apache.lucene.index.DocFieldConsumers.flush(DocFieldConsumers.java:75)
+	org.apache.lucene.index.DocFieldProcessor.flush(DocFieldProcessor.java:60)
+TRACE 300476:
+	org.apache.lucene.store.IndexOutput.writeVInt(IndexOutput.java:72)
+	org.apache.lucene.index.SegmentMerger.appendPostings(SegmentMerger.java:658)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:586)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:547)
+TRACE 300480:
+	org.apache.lucene.store.IndexInput.readVInt(IndexInput.java:78)
+	org.apache.lucene.index.TermBuffer.read(TermBuffer.java:65)
+	org.apache.lucene.index.SegmentTermEnum.next(SegmentTermEnum.java:127)
+	org.apache.lucene.index.SegmentMergeInfo.next(SegmentMergeInfo.java:65)
+TRACE 300481:
+	org.apache.lucene.index.TermInfosWriter.add(TermInfosWriter.java:109)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:594)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:547)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+TRACE 300484:
+	java.io.UnixFileSystem.canonicalize0(UnixFileSystem.java:Unknown line)
+	java.io.UnixFileSystem.canonicalize(UnixFileSystem.java:172)
+	java.io.File.getCanonicalPath(File.java:618)
+	org.dacapo.luindex.Index.indexDocs(Index.java:89)
+TRACE 300487:
+	java.io.UnixFileSystem.delete0(UnixFileSystem.java:Unknown line)
+	java.io.UnixFileSystem.delete(UnixFileSystem.java:265)
+	java.io.File.delete(File.java:1041)
+	org.apache.lucene.store.FSDirectory.createOutput(FSDirectory.java:439)
+TRACE 300490:
+	org.apache.lucene.store.IndexInput.readVInt(IndexInput.java:80)
+	org.apache.lucene.index.SegmentTermDocs.next(SegmentTermDocs.java:110)
+	org.apache.lucene.index.SegmentTermPositions.next(SegmentTermPositions.java:98)
+	org.apache.lucene.index.SegmentMerger.appendPostings(SegmentMerger.java:634)
+TRACE 300491:
+	org.apache.lucene.store.IndexInput.readVInt(IndexInput.java:78)
+	org.apache.lucene.index.SegmentTermDocs.next(SegmentTermDocs.java:120)
+	org.apache.lucene.index.SegmentTermPositions.next(SegmentTermPositions.java:98)
+	org.apache.lucene.index.SegmentMerger.appendPostings(SegmentMerger.java:634)
+TRACE 300492:
+	java.lang.Object.clone(Object.java:Unknown line)
+	java.util.Hashtable.clone(Hashtable.java:547)
+	org.dacapo.harness.Benchmark.startIteration(Benchmark.java:311)
+	org.dacapo.harness.Benchmark.run(Benchmark.java:185)
+TRACE 300493:
+	org.apache.lucene.index.ConcurrentMergeScheduler$MergeThread.setRunningMerge(ConcurrentMergeScheduler.java:229)
+	org.apache.lucene.index.ConcurrentMergeScheduler$MergeThread.run(ConcurrentMergeScheduler.java:259)
+TRACE 300494:
+	org.apache.lucene.index.SegmentTermDocs.next(SegmentTermDocs.java:120)
+	org.apache.lucene.index.SegmentTermPositions.next(SegmentTermPositions.java:98)
+	org.apache.lucene.index.SegmentMerger.appendPostings(SegmentMerger.java:634)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:586)
+TRACE 300495:
+	org.apache.lucene.index.SegmentMerger.appendPostings(SegmentMerger.java:648)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:586)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:547)
+	org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:500)
+TRACE 300497:
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:192)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+	org.apache.lucene.index.TermsHashPerField.sortPostings(TermsHashPerField.java:136)
+	org.apache.lucene.index.FreqProxFieldMergeState.<init>(FreqProxFieldMergeState.java:51)
+TRACE 300498:
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:262)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+	org.apache.lucene.index.TermsHash.flush(TermsHash.java:145)
+	org.apache.lucene.index.DocInverter.flush(DocInverter.java:74)
+TRACE 300499:
+	org.apache.lucene.index.TermsHashPerField.comparePostings(TermsHashPerField.java:229)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:181)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:198)
+TRACE 300500:
+	org.apache.lucene.store.IndexOutput.writeVInt(IndexOutput.java:72)
+	org.apache.lucene.index.SegmentMerger.appendPostings(SegmentMerger.java:656)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:586)
+	org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:547)
+TRACE 300501:
+	org.apache.lucene.store.IndexOutput.writeVInt(IndexOutput.java:72)
+	org.apache.lucene.index.DefaultSkipListWriter.writeSkipData(DefaultSkipListWriter.java:114)
+	org.apache.lucene.index.MultiLevelSkipListWriter.bufferSkip(MultiLevelSkipListWriter.java:115)
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:262)
+TRACE 300502:
+	java.io.UnixFileSystem.getLength(UnixFileSystem.java:Unknown line)
+	java.io.File.length(File.java:974)
+	org.dacapo.harness.Benchmark.byteCount(Benchmark.java:659)
+	org.dacapo.harness.Benchmark.validate(Benchmark.java:465)
+TRACE 300504:
+	org.apache.lucene.index.FreqProxTermsWriter.appendPostings(FreqProxTermsWriter.java:363)
+	org.apache.lucene.index.FreqProxTermsWriter.flush(FreqProxTermsWriter.java:132)
+	org.apache.lucene.index.TermsHash.flush(TermsHash.java:145)
+	org.apache.lucene.index.DocInverter.flush(DocInverter.java:74)
+TRACE 300505:
+	org.apache.lucene.index.TermsHashPerField.comparePostings(TermsHashPerField.java:229)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:184)
+	org.apache.lucene.index.TermsHashPerField.sortPostings(TermsHashPerField.java:136)
+	org.apache.lucene.index.FreqProxFieldMergeState.<init>(FreqProxFieldMergeState.java:51)
+TRACE 300506:
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:192)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+	org.apache.lucene.index.TermsHashPerField.quickSort(TermsHashPerField.java:197)
+TRACE 300507:
+	java.util.Hashtable.clone(Hashtable.java:548)
+	org.dacapo.harness.Benchmark.startIteration(Benchmark.java:311)
+	org.dacapo.harness.Benchmark.run(Benchmark.java:185)
+	org.dacapo.harness.TestHarness.runBenchmark(TestHarness.java:199)
+TRACE 300508:
+	java.util.HashMap.getNode(HashMap.java:581)
+	java.util.LinkedHashMap.get(LinkedHashMap.java:440)
+	java.io.ExpiringCache.entryFor(ExpiringCache.java:103)
+	java.io.ExpiringCache.cleanup(ExpiringCache.java:123)
+CPU SAMPLES BEGIN (total = 2243) Thu Sep 27 22:48:01 2018
+rank   self  accum   count trace method
+   1 16,36% 16,36%     367 300360 java.io.FileDescriptor.sync
+   2  9,14% 25,50%     205 300328 java.io.FileOutputStream.write
+   3  5,44% 30,94%     122 300307 org.apache.lucene.analysis.standard.StandardTokenizerImpl.getNextToken
+   4  4,41% 35,35%      99 300361 java.io.FileDescriptor.sync
+   5  4,32% 39,68%      97 300197 java.io.FileDescriptor.sync
+   6  3,66% 43,33%      82 300305 org.apache.lucene.analysis.standard.StandardTokenizerImpl.getNextToken
+   7  3,25% 46,59%      73 300376 org.apache.lucene.index.FreqProxTermsWriterPerField.writeProx
+   8  3,21% 49,80%      72 300302 org.apache.lucene.analysis.StopFilter.next
+   9  2,99% 52,79%      67 300325 org.apache.lucene.analysis.StopFilter.next
+  10  2,59% 55,37%      58 300308 org.apache.lucene.index.FreqProxTermsWriterPerField.addTerm
+  11  2,36% 57,74%      53 300306 java.io.FileInputStream.readBytes
+  12  2,10% 59,83%      47 300372 java.io.UnixFileSystem.canonicalize0
+  13  1,87% 61,70%      42 300366 org.apache.lucene.index.FreqProxTermsWriterPerField.addTerm
+  14  1,78% 63,49%      40 300334 org.apache.lucene.analysis.standard.StandardTokenizer.next
+  15  1,69% 65,18%      38 300359 org.apache.lucene.store.IndexInput.readVInt
+  16  1,69% 66,87%      38 300369 org.apache.lucene.store.IndexInput.readVInt
+  17  1,38% 68,26%      31 300364 org.apache.lucene.analysis.CharArraySet.getSlot
+  18  1,11% 69,37%      25 300333 java.io.UnixFileSystem.checkAccess
+  19  1,03% 70,40%      23 300336 org.apache.lucene.analysis.StopFilter.next
+  20  0,98% 71,38%      22 300312 org.apache.lucene.index.TermsHashPerField.writeVInt
+  21  0,98% 72,36%      22 300344 java.io.RandomAccessFile.writeBytes
+  22  0,94% 73,29%      21 300122 java.io.FileOutputStream.writeBytes
+  23  0,89% 74,19%      20 300365 org.apache.lucene.index.FreqProxTermsWriterPerField.writeProx
+  24  0,85% 75,03%      19 300330 java.io.FileInputStream.open0
+  25  0,85% 75,88%      19 300335 java.io.UnixFileSystem.getBooleanAttributes0
+  26  0,80% 76,68%      18 300393 org.apache.lucene.analysis.standard.StandardTokenizer.next
+  27  0,76% 77,44%      17 300311 org.apache.lucene.index.TermsHashPerField.add
+  28  0,76% 78,20%      17 300414 java.io.RandomAccessFile.readBytes
+  29  0,71% 78,91%      16 300373 java.io.FileInputStream.available0
+  30  0,67% 79,58%      15 300410 org.apache.lucene.index.FreqProxTermsWriterPerField.writeProx
+  31  0,62% 80,21%      14 300421 java.lang.Object.notifyAll
+  32  0,58% 80,78%      13 300374 java.io.UnixFileSystem.list
+  33  0,58% 81,36%      13 300379 org.apache.lucene.index.FreqProxTermsWriter.appendPostings
+  34  0,58% 81,94%      13 300396 java.io.UnixFileSystem.getLastModifiedTime
+  35  0,53% 82,48%      12 300352 java.io.RandomAccessFile.seek0
+  36  0,53% 83,01%      12 300412 org.apache.lucene.index.TermsHashPerField.writeVInt
+  37  0,45% 83,46%      10 300321 org.apache.lucene.index.FreqProxFieldMergeState.nextTerm
+  38  0,45% 83,91%      10 300371 org.apache.lucene.index.TermsHashPerField.writeVInt
+  39  0,45% 84,35%      10 300380 org.apache.lucene.index.FreqProxTermsWriter.appendPostings
+  40  0,40% 84,75%       9 300397 java.io.FileInputStream.close0
+  41  0,36% 85,11%       8 300402 org.apache.lucene.store.IndexInput.readVInt
+  42  0,36% 85,47%       8 300430 org.apache.lucene.store.IndexOutput.writeVInt
+  43  0,36% 85,82%       8 300450 org.apache.lucene.index.SegmentMerger.appendPostings
+  44  0,31% 86,13%       7 300124 java.util.zip.Inflater.inflateBytes
+  45  0,31% 86,45%       7 300332 java.lang.String.intern
+  46  0,31% 86,76%       7 300385 org.apache.lucene.index.TermInfosWriter.add
+  47  0,27% 87,03%       6 300425 org.apache.lucene.index.FreqProxTermsWriterPerField.writeProx
+  48  0,22% 87,25%       5 300358 org.apache.lucene.store.IndexOutput.writeVInt
+  49  0,22% 87,47%       5 300378 java.lang.String.intern
+  50  0,22% 87,70%       5 300408 java.io.UnixFileSystem.delete0
+  51  0,22% 87,92%       5 300415 org.apache.lucene.store.IndexInput.readVInt
+  52  0,22% 88,14%       5 300486 org.apache.lucene.index.TermsHashPerField.comparePostings
+  53  0,22% 88,36%       5 300488 org.apache.lucene.index.TermsHashPerField.comparePostings
+  54  0,18% 88,54%       4 300322 org.apache.lucene.index.FreqProxTermsWriter.appendPostings
+  55  0,18% 88,72%       4 300403 org.apache.lucene.index.TermsHashPerField.comparePostings
+  56  0,18% 88,90%       4 300407 org.apache.lucene.store.IndexInput.readVInt
+  57  0,18% 89,08%       4 300419 org.apache.lucene.index.DocInverterPerField.processFields
+  58  0,18% 89,26%       4 300429 java.io.BufferedReader.readLine
+  59  0,18% 89,43%       4 300446 org.apache.lucene.index.TermBuffer.read
+  60  0,18% 89,61%       4 300448 org.apache.lucene.index.FreqProxTermsWriterPerField.writeProx
+  61  0,18% 89,79%       4 300452 org.apache.lucene.index.TermsHashPerField.rehashPostings
+  62  0,18% 89,97%       4 300457 java.lang.String.intern
+  63  0,18% 90,15%       4 300459 org.apache.lucene.index.TermInfosWriter.add
+  64  0,18% 90,33%       4 300489 org.apache.lucene.index.MultiLevelSkipListWriter.writeSkip
+  65  0,18% 90,50%       4 300496 java.io.UnixFileSystem.delete0
+  66  0,13% 90,64%       3 300339 org.apache.lucene.index.FreqProxTermsWriter.appendPostings
+  67  0,13% 90,77%       3 300341 org.apache.lucene.index.FreqProxTermsWriter.appendPostings
+  68  0,13% 90,91%       3 300367 org.apache.lucene.index.TermsHashPerField.quickSort
+  69  0,13% 91,04%       3 300387 org.apache.lucene.index.MultiLevelSkipListWriter.resetSkip
+  70  0,13% 91,17%       3 300395 org.apache.lucene.store.RAMOutputStream.writeTo
+  71  0,13% 91,31%       3 300399 org.apache.lucene.store.IndexInput.readVInt
+  72  0,13% 91,44%       3 300405 org.apache.lucene.index.MultiLevelSkipListWriter.resetSkip
+  73  0,13% 91,57%       3 300406 org.apache.lucene.index.SegmentMerger.mergeTermInfos
+  74  0,13% 91,71%       3 300413 org.apache.lucene.index.TermsHashPerField.quickSort
+  75  0,13% 91,84%       3 300424 org.apache.lucene.index.SegmentMerger.appendPostings
+  76  0,13% 91,98%       3 300427 org.apache.lucene.index.SegmentTermPositions.readDeltaPosition
+  77  0,13% 92,11%       3 300462 org.apache.lucene.index.TermsHashPerField.comparePostings
+  78  0,13% 92,24%       3 300465 org.apache.lucene.index.SegmentMerger.mergeTermInfo
+  79  0,13% 92,38%       3 300471 sun.nio.cs.UTF_8$Decoder.decodeArrayLoop
+  80  0,13% 92,51%       3 300472 org.apache.lucene.index.TermsHashPerField.comparePostings
+  81  0,13% 92,64%       3 300478 org.apache.lucene.index.TermsHashPerField.quickSort
+  82  0,13% 92,78%       3 300483 java.lang.System.currentTimeMillis
+  83  0,09% 92,87%       2 300062 java.lang.ClassLoader.defineClass1
+  84  0,09% 92,96%       2 300296 org.apache.lucene.index.DocInverterPerField.processFields
+  85  0,09% 93,05%       2 300323 org.apache.lucene.index.FreqProxTermsWriter.appendPostings
+  86  0,09% 93,13%       2 300353 org.apache.lucene.index.SegmentMerger.mergeTermInfos
+  87  0,09% 93,22%       2 300354 org.apache.lucene.index.SegmentMerger.mergeTermInfo
+  88  0,09% 93,31%       2 300388 org.apache.lucene.index.SegmentMerger.appendPostings
+  89  0,09% 93,40%       2 300394 org.apache.lucene.index.TermsHashPerField.sortPostings
+  90  0,09% 93,49%       2 300398 org.apache.lucene.index.TermsHashPerField.comparePostings
+  91  0,09% 93,58%       2 300401 org.apache.lucene.util.PriorityQueue.put
+  92  0,09% 93,67%       2 300404 org.apache.lucene.index.MultiLevelSkipListWriter.writeSkip
+  93  0,09% 93,76%       2 300422 org.apache.lucene.index.FreqProxTermsWriter.appendPostings
+  94  0,09% 93,85%       2 300426 org.apache.lucene.index.TermsHashPerField.comparePostings
+  95  0,09% 93,94%       2 300431 org.apache.lucene.util.UnicodeUtil.UTF16toUTF8
+  96  0,09% 94,03%       2 300444 org.apache.lucene.store.RAMOutputStream.writeTo
+  97  0,09% 94,12%       2 300447 org.apache.lucene.index.TermInfosWriter.add
+  98  0,09% 94,20%       2 300468 java.io.UnixFileSystem.getBooleanAttributes0
+  99  0,09% 94,29%       2 300470 org.apache.lucene.index.FreqProxTermsWriterPerField.addTerm
+ 100  0,09% 94,38%       2 300473 java.io.UnixFileSystem.getBooleanAttributes0
+ 101  0,09% 94,47%       2 300477 java.lang.Runtime.gc
+ 102  0,09% 94,56%       2 300479 java.lang.Object.<init>
+ 103  0,09% 94,65%       2 300482 java.io.UnixFileSystem.getBooleanAttributes0
+ 104  0,09% 94,74%       2 300485 org.apache.lucene.index.TermsHashPerField.comparePostings
+ 105  0,09% 94,83%       2 300503 org.apache.lucene.index.TermsHashPerField.quickSort
+ 106  0,04% 94,87%       1 300049 java.util.zip.ZipFile.open
+ 107  0,04% 94,92%       1 300085 sun.net.www.protocol.jar.JarURLConnection.<clinit>
+ 108  0,04% 94,96%       1 300095 java.lang.String.indexOf
+ 109  0,04% 95,01%       1 300113 java.util.zip.ZipFile.getEntryCrc
+ 110  0,04% 95,05%       1 300118 java.io.FileOutputStream.writeBytes
+ 111  0,04% 95,10%       1 300123 java.util.zip.ZipInputStream.readLOC
+ 112  0,04% 95,14%       1 300125 java.lang.String.startsWith
+ 113  0,04% 95,19%       1 300126 java.io.FileOutputStream.open0
+ 114  0,04% 95,23%       1 300127 java.util.zip.ZipFile.read
+ 115  0,04% 95,27%       1 300128 java.lang.Object.<init>
+ 116  0,04% 95,32%       1 300129 java.util.zip.Inflater.reset
+ 117  0,04% 95,36%       1 300130 java.io.FileOutputStream.writeBytes
+ 118  0,04% 95,41%       1 300136 java.util.regex.Pattern.compile
+ 119  0,04% 95,45%       1 300155 org.dacapo.harness.Callback.start
+ 120  0,04% 95,50%       1 300156 org.dacapo.luindex.Index.main
+ 121  0,04% 95,54%       1 300157 org.apache.lucene.index.IndexWriter.<init>
+ 122  0,04% 95,59%       1 300191 java.lang.String.intern
+ 123  0,04% 95,63%       1 300192 java.lang.Class.forName0
+ 124  0,04% 95,68%       1 300198 java.util.zip.Inflater.inflateBytes
+ 125  0,04% 95,72%       1 300235 java.lang.Class.getDeclaredConstructors0
+ 126  0,04% 95,76%       1 300263 java.net.URLStreamHandler.setURL
+ 127  0,04% 95,81%       1 300268 java.util.TimeZone.getTimeZone
+ 128  0,04% 95,85%       1 300292 org.apache.lucene.index.DocFieldProcessor.addThread
+ 129  0,04% 95,90%       1 300293 org.apache.lucene.analysis.standard.StandardTokenizer.<init>
+ 130  0,04% 95,94%       1 300294 java.lang.System.arraycopy
+ 131  0,04% 95,99%       1 300295 org.apache.lucene.index.TermsHashPerField.rehashPostings
+ 132  0,04% 96,03%       1 300297 org.apache.lucene.index.DocInverterPerField.processFields
+ 133  0,04% 96,08%       1 300298 org.apache.lucene.index.DocInverterPerField.processFields
+ 134  0,04% 96,12%       1 300299 org.apache.lucene.index.DocInverterPerField.processFields
+ 135  0,04% 96,17%       1 300300 org.apache.lucene.index.DocInverterPerField.processFields
+ 136  0,04% 96,21%       1 300301 org.apache.lucene.index.TermsHashPerField.add
+ 137  0,04% 96,26%       1 300303 org.apache.lucene.index.TermsHashPerField.add
+ 138  0,04% 96,30%       1 300304 org.apache.lucene.analysis.Token.termBuffer
+ 139  0,04% 96,34%       1 300309 org.apache.lucene.index.DocumentsWriter$ByteBlockAllocator.getByteBlock
+ 140  0,04% 96,39%       1 300310 org.apache.lucene.index.DocumentsWriter.bytesAllocated
+ 141  0,04% 96,43%       1 300316 org.apache.lucene.index.TermsHashPerField.quickSort
+ 142  0,04% 96,48%       1 300317 org.apache.lucene.index.TermsHashPerField.quickSort
+ 143  0,04% 96,52%       1 300318 org.apache.lucene.index.FreqProxFieldMergeState.nextDoc
+ 144  0,04% 96,57%       1 300319 org.apache.lucene.index.FreqProxTermsWriter.appendPostings
+ 145  0,04% 96,61%       1 300320 org.apache.lucene.index.DefaultSkipListWriter.writeSkipData
+ 146  0,04% 96,66%       1 300324 java.util.Arrays.fill
+ 147  0,04% 96,70%       1 300329 java.util.Calendar.getTime
+ 148  0,04% 96,75%       1 300331 java.nio.Buffer.<init>
+ 149  0,04% 96,79%       1 300337 java.nio.Buffer.<init>
+ 150  0,04% 96,83%       1 300338 org.apache.lucene.index.TermsHashPerField.quickSort
+ 151  0,04% 96,88%       1 300340 org.apache.lucene.index.FreqProxTermsWriter.appendPostings
+ 152  0,04% 96,92%       1 300342 org.apache.lucene.index.FreqProxTermsWriter.appendPostings
+ 153  0,04% 96,97%       1 300343 org.apache.lucene.index.FreqProxTermsWriter.appendPostings
+ 154  0,04% 97,01%       1 300349 org.apache.lucene.index.SegmentReader.initialize
+ 155  0,04% 97,06%       1 300350 org.apache.lucene.store.IndexInput.readVInt
+ 156  0,04% 97,10%       1 300351 java.lang.System.arraycopy
+ 157  0,04% 97,15%       1 300355 org.apache.lucene.index.SegmentMerger.mergeTermInfos
+ 158  0,04% 97,19%       1 300356 org.apache.lucene.index.SegmentMerger.mergeTermInfos
+ 159  0,04% 97,24%       1 300357 org.apache.lucene.index.SegmentMerger.mergeTermInfos
+ 160  0,04% 97,28%       1 300362 java.lang.Integer.toUnsignedString0
+ 161  0,04% 97,33%       1 300363 org.apache.lucene.analysis.Token.termBuffer
+ 162  0,04% 97,37%       1 300368 org.apache.lucene.index.FreqProxTermsWriter.appendPostings
+ 163  0,04% 97,41%       1 300370 org.apache.lucene.store.IndexOutput.writeInt
+ 164  0,04% 97,46%       1 300375 org.apache.lucene.index.FreqProxTermsWriterPerField.writeProx
+ 165  0,04% 97,50%       1 300377 java.nio.HeapByteBuffer.compact
+ 166  0,04% 97,55%       1 300381 java.lang.System.arraycopy
+ 167  0,04% 97,59%       1 300382 org.apache.lucene.index.SegmentTermPositions.lazySkip
+ 168  0,04% 97,64%       1 300383 org.apache.lucene.index.SegmentMerger.appendPostings
+ 169  0,04% 97,68%       1 300384 org.apache.lucene.index.SegmentMerger.appendPostings
+ 170  0,04% 97,73%       1 300386 org.apache.lucene.index.SegmentMergeInfo.next
+ 171  0,04% 97,77%       1 300389 org.apache.lucene.index.SegmentMerger.appendPostings
+ 172  0,04% 97,82%       1 300390 org.apache.lucene.index.SegmentMerger.appendPostings
+ 173  0,04% 97,86%       1 300391 java.io.UnixFileSystem.getBooleanAttributes0
+ 174  0,04% 97,90%       1 300392 java.util.Hashtable$Entry.clone
+ 175  0,04% 97,95%       1 300400 org.apache.lucene.index.SegmentMergeInfo.next
+ 176  0,04% 97,99%       1 300409 java.security.MessageDigest.update
+ 177  0,04% 98,04%       1 300411 org.apache.lucene.index.TermsHashPerField.comparePostings
+ 178  0,04% 98,08%       1 300416 org.apache.lucene.index.SegmentTermEnum.close
+ 179  0,04% 98,13%       1 300417 java.util.Hashtable.get
+ 180  0,04% 98,17%       1 300418 java.util.Hashtable$Entry.clone
+ 181  0,04% 98,22%       1 300423 org.apache.lucene.index.TermsHashPerField.comparePostings
+ 182  0,04% 98,26%       1 300428 java.lang.Object.notifyAll
+ 183  0,04% 98,31%       1 300445 org.apache.lucene.index.TermBuffer.read
+ 184  0,04% 98,35%       1 300449 org.apache.lucene.index.TermsHashPerField.comparePostings
+ 185  0,04% 98,40%       1 300451 org.apache.lucene.index.SegmentTermEnum.next
+ 186  0,04% 98,44%       1 300453 org.apache.lucene.store.BufferedIndexOutput.close
+ 187  0,04% 98,48%       1 300454 org.apache.lucene.index.TermsHashPerField.comparePostings
+ 188  0,04% 98,53%       1 300455 java.lang.String.indexOf
+ 189  0,04% 98,57%       1 300456 org.apache.lucene.index.TermsHashPerField.quickSort
+ 190  0,04% 98,62%       1 300458 org.apache.lucene.index.TermsHashPerField.quickSort
+ 191  0,04% 98,66%       1 300460 org.apache.lucene.index.TermsHash.getPostings
+ 192  0,04% 98,71%       1 300461 org.apache.lucene.store.IndexOutput.writeVInt
+ 193  0,04% 98,75%       1 300463 java.lang.Thread.setPriority0
+ 194  0,04% 98,80%       1 300464 org.apache.lucene.store.RAMOutputStream.writeTo
+ 195  0,04% 98,84%       1 300466 org.apache.lucene.index.TermsHashPerField.comparePostings
+ 196  0,04% 98,89%       1 300467 org.apache.lucene.index.TermsHashPerField.comparePostings
+ 197  0,04% 98,93%       1 300469 org.apache.lucene.index.TermsHashPerField.comparePostings
+ 198  0,04% 98,97%       1 300474 org.apache.lucene.index.TermsHashPerField.quickSort
+ 199  0,04% 99,02%       1 300475 org.apache.lucene.index.NormsWriter.flush
+ 200  0,04% 99,06%       1 300476 org.apache.lucene.store.IndexOutput.writeVInt
+ 201  0,04% 99,11%       1 300480 org.apache.lucene.store.IndexInput.readVInt
+ 202  0,04% 99,15%       1 300481 org.apache.lucene.index.TermInfosWriter.add
+ 203  0,04% 99,20%       1 300484 java.io.UnixFileSystem.canonicalize0
+ 204  0,04% 99,24%       1 300487 java.io.UnixFileSystem.delete0
+ 205  0,04% 99,29%       1 300490 org.apache.lucene.store.IndexInput.readVInt
+ 206  0,04% 99,33%       1 300491 org.apache.lucene.store.IndexInput.readVInt
+ 207  0,04% 99,38%       1 300492 java.lang.Object.clone
+ 208  0,04% 99,42%       1 300493 org.apache.lucene.index.ConcurrentMergeScheduler$MergeThread.setRunningMerge
+ 209  0,04% 99,47%       1 300494 org.apache.lucene.index.SegmentTermDocs.next
+ 210  0,04% 99,51%       1 300495 org.apache.lucene.index.SegmentMerger.appendPostings
+ 211  0,04% 99,55%       1 300497 org.apache.lucene.index.TermsHashPerField.quickSort
+ 212  0,04% 99,60%       1 300498 org.apache.lucene.index.FreqProxTermsWriter.appendPostings
+ 213  0,04% 99,64%       1 300499 org.apache.lucene.index.TermsHashPerField.comparePostings
+ 214  0,04% 99,69%       1 300500 org.apache.lucene.store.IndexOutput.writeVInt
+ 215  0,04% 99,73%       1 300501 org.apache.lucene.store.IndexOutput.writeVInt
+ 216  0,04% 99,78%       1 300502 java.io.UnixFileSystem.getLength
+ 217  0,04% 99,82%       1 300504 org.apache.lucene.index.FreqProxTermsWriter.appendPostings
+ 218  0,04% 99,87%       1 300505 org.apache.lucene.index.TermsHashPerField.comparePostings
+ 219  0,04% 99,91%       1 300506 org.apache.lucene.index.TermsHashPerField.quickSort
+ 220  0,04% 99,96%       1 300507 java.util.Hashtable.clone
+ 221  0,04% 100,00%       1 300508 java.util.HashMap.getNode
+CPU SAMPLES END
