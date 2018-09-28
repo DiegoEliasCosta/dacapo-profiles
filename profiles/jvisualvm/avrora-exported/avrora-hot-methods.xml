@@ -1,0 +1,4001 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExportedView Name="Hot Spots" type="table">
+ <TableData NumRows="443" NumColumns="4">
+  <TableHeader>   <TableColumn><![CDATA[Hot Spots - Method]]></TableColumn>
+   <TableColumn><![CDATA[Self Time [%]]]></TableColumn>
+   <TableColumn><![CDATA[Self Time]]></TableColumn>
+   <TableColumn><![CDATA[Self Time (CPU)]]></TableColumn>
+   <TableColumn><![CDATA[Total Time]]></TableColumn>
+   <TableColumn><![CDATA[Total Time (CPU)]]></TableColumn>
+   <TableColumn><![CDATA[Samples]]></TableColumn>
+  </TableHeader>
+  <TableBody>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Object.wait[native]()]]></TableColumn>
+    <TableColumn><![CDATA[56,04%]]></TableColumn>
+    <TableColumn><![CDATA[2788957.029 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2788957.029 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[51612]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.misc.Unsafe.park[native]()]]></TableColumn>
+    <TableColumn><![CDATA[9,33%]]></TableColumn>
+    <TableColumn><![CDATA[464372.699 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[464372.699 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.net.SocketInputStream.socketRead0[native]()]]></TableColumn>
+    <TableColumn><![CDATA[8,06%]]></TableColumn>
+    <TableColumn><![CDATA[400973.501 ms]]></TableColumn>
+    <TableColumn><![CDATA[400973.501 ms]]></TableColumn>
+    <TableColumn><![CDATA[400973.501 ms]]></TableColumn>
+    <TableColumn><![CDATA[400973.501 ms]]></TableColumn>
+    <TableColumn><![CDATA[123]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.management.ThreadImpl.dumpThreads0[native]()]]></TableColumn>
+    <TableColumn><![CDATA[6,92%]]></TableColumn>
+    <TableColumn><![CDATA[344373.877 ms]]></TableColumn>
+    <TableColumn><![CDATA[344373.877 ms]]></TableColumn>
+    <TableColumn><![CDATA[344373.877 ms]]></TableColumn>
+    <TableColumn><![CDATA[344373.877 ms]]></TableColumn>
+    <TableColumn><![CDATA[117]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.net.DualStackPlainSocketImpl.accept0[native]()]]></TableColumn>
+    <TableColumn><![CDATA[6,91%]]></TableColumn>
+    <TableColumn><![CDATA[344026.374 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344026.374 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.output.SimPrinter.printBuffer()]]></TableColumn>
+    <TableColumn><![CDATA[6,24%]]></TableColumn>
+    <TableColumn><![CDATA[310704.733 ms]]></TableColumn>
+    <TableColumn><![CDATA[1823.272 ms]]></TableColumn>
+    <TableColumn><![CDATA[508135.969 ms]]></TableColumn>
+    <TableColumn><![CDATA[199254.217 ms]]></TableColumn>
+    <TableColumn><![CDATA[22759]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FileOutputStream.write[native]()]]></TableColumn>
+    <TableColumn><![CDATA[3,98%]]></TableColumn>
+    <TableColumn><![CDATA[198147.379 ms]]></TableColumn>
+    <TableColumn><![CDATA[198147.379 ms]]></TableColumn>
+    <TableColumn><![CDATA[198147.379 ms]]></TableColumn>
+    <TableColumn><![CDATA[198147.379 ms]]></TableColumn>
+    <TableColumn><![CDATA[9584]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.RippleSynchronizer.waitForNeighbors()]]></TableColumn>
+    <TableColumn><![CDATA[0,87%]]></TableColumn>
+    <TableColumn><![CDATA[43171.251 ms]]></TableColumn>
+    <TableColumn><![CDATA[4204.144 ms]]></TableColumn>
+    <TableColumn><![CDATA[1514010.91 ms]]></TableColumn>
+    <TableColumn><![CDATA[59956.848 ms]]></TableColumn>
+    <TableColumn><![CDATA[36533]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Object.notifyAll[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,64%]]></TableColumn>
+    <TableColumn><![CDATA[32044.165 ms]]></TableColumn>
+    <TableColumn><![CDATA[32044.165 ms]]></TableColumn>
+    <TableColumn><![CDATA[32044.165 ms]]></TableColumn>
+    <TableColumn><![CDATA[32044.165 ms]]></TableColumn>
+    <TableColumn><![CDATA[1576]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Object.hashCode[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,52%]]></TableColumn>
+    <TableColumn><![CDATA[25992.379 ms]]></TableColumn>
+    <TableColumn><![CDATA[25992.379 ms]]></TableColumn>
+    <TableColumn><![CDATA[25992.379 ms]]></TableColumn>
+    <TableColumn><![CDATA[25992.379 ms]]></TableColumn>
+    <TableColumn><![CDATA[1237]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.arch.legacy.LegacyInterpreter.fastLoop()]]></TableColumn>
+    <TableColumn><![CDATA[0,25%]]></TableColumn>
+    <TableColumn><![CDATA[12616.935 ms]]></TableColumn>
+    <TableColumn><![CDATA[12616.935 ms]]></TableColumn>
+    <TableColumn><![CDATA[203178.458 ms]]></TableColumn>
+    <TableColumn><![CDATA[86969.194 ms]]></TableColumn>
+    <TableColumn><![CDATA[9125]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.RippleSynchronizer$NotifyEvent.fire()]]></TableColumn>
+    <TableColumn><![CDATA[0,05%]]></TableColumn>
+    <TableColumn><![CDATA[2309.238 ms]]></TableColumn>
+    <TableColumn><![CDATA[224.414 ms]]></TableColumn>
+    <TableColumn><![CDATA[4837.948 ms]]></TableColumn>
+    <TableColumn><![CDATA[2753.113 ms]]></TableColumn>
+    <TableColumn><![CDATA[241]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.mcu.DefaultMCU$Pin.write()]]></TableColumn>
+    <TableColumn><![CDATA[0,03%]]></TableColumn>
+    <TableColumn><![CDATA[1274.415 ms]]></TableColumn>
+    <TableColumn><![CDATA[1274.415 ms]]></TableColumn>
+    <TableColumn><![CDATA[116482.691 ms]]></TableColumn>
+    <TableColumn><![CDATA[28558.636 ms]]></TableColumn>
+    <TableColumn><![CDATA[5520]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.RandomAccessFile.read0[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,02%]]></TableColumn>
+    <TableColumn><![CDATA[1109.835 ms]]></TableColumn>
+    <TableColumn><![CDATA[1109.835 ms]]></TableColumn>
+    <TableColumn><![CDATA[1109.835 ms]]></TableColumn>
+    <TableColumn><![CDATA[1109.835 ms]]></TableColumn>
+    <TableColumn><![CDATA[54]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.WinNTFileSystem.rename0[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,02%]]></TableColumn>
+    <TableColumn><![CDATA[869.87 ms]]></TableColumn>
+    <TableColumn><![CDATA[869.87 ms]]></TableColumn>
+    <TableColumn><![CDATA[869.87 ms]]></TableColumn>
+    <TableColumn><![CDATA[869.87 ms]]></TableColumn>
+    <TableColumn><![CDATA[51]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.AtmelInterpreter$IORegBehavior.read()]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[582.823 ms]]></TableColumn>
+    <TableColumn><![CDATA[582.823 ms]]></TableColumn>
+    <TableColumn><![CDATA[582.823 ms]]></TableColumn>
+    <TableColumn><![CDATA[582.823 ms]]></TableColumn>
+    <TableColumn><![CDATA[28]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.DeltaQueue.insertEvent()]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[534.975 ms]]></TableColumn>
+    <TableColumn><![CDATA[534.975 ms]]></TableColumn>
+    <TableColumn><![CDATA[534.975 ms]]></TableColumn>
+    <TableColumn><![CDATA[534.975 ms]]></TableColumn>
+    <TableColumn><![CDATA[25]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.net.NetworkInterface.getAll[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[347.504 ms]]></TableColumn>
+    <TableColumn><![CDATA[347.504 ms]]></TableColumn>
+    <TableColumn><![CDATA[347.504 ms]]></TableColumn>
+    <TableColumn><![CDATA[347.504 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.Medium$Receiver.getIntersection()]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[282.291 ms]]></TableColumn>
+    <TableColumn><![CDATA[220.078 ms]]></TableColumn>
+    <TableColumn><![CDATA[282.291 ms]]></TableColumn>
+    <TableColumn><![CDATA[220.078 ms]]></TableColumn>
+    <TableColumn><![CDATA[14]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FileOutputStream.close0[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[269.76 ms]]></TableColumn>
+    <TableColumn><![CDATA[269.76 ms]]></TableColumn>
+    <TableColumn><![CDATA[269.76 ms]]></TableColumn>
+    <TableColumn><![CDATA[269.76 ms]]></TableColumn>
+    <TableColumn><![CDATA[10]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.System.identityHashCode[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[210.431 ms]]></TableColumn>
+    <TableColumn><![CDATA[210.431 ms]]></TableColumn>
+    <TableColumn><![CDATA[210.431 ms]]></TableColumn>
+    <TableColumn><![CDATA[210.431 ms]]></TableColumn>
+    <TableColumn><![CDATA[10]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.RippleSynchronizer.advance()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[202.495 ms]]></TableColumn>
+    <TableColumn><![CDATA[202.495 ms]]></TableColumn>
+    <TableColumn><![CDATA[32246.663 ms]]></TableColumn>
+    <TableColumn><![CDATA[32246.663 ms]]></TableColumn>
+    <TableColumn><![CDATA[1585]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.net.SocketOutputStream.socketWrite0[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[195.271 ms]]></TableColumn>
+    <TableColumn><![CDATA[195.271 ms]]></TableColumn>
+    <TableColumn><![CDATA[195.271 ms]]></TableColumn>
+    <TableColumn><![CDATA[195.271 ms]]></TableColumn>
+    <TableColumn><![CDATA[11]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.AtmelInterpreter$IORegBehavior.write()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[153.509 ms]]></TableColumn>
+    <TableColumn><![CDATA[153.509 ms]]></TableColumn>
+    <TableColumn><![CDATA[116636.228 ms]]></TableColumn>
+    <TableColumn><![CDATA[28712.146 ms]]></TableColumn>
+    <TableColumn><![CDATA[5528]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.Medium$Receiver.earliestNewTransmission()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[140.135 ms]]></TableColumn>
+    <TableColumn><![CDATA[120.533 ms]]></TableColumn>
+    <TableColumn><![CDATA[239.791 ms]]></TableColumn>
+    <TableColumn><![CDATA[220.189 ms]]></TableColumn>
+    <TableColumn><![CDATA[12]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Long.toString()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[136.348 ms]]></TableColumn>
+    <TableColumn><![CDATA[136.348 ms]]></TableColumn>
+    <TableColumn><![CDATA[157.194 ms]]></TableColumn>
+    <TableColumn><![CDATA[157.194 ms]]></TableColumn>
+    <TableColumn><![CDATA[8]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.Medium$Receiver.waitForNeighbors()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[136.217 ms]]></TableColumn>
+    <TableColumn><![CDATA[136.217 ms]]></TableColumn>
+    <TableColumn><![CDATA[1514118.471 ms]]></TableColumn>
+    <TableColumn><![CDATA[60093.066 ms]]></TableColumn>
+    <TableColumn><![CDATA[36536]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Throwable.fillInStackTrace[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[133.985 ms]]></TableColumn>
+    <TableColumn><![CDATA[133.985 ms]]></TableColumn>
+    <TableColumn><![CDATA[133.985 ms]]></TableColumn>
+    <TableColumn><![CDATA[133.985 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.arch.legacy.LegacyInterpreter.runLoop()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[122.014 ms]]></TableColumn>
+    <TableColumn><![CDATA[122.014 ms]]></TableColumn>
+    <TableColumn><![CDATA[2044417.664 ms]]></TableColumn>
+    <TableColumn><![CDATA[279343.624 ms]]></TableColumn>
+    <TableColumn><![CDATA[348]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.CodeSegment.readInstr()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[119.154 ms]]></TableColumn>
+    <TableColumn><![CDATA[119.154 ms]]></TableColumn>
+    <TableColumn><![CDATA[119.154 ms]]></TableColumn>
+    <TableColumn><![CDATA[119.154 ms]]></TableColumn>
+    <TableColumn><![CDATA[6]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.CC1000Radio$RadioRegister.write()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[102.082 ms]]></TableColumn>
+    <TableColumn><![CDATA[102.082 ms]]></TableColumn>
+    <TableColumn><![CDATA[362.341 ms]]></TableColumn>
+    <TableColumn><![CDATA[340.765 ms]]></TableColumn>
+    <TableColumn><![CDATA[18]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.Arrays.copyOf()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[100.91 ms]]></TableColumn>
+    <TableColumn><![CDATA[100.91 ms]]></TableColumn>
+    <TableColumn><![CDATA[100.91 ms]]></TableColumn>
+    <TableColumn><![CDATA[100.91 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.LinkedList.listIterator()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[99.656 ms]]></TableColumn>
+    <TableColumn><![CDATA[99.656 ms]]></TableColumn>
+    <TableColumn><![CDATA[99.656 ms]]></TableColumn>
+    <TableColumn><![CDATA[99.656 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.monitors.PacketMonitor$Mon.renderPacket()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[99.584 ms]]></TableColumn>
+    <TableColumn><![CDATA[99.584 ms]]></TableColumn>
+    <TableColumn><![CDATA[420.41 ms]]></TableColumn>
+    <TableColumn><![CDATA[420.41 ms]]></TableColumn>
+    <TableColumn><![CDATA[21]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.monitors.PacketMonitor$Mon.renderByte()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[98.521 ms]]></TableColumn>
+    <TableColumn><![CDATA[98.521 ms]]></TableColumn>
+    <TableColumn><![CDATA[197.042 ms]]></TableColumn>
+    <TableColumn><![CDATA[197.042 ms]]></TableColumn>
+    <TableColumn><![CDATA[20]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.Medium$Probe$List.fireBeforeTransmit()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[98.026 ms]]></TableColumn>
+    <TableColumn><![CDATA[98.026 ms]]></TableColumn>
+    <TableColumn><![CDATA[98.026 ms]]></TableColumn>
+    <TableColumn><![CDATA[98.026 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.MainClock.insertEvent()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[85.226 ms]]></TableColumn>
+    <TableColumn><![CDATA[85.226 ms]]></TableColumn>
+    <TableColumn><![CDATA[620.201 ms]]></TableColumn>
+    <TableColumn><![CDATA[620.201 ms]]></TableColumn>
+    <TableColumn><![CDATA[29]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.monitors.LEDMonitor$Mon.fireAfterTransition()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[83.779 ms]]></TableColumn>
+    <TableColumn><![CDATA[83.779 ms]]></TableColumn>
+    <TableColumn><![CDATA[114787.555 ms]]></TableColumn>
+    <TableColumn><![CDATA[26885.078 ms]]></TableColumn>
+    <TableColumn><![CDATA[5436]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.WinNTFileSystem.getBooleanAttributes[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[82.47 ms]]></TableColumn>
+    <TableColumn><![CDATA[82.47 ms]]></TableColumn>
+    <TableColumn><![CDATA[82.47 ms]]></TableColumn>
+    <TableColumn><![CDATA[82.47 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.nio.cs.SingleByte.withResult()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[79.02 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.02 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.02 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.02 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FileOutputStream.open0[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[61.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[61.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[61.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[61.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.System.setOut0[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[60.056 ms]]></TableColumn>
+    <TableColumn><![CDATA[60.056 ms]]></TableColumn>
+    <TableColumn><![CDATA[60.056 ms]]></TableColumn>
+    <TableColumn><![CDATA[60.056 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.util.MulticastFSMProbe.fireBeforeTransition()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[58.372 ms]]></TableColumn>
+    <TableColumn><![CDATA[58.372 ms]]></TableColumn>
+    <TableColumn><![CDATA[58.372 ms]]></TableColumn>
+    <TableColumn><![CDATA[58.372 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.DeltaQueue$Link.remove()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[58.257 ms]]></TableColumn>
+    <TableColumn><![CDATA[58.257 ms]]></TableColumn>
+    <TableColumn><![CDATA[58.257 ms]]></TableColumn>
+    <TableColumn><![CDATA[58.257 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.management.ThreadImpl.getThreadInfo1[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[57.728 ms]]></TableColumn>
+    <TableColumn><![CDATA[57.728 ms]]></TableColumn>
+    <TableColumn><![CDATA[57.728 ms]]></TableColumn>
+    <TableColumn><![CDATA[57.728 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FileOutputStream.writeBytes[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[49.179 ms]]></TableColumn>
+    <TableColumn><![CDATA[49.179 ms]]></TableColumn>
+    <TableColumn><![CDATA[49.179 ms]]></TableColumn>
+    <TableColumn><![CDATA[49.179 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.TreeMap.getEntry()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[44.344 ms]]></TableColumn>
+    <TableColumn><![CDATA[44.344 ms]]></TableColumn>
+    <TableColumn><![CDATA[44.344 ms]]></TableColumn>
+    <TableColumn><![CDATA[44.344 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.HashMap.getNode()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[42.27 ms]]></TableColumn>
+    <TableColumn><![CDATA[42.27 ms]]></TableColumn>
+    <TableColumn><![CDATA[42.27 ms]]></TableColumn>
+    <TableColumn><![CDATA[42.27 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.text.StringUtil.toHex()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[41.966 ms]]></TableColumn>
+    <TableColumn><![CDATA[41.966 ms]]></TableColumn>
+    <TableColumn><![CDATA[98.521 ms]]></TableColumn>
+    <TableColumn><![CDATA[98.521 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.text.StringUtil.space()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[41.94 ms]]></TableColumn>
+    <TableColumn><![CDATA[41.94 ms]]></TableColumn>
+    <TableColumn><![CDATA[41.94 ms]]></TableColumn>
+    <TableColumn><![CDATA[41.94 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Thread.start0[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[41.536 ms]]></TableColumn>
+    <TableColumn><![CDATA[41.536 ms]]></TableColumn>
+    <TableColumn><![CDATA[41.536 ms]]></TableColumn>
+    <TableColumn><![CDATA[41.536 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.Medium$Probe$List.fireAfterReceive()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[39.634 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.634 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.634 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.634 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.StringBuffer.append()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[39.442 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.442 ms]]></TableColumn>
+    <TableColumn><![CDATA[122.524 ms]]></TableColumn>
+    <TableColumn><![CDATA[122.524 ms]]></TableColumn>
+    <TableColumn><![CDATA[6]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.DeltaQueue$Link.fire()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[39.101 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.101 ms]]></TableColumn>
+    <TableColumn><![CDATA[1914279.867 ms]]></TableColumn>
+    <TableColumn><![CDATA[237129.962 ms]]></TableColumn>
+    <TableColumn><![CDATA[12671]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.arch.legacy.LegacyInterpreter.sleepLoop()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[39.077 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.077 ms]]></TableColumn>
+    <TableColumn><![CDATA[1841077.691 ms]]></TableColumn>
+    <TableColumn><![CDATA[192212.906 ms]]></TableColumn>
+    <TableColumn><![CDATA[9216]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.text.StringUtil.convertToHex()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[38.727 ms]]></TableColumn>
+    <TableColumn><![CDATA[38.727 ms]]></TableColumn>
+    <TableColumn><![CDATA[56.555 ms]]></TableColumn>
+    <TableColumn><![CDATA[56.555 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.WinNTFileSystem.delete0[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[35.52 ms]]></TableColumn>
+    <TableColumn><![CDATA[35.52 ms]]></TableColumn>
+    <TableColumn><![CDATA[35.52 ms]]></TableColumn>
+    <TableColumn><![CDATA[35.52 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Object.clone[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[24.322 ms]]></TableColumn>
+    <TableColumn><![CDATA[24.322 ms]]></TableColumn>
+    <TableColumn><![CDATA[24.322 ms]]></TableColumn>
+    <TableColumn><![CDATA[24.322 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.management.OperatingSystemImpl.getProcessCpuTime[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[23.255 ms]]></TableColumn>
+    <TableColumn><![CDATA[23.255 ms]]></TableColumn>
+    <TableColumn><![CDATA[23.255 ms]]></TableColumn>
+    <TableColumn><![CDATA[23.255 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.core.Program.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[22.669 ms]]></TableColumn>
+    <TableColumn><![CDATA[22.669 ms]]></TableColumn>
+    <TableColumn><![CDATA[41.994 ms]]></TableColumn>
+    <TableColumn><![CDATA[41.994 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.FiniteStateMachine.buildUniformTTM()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[22.251 ms]]></TableColumn>
+    <TableColumn><![CDATA[22.251 ms]]></TableColumn>
+    <TableColumn><![CDATA[22.251 ms]]></TableColumn>
+    <TableColumn><![CDATA[22.251 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.arch.legacy.LegacyInstr$SBC.accept()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[21.055 ms]]></TableColumn>
+    <TableColumn><![CDATA[21.055 ms]]></TableColumn>
+    <TableColumn><![CDATA[21.055 ms]]></TableColumn>
+    <TableColumn><![CDATA[21.055 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.String.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[20.846 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.846 ms]]></TableColumn>
+    <TableColumn><![CDATA[38.674 ms]]></TableColumn>
+    <TableColumn><![CDATA[38.674 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.misc.VM.latestUserDefinedLoader0[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[20.822 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.822 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.822 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.822 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.text.StringUtil.toFixedFloat()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[20.66 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.66 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.66 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.66 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.remote.internal.ServerCommunicatorAdmin.reqIncoming()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[20.503 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.503 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.503 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.503 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.mcu.Timer16Bit.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[20.43 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.43 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.43 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.43 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.management.GarbageCollectorImpl.getCollectionTime[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[20.405 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.405 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.405 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.405 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.arch.legacy.LegacyDisassembler.decode_4()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[20.353 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.353 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.353 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.353 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.AbstractCollection.containsAll()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[20.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.mcu.MCUProperties.getPin()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[20.217 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.217 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.217 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.217 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.mcu.USART$SerialPrinter.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[20.209 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.209 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.209 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.209 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.arch.legacy.LegacyDisassembler.decode_MULS_0()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[20.189 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.189 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.189 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.189 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FileInputStream.open0[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[20.084 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.084 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.084 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.084 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.AbstractStringBuilder.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[20.042 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.042 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.042 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.042 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Class.forName0[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[19.919 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.919 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.919 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.919 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectOutputStream$BlockDataOutputStream.writeBytes()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[19.789 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.789 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.789 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.789 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Thread.setPriority0[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[19.721 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.721 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.721 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.721 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.arch.legacy.LegacyArchitecture.newInstrArray()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[19.324 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.324 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.324 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.324 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.TreeMap.fixAfterInsertion()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[18.925 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.925 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.925 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.925 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.security.AccessController.doPrivileged[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[18.626 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.626 ms]]></TableColumn>
+    <TableColumn><![CDATA[746105.583 ms]]></TableColumn>
+    <TableColumn><![CDATA[746105.583 ms]]></TableColumn>
+    <TableColumn><![CDATA[123]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.management.ThreadImpl.verifyThreadIds()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[17.892 ms]]></TableColumn>
+    <TableColumn><![CDATA[17.892 ms]]></TableColumn>
+    <TableColumn><![CDATA[17.892 ms]]></TableColumn>
+    <TableColumn><![CDATA[17.892 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.remote.internal.ServerCommunicatorAdmin.rspOutgoing()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[17.203 ms]]></TableColumn>
+    <TableColumn><![CDATA[17.203 ms]]></TableColumn>
+    <TableColumn><![CDATA[17.203 ms]]></TableColumn>
+    <TableColumn><![CDATA[17.203 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.String.intern[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[12.937 ms]]></TableColumn>
+    <TableColumn><![CDATA[12.937 ms]]></TableColumn>
+    <TableColumn><![CDATA[12.937 ms]]></TableColumn>
+    <TableColumn><![CDATA[12.937 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.Properties.setProperty()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[8.798 ms]]></TableColumn>
+    <TableColumn><![CDATA[8.798 ms]]></TableColumn>
+    <TableColumn><![CDATA[8.798 ms]]></TableColumn>
+    <TableColumn><![CDATA[8.798 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.TeeOutputStream.version()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[8.421 ms]]></TableColumn>
+    <TableColumn><![CDATA[8.421 ms]]></TableColumn>
+    <TableColumn><![CDATA[878.291 ms]]></TableColumn>
+    <TableColumn><![CDATA[878.291 ms]]></TableColumn>
+    <TableColumn><![CDATA[52]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.System.currentTimeMillis[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[3.262 ms]]></TableColumn>
+    <TableColumn><![CDATA[3.262 ms]]></TableColumn>
+    <TableColumn><![CDATA[3.262 ms]]></TableColumn>
+    <TableColumn><![CDATA[3.262 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Object.wait()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1759460.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[51552]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.RippleSynchronizer.waitForLink()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1415086.428 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[51551]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.Medium$Receiver.access$000()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1514118.471 ms]]></TableColumn>
+    <TableColumn><![CDATA[60093.066 ms]]></TableColumn>
+    <TableColumn><![CDATA[36536]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.RippleSynchronizer.waitFor()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1415086.428 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[35678]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.Medium$Receiver$Ticker.fireUnlocked()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1262290.782 ms]]></TableColumn>
+    <TableColumn><![CDATA[46605.982 ms]]></TableColumn>
+    <TableColumn><![CDATA[24998]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.Medium$Receiver$Ticker.fireLocked()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[614544.667 ms]]></TableColumn>
+    <TableColumn><![CDATA[156559.268 ms]]></TableColumn>
+    <TableColumn><![CDATA[23071]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.PrintStream.write()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[198275.581 ms]]></TableColumn>
+    <TableColumn><![CDATA[198275.581 ms]]></TableColumn>
+    <TableColumn><![CDATA[19023]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.Medium$Receiver$Ticker.deliverByte()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[362476.971 ms]]></TableColumn>
+    <TableColumn><![CDATA[142851.861 ms]]></TableColumn>
+    <TableColumn><![CDATA[15773]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.monitors.PacketMonitor$Mon.fireAfterReceiveEnd()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[362275.625 ms]]></TableColumn>
+    <TableColumn><![CDATA[142691.155 ms]]></TableColumn>
+    <TableColumn><![CDATA[15767]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.Medium$Probe$List.fireAfterReceiveEnd()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[362275.625 ms]]></TableColumn>
+    <TableColumn><![CDATA[142691.155 ms]]></TableColumn>
+    <TableColumn><![CDATA[15767]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.Medium$Receiver$Ticker.fire()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1876835.63 ms]]></TableColumn>
+    <TableColumn><![CDATA[203165.438 ms]]></TableColumn>
+    <TableColumn><![CDATA[11473]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.nio.cs.StreamEncoder.flushBuffer()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[198196.558 ms]]></TableColumn>
+    <TableColumn><![CDATA[198196.558 ms]]></TableColumn>
+    <TableColumn><![CDATA[9587]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.nio.cs.StreamEncoder.writeBytes()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[198196.558 ms]]></TableColumn>
+    <TableColumn><![CDATA[198196.558 ms]]></TableColumn>
+    <TableColumn><![CDATA[9587]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FileOutputStream.write()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[198196.558 ms]]></TableColumn>
+    <TableColumn><![CDATA[198196.558 ms]]></TableColumn>
+    <TableColumn><![CDATA[9587]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.OutputStreamWriter.flushBuffer()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[198196.558 ms]]></TableColumn>
+    <TableColumn><![CDATA[198196.558 ms]]></TableColumn>
+    <TableColumn><![CDATA[9587]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.nio.cs.StreamEncoder.implFlushBuffer()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[198196.558 ms]]></TableColumn>
+    <TableColumn><![CDATA[198196.558 ms]]></TableColumn>
+    <TableColumn><![CDATA[9587]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FilterOutputStream.write()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[198147.379 ms]]></TableColumn>
+    <TableColumn><![CDATA[198147.379 ms]]></TableColumn>
+    <TableColumn><![CDATA[9584]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.TeeOutputStream.write()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[198147.379 ms]]></TableColumn>
+    <TableColumn><![CDATA[198147.379 ms]]></TableColumn>
+    <TableColumn><![CDATA[9584]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.PrintStream.println()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[197531.805 ms]]></TableColumn>
+    <TableColumn><![CDATA[197531.805 ms]]></TableColumn>
+    <TableColumn><![CDATA[9541]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.text.Terminal.println()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[197504.464 ms]]></TableColumn>
+    <TableColumn><![CDATA[197504.464 ms]]></TableColumn>
+    <TableColumn><![CDATA[9539]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.PrintStream.print()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[195195.077 ms]]></TableColumn>
+    <TableColumn><![CDATA[195195.077 ms]]></TableColumn>
+    <TableColumn><![CDATA[9436]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.DeltaQueue.skipAhead()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1841038.613 ms]]></TableColumn>
+    <TableColumn><![CDATA[192173.828 ms]]></TableColumn>
+    <TableColumn><![CDATA[9218]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.MainClock.skipAhead()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1841038.613 ms]]></TableColumn>
+    <TableColumn><![CDATA[192173.828 ms]]></TableColumn>
+    <TableColumn><![CDATA[9218]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.arch.legacy.LegacyInterpreter.visit()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[117338.207 ms]]></TableColumn>
+    <TableColumn><![CDATA[29414.125 ms]]></TableColumn>
+    <TableColumn><![CDATA[5562]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.AtmelInterpreter.writeSRAM()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[116636.228 ms]]></TableColumn>
+    <TableColumn><![CDATA[28712.146 ms]]></TableColumn>
+    <TableColumn><![CDATA[5528]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.AtmelInterpreter.writeVolatile()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[116636.228 ms]]></TableColumn>
+    <TableColumn><![CDATA[28712.146 ms]]></TableColumn>
+    <TableColumn><![CDATA[5528]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.AtmelInterpreter.setIORegBit()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[116628.516 ms]]></TableColumn>
+    <TableColumn><![CDATA[28704.434 ms]]></TableColumn>
+    <TableColumn><![CDATA[5527]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.platform.LED.write()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[114845.928 ms]]></TableColumn>
+    <TableColumn><![CDATA[26943.451 ms]]></TableColumn>
+    <TableColumn><![CDATA[5438]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.FiniteStateMachine.transition()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[114845.928 ms]]></TableColumn>
+    <TableColumn><![CDATA[26943.451 ms]]></TableColumn>
+    <TableColumn><![CDATA[5438]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.FiniteStateMachine.fireAfter()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[114787.555 ms]]></TableColumn>
+    <TableColumn><![CDATA[26885.078 ms]]></TableColumn>
+    <TableColumn><![CDATA[5436]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.util.MulticastFSMProbe.fireAfterTransition()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[114787.555 ms]]></TableColumn>
+    <TableColumn><![CDATA[26885.078 ms]]></TableColumn>
+    <TableColumn><![CDATA[5436]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.mcu.ATMegaFamily$PortRegister.write()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[114086.966 ms]]></TableColumn>
+    <TableColumn><![CDATA[27996.743 ms]]></TableColumn>
+    <TableColumn><![CDATA[5399]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.DeltaQueue.advanceSlow()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[73241.254 ms]]></TableColumn>
+    <TableColumn><![CDATA[44956.134 ms]]></TableColumn>
+    <TableColumn><![CDATA[3453]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.MainClock.advance()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[73241.254 ms]]></TableColumn>
+    <TableColumn><![CDATA[44956.134 ms]]></TableColumn>
+    <TableColumn><![CDATA[3453]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.DeltaQueue.advance()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[73241.254 ms]]></TableColumn>
+    <TableColumn><![CDATA[44956.134 ms]]></TableColumn>
+    <TableColumn><![CDATA[3453]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.AtmelInterpreter.commit()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[73201.938 ms]]></TableColumn>
+    <TableColumn><![CDATA[44916.818 ms]]></TableColumn>
+    <TableColumn><![CDATA[3451]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.arch.legacy.LegacyInstr$CBI.accept()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[59595.27 ms]]></TableColumn>
+    <TableColumn><![CDATA[15748.741 ms]]></TableColumn>
+    <TableColumn><![CDATA[2839]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.arch.legacy.LegacyInstr$SBI.accept()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[57033.246 ms]]></TableColumn>
+    <TableColumn><![CDATA[12955.693 ms]]></TableColumn>
+    <TableColumn><![CDATA[2688]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.Medium$Transmitter$Ticker.fire()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[31913.606 ms]]></TableColumn>
+    <TableColumn><![CDATA[30518.798 ms]]></TableColumn>
+    <TableColumn><![CDATA[1592]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.monitors.PacketMonitor$Mon.fireBeforeTransmitEnd()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[31815.58 ms]]></TableColumn>
+    <TableColumn><![CDATA[30420.772 ms]]></TableColumn>
+    <TableColumn><![CDATA[1587]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.Medium$Probe$List.fireBeforeTransmitEnd()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[31815.58 ms]]></TableColumn>
+    <TableColumn><![CDATA[30420.772 ms]]></TableColumn>
+    <TableColumn><![CDATA[1587]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.RippleSynchronizer.notifyLink()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[32044.165 ms]]></TableColumn>
+    <TableColumn><![CDATA[32044.165 ms]]></TableColumn>
+    <TableColumn><![CDATA[1576]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.HashMap.get()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[26034.649 ms]]></TableColumn>
+    <TableColumn><![CDATA[26034.649 ms]]></TableColumn>
+    <TableColumn><![CDATA[1239]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.HashMap.hash()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[25992.379 ms]]></TableColumn>
+    <TableColumn><![CDATA[25992.379 ms]]></TableColumn>
+    <TableColumn><![CDATA[1237]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.DelegatingMethodAccessorImpl.invoke()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[689290.046 ms]]></TableColumn>
+    <TableColumn><![CDATA[348541.078 ms]]></TableColumn>
+    <TableColumn><![CDATA[424]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.reflect.Method.invoke()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[689290.046 ms]]></TableColumn>
+    <TableColumn><![CDATA[348541.078 ms]]></TableColumn>
+    <TableColumn><![CDATA[424]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.AtmelInterpreter.start()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2044417.664 ms]]></TableColumn>
+    <TableColumn><![CDATA[279343.624 ms]]></TableColumn>
+    <TableColumn><![CDATA[348]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.Simulator.start()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2044417.664 ms]]></TableColumn>
+    <TableColumn><![CDATA[279343.624 ms]]></TableColumn>
+    <TableColumn><![CDATA[348]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.SimulatorThread.run()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2044446.322 ms]]></TableColumn>
+    <TableColumn><![CDATA[279343.624 ms]]></TableColumn>
+    <TableColumn><![CDATA[348]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.net.SocketInputStream.read()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[400973.501 ms]]></TableColumn>
+    <TableColumn><![CDATA[400973.501 ms]]></TableColumn>
+    <TableColumn><![CDATA[246]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.transport.Transport$1.run()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[345035.445 ms]]></TableColumn>
+    <TableColumn><![CDATA[345035.445 ms]]></TableColumn>
+    <TableColumn><![CDATA[238]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344576.734 ms]]></TableColumn>
+    <TableColumn><![CDATA[344576.734 ms]]></TableColumn>
+    <TableColumn><![CDATA[234]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344576.734 ms]]></TableColumn>
+    <TableColumn><![CDATA[344576.734 ms]]></TableColumn>
+    <TableColumn><![CDATA[234]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.PrintStream.newLine()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[3080.504 ms]]></TableColumn>
+    <TableColumn><![CDATA[3080.504 ms]]></TableColumn>
+    <TableColumn><![CDATA[155]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.RippleSynchronizer.access$000()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2528.699 ms]]></TableColumn>
+    <TableColumn><![CDATA[2528.699 ms]]></TableColumn>
+    <TableColumn><![CDATA[126]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.BufferedInputStream.read()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[400973.501 ms]]></TableColumn>
+    <TableColumn><![CDATA[400973.501 ms]]></TableColumn>
+    <TableColumn><![CDATA[123]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.BufferedInputStream.fill()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[400973.501 ms]]></TableColumn>
+    <TableColumn><![CDATA[400973.501 ms]]></TableColumn>
+    <TableColumn><![CDATA[123]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.net.SocketInputStream.socketRead()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[400973.501 ms]]></TableColumn>
+    <TableColumn><![CDATA[400973.501 ms]]></TableColumn>
+    <TableColumn><![CDATA[123]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FilterInputStream.read()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[400973.501 ms]]></TableColumn>
+    <TableColumn><![CDATA[400973.501 ms]]></TableColumn>
+    <TableColumn><![CDATA[123]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.mcu.DefaultMCU$Pin.setOutputDir()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2395.725 ms]]></TableColumn>
+    <TableColumn><![CDATA[561.893 ms]]></TableColumn>
+    <TableColumn><![CDATA[121]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.mcu.ATMegaFamily$DirectionRegister.write()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2395.725 ms]]></TableColumn>
+    <TableColumn><![CDATA[561.893 ms]]></TableColumn>
+    <TableColumn><![CDATA[121]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344627.377 ms]]></TableColumn>
+    <TableColumn><![CDATA[344627.377 ms]]></TableColumn>
+    <TableColumn><![CDATA[120]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.server.UnicastServerRef.dispatch()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[345035.445 ms]]></TableColumn>
+    <TableColumn><![CDATA[345035.445 ms]]></TableColumn>
+    <TableColumn><![CDATA[119]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.transport.Transport.serviceCall()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[345054.071 ms]]></TableColumn>
+    <TableColumn><![CDATA[345054.071 ms]]></TableColumn>
+    <TableColumn><![CDATA[119]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344589.671 ms]]></TableColumn>
+    <TableColumn><![CDATA[344589.671 ms]]></TableColumn>
+    <TableColumn><![CDATA[118]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.management.remote.rmi.RMIConnectionImpl.access$300()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344589.671 ms]]></TableColumn>
+    <TableColumn><![CDATA[344589.671 ms]]></TableColumn>
+    <TableColumn><![CDATA[118]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.management.remote.rmi.RMIConnectionImpl.doOperation()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344589.671 ms]]></TableColumn>
+    <TableColumn><![CDATA[344589.671 ms]]></TableColumn>
+    <TableColumn><![CDATA[118]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344576.734 ms]]></TableColumn>
+    <TableColumn><![CDATA[344576.734 ms]]></TableColumn>
+    <TableColumn><![CDATA[117]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.GeneratedMethodAccessor1.invoke()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344493.159 ms]]></TableColumn>
+    <TableColumn><![CDATA[344493.159 ms]]></TableColumn>
+    <TableColumn><![CDATA[117]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.management.ThreadImpl.dumpAllThreads()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344373.877 ms]]></TableColumn>
+    <TableColumn><![CDATA[344373.877 ms]]></TableColumn>
+    <TableColumn><![CDATA[117]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.misc.Trampoline.invoke()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344493.159 ms]]></TableColumn>
+    <TableColumn><![CDATA[344493.159 ms]]></TableColumn>
+    <TableColumn><![CDATA[117]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.misc.MethodUtil.invoke()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344493.159 ms]]></TableColumn>
+    <TableColumn><![CDATA[344493.159 ms]]></TableColumn>
+    <TableColumn><![CDATA[117]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Thread.join()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[340748.967 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[116]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.GeneratedMethodAccessor37.invoke()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344076.96 ms]]></TableColumn>
+    <TableColumn><![CDATA[344076.96 ms]]></TableColumn>
+    <TableColumn><![CDATA[116]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.mbeanserver.PerInterface.invoke()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344533.074 ms]]></TableColumn>
+    <TableColumn><![CDATA[344533.074 ms]]></TableColumn>
+    <TableColumn><![CDATA[115]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.mbeanserver.JmxMBeanServer.invoke()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344533.074 ms]]></TableColumn>
+    <TableColumn><![CDATA[344533.074 ms]]></TableColumn>
+    <TableColumn><![CDATA[115]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.mbeanserver.MBeanSupport.invoke()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344533.074 ms]]></TableColumn>
+    <TableColumn><![CDATA[344533.074 ms]]></TableColumn>
+    <TableColumn><![CDATA[115]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.management.StandardMBean.invoke()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344533.074 ms]]></TableColumn>
+    <TableColumn><![CDATA[344533.074 ms]]></TableColumn>
+    <TableColumn><![CDATA[115]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344533.074 ms]]></TableColumn>
+    <TableColumn><![CDATA[344533.074 ms]]></TableColumn>
+    <TableColumn><![CDATA[115]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.GeneratedMethodAccessor32.invoke()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344553.897 ms]]></TableColumn>
+    <TableColumn><![CDATA[344553.897 ms]]></TableColumn>
+    <TableColumn><![CDATA[115]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.management.remote.rmi.RMIConnectionImpl.invoke()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344553.897 ms]]></TableColumn>
+    <TableColumn><![CDATA[344553.897 ms]]></TableColumn>
+    <TableColumn><![CDATA[115]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.RippleSynchronizer.join()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[340748.967 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[58]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.Avrora.iterate()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[342965.016 ms]]></TableColumn>
+    <TableColumn><![CDATA[2216.047 ms]]></TableColumn>
+    <TableColumn><![CDATA[58]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.Main.main()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[342965.015 ms]]></TableColumn>
+    <TableColumn><![CDATA[2216.047 ms]]></TableColumn>
+    <TableColumn><![CDATA[58]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.Main.runAction()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[342965.015 ms]]></TableColumn>
+    <TableColumn><![CDATA[2216.047 ms]]></TableColumn>
+    <TableColumn><![CDATA[58]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.actions.SimAction.run()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[342868.437 ms]]></TableColumn>
+    <TableColumn><![CDATA[2119.468 ms]]></TableColumn>
+    <TableColumn><![CDATA[58]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.Simulation.join()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[340748.967 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[58]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.types.SensorSimulation.createNodes()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1688.22 ms]]></TableColumn>
+    <TableColumn><![CDATA[1688.22 ms]]></TableColumn>
+    <TableColumn><![CDATA[57]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.Main.loadProgram()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1688.22 ms]]></TableColumn>
+    <TableColumn><![CDATA[1688.22 ms]]></TableColumn>
+    <TableColumn><![CDATA[57]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.core.LoadableProgram.load()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1688.22 ms]]></TableColumn>
+    <TableColumn><![CDATA[1688.22 ms]]></TableColumn>
+    <TableColumn><![CDATA[57]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.types.SensorSimulation.process()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1708.678 ms]]></TableColumn>
+    <TableColumn><![CDATA[1708.678 ms]]></TableColumn>
+    <TableColumn><![CDATA[57]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.Benchmark.startIteration()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1012.942 ms]]></TableColumn>
+    <TableColumn><![CDATA[1012.942 ms]]></TableColumn>
+    <TableColumn><![CDATA[57]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectOutputStream.writeObject0()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[267.966 ms]]></TableColumn>
+    <TableColumn><![CDATA[267.966 ms]]></TableColumn>
+    <TableColumn><![CDATA[56]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.elf.ELFDataInputStream.read_1()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1109.835 ms]]></TableColumn>
+    <TableColumn><![CDATA[1109.835 ms]]></TableColumn>
+    <TableColumn><![CDATA[54]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.RandomAccessFile.read()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1109.835 ms]]></TableColumn>
+    <TableColumn><![CDATA[1109.835 ms]]></TableColumn>
+    <TableColumn><![CDATA[54]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.TeePrintStream.version()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[878.291 ms]]></TableColumn>
+    <TableColumn><![CDATA[878.291 ms]]></TableColumn>
+    <TableColumn><![CDATA[52]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.WinNTFileSystem.rename()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[869.87 ms]]></TableColumn>
+    <TableColumn><![CDATA[869.87 ms]]></TableColumn>
+    <TableColumn><![CDATA[51]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.File.renameTo()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[869.87 ms]]></TableColumn>
+    <TableColumn><![CDATA[869.87 ms]]></TableColumn>
+    <TableColumn><![CDATA[51]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.syntax.elf.ELFParser.read()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1255.638 ms]]></TableColumn>
+    <TableColumn><![CDATA[1255.638 ms]]></TableColumn>
+    <TableColumn><![CDATA[50]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.Defaults$AutoProgramReader.read()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1255.638 ms]]></TableColumn>
+    <TableColumn><![CDATA[1255.638 ms]]></TableColumn>
+    <TableColumn><![CDATA[50]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.GeneratedMethodAccessor42.invoke()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[262161.92 ms]]></TableColumn>
+    <TableColumn><![CDATA[1614.379 ms]]></TableColumn>
+    <TableColumn><![CDATA[44]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.syntax.elf.ELFParser.loadSymbolTables()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[890.906 ms]]></TableColumn>
+    <TableColumn><![CDATA[890.906 ms]]></TableColumn>
+    <TableColumn><![CDATA[42]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.elf.ELFLoader.readSymbolTables()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[890.906 ms]]></TableColumn>
+    <TableColumn><![CDATA[890.906 ms]]></TableColumn>
+    <TableColumn><![CDATA[42]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.elf.ELFSymbolTable.read()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[890.906 ms]]></TableColumn>
+    <TableColumn><![CDATA[890.906 ms]]></TableColumn>
+    <TableColumn><![CDATA[42]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.elf.ELFDataInputStream.read_4()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[859.033 ms]]></TableColumn>
+    <TableColumn><![CDATA[859.033 ms]]></TableColumn>
+    <TableColumn><![CDATA[42]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.elf.ELFDataInputStream.read_Elf32_Word()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[637.848 ms]]></TableColumn>
+    <TableColumn><![CDATA[637.848 ms]]></TableColumn>
+    <TableColumn><![CDATA[31]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectOutputStream.writeOrdinaryObject()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[267.966 ms]]></TableColumn>
+    <TableColumn><![CDATA[267.966 ms]]></TableColumn>
+    <TableColumn><![CDATA[30]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectOutputStream.writeSerialData()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[267.966 ms]]></TableColumn>
+    <TableColumn><![CDATA[267.966 ms]]></TableColumn>
+    <TableColumn><![CDATA[29]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.AtmelInterpreter.readVolatile()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[582.823 ms]]></TableColumn>
+    <TableColumn><![CDATA[582.823 ms]]></TableColumn>
+    <TableColumn><![CDATA[28]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.text.Terminal.print()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[581.971 ms]]></TableColumn>
+    <TableColumn><![CDATA[581.971 ms]]></TableColumn>
+    <TableColumn><![CDATA[28]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.AtmelInterpreter.readSRAM()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[582.823 ms]]></TableColumn>
+    <TableColumn><![CDATA[582.823 ms]]></TableColumn>
+    <TableColumn><![CDATA[28]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectOutputStream.writeObject()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[267.966 ms]]></TableColumn>
+    <TableColumn><![CDATA[267.966 ms]]></TableColumn>
+    <TableColumn><![CDATA[26]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.text.Terminal.outputColor()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[510.485 ms]]></TableColumn>
+    <TableColumn><![CDATA[510.485 ms]]></TableColumn>
+    <TableColumn><![CDATA[25]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.AtmelInterpreter.getIORegisterByte()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[458.65 ms]]></TableColumn>
+    <TableColumn><![CDATA[458.65 ms]]></TableColumn>
+    <TableColumn><![CDATA[22]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.arch.legacy.LegacyInstr$IN.accept()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[458.65 ms]]></TableColumn>
+    <TableColumn><![CDATA[458.65 ms]]></TableColumn>
+    <TableColumn><![CDATA[22]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.text.Status.begin()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[410.984 ms]]></TableColumn>
+    <TableColumn><![CDATA[410.984 ms]]></TableColumn>
+    <TableColumn><![CDATA[20]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.CC1000Radio$SerialConfigurationInterface.access$200()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[362.341 ms]]></TableColumn>
+    <TableColumn><![CDATA[340.765 ms]]></TableColumn>
+    <TableColumn><![CDATA[18]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.CC1000Radio$SerialConfigurationInterface$PCLKOutput.write()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[362.341 ms]]></TableColumn>
+    <TableColumn><![CDATA[340.765 ms]]></TableColumn>
+    <TableColumn><![CDATA[18]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.CC1000Radio$SerialConfigurationInterface.clockInBit()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[362.341 ms]]></TableColumn>
+    <TableColumn><![CDATA[340.765 ms]]></TableColumn>
+    <TableColumn><![CDATA[18]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.NativeMethodAccessorImpl.invoke()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344670.795 ms]]></TableColumn>
+    <TableColumn><![CDATA[3921.827 ms]]></TableColumn>
+    <TableColumn><![CDATA[16]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectOutputStream.defaultWriteFields()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[267.966 ms]]></TableColumn>
+    <TableColumn><![CDATA[267.966 ms]]></TableColumn>
+    <TableColumn><![CDATA[16]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.NativeMethodAccessorImpl.invoke0[native]()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344670.795 ms]]></TableColumn>
+    <TableColumn><![CDATA[3921.827 ms]]></TableColumn>
+    <TableColumn><![CDATA[16]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.text.StringUtil.justify()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[238.576 ms]]></TableColumn>
+    <TableColumn><![CDATA[238.576 ms]]></TableColumn>
+    <TableColumn><![CDATA[16]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectOutputStream.writeArray()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[267.966 ms]]></TableColumn>
+    <TableColumn><![CDATA[267.966 ms]]></TableColumn>
+    <TableColumn><![CDATA[15]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.BufferedOutputStream.flushBuffer()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[244.45 ms]]></TableColumn>
+    <TableColumn><![CDATA[244.45 ms]]></TableColumn>
+    <TableColumn><![CDATA[14]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.Medium$Receiver.access$200()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[282.291 ms]]></TableColumn>
+    <TableColumn><![CDATA[220.078 ms]]></TableColumn>
+    <TableColumn><![CDATA[14]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.CC1000Radio$SPITicker.fire()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[292.181 ms]]></TableColumn>
+    <TableColumn><![CDATA[292.181 ms]]></TableColumn>
+    <TableColumn><![CDATA[14]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.TreeMap.writeObject()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[267.965 ms]]></TableColumn>
+    <TableColumn><![CDATA[267.965 ms]]></TableColumn>
+    <TableColumn><![CDATA[13]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.output.SimPrinter.getBuffer()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[258.618 ms]]></TableColumn>
+    <TableColumn><![CDATA[258.618 ms]]></TableColumn>
+    <TableColumn><![CDATA[13]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.server.UnicastRef.marshalValue()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[267.966 ms]]></TableColumn>
+    <TableColumn><![CDATA[267.966 ms]]></TableColumn>
+    <TableColumn><![CDATA[13]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.GeneratedMethodAccessor3.invoke()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[267.965 ms]]></TableColumn>
+    <TableColumn><![CDATA[267.965 ms]]></TableColumn>
+    <TableColumn><![CDATA[13]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.CC1000Radio$MainRegister.decode()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[260.259 ms]]></TableColumn>
+    <TableColumn><![CDATA[238.683 ms]]></TableColumn>
+    <TableColumn><![CDATA[13]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectStreamClass.invokeWriteObject()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[267.965 ms]]></TableColumn>
+    <TableColumn><![CDATA[267.965 ms]]></TableColumn>
+    <TableColumn><![CDATA[13]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.util.SimUtil.getIDTimeString()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[238.576 ms]]></TableColumn>
+    <TableColumn><![CDATA[238.576 ms]]></TableColumn>
+    <TableColumn><![CDATA[12]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.Medium$Receiver.access$100()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[239.791 ms]]></TableColumn>
+    <TableColumn><![CDATA[220.189 ms]]></TableColumn>
+    <TableColumn><![CDATA[12]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.util.SimUtil.toIDTimeString()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[238.576 ms]]></TableColumn>
+    <TableColumn><![CDATA[238.576 ms]]></TableColumn>
+    <TableColumn><![CDATA[12]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.BufferedOutputStream.flush()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[206.706 ms]]></TableColumn>
+    <TableColumn><![CDATA[206.706 ms]]></TableColumn>
+    <TableColumn><![CDATA[12]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.mcu.Timer8Bit.tickerFinish()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[246.605 ms]]></TableColumn>
+    <TableColumn><![CDATA[246.605 ms]]></TableColumn>
+    <TableColumn><![CDATA[11]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.DerivedClock.insertEvent()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[246.605 ms]]></TableColumn>
+    <TableColumn><![CDATA[246.605 ms]]></TableColumn>
+    <TableColumn><![CDATA[11]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.net.SocketOutputStream.write()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[195.271 ms]]></TableColumn>
+    <TableColumn><![CDATA[195.271 ms]]></TableColumn>
+    <TableColumn><![CDATA[11]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.net.SocketOutputStream.socketWrite()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[195.271 ms]]></TableColumn>
+    <TableColumn><![CDATA[195.271 ms]]></TableColumn>
+    <TableColumn><![CDATA[11]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.mcu.Timer8Bit$Mode_CTC.fire()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[246.605 ms]]></TableColumn>
+    <TableColumn><![CDATA[246.605 ms]]></TableColumn>
+    <TableColumn><![CDATA[11]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.mcu.Timer8Bit.access$100()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[246.605 ms]]></TableColumn>
+    <TableColumn><![CDATA[246.605 ms]]></TableColumn>
+    <TableColumn><![CDATA[11]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.TeeOutputStream.closeLog()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[269.76 ms]]></TableColumn>
+    <TableColumn><![CDATA[269.76 ms]]></TableColumn>
+    <TableColumn><![CDATA[10]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.Medium$Receiver.endReceive()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[199.357 ms]]></TableColumn>
+    <TableColumn><![CDATA[177.781 ms]]></TableColumn>
+    <TableColumn><![CDATA[10]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.mbeanserver.DefaultMXBeanMappingFactory$NonNullMXBeanMapping.toOpenValue()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[83.575 ms]]></TableColumn>
+    <TableColumn><![CDATA[83.575 ms]]></TableColumn>
+    <TableColumn><![CDATA[10]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectOutputStream$HandleTable.hash()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[210.431 ms]]></TableColumn>
+    <TableColumn><![CDATA[210.431 ms]]></TableColumn>
+    <TableColumn><![CDATA[10]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FileDescriptor.closeAll()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[269.76 ms]]></TableColumn>
+    <TableColumn><![CDATA[269.76 ms]]></TableColumn>
+    <TableColumn><![CDATA[10]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FileOutputStream$1.close()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[269.76 ms]]></TableColumn>
+    <TableColumn><![CDATA[269.76 ms]]></TableColumn>
+    <TableColumn><![CDATA[10]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectOutputStream$HandleTable.lookup()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[210.431 ms]]></TableColumn>
+    <TableColumn><![CDATA[210.431 ms]]></TableColumn>
+    <TableColumn><![CDATA[10]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.Benchmark.stopIteration()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[269.76 ms]]></TableColumn>
+    <TableColumn><![CDATA[269.76 ms]]></TableColumn>
+    <TableColumn><![CDATA[10]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.TeePrintStream.closeLog()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[269.76 ms]]></TableColumn>
+    <TableColumn><![CDATA[269.76 ms]]></TableColumn>
+    <TableColumn><![CDATA[10]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FileOutputStream.access$000()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[269.76 ms]]></TableColumn>
+    <TableColumn><![CDATA[269.76 ms]]></TableColumn>
+    <TableColumn><![CDATA[10]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.elf.ELFDataInputStream.read_Elf32_Addr()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[202.051 ms]]></TableColumn>
+    <TableColumn><![CDATA[202.051 ms]]></TableColumn>
+    <TableColumn><![CDATA[10]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FileOutputStream.close()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[269.76 ms]]></TableColumn>
+    <TableColumn><![CDATA[269.76 ms]]></TableColumn>
+    <TableColumn><![CDATA[10]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.elf.ELFSectionHeaderTable.read()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[178.311 ms]]></TableColumn>
+    <TableColumn><![CDATA[178.311 ms]]></TableColumn>
+    <TableColumn><![CDATA[9]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.elf.ELFLoader.readSHT()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[178.311 ms]]></TableColumn>
+    <TableColumn><![CDATA[178.311 ms]]></TableColumn>
+    <TableColumn><![CDATA[9]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.actions.SimAction.printSimHeader()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[170.261 ms]]></TableColumn>
+    <TableColumn><![CDATA[170.261 ms]]></TableColumn>
+    <TableColumn><![CDATA[8]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FileOutputStream.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[61.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[61.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[8]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.elf.ELFDataInputStream.read_Elf32_Half()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[169.378 ms]]></TableColumn>
+    <TableColumn><![CDATA[169.378 ms]]></TableColumn>
+    <TableColumn><![CDATA[8]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.elf.ELFDataInputStream.read_2()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[169.378 ms]]></TableColumn>
+    <TableColumn><![CDATA[169.378 ms]]></TableColumn>
+    <TableColumn><![CDATA[8]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.arch.legacy.LegacyInstr$OUT.accept()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[131.887 ms]]></TableColumn>
+    <TableColumn><![CDATA[131.887 ms]]></TableColumn>
+    <TableColumn><![CDATA[7]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Thread.run()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1899226.04 ms]]></TableColumn>
+    <TableColumn><![CDATA[746453.087 ms]]></TableColumn>
+    <TableColumn><![CDATA[7]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.Simulation.start()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[144.366 ms]]></TableColumn>
+    <TableColumn><![CDATA[144.366 ms]]></TableColumn>
+    <TableColumn><![CDATA[7]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.AtmelInterpreter.writeIORegisterByte()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[131.887 ms]]></TableColumn>
+    <TableColumn><![CDATA[131.887 ms]]></TableColumn>
+    <TableColumn><![CDATA[7]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.Benchmark.postIterationCleanup()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[53.631 ms]]></TableColumn>
+    <TableColumn><![CDATA[53.631 ms]]></TableColumn>
+    <TableColumn><![CDATA[6]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.Benchmark.postIteration()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[53.631 ms]]></TableColumn>
+    <TableColumn><![CDATA[53.631 ms]]></TableColumn>
+    <TableColumn><![CDATA[6]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.AtmelInterpreter.getInstr()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[119.154 ms]]></TableColumn>
+    <TableColumn><![CDATA[119.154 ms]]></TableColumn>
+    <TableColumn><![CDATA[6]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.AtmelInterpreter.getInstrSize()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[119.154 ms]]></TableColumn>
+    <TableColumn><![CDATA[119.154 ms]]></TableColumn>
+    <TableColumn><![CDATA[6]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.Benchmark.deleteFile()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[53.631 ms]]></TableColumn>
+    <TableColumn><![CDATA[53.631 ms]]></TableColumn>
+    <TableColumn><![CDATA[6]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Exception.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[133.985 ms]]></TableColumn>
+    <TableColumn><![CDATA[133.985 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectOutputStream.flush()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.519 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.519 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.transport.StreamRemoteCall.releaseOutputStream()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.519 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.519 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.Main.title()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[96.578 ms]]></TableColumn>
+    <TableColumn><![CDATA[96.578 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.Main.banner()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[96.578 ms]]></TableColumn>
+    <TableColumn><![CDATA[96.578 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.mbeanserver.DefaultMXBeanMappingFactory$CompositeMapping.toNonNullOpenValue()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[83.575 ms]]></TableColumn>
+    <TableColumn><![CDATA[83.575 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.mbeanserver.DefaultMXBeanMappingFactory$ArrayMapping.toNonNullOpenValue()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[83.575 ms]]></TableColumn>
+    <TableColumn><![CDATA[83.575 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.syntax.elf.ELFParser.loadSections()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[101.895 ms]]></TableColumn>
+    <TableColumn><![CDATA[101.895 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.System.setOut()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[60.056 ms]]></TableColumn>
+    <TableColumn><![CDATA[60.056 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.WinNTFileSystem.delete()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[35.52 ms]]></TableColumn>
+    <TableColumn><![CDATA[35.52 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.concurrent.ThreadPoolExecutor.runWorker()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1210478.284 ms]]></TableColumn>
+    <TableColumn><![CDATA[746105.583 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.concurrent.ThreadPoolExecutor$Worker.run()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1210478.284 ms]]></TableColumn>
+    <TableColumn><![CDATA[746105.583 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.Simulation.instantiateNodes()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[102.83 ms]]></TableColumn>
+    <TableColumn><![CDATA[102.83 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.File.delete()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[35.52 ms]]></TableColumn>
+    <TableColumn><![CDATA[35.52 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.types.SensorSimulation$SensorNode.createNode()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[102.83 ms]]></TableColumn>
+    <TableColumn><![CDATA[102.83 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.types.SensorSimulation$SensorNode.instantiate()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[102.83 ms]]></TableColumn>
+    <TableColumn><![CDATA[102.83 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.monitors.PacketMonitor$Mon.appendTime()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[103.742 ms]]></TableColumn>
+    <TableColumn><![CDATA[103.742 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectOutputStream$BlockDataOutputStream.flush()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.519 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.519 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.management.openmbean.CompositeDataSupport.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[83.575 ms]]></TableColumn>
+    <TableColumn><![CDATA[83.575 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.AbstractList.listIterator()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[99.656 ms]]></TableColumn>
+    <TableColumn><![CDATA[99.656 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.AbstractSequentialList.iterator()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[99.656 ms]]></TableColumn>
+    <TableColumn><![CDATA[99.656 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Throwable.fillInStackTrace()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[133.985 ms]]></TableColumn>
+    <TableColumn><![CDATA[133.985 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Throwable.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[133.985 ms]]></TableColumn>
+    <TableColumn><![CDATA[133.985 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[746105.583 ms]]></TableColumn>
+    <TableColumn><![CDATA[746105.583 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$$Lambda$3.1723803415.run()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[746105.583 ms]]></TableColumn>
+    <TableColumn><![CDATA[746105.583 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[746105.583 ms]]></TableColumn>
+    <TableColumn><![CDATA[746105.583 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.transport.tcp.TCPConnection.releaseOutputStream()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[78.008 ms]]></TableColumn>
+    <TableColumn><![CDATA[78.008 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.File.exists()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[82.47 ms]]></TableColumn>
+    <TableColumn><![CDATA[82.47 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.Callback.complete()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[43.948 ms]]></TableColumn>
+    <TableColumn><![CDATA[43.948 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.AbstractStringBuilder.append()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[83.082 ms]]></TableColumn>
+    <TableColumn><![CDATA[83.082 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[746105.583 ms]]></TableColumn>
+    <TableColumn><![CDATA[746105.583 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.transport.tcp.TCPTransport.handleMessages()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[746105.583 ms]]></TableColumn>
+    <TableColumn><![CDATA[746105.583 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.AbstractStringBuilder.ensureCapacityInternal()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[83.082 ms]]></TableColumn>
+    <TableColumn><![CDATA[83.082 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.text.TermUtil.printSeparator()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[86.14 ms]]></TableColumn>
+    <TableColumn><![CDATA[86.14 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.nio.cs.SingleByte.access$000()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.02 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.02 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.nio.cs.SingleByte$Encoder.encodeArrayLoop()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.02 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.02 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.nio.cs.StreamEncoder.implWrite()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.02 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.02 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.nio.cs.StreamEncoder.write()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.02 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.02 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.OutputStreamWriter.write()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.02 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.02 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.BufferedWriter.flushBuffer()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.02 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.02 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.TeePrintStream.openLog()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[61.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[61.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.TeeOutputStream.openLog()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[61.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[61.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.TeeOutputStream.newLog()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[61.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[61.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.nio.cs.SingleByte$Encoder.encodeLoop()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.02 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.02 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.nio.charset.CharsetEncoder.encode()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.02 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.02 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FileOutputStream.open()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[61.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[61.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.management.ThreadImpl.getThreadInfo()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[75.62 ms]]></TableColumn>
+    <TableColumn><![CDATA[75.62 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.GeneratedMethodAccessor41.invoke()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[75.62 ms]]></TableColumn>
+    <TableColumn><![CDATA[75.62 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.RuntimeException.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[114.628 ms]]></TableColumn>
+    <TableColumn><![CDATA[114.628 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.actions.SimAction$TimeoutException.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[114.628 ms]]></TableColumn>
+    <TableColumn><![CDATA[114.628 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.util.ClockCycleTimeout.fire()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[114.628 ms]]></TableColumn>
+    <TableColumn><![CDATA[114.628 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.actions.SimAction.exitSimulation()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[96.159 ms]]></TableColumn>
+    <TableColumn><![CDATA[96.159 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.actions.SimAction.report()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[96.159 ms]]></TableColumn>
+    <TableColumn><![CDATA[96.159 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.arch.legacy.LegacyInstr$SBRC.accept()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[78.154 ms]]></TableColumn>
+    <TableColumn><![CDATA[78.154 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.actions.SimAction.reportMonitors()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[96.159 ms]]></TableColumn>
+    <TableColumn><![CDATA[96.159 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.monitors.PacketMonitor$Mon.report()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[96.159 ms]]></TableColumn>
+    <TableColumn><![CDATA[96.159 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.elf.ELFDataInputStream.read_Elf32_uchar()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[81.424 ms]]></TableColumn>
+    <TableColumn><![CDATA[81.424 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.Simulation$Node.instantiate()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[83.109 ms]]></TableColumn>
+    <TableColumn><![CDATA[83.109 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.platform.Mica2$Factory.newPlatform()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[83.109 ms]]></TableColumn>
+    <TableColumn><![CDATA[83.109 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.concurrent.locks.LockSupport.parkNanos()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[464372.699 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.mcu.ATMega128.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[60.857 ms]]></TableColumn>
+    <TableColumn><![CDATA[60.857 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.mcu.ATMega128.installDevices()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[60.857 ms]]></TableColumn>
+    <TableColumn><![CDATA[60.857 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.text.TermUtil.printThinSeparator()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[73.557 ms]]></TableColumn>
+    <TableColumn><![CDATA[73.557 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.management.openmbean.CompositeDataSupport.makeMap()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[63.269 ms]]></TableColumn>
+    <TableColumn><![CDATA[63.269 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.syntax.elf.ELFParser.disassembleSection()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[59.9 ms]]></TableColumn>
+    <TableColumn><![CDATA[59.9 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.arch.legacy.LegacyDisassembler.disassemble()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[59.9 ms]]></TableColumn>
+    <TableColumn><![CDATA[59.9 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.arch.legacy.LegacyDisassembler.disassembleLegacy()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[59.9 ms]]></TableColumn>
+    <TableColumn><![CDATA[59.9 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.arch.legacy.LegacyDisassembler.decode_root()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[59.9 ms]]></TableColumn>
+    <TableColumn><![CDATA[59.9 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.GeneratedMethodAccessor29.invoke()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[64.163 ms]]></TableColumn>
+    <TableColumn><![CDATA[64.163 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.management.remote.rmi.RMIConnectionImpl.getAttribute()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[64.163 ms]]></TableColumn>
+    <TableColumn><![CDATA[64.163 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.MainClock.removeEvent()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[58.257 ms]]></TableColumn>
+    <TableColumn><![CDATA[58.257 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.DeltaQueue.removeEvent()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[58.257 ms]]></TableColumn>
+    <TableColumn><![CDATA[58.257 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.text.Terminal.printGreen()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[61.017 ms]]></TableColumn>
+    <TableColumn><![CDATA[61.017 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectInputStream.readObject0()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.741 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.741 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.text.Terminal.printBrightBlue()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[57.435 ms]]></TableColumn>
+    <TableColumn><![CDATA[57.435 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.radio.Medium$Transmitter.beginTransmit()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[60.902 ms]]></TableColumn>
+    <TableColumn><![CDATA[60.902 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.Main.checkFileExists()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[64.359 ms]]></TableColumn>
+    <TableColumn><![CDATA[64.359 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.FiniteStateMachine.fireBefore()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[58.372 ms]]></TableColumn>
+    <TableColumn><![CDATA[58.372 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.net.ServerSocket.accept()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344026.374 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.net.ServerSocket.implAccept()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344026.374 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.net.PlainSocketImpl.accept()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344026.374 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.net.AbstractPlainSocketImpl.accept()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344026.374 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.net.DualStackPlainSocketImpl.socketAccept()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344026.374 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.concurrent.ThreadPoolExecutor.getTask()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[464372.699 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.TreeMap.containsKey()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[44.344 ms]]></TableColumn>
+    <TableColumn><![CDATA[44.344 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.GeneratedMethodAccessor33.invoke()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[30.14 ms]]></TableColumn>
+    <TableColumn><![CDATA[30.14 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.management.remote.rmi.RMIConnectionImpl.getAttributes()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[30.14 ms]]></TableColumn>
+    <TableColumn><![CDATA[30.14 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.concurrent.SynchronousQueue.poll()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[119998.821 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.concurrent.SynchronousQueue$TransferStack.transfer()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[119998.821 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[119998.821 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.arch.legacy.LegacyDisassembler.decode_root0()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.542 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.542 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.server.UnicastServerRef.unmarshalParameters()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.753 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.753 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.server.UnicastServerRef.unmarshalParametersUnchecked()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.753 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.753 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectOutputStream$BlockDataOutputStream.drain()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[37.744 ms]]></TableColumn>
+    <TableColumn><![CDATA[37.744 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.BufferedOutputStream.write()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[37.744 ms]]></TableColumn>
+    <TableColumn><![CDATA[37.744 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.elf.ELFLoader.readPHT()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.621 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.621 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.elf.ELFProgramHeaderTable.read()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.621 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.621 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.management.remote.rmi.RMIConnectionImpl.unwrap()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.822 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.822 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectInputStream.readObject()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.741 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.741 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectInputStream.readArray()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.822 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.822 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectInputStream.readClassDesc()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.741 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.741 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344373.878 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.net.NetworkInterface.getNetworkInterfaces()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[347.504 ms]]></TableColumn>
+    <TableColumn><![CDATA[347.504 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectInputStream.readNonProxyDesc()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.741 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.741 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.server.MarshalInputStream.resolveClass()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.741 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.741 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.Callback.start()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[5.232 ms]]></TableColumn>
+    <TableColumn><![CDATA[5.232 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.ref.ReferenceQueue.remove()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344373.878 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.server.LoaderHandler.loadClass()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.919 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.919 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.RippleSynchronizer.start()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[41.536 ms]]></TableColumn>
+    <TableColumn><![CDATA[41.536 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Thread.start()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[41.536 ms]]></TableColumn>
+    <TableColumn><![CDATA[41.536 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.mbeanserver.JmxMBeanServer.getAttribute()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[43.66 ms]]></TableColumn>
+    <TableColumn><![CDATA[43.66 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getAttribute()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[43.66 ms]]></TableColumn>
+    <TableColumn><![CDATA[43.66 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.management.StandardMBean.getAttribute()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[43.66 ms]]></TableColumn>
+    <TableColumn><![CDATA[43.66 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.mbeanserver.MBeanSupport.getAttribute()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[43.66 ms]]></TableColumn>
+    <TableColumn><![CDATA[43.66 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.mbeanserver.PerInterface.getAttribute()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[43.66 ms]]></TableColumn>
+    <TableColumn><![CDATA[43.66 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.AtmelInterpreter.advanceClock()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.316 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.316 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Thread.init()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.721 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.721 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.arch.legacy.LegacyInstr$SBRS.accept()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[41.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[41.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectOutputStream$BlockDataOutputStream.writeUTF()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.789 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.789 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.syntax.elf.ELFParser.createProgram()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[41.994 ms]]></TableColumn>
+    <TableColumn><![CDATA[41.994 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344373.878 ms]]></TableColumn>
+    <TableColumn><![CDATA[347.504 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectOutputStream$BlockDataOutputStream.setBlockDataMode()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.387 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.387 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getMBean()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[12.937 ms]]></TableColumn>
+    <TableColumn><![CDATA[12.937 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.server.MarshalInputStream.latestUserDefinedLoader()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.822 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.822 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.misc.VM.latestUserDefinedLoader()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.822 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.822 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getAttributes()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[12.937 ms]]></TableColumn>
+    <TableColumn><![CDATA[12.937 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.platform.Mica2.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[22.251 ms]]></TableColumn>
+    <TableColumn><![CDATA[22.251 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.platform.Mica2.addDevices()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[22.251 ms]]></TableColumn>
+    <TableColumn><![CDATA[22.251 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.platform.LED.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[22.251 ms]]></TableColumn>
+    <TableColumn><![CDATA[22.251 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.FiniteStateMachine.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[22.251 ms]]></TableColumn>
+    <TableColumn><![CDATA[22.251 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.mcu.ATMegaFamily.buildPort()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.217 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.217 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.mcu.AtmelMicrocontroller.getPin()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.217 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.217 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.elf.ELFDataInputStream.read_Elf32_Off()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.134 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.134 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.mbeanserver.JmxMBeanServer.getAttributes()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[12.937 ms]]></TableColumn>
+    <TableColumn><![CDATA[12.937 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.ref.Finalizer$FinalizerThread.run()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344373.878 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.clock.RippleSynchronizer.removeNode()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[28.657 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.server.UnicastRef.unmarshalValue()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.919 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.919 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectInputStream.readOrdinaryObject()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.919 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.919 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.rmi.server.RMIClassLoader.loadClass()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.919 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.919 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.ref.Reference.tryHandlePending()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344373.878 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.ref.Reference$ReferenceHandler.run()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344373.878 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.rmi.server.RMIClassLoader$2.loadClass()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.919 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.919 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.Main.checkFilesExist()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.458 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.458 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Class.forName()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.919 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.919 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.StringBuffer.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.042 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.042 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.TreeMap.put()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.925 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.925 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.rmi.MarshalledObject.get()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.822 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.822 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.arch.legacy.LegacyDisassembler.decode_31()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.189 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.189 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.arch.legacy.LegacyDisassembler.decode_30()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.189 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.189 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.mbeanserver.Repository.retrieveNamedObject()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[12.937 ms]]></TableColumn>
+    <TableColumn><![CDATA[12.937 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.AbstractSet.equals()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.Collections$UnmodifiableSet.equals()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.306 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectOutputStream$BlockDataOutputStream.write()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.357 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.357 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.GeneratedMethodAccessor39.invoke()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[23.255 ms]]></TableColumn>
+    <TableColumn><![CDATA[23.255 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[Harness.main()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344373.878 ms]]></TableColumn>
+    <TableColumn><![CDATA[3624.91 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.Hashtable.clone()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[4.488 ms]]></TableColumn>
+    <TableColumn><![CDATA[4.488 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.arch.legacy.LegacyDisassembler$InvalidInstruction.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.357 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.357 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.remote.internal.ServerCommunicatorAdmin$Timeout.run()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344373.878 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.mcu.USART.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.209 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.209 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.TestHarness.main()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344373.878 ms]]></TableColumn>
+    <TableColumn><![CDATA[3624.91 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.TestHarness.runBenchmark()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344373.878 ms]]></TableColumn>
+    <TableColumn><![CDATA[3624.91 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.Benchmark.run()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344373.878 ms]]></TableColumn>
+    <TableColumn><![CDATA[3624.91 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.GeneratedMethodAccessor30.invoke()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.405 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.405 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344373.878 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.mbeanserver.Repository.retrieve()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[12.937 ms]]></TableColumn>
+    <TableColumn><![CDATA[12.937 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.SimulatorThread.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.721 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.721 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Thread.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.721 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.721 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.reflect.Method.getParameterTypes()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.834 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.834 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Thread.setPriority()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.721 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.721 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[avrora.sim.mcu.ATMegaFamily$Timer3.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.43 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.43 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.System.setProperty()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[8.798 ms]]></TableColumn>
+    <TableColumn><![CDATA[8.798 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.text.Terminal.nextln()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[21.596 ms]]></TableColumn>
+    <TableColumn><![CDATA[21.596 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.text.Status.print()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[21.596 ms]]></TableColumn>
+    <TableColumn><![CDATA[21.596 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[cck.text.Status.success()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[21.596 ms]]></TableColumn>
+    <TableColumn><![CDATA[21.596 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344373.878 ms]]></TableColumn>
+    <TableColumn><![CDATA[347.504 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectOutputStream.writeUTF()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.789 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.789 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectStreamClass.writeNonProxy()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.789 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.789 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectOutputStream.writeNonProxyDesc()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.789 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.789 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectOutputStream.writeClassDesc()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.789 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.789 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[344373.878 ms]]></TableColumn>
+    <TableColumn><![CDATA[347.504 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FileInputStream.open()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.084 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.084 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FileInputStream.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.084 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.084 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FileReader.<init>()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.084 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.084 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.FileDigest.getText()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.084 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.084 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.FileDigest.get()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.084 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.084 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.Benchmark.validate()]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.084 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.084 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+  </TableBody> </TableData>
+</ExportedView>

@@ -1,0 +1,2822 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExportedView Name="Hot Spots" type="table">
+ <TableData NumRows="312" NumColumns="4">
+  <TableHeader>   <TableColumn><![CDATA[Hot Spots - Class]]></TableColumn>
+   <TableColumn><![CDATA[Self Time [%]]]></TableColumn>
+   <TableColumn><![CDATA[Self Time]]></TableColumn>
+   <TableColumn><![CDATA[Self Time (CPU)]]></TableColumn>
+   <TableColumn><![CDATA[Total Time]]></TableColumn>
+   <TableColumn><![CDATA[Total Time (CPU)]]></TableColumn>
+   <TableColumn><![CDATA[Samples]]></TableColumn>
+  </TableHeader>
+  <TableBody>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Object]]></TableColumn>
+    <TableColumn><![CDATA[33,64%]]></TableColumn>
+    <TableColumn><![CDATA[72764.526 ms]]></TableColumn>
+    <TableColumn><![CDATA[197.517 ms]]></TableColumn>
+    <TableColumn><![CDATA[72764.526 ms]]></TableColumn>
+    <TableColumn><![CDATA[197.517 ms]]></TableColumn>
+    <TableColumn><![CDATA[13]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.net.SocketInputStream]]></TableColumn>
+    <TableColumn><![CDATA[21,71%]]></TableColumn>
+    <TableColumn><![CDATA[46956.271 ms]]></TableColumn>
+    <TableColumn><![CDATA[46956.271 ms]]></TableColumn>
+    <TableColumn><![CDATA[46956.271 ms]]></TableColumn>
+    <TableColumn><![CDATA[46956.271 ms]]></TableColumn>
+    <TableColumn><![CDATA[64]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.misc.Unsafe]]></TableColumn>
+    <TableColumn><![CDATA[11,18%]]></TableColumn>
+    <TableColumn><![CDATA[24189.003 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.003 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.net.DualStackPlainSocketImpl]]></TableColumn>
+    <TableColumn><![CDATA[11,18%]]></TableColumn>
+    <TableColumn><![CDATA[24189.003 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.003 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.management.ThreadImpl]]></TableColumn>
+    <TableColumn><![CDATA[11,18%]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[32]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FileOutputStream]]></TableColumn>
+    <TableColumn><![CDATA[2,39%]]></TableColumn>
+    <TableColumn><![CDATA[5172.018 ms]]></TableColumn>
+    <TableColumn><![CDATA[5172.018 ms]]></TableColumn>
+    <TableColumn><![CDATA[5172.018 ms]]></TableColumn>
+    <TableColumn><![CDATA[5172.018 ms]]></TableColumn>
+    <TableColumn><![CDATA[725]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.security.AccessController]]></TableColumn>
+    <TableColumn><![CDATA[1,25%]]></TableColumn>
+    <TableColumn><![CDATA[2708.883 ms]]></TableColumn>
+    <TableColumn><![CDATA[2708.883 ms]]></TableColumn>
+    <TableColumn><![CDATA[74455.185 ms]]></TableColumn>
+    <TableColumn><![CDATA[74455.185 ms]]></TableColumn>
+    <TableColumn><![CDATA[202]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.misc.FloatingDecimal$BinaryToASCIIBuffer]]></TableColumn>
+    <TableColumn><![CDATA[0,96%]]></TableColumn>
+    <TableColumn><![CDATA[2070.819 ms]]></TableColumn>
+    <TableColumn><![CDATA[2070.819 ms]]></TableColumn>
+    <TableColumn><![CDATA[2070.819 ms]]></TableColumn>
+    <TableColumn><![CDATA[2070.819 ms]]></TableColumn>
+    <TableColumn><![CDATA[94]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.PropertyMaker]]></TableColumn>
+    <TableColumn><![CDATA[0,67%]]></TableColumn>
+    <TableColumn><![CDATA[1439.23 ms]]></TableColumn>
+    <TableColumn><![CDATA[1439.23 ms]]></TableColumn>
+    <TableColumn><![CDATA[2427.216 ms]]></TableColumn>
+    <TableColumn><![CDATA[2427.216 ms]]></TableColumn>
+    <TableColumn><![CDATA[410]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.WinNTFileSystem]]></TableColumn>
+    <TableColumn><![CDATA[0,40%]]></TableColumn>
+    <TableColumn><![CDATA[859.865 ms]]></TableColumn>
+    <TableColumn><![CDATA[859.865 ms]]></TableColumn>
+    <TableColumn><![CDATA[877.345 ms]]></TableColumn>
+    <TableColumn><![CDATA[877.345 ms]]></TableColumn>
+    <TableColumn><![CDATA[100]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.text.DigitList]]></TableColumn>
+    <TableColumn><![CDATA[0,38%]]></TableColumn>
+    <TableColumn><![CDATA[820.596 ms]]></TableColumn>
+    <TableColumn><![CDATA[820.596 ms]]></TableColumn>
+    <TableColumn><![CDATA[2788.506 ms]]></TableColumn>
+    <TableColumn><![CDATA[2788.506 ms]]></TableColumn>
+    <TableColumn><![CDATA[179]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.FObj]]></TableColumn>
+    <TableColumn><![CDATA[0,38%]]></TableColumn>
+    <TableColumn><![CDATA[811.4 ms]]></TableColumn>
+    <TableColumn><![CDATA[811.4 ms]]></TableColumn>
+    <TableColumn><![CDATA[3547.526 ms]]></TableColumn>
+    <TableColumn><![CDATA[3547.526 ms]]></TableColumn>
+    <TableColumn><![CDATA[136]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.render.ps.PSRenderer]]></TableColumn>
+    <TableColumn><![CDATA[0,33%]]></TableColumn>
+    <TableColumn><![CDATA[720.167 ms]]></TableColumn>
+    <TableColumn><![CDATA[720.167 ms]]></TableColumn>
+    <TableColumn><![CDATA[6717.277 ms]]></TableColumn>
+    <TableColumn><![CDATA[6717.277 ms]]></TableColumn>
+    <TableColumn><![CDATA[1223]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xmlgraphics.ps.PSGenerator]]></TableColumn>
+    <TableColumn><![CDATA[0,31%]]></TableColumn>
+    <TableColumn><![CDATA[667.932 ms]]></TableColumn>
+    <TableColumn><![CDATA[667.932 ms]]></TableColumn>
+    <TableColumn><![CDATA[5074.199 ms]]></TableColumn>
+    <TableColumn><![CDATA[5074.199 ms]]></TableColumn>
+    <TableColumn><![CDATA[347]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.text.DecimalFormat]]></TableColumn>
+    <TableColumn><![CDATA[0,30%]]></TableColumn>
+    <TableColumn><![CDATA[655.78 ms]]></TableColumn>
+    <TableColumn><![CDATA[655.78 ms]]></TableColumn>
+    <TableColumn><![CDATA[3444.286 ms]]></TableColumn>
+    <TableColumn><![CDATA[3444.286 ms]]></TableColumn>
+    <TableColumn><![CDATA[307]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.FONode]]></TableColumn>
+    <TableColumn><![CDATA[0,24%]]></TableColumn>
+    <TableColumn><![CDATA[518.231 ms]]></TableColumn>
+    <TableColumn><![CDATA[518.231 ms]]></TableColumn>
+    <TableColumn><![CDATA[518.231 ms]]></TableColumn>
+    <TableColumn><![CDATA[518.231 ms]]></TableColumn>
+    <TableColumn><![CDATA[154]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.PropertyCache]]></TableColumn>
+    <TableColumn><![CDATA[0,21%]]></TableColumn>
+    <TableColumn><![CDATA[459.133 ms]]></TableColumn>
+    <TableColumn><![CDATA[459.133 ms]]></TableColumn>
+    <TableColumn><![CDATA[498.667 ms]]></TableColumn>
+    <TableColumn><![CDATA[498.667 ms]]></TableColumn>
+    <TableColumn><![CDATA[82]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FileInputStream]]></TableColumn>
+    <TableColumn><![CDATA[0,20%]]></TableColumn>
+    <TableColumn><![CDATA[426.258 ms]]></TableColumn>
+    <TableColumn><![CDATA[426.258 ms]]></TableColumn>
+    <TableColumn><![CDATA[426.258 ms]]></TableColumn>
+    <TableColumn><![CDATA[426.258 ms]]></TableColumn>
+    <TableColumn><![CDATA[42]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.StringBuffer]]></TableColumn>
+    <TableColumn><![CDATA[0,19%]]></TableColumn>
+    <TableColumn><![CDATA[417.897 ms]]></TableColumn>
+    <TableColumn><![CDATA[417.897 ms]]></TableColumn>
+    <TableColumn><![CDATA[475.212 ms]]></TableColumn>
+    <TableColumn><![CDATA[475.212 ms]]></TableColumn>
+    <TableColumn><![CDATA[24]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.CompoundPropertyMaker]]></TableColumn>
+    <TableColumn><![CDATA[0,19%]]></TableColumn>
+    <TableColumn><![CDATA[409.568 ms]]></TableColumn>
+    <TableColumn><![CDATA[409.568 ms]]></TableColumn>
+    <TableColumn><![CDATA[1207.168 ms]]></TableColumn>
+    <TableColumn><![CDATA[1207.168 ms]]></TableColumn>
+    <TableColumn><![CDATA[149]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.PositionIterator]]></TableColumn>
+    <TableColumn><![CDATA[0,19%]]></TableColumn>
+    <TableColumn><![CDATA[408.939 ms]]></TableColumn>
+    <TableColumn><![CDATA[408.939 ms]]></TableColumn>
+    <TableColumn><![CDATA[408.939 ms]]></TableColumn>
+    <TableColumn><![CDATA[408.939 ms]]></TableColumn>
+    <TableColumn><![CDATA[20]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.XMLWhiteSpaceHandler]]></TableColumn>
+    <TableColumn><![CDATA[0,16%]]></TableColumn>
+    <TableColumn><![CDATA[345.409 ms]]></TableColumn>
+    <TableColumn><![CDATA[345.409 ms]]></TableColumn>
+    <TableColumn><![CDATA[521.956 ms]]></TableColumn>
+    <TableColumn><![CDATA[521.956 ms]]></TableColumn>
+    <TableColumn><![CDATA[69]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.String]]></TableColumn>
+    <TableColumn><![CDATA[0,15%]]></TableColumn>
+    <TableColumn><![CDATA[320.995 ms]]></TableColumn>
+    <TableColumn><![CDATA[320.995 ms]]></TableColumn>
+    <TableColumn><![CDATA[402.433 ms]]></TableColumn>
+    <TableColumn><![CDATA[402.433 ms]]></TableColumn>
+    <TableColumn><![CDATA[20]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.BreakingAlgorithm]]></TableColumn>
+    <TableColumn><![CDATA[0,13%]]></TableColumn>
+    <TableColumn><![CDATA[289.18 ms]]></TableColumn>
+    <TableColumn><![CDATA[289.18 ms]]></TableColumn>
+    <TableColumn><![CDATA[472.649 ms]]></TableColumn>
+    <TableColumn><![CDATA[472.649 ms]]></TableColumn>
+    <TableColumn><![CDATA[68]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.PropertyList]]></TableColumn>
+    <TableColumn><![CDATA[0,11%]]></TableColumn>
+    <TableColumn><![CDATA[242.489 ms]]></TableColumn>
+    <TableColumn><![CDATA[242.489 ms]]></TableColumn>
+    <TableColumn><![CDATA[3052.967 ms]]></TableColumn>
+    <TableColumn><![CDATA[3052.967 ms]]></TableColumn>
+    <TableColumn><![CDATA[469]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fonts.Font]]></TableColumn>
+    <TableColumn><![CDATA[0,10%]]></TableColumn>
+    <TableColumn><![CDATA[224.698 ms]]></TableColumn>
+    <TableColumn><![CDATA[224.698 ms]]></TableColumn>
+    <TableColumn><![CDATA[262.715 ms]]></TableColumn>
+    <TableColumn><![CDATA[262.715 ms]]></TableColumn>
+    <TableColumn><![CDATA[23]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.FOTreeBuilder$MainFOHandler]]></TableColumn>
+    <TableColumn><![CDATA[0,10%]]></TableColumn>
+    <TableColumn><![CDATA[222.489 ms]]></TableColumn>
+    <TableColumn><![CDATA[222.489 ms]]></TableColumn>
+    <TableColumn><![CDATA[17755.997 ms]]></TableColumn>
+    <TableColumn><![CDATA[17755.997 ms]]></TableColumn>
+    <TableColumn><![CDATA[258]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xmlgraphics.ps.PSFontUtils]]></TableColumn>
+    <TableColumn><![CDATA[0,08%]]></TableColumn>
+    <TableColumn><![CDATA[180.904 ms]]></TableColumn>
+    <TableColumn><![CDATA[180.904 ms]]></TableColumn>
+    <TableColumn><![CDATA[199.834 ms]]></TableColumn>
+    <TableColumn><![CDATA[199.834 ms]]></TableColumn>
+    <TableColumn><![CDATA[10]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Throwable]]></TableColumn>
+    <TableColumn><![CDATA[0,08%]]></TableColumn>
+    <TableColumn><![CDATA[174.073 ms]]></TableColumn>
+    <TableColumn><![CDATA[174.073 ms]]></TableColumn>
+    <TableColumn><![CDATA[174.073 ms]]></TableColumn>
+    <TableColumn><![CDATA[174.073 ms]]></TableColumn>
+    <TableColumn><![CDATA[21]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.impl.XMLEntityScanner]]></TableColumn>
+    <TableColumn><![CDATA[0,08%]]></TableColumn>
+    <TableColumn><![CDATA[163.657 ms]]></TableColumn>
+    <TableColumn><![CDATA[163.657 ms]]></TableColumn>
+    <TableColumn><![CDATA[729.608 ms]]></TableColumn>
+    <TableColumn><![CDATA[729.608 ms]]></TableColumn>
+    <TableColumn><![CDATA[57]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.HashMap]]></TableColumn>
+    <TableColumn><![CDATA[0,07%]]></TableColumn>
+    <TableColumn><![CDATA[157.474 ms]]></TableColumn>
+    <TableColumn><![CDATA[157.474 ms]]></TableColumn>
+    <TableColumn><![CDATA[304.619 ms]]></TableColumn>
+    <TableColumn><![CDATA[304.619 ms]]></TableColumn>
+    <TableColumn><![CDATA[26]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.render.AbstractRenderer]]></TableColumn>
+    <TableColumn><![CDATA[0,06%]]></TableColumn>
+    <TableColumn><![CDATA[130.405 ms]]></TableColumn>
+    <TableColumn><![CDATA[130.405 ms]]></TableColumn>
+    <TableColumn><![CDATA[6218.477 ms]]></TableColumn>
+    <TableColumn><![CDATA[6218.477 ms]]></TableColumn>
+    <TableColumn><![CDATA[3090]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.expr.PropertyParser]]></TableColumn>
+    <TableColumn><![CDATA[0,05%]]></TableColumn>
+    <TableColumn><![CDATA[118.542 ms]]></TableColumn>
+    <TableColumn><![CDATA[118.542 ms]]></TableColumn>
+    <TableColumn><![CDATA[216.923 ms]]></TableColumn>
+    <TableColumn><![CDATA[216.923 ms]]></TableColumn>
+    <TableColumn><![CDATA[50]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.AbstractLayoutManager]]></TableColumn>
+    <TableColumn><![CDATA[0,05%]]></TableColumn>
+    <TableColumn><![CDATA[115.859 ms]]></TableColumn>
+    <TableColumn><![CDATA[115.859 ms]]></TableColumn>
+    <TableColumn><![CDATA[285.604 ms]]></TableColumn>
+    <TableColumn><![CDATA[285.604 ms]]></TableColumn>
+    <TableColumn><![CDATA[34]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.CommonFont]]></TableColumn>
+    <TableColumn><![CDATA[0,05%]]></TableColumn>
+    <TableColumn><![CDATA[109.773 ms]]></TableColumn>
+    <TableColumn><![CDATA[109.773 ms]]></TableColumn>
+    <TableColumn><![CDATA[323.141 ms]]></TableColumn>
+    <TableColumn><![CDATA[323.141 ms]]></TableColumn>
+    <TableColumn><![CDATA[17]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.SpaceResolver]]></TableColumn>
+    <TableColumn><![CDATA[0,05%]]></TableColumn>
+    <TableColumn><![CDATA[102.57 ms]]></TableColumn>
+    <TableColumn><![CDATA[102.57 ms]]></TableColumn>
+    <TableColumn><![CDATA[163.056 ms]]></TableColumn>
+    <TableColumn><![CDATA[163.056 ms]]></TableColumn>
+    <TableColumn><![CDATA[12]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.BlockLayoutManager]]></TableColumn>
+    <TableColumn><![CDATA[0,05%]]></TableColumn>
+    <TableColumn><![CDATA[102.401 ms]]></TableColumn>
+    <TableColumn><![CDATA[102.401 ms]]></TableColumn>
+    <TableColumn><![CDATA[4531.528 ms]]></TableColumn>
+    <TableColumn><![CDATA[4531.528 ms]]></TableColumn>
+    <TableColumn><![CDATA[228]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.render.AbstractPathOrientedRenderer]]></TableColumn>
+    <TableColumn><![CDATA[0,05%]]></TableColumn>
+    <TableColumn><![CDATA[100.676 ms]]></TableColumn>
+    <TableColumn><![CDATA[100.676 ms]]></TableColumn>
+    <TableColumn><![CDATA[5799.092 ms]]></TableColumn>
+    <TableColumn><![CDATA[5799.092 ms]]></TableColumn>
+    <TableColumn><![CDATA[277]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.System]]></TableColumn>
+    <TableColumn><![CDATA[0,04%]]></TableColumn>
+    <TableColumn><![CDATA[90.145 ms]]></TableColumn>
+    <TableColumn><![CDATA[90.145 ms]]></TableColumn>
+    <TableColumn><![CDATA[90.145 ms]]></TableColumn>
+    <TableColumn><![CDATA[90.145 ms]]></TableColumn>
+    <TableColumn><![CDATA[13]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.FontFamilyProperty$Maker]]></TableColumn>
+    <TableColumn><![CDATA[0,04%]]></TableColumn>
+    <TableColumn><![CDATA[80.462 ms]]></TableColumn>
+    <TableColumn><![CDATA[80.462 ms]]></TableColumn>
+    <TableColumn><![CDATA[119.057 ms]]></TableColumn>
+    <TableColumn><![CDATA[119.057 ms]]></TableColumn>
+    <TableColumn><![CDATA[6]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.area.LineArea]]></TableColumn>
+    <TableColumn><![CDATA[0,04%]]></TableColumn>
+    <TableColumn><![CDATA[79.573 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.573 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.573 ms]]></TableColumn>
+    <TableColumn><![CDATA[79.573 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.inline.TextLayoutManager]]></TableColumn>
+    <TableColumn><![CDATA[0,04%]]></TableColumn>
+    <TableColumn><![CDATA[77.364 ms]]></TableColumn>
+    <TableColumn><![CDATA[77.364 ms]]></TableColumn>
+    <TableColumn><![CDATA[809.191 ms]]></TableColumn>
+    <TableColumn><![CDATA[809.191 ms]]></TableColumn>
+    <TableColumn><![CDATA[59]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.LinkedList]]></TableColumn>
+    <TableColumn><![CDATA[0,03%]]></TableColumn>
+    <TableColumn><![CDATA[65.031 ms]]></TableColumn>
+    <TableColumn><![CDATA[65.031 ms]]></TableColumn>
+    <TableColumn><![CDATA[65.031 ms]]></TableColumn>
+    <TableColumn><![CDATA[65.031 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.CommonBorderPaddingBackground]]></TableColumn>
+    <TableColumn><![CDATA[0,03%]]></TableColumn>
+    <TableColumn><![CDATA[62.844 ms]]></TableColumn>
+    <TableColumn><![CDATA[62.844 ms]]></TableColumn>
+    <TableColumn><![CDATA[357.704 ms]]></TableColumn>
+    <TableColumn><![CDATA[357.704 ms]]></TableColumn>
+    <TableColumn><![CDATA[28]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.impl.XMLDocumentFragmentScannerImpl]]></TableColumn>
+    <TableColumn><![CDATA[0,03%]]></TableColumn>
+    <TableColumn><![CDATA[62.833 ms]]></TableColumn>
+    <TableColumn><![CDATA[62.833 ms]]></TableColumn>
+    <TableColumn><![CDATA[18623.902 ms]]></TableColumn>
+    <TableColumn><![CDATA[18623.902 ms]]></TableColumn>
+    <TableColumn><![CDATA[136]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.util.SymbolTable]]></TableColumn>
+    <TableColumn><![CDATA[0,03%]]></TableColumn>
+    <TableColumn><![CDATA[60.931 ms]]></TableColumn>
+    <TableColumn><![CDATA[60.931 ms]]></TableColumn>
+    <TableColumn><![CDATA[121.015 ms]]></TableColumn>
+    <TableColumn><![CDATA[121.015 ms]]></TableColumn>
+    <TableColumn><![CDATA[6]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.RecursiveCharIterator]]></TableColumn>
+    <TableColumn><![CDATA[0,03%]]></TableColumn>
+    <TableColumn><![CDATA[59.305 ms]]></TableColumn>
+    <TableColumn><![CDATA[59.305 ms]]></TableColumn>
+    <TableColumn><![CDATA[136.861 ms]]></TableColumn>
+    <TableColumn><![CDATA[136.861 ms]]></TableColumn>
+    <TableColumn><![CDATA[13]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.inline.LineLayoutManager$LineBreakingAlgorithm]]></TableColumn>
+    <TableColumn><![CDATA[0,03%]]></TableColumn>
+    <TableColumn><![CDATA[58.932 ms]]></TableColumn>
+    <TableColumn><![CDATA[58.932 ms]]></TableColumn>
+    <TableColumn><![CDATA[282.993 ms]]></TableColumn>
+    <TableColumn><![CDATA[282.993 ms]]></TableColumn>
+    <TableColumn><![CDATA[26]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fonts.base14.Helvetica]]></TableColumn>
+    <TableColumn><![CDATA[0,03%]]></TableColumn>
+    <TableColumn><![CDATA[58.313 ms]]></TableColumn>
+    <TableColumn><![CDATA[58.313 ms]]></TableColumn>
+    <TableColumn><![CDATA[58.313 ms]]></TableColumn>
+    <TableColumn><![CDATA[58.313 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.pagination.PageNumberGenerator]]></TableColumn>
+    <TableColumn><![CDATA[0,02%]]></TableColumn>
+    <TableColumn><![CDATA[52.849 ms]]></TableColumn>
+    <TableColumn><![CDATA[52.849 ms]]></TableColumn>
+    <TableColumn><![CDATA[52.849 ms]]></TableColumn>
+    <TableColumn><![CDATA[52.849 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.CommonTextDecoration]]></TableColumn>
+    <TableColumn><![CDATA[0,02%]]></TableColumn>
+    <TableColumn><![CDATA[44.176 ms]]></TableColumn>
+    <TableColumn><![CDATA[44.176 ms]]></TableColumn>
+    <TableColumn><![CDATA[44.176 ms]]></TableColumn>
+    <TableColumn><![CDATA[44.176 ms]]></TableColumn>
+    <TableColumn><![CDATA[9]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.inline.InlineLayoutManager]]></TableColumn>
+    <TableColumn><![CDATA[0,02%]]></TableColumn>
+    <TableColumn><![CDATA[42.022 ms]]></TableColumn>
+    <TableColumn><![CDATA[42.022 ms]]></TableColumn>
+    <TableColumn><![CDATA[533.672 ms]]></TableColumn>
+    <TableColumn><![CDATA[533.672 ms]]></TableColumn>
+    <TableColumn><![CDATA[34]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.inline.LineLayoutManager]]></TableColumn>
+    <TableColumn><![CDATA[0,02%]]></TableColumn>
+    <TableColumn><![CDATA[41.822 ms]]></TableColumn>
+    <TableColumn><![CDATA[41.822 ms]]></TableColumn>
+    <TableColumn><![CDATA[4157.183 ms]]></TableColumn>
+    <TableColumn><![CDATA[4157.183 ms]]></TableColumn>
+    <TableColumn><![CDATA[308]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.xinclude.XIncludeHandler]]></TableColumn>
+    <TableColumn><![CDATA[0,02%]]></TableColumn>
+    <TableColumn><![CDATA[40.998 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.998 ms]]></TableColumn>
+    <TableColumn><![CDATA[17796.995 ms]]></TableColumn>
+    <TableColumn><![CDATA[17796.995 ms]]></TableColumn>
+    <TableColumn><![CDATA[258]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.flow.table.TableFObj]]></TableColumn>
+    <TableColumn><![CDATA[0,02%]]></TableColumn>
+    <TableColumn><![CDATA[40.948 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.948 ms]]></TableColumn>
+    <TableColumn><![CDATA[102.654 ms]]></TableColumn>
+    <TableColumn><![CDATA[102.654 ms]]></TableColumn>
+    <TableColumn><![CDATA[7]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.SpaceElement]]></TableColumn>
+    <TableColumn><![CDATA[0,02%]]></TableColumn>
+    <TableColumn><![CDATA[40.717 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.717 ms]]></TableColumn>
+    <TableColumn><![CDATA[80.882 ms]]></TableColumn>
+    <TableColumn><![CDATA[80.882 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.render.ps.PSFontUtils]]></TableColumn>
+    <TableColumn><![CDATA[0,02%]]></TableColumn>
+    <TableColumn><![CDATA[40.609 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.609 ms]]></TableColumn>
+    <TableColumn><![CDATA[240.443 ms]]></TableColumn>
+    <TableColumn><![CDATA[240.443 ms]]></TableColumn>
+    <TableColumn><![CDATA[34]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.AreaAdditionUtil]]></TableColumn>
+    <TableColumn><![CDATA[0,02%]]></TableColumn>
+    <TableColumn><![CDATA[40.307 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.307 ms]]></TableColumn>
+    <TableColumn><![CDATA[1330.016 ms]]></TableColumn>
+    <TableColumn><![CDATA[1330.016 ms]]></TableColumn>
+    <TableColumn><![CDATA[61]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.BlockStackingLayoutManager]]></TableColumn>
+    <TableColumn><![CDATA[0,02%]]></TableColumn>
+    <TableColumn><![CDATA[40.118 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.118 ms]]></TableColumn>
+    <TableColumn><![CDATA[3234.55 ms]]></TableColumn>
+    <TableColumn><![CDATA[3234.55 ms]]></TableColumn>
+    <TableColumn><![CDATA[268]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.FOText]]></TableColumn>
+    <TableColumn><![CDATA[0,02%]]></TableColumn>
+    <TableColumn><![CDATA[39.689 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.689 ms]]></TableColumn>
+    <TableColumn><![CDATA[592.57 ms]]></TableColumn>
+    <TableColumn><![CDATA[592.57 ms]]></TableColumn>
+    <TableColumn><![CDATA[31]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.area.MainReference]]></TableColumn>
+    <TableColumn><![CDATA[0,02%]]></TableColumn>
+    <TableColumn><![CDATA[39.413 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.413 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.413 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.413 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.AbstractBreaker]]></TableColumn>
+    <TableColumn><![CDATA[0,02%]]></TableColumn>
+    <TableColumn><![CDATA[39.341 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.341 ms]]></TableColumn>
+    <TableColumn><![CDATA[12370.045 ms]]></TableColumn>
+    <TableColumn><![CDATA[12370.045 ms]]></TableColumn>
+    <TableColumn><![CDATA[759]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.impl.XMLNSDocumentScannerImpl]]></TableColumn>
+    <TableColumn><![CDATA[0,02%]]></TableColumn>
+    <TableColumn><![CDATA[39.114 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.114 ms]]></TableColumn>
+    <TableColumn><![CDATA[17733.398 ms]]></TableColumn>
+    <TableColumn><![CDATA[17733.398 ms]]></TableColumn>
+    <TableColumn><![CDATA[241]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.FObjMixed]]></TableColumn>
+    <TableColumn><![CDATA[0,02%]]></TableColumn>
+    <TableColumn><![CDATA[39.062 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.062 ms]]></TableColumn>
+    <TableColumn><![CDATA[1336.355 ms]]></TableColumn>
+    <TableColumn><![CDATA[1336.355 ms]]></TableColumn>
+    <TableColumn><![CDATA[70]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fonts.base14.Courier]]></TableColumn>
+    <TableColumn><![CDATA[0,02%]]></TableColumn>
+    <TableColumn><![CDATA[38.604 ms]]></TableColumn>
+    <TableColumn><![CDATA[38.604 ms]]></TableColumn>
+    <TableColumn><![CDATA[38.604 ms]]></TableColumn>
+    <TableColumn><![CDATA[38.604 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.FObj$FObjIterator]]></TableColumn>
+    <TableColumn><![CDATA[0,02%]]></TableColumn>
+    <TableColumn><![CDATA[37.867 ms]]></TableColumn>
+    <TableColumn><![CDATA[37.867 ms]]></TableColumn>
+    <TableColumn><![CDATA[37.867 ms]]></TableColumn>
+    <TableColumn><![CDATA[37.867 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.misc.FloatingDecimal]]></TableColumn>
+    <TableColumn><![CDATA[0,02%]]></TableColumn>
+    <TableColumn><![CDATA[37.86 ms]]></TableColumn>
+    <TableColumn><![CDATA[37.86 ms]]></TableColumn>
+    <TableColumn><![CDATA[1888.033 ms]]></TableColumn>
+    <TableColumn><![CDATA[1888.033 ms]]></TableColumn>
+    <TableColumn><![CDATA[171]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.LayoutManagerMapping]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[23.281 ms]]></TableColumn>
+    <TableColumn><![CDATA[23.281 ms]]></TableColumn>
+    <TableColumn><![CDATA[42.697 ms]]></TableColumn>
+    <TableColumn><![CDATA[42.697 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.PageBreakingAlgorithm]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[21.677 ms]]></TableColumn>
+    <TableColumn><![CDATA[21.677 ms]]></TableColumn>
+    <TableColumn><![CDATA[325.524 ms]]></TableColumn>
+    <TableColumn><![CDATA[325.524 ms]]></TableColumn>
+    <TableColumn><![CDATA[17]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.area.PageViewport]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[21.558 ms]]></TableColumn>
+    <TableColumn><![CDATA[21.558 ms]]></TableColumn>
+    <TableColumn><![CDATA[81.839 ms]]></TableColumn>
+    <TableColumn><![CDATA[81.839 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.XMLWhiteSpaceHandler$EOLchecker]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[21.06 ms]]></TableColumn>
+    <TableColumn><![CDATA[21.06 ms]]></TableColumn>
+    <TableColumn><![CDATA[43.269 ms]]></TableColumn>
+    <TableColumn><![CDATA[43.269 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.area.Page]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[20.868 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.868 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.868 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.868 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.MinOptMaxUtil]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[20.838 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.838 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.165 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.165 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.pagination.AbstractPageSequence]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[20.817 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.817 ms]]></TableColumn>
+    <TableColumn><![CDATA[73.666 ms]]></TableColumn>
+    <TableColumn><![CDATA[73.666 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.zip.ZipFile]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[20.49 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.49 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.49 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.49 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.ClassLoader]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[20.472 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.472 ms]]></TableColumn>
+    <TableColumn><![CDATA[120.773 ms]]></TableColumn>
+    <TableColumn><![CDATA[120.773 ms]]></TableColumn>
+    <TableColumn><![CDATA[15]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.ColorProperty$Maker]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[20.447 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.447 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.447 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.447 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.flow.table.Table]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[20.43 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.43 ms]]></TableColumn>
+    <TableColumn><![CDATA[62.343 ms]]></TableColumn>
+    <TableColumn><![CDATA[62.343 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.impl.XMLDTDScannerImpl]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[20.422 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.422 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.422 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.422 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.area.RenderPagesModel]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[20.294 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.294 ms]]></TableColumn>
+    <TableColumn><![CDATA[6737.571 ms]]></TableColumn>
+    <TableColumn><![CDATA[6737.571 ms]]></TableColumn>
+    <TableColumn><![CDATA[441]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.pagination.Flow]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[20.136 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.136 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.136 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.136 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.StaticPropertyList]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[20.129 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.129 ms]]></TableColumn>
+    <TableColumn><![CDATA[2268.493 ms]]></TableColumn>
+    <TableColumn><![CDATA[2268.493 ms]]></TableColumn>
+    <TableColumn><![CDATA[205]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.misc.URLClassPath]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[20.022 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.022 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.512 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.512 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.area.IDTracker]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[19.93 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.93 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.93 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.93 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.flow.table.SeparateBorderResolver]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[19.928 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.928 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.928 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.928 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.SpaceResolver$SpaceHandlingBreakPosition]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[19.769 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.769 ms]]></TableColumn>
+    <TableColumn><![CDATA[60.486 ms]]></TableColumn>
+    <TableColumn><![CDATA[60.486 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.CommonMarginBlock]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[19.681 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.681 ms]]></TableColumn>
+    <TableColumn><![CDATA[416.502 ms]]></TableColumn>
+    <TableColumn><![CDATA[416.502 ms]]></TableColumn>
+    <TableColumn><![CDATA[21]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.LineHeightPropertyMaker]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[19.634 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.634 ms]]></TableColumn>
+    <TableColumn><![CDATA[482.834 ms]]></TableColumn>
+    <TableColumn><![CDATA[482.834 ms]]></TableColumn>
+    <TableColumn><![CDATA[50]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.table.TableStepper]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[19.595 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.595 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.595 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.595 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.PageProvider]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[19.581 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.581 ms]]></TableColumn>
+    <TableColumn><![CDATA[155.447 ms]]></TableColumn>
+    <TableColumn><![CDATA[155.447 ms]]></TableColumn>
+    <TableColumn><![CDATA[17]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.list.ListItemContentLayoutManager]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[19.463 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.463 ms]]></TableColumn>
+    <TableColumn><![CDATA[305.62 ms]]></TableColumn>
+    <TableColumn><![CDATA[305.62 ms]]></TableColumn>
+    <TableColumn><![CDATA[16]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.AbstractBaseLayoutManager]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[19.416 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.416 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.416 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.416 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.parsers.AbstractSAXParser]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[19.39 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.39 ms]]></TableColumn>
+    <TableColumn><![CDATA[18705.245 ms]]></TableColumn>
+    <TableColumn><![CDATA[18705.245 ms]]></TableColumn>
+    <TableColumn><![CDATA[355]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.flow.AbstractListItemPart]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[19.362 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.362 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.362 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.362 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.Property]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[19.327 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.327 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.327 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.327 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Class]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[19.099 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.099 ms]]></TableColumn>
+    <TableColumn><![CDATA[237.162 ms]]></TableColumn>
+    <TableColumn><![CDATA[237.162 ms]]></TableColumn>
+    <TableColumn><![CDATA[42]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.util.URI]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[19.049 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.049 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.049 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.049 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.Arrays]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[19.043 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.043 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.043 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.043 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.flow.table.TableCell]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[18.982 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.982 ms]]></TableColumn>
+    <TableColumn><![CDATA[59.98 ms]]></TableColumn>
+    <TableColumn><![CDATA[59.98 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xmlgraphics.fonts.Glyphs]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[18.93 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.93 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.93 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.93 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fonts.FontInfo]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[18.836 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.836 ms]]></TableColumn>
+    <TableColumn><![CDATA[102.274 ms]]></TableColumn>
+    <TableColumn><![CDATA[102.274 ms]]></TableColumn>
+    <TableColumn><![CDATA[7]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.StaticContentLayoutManager$StaticContentBreaker]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[18.713 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.713 ms]]></TableColumn>
+    <TableColumn><![CDATA[443.581 ms]]></TableColumn>
+    <TableColumn><![CDATA[443.581 ms]]></TableColumn>
+    <TableColumn><![CDATA[26]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.impl.io.UTF8Reader]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[18.678 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.678 ms]]></TableColumn>
+    <TableColumn><![CDATA[444.936 ms]]></TableColumn>
+    <TableColumn><![CDATA[444.936 ms]]></TableColumn>
+    <TableColumn><![CDATA[22]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.flow.table.FixedColRowGroupBuilder]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[18.629 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.629 ms]]></TableColumn>
+    <TableColumn><![CDATA[38.557 ms]]></TableColumn>
+    <TableColumn><![CDATA[38.557 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.ArrayList]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[18.626 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.626 ms]]></TableColumn>
+    <TableColumn><![CDATA[78.738 ms]]></TableColumn>
+    <TableColumn><![CDATA[78.738 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.BufferedWriter]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[18.586 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.586 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.586 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.586 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Long]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[18.088 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.088 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.088 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.088 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[17.834 ms]]></TableColumn>
+    <TableColumn><![CDATA[17.834 ms]]></TableColumn>
+    <TableColumn><![CDATA[18567.067 ms]]></TableColumn>
+    <TableColumn><![CDATA[18567.067 ms]]></TableColumn>
+    <TableColumn><![CDATA[96]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.jaxp.SAXParserFactoryImpl]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[16.93 ms]]></TableColumn>
+    <TableColumn><![CDATA[16.93 ms]]></TableColumn>
+    <TableColumn><![CDATA[121.54 ms]]></TableColumn>
+    <TableColumn><![CDATA[121.54 ms]]></TableColumn>
+    <TableColumn><![CDATA[9]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fonts.AbstractCodePointMapping]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[14.526 ms]]></TableColumn>
+    <TableColumn><![CDATA[14.526 ms]]></TableColumn>
+    <TableColumn><![CDATA[14.526 ms]]></TableColumn>
+    <TableColumn><![CDATA[14.526 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.Hashtable]]></TableColumn>
+    <TableColumn><![CDATA[0,01%]]></TableColumn>
+    <TableColumn><![CDATA[11.346 ms]]></TableColumn>
+    <TableColumn><![CDATA[11.346 ms]]></TableColumn>
+    <TableColumn><![CDATA[32.717 ms]]></TableColumn>
+    <TableColumn><![CDATA[32.717 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.Fop]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[9.308 ms]]></TableColumn>
+    <TableColumn><![CDATA[9.308 ms]]></TableColumn>
+    <TableColumn><![CDATA[22131.833 ms]]></TableColumn>
+    <TableColumn><![CDATA[22131.833 ms]]></TableColumn>
+    <TableColumn><![CDATA[96]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.commons.cli.CommandLine]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[3.905 ms]]></TableColumn>
+    <TableColumn><![CDATA[3.905 ms]]></TableColumn>
+    <TableColumn><![CDATA[3.905 ms]]></TableColumn>
+    <TableColumn><![CDATA[3.905 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.management.remote.rmi.RMIConnectionImpl]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[3.841 ms]]></TableColumn>
+    <TableColumn><![CDATA[3.841 ms]]></TableColumn>
+    <TableColumn><![CDATA[24192.843 ms]]></TableColumn>
+    <TableColumn><![CDATA[24192.843 ms]]></TableColumn>
+    <TableColumn><![CDATA[61]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.File]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[3.257 ms]]></TableColumn>
+    <TableColumn><![CDATA[3.257 ms]]></TableColumn>
+    <TableColumn><![CDATA[880.602 ms]]></TableColumn>
+    <TableColumn><![CDATA[880.602 ms]]></TableColumn>
+    <TableColumn><![CDATA[57]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.PageBreaker]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[12151.413 ms]]></TableColumn>
+    <TableColumn><![CDATA[12151.413 ms]]></TableColumn>
+    <TableColumn><![CDATA[957]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.AbstractPageSequenceLayoutManager]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[7503.868 ms]]></TableColumn>
+    <TableColumn><![CDATA[7503.868 ms]]></TableColumn>
+    <TableColumn><![CDATA[460]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.PageSequenceLayoutManager]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[12467.577 ms]]></TableColumn>
+    <TableColumn><![CDATA[12467.577 ms]]></TableColumn>
+    <TableColumn><![CDATA[370]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xalan.transformer.TransformerIdentityImpl]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[18705.245 ms]]></TableColumn>
+    <TableColumn><![CDATA[18705.245 ms]]></TableColumn>
+    <TableColumn><![CDATA[354]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.commons.logging.LogFactory]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2829.973 ms]]></TableColumn>
+    <TableColumn><![CDATA[2829.973 ms]]></TableColumn>
+    <TableColumn><![CDATA[282]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.FOTreeBuilder]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[17775.928 ms]]></TableColumn>
+    <TableColumn><![CDATA[17775.928 ms]]></TableColumn>
+    <TableColumn><![CDATA[259]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.inline.ScaledBaselineTableFactory]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2647.76 ms]]></TableColumn>
+    <TableColumn><![CDATA[2647.76 ms]]></TableColumn>
+    <TableColumn><![CDATA[234]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.PrintStream]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[347.534 ms]]></TableColumn>
+    <TableColumn><![CDATA[347.534 ms]]></TableColumn>
+    <TableColumn><![CDATA[201]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.cli.InputHandler]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[18821.965 ms]]></TableColumn>
+    <TableColumn><![CDATA[18821.965 ms]]></TableColumn>
+    <TableColumn><![CDATA[195]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.BufferedOutputStream]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1229.189 ms]]></TableColumn>
+    <TableColumn><![CDATA[1229.189 ms]]></TableColumn>
+    <TableColumn><![CDATA[194]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.parsers.XML11Configuration]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[18685.855 ms]]></TableColumn>
+    <TableColumn><![CDATA[18685.855 ms]]></TableColumn>
+    <TableColumn><![CDATA[193]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.FlowLayoutManager]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[4598.212 ms]]></TableColumn>
+    <TableColumn><![CDATA[4598.212 ms]]></TableColumn>
+    <TableColumn><![CDATA[184]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.inline.AlignmentContext]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2810.042 ms]]></TableColumn>
+    <TableColumn><![CDATA[2810.042 ms]]></TableColumn>
+    <TableColumn><![CDATA[167]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.TeeOutputStream]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1127.076 ms]]></TableColumn>
+    <TableColumn><![CDATA[1127.076 ms]]></TableColumn>
+    <TableColumn><![CDATA[167]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.nio.cs.StreamEncoder]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[347.534 ms]]></TableColumn>
+    <TableColumn><![CDATA[347.534 ms]]></TableColumn>
+    <TableColumn><![CDATA[162]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.Benchmark]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24184.863 ms]]></TableColumn>
+    <TableColumn><![CDATA[24184.863 ms]]></TableColumn>
+    <TableColumn><![CDATA[157]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.text.NumberFormat]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[3423.676 ms]]></TableColumn>
+    <TableColumn><![CDATA[3423.676 ms]]></TableColumn>
+    <TableColumn><![CDATA[152]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.reflect.Method]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[48401.202 ms]]></TableColumn>
+    <TableColumn><![CDATA[48401.202 ms]]></TableColumn>
+    <TableColumn><![CDATA[143]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.inline.BasicScaledBaselineTable]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2810.042 ms]]></TableColumn>
+    <TableColumn><![CDATA[2810.042 ms]]></TableColumn>
+    <TableColumn><![CDATA[143]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.DelegatingMethodAccessorImpl]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[48381.611 ms]]></TableColumn>
+    <TableColumn><![CDATA[48381.611 ms]]></TableColumn>
+    <TableColumn><![CDATA[142]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.Callback]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[351.439 ms]]></TableColumn>
+    <TableColumn><![CDATA[351.439 ms]]></TableColumn>
+    <TableColumn><![CDATA[109]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[18809.855 ms]]></TableColumn>
+    <TableColumn><![CDATA[18809.855 ms]]></TableColumn>
+    <TableColumn><![CDATA[103]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FilterOutputStream]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[3556.499 ms]]></TableColumn>
+    <TableColumn><![CDATA[3556.499 ms]]></TableColumn>
+    <TableColumn><![CDATA[103]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.ElementMappingRegistry]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[415.877 ms]]></TableColumn>
+    <TableColumn><![CDATA[415.877 ms]]></TableColumn>
+    <TableColumn><![CDATA[96]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.parsers.XMLParser]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[18685.855 ms]]></TableColumn>
+    <TableColumn><![CDATA[18685.855 ms]]></TableColumn>
+    <TableColumn><![CDATA[96]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.pagination.PageSequence]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[12467.577 ms]]></TableColumn>
+    <TableColumn><![CDATA[12467.577 ms]]></TableColumn>
+    <TableColumn><![CDATA[96]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.area.AreaTreeHandler]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[12467.577 ms]]></TableColumn>
+    <TableColumn><![CDATA[12467.577 ms]]></TableColumn>
+    <TableColumn><![CDATA[96]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.cli.Main]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[22122.525 ms]]></TableColumn>
+    <TableColumn><![CDATA[22122.525 ms]]></TableColumn>
+    <TableColumn><![CDATA[95]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.GeneratedMethodAccessor31]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[22122.525 ms]]></TableColumn>
+    <TableColumn><![CDATA[22122.525 ms]]></TableColumn>
+    <TableColumn><![CDATA[95]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.flow.Block]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2113.696 ms]]></TableColumn>
+    <TableColumn><![CDATA[2113.696 ms]]></TableColumn>
+    <TableColumn><![CDATA[95]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.TeePrintStream]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1127.076 ms]]></TableColumn>
+    <TableColumn><![CDATA[1127.076 ms]]></TableColumn>
+    <TableColumn><![CDATA[89]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.list.ListItemLayoutManager]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1423.175 ms]]></TableColumn>
+    <TableColumn><![CDATA[1423.175 ms]]></TableColumn>
+    <TableColumn><![CDATA[68]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.list.ListBlockLayoutManager]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1423.175 ms]]></TableColumn>
+    <TableColumn><![CDATA[1423.175 ms]]></TableColumn>
+    <TableColumn><![CDATA[67]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FileDescriptor]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2694.644 ms]]></TableColumn>
+    <TableColumn><![CDATA[2694.644 ms]]></TableColumn>
+    <TableColumn><![CDATA[61]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FileOutputStream$1]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2694.644 ms]]></TableColumn>
+    <TableColumn><![CDATA[2694.644 ms]]></TableColumn>
+    <TableColumn><![CDATA[61]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.commons.io.IOUtils]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2694.644 ms]]></TableColumn>
+    <TableColumn><![CDATA[2694.644 ms]]></TableColumn>
+    <TableColumn><![CDATA[61]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.OutputStreamWriter]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[347.534 ms]]></TableColumn>
+    <TableColumn><![CDATA[347.534 ms]]></TableColumn>
+    <TableColumn><![CDATA[54]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.apps.FopFactory]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[455.62 ms]]></TableColumn>
+    <TableColumn><![CDATA[455.62 ms]]></TableColumn>
+    <TableColumn><![CDATA[52]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.net.www.protocol.jar.JarFileFactory]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[294.261 ms]]></TableColumn>
+    <TableColumn><![CDATA[294.261 ms]]></TableColumn>
+    <TableColumn><![CDATA[51]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.table.TableContentLayoutManager]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[482.037 ms]]></TableColumn>
+    <TableColumn><![CDATA[482.037 ms]]></TableColumn>
+    <TableColumn><![CDATA[43]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.xml.parsers.FactoryFinder]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[333.673 ms]]></TableColumn>
+    <TableColumn><![CDATA[333.673 ms]]></TableColumn>
+    <TableColumn><![CDATA[39]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.extensions.svg.SVGElementMapping]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[313.223 ms]]></TableColumn>
+    <TableColumn><![CDATA[313.223 ms]]></TableColumn>
+    <TableColumn><![CDATA[36]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.table.RowGroupLayoutManager]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[421.317 ms]]></TableColumn>
+    <TableColumn><![CDATA[421.317 ms]]></TableColumn>
+    <TableColumn><![CDATA[34]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FilePermission]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[294.261 ms]]></TableColumn>
+    <TableColumn><![CDATA[294.261 ms]]></TableColumn>
+    <TableColumn><![CDATA[34]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.net.www.protocol.jar.JarURLConnection]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[294.261 ms]]></TableColumn>
+    <TableColumn><![CDATA[294.261 ms]]></TableColumn>
+    <TableColumn><![CDATA[34]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.transport.Transport$1]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24231.533 ms]]></TableColumn>
+    <TableColumn><![CDATA[24231.533 ms]]></TableColumn>
+    <TableColumn><![CDATA[32]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FilePermission$1]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[275.663 ms]]></TableColumn>
+    <TableColumn><![CDATA[275.663 ms]]></TableColumn>
+    <TableColumn><![CDATA[32]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.BufferedInputStream]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[46956.271 ms]]></TableColumn>
+    <TableColumn><![CDATA[46956.271 ms]]></TableColumn>
+    <TableColumn><![CDATA[32]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.StaticContentLayoutManager]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[660.164 ms]]></TableColumn>
+    <TableColumn><![CDATA[660.164 ms]]></TableColumn>
+    <TableColumn><![CDATA[31]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.mbeanserver.MXBeanIntrospector]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[30]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.mbeanserver.ConvertingMethod]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[30]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.net.URLClassLoader]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[394.562 ms]]></TableColumn>
+    <TableColumn><![CDATA[394.562 ms]]></TableColumn>
+    <TableColumn><![CDATA[27]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.table.TableLayoutManager]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[656.11 ms]]></TableColumn>
+    <TableColumn><![CDATA[656.11 ms]]></TableColumn>
+    <TableColumn><![CDATA[27]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.cli.CommandLineOptions]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[435.689 ms]]></TableColumn>
+    <TableColumn><![CDATA[435.689 ms]]></TableColumn>
+    <TableColumn><![CDATA[25]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.IndentPropertyMaker]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[157.713 ms]]></TableColumn>
+    <TableColumn><![CDATA[157.713 ms]]></TableColumn>
+    <TableColumn><![CDATA[24]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.ElementMapping]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[396.607 ms]]></TableColumn>
+    <TableColumn><![CDATA[396.607 ms]]></TableColumn>
+    <TableColumn><![CDATA[23]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.impl.XMLEntityManager$RewindableInputStream]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[426.258 ms]]></TableColumn>
+    <TableColumn><![CDATA[426.258 ms]]></TableColumn>
+    <TableColumn><![CDATA[23]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.flow.Inline]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[421.399 ms]]></TableColumn>
+    <TableColumn><![CDATA[421.399 ms]]></TableColumn>
+    <TableColumn><![CDATA[20]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.table.TableCellLayoutManager]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[462.442 ms]]></TableColumn>
+    <TableColumn><![CDATA[462.442 ms]]></TableColumn>
+    <TableColumn><![CDATA[20]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.server.UnicastServerRef]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24231.533 ms]]></TableColumn>
+    <TableColumn><![CDATA[24231.533 ms]]></TableColumn>
+    <TableColumn><![CDATA[20]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.xml.parsers.SAXParserFactory]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[333.673 ms]]></TableColumn>
+    <TableColumn><![CDATA[333.673 ms]]></TableColumn>
+    <TableColumn><![CDATA[19]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.xml.parsers.SecuritySupport]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[313.201 ms]]></TableColumn>
+    <TableColumn><![CDATA[313.201 ms]]></TableColumn>
+    <TableColumn><![CDATA[18]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.xml.parsers.SecuritySupport$4]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[313.201 ms]]></TableColumn>
+    <TableColumn><![CDATA[313.201 ms]]></TableColumn>
+    <TableColumn><![CDATA[18]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.net.www.protocol.file.FileURLConnection]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[294.261 ms]]></TableColumn>
+    <TableColumn><![CDATA[294.261 ms]]></TableColumn>
+    <TableColumn><![CDATA[17]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.FilterInputStream]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[46956.271 ms]]></TableColumn>
+    <TableColumn><![CDATA[46956.271 ms]]></TableColumn>
+    <TableColumn><![CDATA[16]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.transport.Transport]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24231.533 ms]]></TableColumn>
+    <TableColumn><![CDATA[24231.533 ms]]></TableColumn>
+    <TableColumn><![CDATA[16]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.management.StandardMBean]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[15]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.mbeanserver.MBeanSupport]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[15]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.mbeanserver.PerInterface]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[15]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.mbeanserver.MBeanIntrospector]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[15]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.misc.MethodUtil]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[15]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.GeneratedMethodAccessor2]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[15]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.misc.Trampoline]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[15]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xmlgraphics.ps.PSResource]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[147.145 ms]]></TableColumn>
+    <TableColumn><![CDATA[147.145 ms]]></TableColumn>
+    <TableColumn><![CDATA[15]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.parsers.ObjectFactory]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[104.61 ms]]></TableColumn>
+    <TableColumn><![CDATA[104.61 ms]]></TableColumn>
+    <TableColumn><![CDATA[15]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.GeneratedMethodAccessor35]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[23897.313 ms]]></TableColumn>
+    <TableColumn><![CDATA[23897.313 ms]]></TableColumn>
+    <TableColumn><![CDATA[15]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.GeneratedMethodAccessor34]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[15]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[15]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.mbeanserver.JmxMBeanServer]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[15]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.interceptor.DefaultMBeanServerInterceptor]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.002 ms]]></TableColumn>
+    <TableColumn><![CDATA[15]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.commons.logging.impl.Jdk14Logger]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[174.073 ms]]></TableColumn>
+    <TableColumn><![CDATA[174.073 ms]]></TableColumn>
+    <TableColumn><![CDATA[14]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.flow.InlineLevel]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[236.748 ms]]></TableColumn>
+    <TableColumn><![CDATA[236.748 ms]]></TableColumn>
+    <TableColumn><![CDATA[12]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.parsers.SAXParser]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[104.61 ms]]></TableColumn>
+    <TableColumn><![CDATA[104.61 ms]]></TableColumn>
+    <TableColumn><![CDATA[12]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.EnumProperty]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[221.816 ms]]></TableColumn>
+    <TableColumn><![CDATA[221.816 ms]]></TableColumn>
+    <TableColumn><![CDATA[11]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.CommonHyphenation]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[191.058 ms]]></TableColumn>
+    <TableColumn><![CDATA[191.058 ms]]></TableColumn>
+    <TableColumn><![CDATA[10]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.commons.logging.LogFactory$1]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[199.477 ms]]></TableColumn>
+    <TableColumn><![CDATA[199.477 ms]]></TableColumn>
+    <TableColumn><![CDATA[10]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.extensions.svg.BatikExtensionElementMapping]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[83.384 ms]]></TableColumn>
+    <TableColumn><![CDATA[83.384 ms]]></TableColumn>
+    <TableColumn><![CDATA[10]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.transport.tcp.TCPTransport$ConnectionHandler]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[71187.804 ms]]></TableColumn>
+    <TableColumn><![CDATA[71187.804 ms]]></TableColumn>
+    <TableColumn><![CDATA[9]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.table.RowPainter]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[60.72 ms]]></TableColumn>
+    <TableColumn><![CDATA[60.72 ms]]></TableColumn>
+    <TableColumn><![CDATA[9]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.BlockLayoutManager$ProxyLMiter]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[63.998 ms]]></TableColumn>
+    <TableColumn><![CDATA[63.998 ms]]></TableColumn>
+    <TableColumn><![CDATA[8]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.LMiter]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[140.789 ms]]></TableColumn>
+    <TableColumn><![CDATA[140.789 ms]]></TableColumn>
+    <TableColumn><![CDATA[8]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.KeepProperty$Maker]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[166.797 ms]]></TableColumn>
+    <TableColumn><![CDATA[166.797 ms]]></TableColumn>
+    <TableColumn><![CDATA[8]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.jaxp.SAXParserImpl]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[104.61 ms]]></TableColumn>
+    <TableColumn><![CDATA[104.61 ms]]></TableColumn>
+    <TableColumn><![CDATA[8]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.inline.PageNumberLayoutManager]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[133.133 ms]]></TableColumn>
+    <TableColumn><![CDATA[133.133 ms]]></TableColumn>
+    <TableColumn><![CDATA[8]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.area.inline.TextArea]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[134.256 ms]]></TableColumn>
+    <TableColumn><![CDATA[134.256 ms]]></TableColumn>
+    <TableColumn><![CDATA[7]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.inline.LeafNodeLayoutManager]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[133.133 ms]]></TableColumn>
+    <TableColumn><![CDATA[133.133 ms]]></TableColumn>
+    <TableColumn><![CDATA[7]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Thread]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[143754.813 ms]]></TableColumn>
+    <TableColumn><![CDATA[71187.804 ms]]></TableColumn>
+    <TableColumn><![CDATA[6]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.flow.table.TableRow]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[105.124 ms]]></TableColumn>
+    <TableColumn><![CDATA[105.124 ms]]></TableColumn>
+    <TableColumn><![CDATA[6]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.area.inline.SpaceArea]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[114.453 ms]]></TableColumn>
+    <TableColumn><![CDATA[114.453 ms]]></TableColumn>
+    <TableColumn><![CDATA[6]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.flow.ListItem]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[120.644 ms]]></TableColumn>
+    <TableColumn><![CDATA[120.644 ms]]></TableColumn>
+    <TableColumn><![CDATA[6]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xmlgraphics.ps.dsc.ResourceTracker]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[147.145 ms]]></TableColumn>
+    <TableColumn><![CDATA[147.145 ms]]></TableColumn>
+    <TableColumn><![CDATA[6]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.parsers.SecuritySupport]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[104.61 ms]]></TableColumn>
+    <TableColumn><![CDATA[104.61 ms]]></TableColumn>
+    <TableColumn><![CDATA[6]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.traits.MinOptMax]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[156.555 ms]]></TableColumn>
+    <TableColumn><![CDATA[156.555 ms]]></TableColumn>
+    <TableColumn><![CDATA[6]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.HashSet]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[147.145 ms]]></TableColumn>
+    <TableColumn><![CDATA[147.145 ms]]></TableColumn>
+    <TableColumn><![CDATA[6]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.xml.transform.FactoryFinder]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[38.183 ms]]></TableColumn>
+    <TableColumn><![CDATA[38.183 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.BorderWidthPropertyMaker]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[98.109 ms]]></TableColumn>
+    <TableColumn><![CDATA[98.109 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Double]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[101.21 ms]]></TableColumn>
+    <TableColumn><![CDATA[101.21 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.impl.XMLScanner]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[78.05 ms]]></TableColumn>
+    <TableColumn><![CDATA[78.05 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.concurrent.ThreadPoolExecutor]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[95376.807 ms]]></TableColumn>
+    <TableColumn><![CDATA[71187.804 ms]]></TableColumn>
+    <TableColumn><![CDATA[5]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.impl.XMLEntityManager]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[37.727 ms]]></TableColumn>
+    <TableColumn><![CDATA[37.727 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.concurrent.ThreadPoolExecutor$Worker]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[95376.807 ms]]></TableColumn>
+    <TableColumn><![CDATA[71187.804 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.render.PrintRenderer]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[83.438 ms]]></TableColumn>
+    <TableColumn><![CDATA[83.438 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectInputStream]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.099 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.099 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.area.Area]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[74.036 ms]]></TableColumn>
+    <TableColumn><![CDATA[74.036 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.net.URLClassLoader$2]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.512 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.512 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.NativeMethodAccessorImpl]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24480.457 ms]]></TableColumn>
+    <TableColumn><![CDATA[24480.457 ms]]></TableColumn>
+    <TableColumn><![CDATA[4]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.Page]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[62.2 ms]]></TableColumn>
+    <TableColumn><![CDATA[62.2 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.parsers.SecuritySupport$6]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[61.764 ms]]></TableColumn>
+    <TableColumn><![CDATA[61.764 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.FontSizePropertyMaker]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[61.95 ms]]></TableColumn>
+    <TableColumn><![CDATA[61.95 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.parsers.SecuritySupport$7]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[42.846 ms]]></TableColumn>
+    <TableColumn><![CDATA[42.846 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$$Lambda$4.1533812849]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[71187.804 ms]]></TableColumn>
+    <TableColumn><![CDATA[71187.804 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.transport.tcp.TCPTransport]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[71187.804 ms]]></TableColumn>
+    <TableColumn><![CDATA[71187.804 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xmlgraphics.ps.PSProcSet]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[59.735 ms]]></TableColumn>
+    <TableColumn><![CDATA[59.735 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.util.SymbolTable$Entry]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[60.084 ms]]></TableColumn>
+    <TableColumn><![CDATA[60.084 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.flow.BasicLink]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[61.747 ms]]></TableColumn>
+    <TableColumn><![CDATA[61.747 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.AbstractStringBuilder]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.227 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.227 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.SpaceProperty$Maker]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[58.896 ms]]></TableColumn>
+    <TableColumn><![CDATA[58.896 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.TraitSetter]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.539 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.539 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.text.SimpleDateFormat]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.125 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.125 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.AbstractCollection]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[59.735 ms]]></TableColumn>
+    <TableColumn><![CDATA[59.735 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fonts.FontCache]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.812 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.812 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.Calendar]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.125 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.125 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.impl.XMLVersionDetector]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[41.531 ms]]></TableColumn>
+    <TableColumn><![CDATA[41.531 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.flow.table.TableBody]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[38.557 ms]]></TableColumn>
+    <TableColumn><![CDATA[38.557 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.CommonMarginInline]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.35 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.35 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.flow.table.TableCellContainer]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[42.001 ms]]></TableColumn>
+    <TableColumn><![CDATA[42.001 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.FOPropertyMapping$2]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.11 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.11 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.003 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.net.ServerSocket]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.003 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.transport.tcp.TCPTransport$AcceptLoop]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.003 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.ref.ReferenceQueue]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.003 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.TestHarness]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24188.768 ms]]></TableColumn>
+    <TableColumn><![CDATA[24188.768 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ObjectStreamClass]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.099 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.099 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xmlgraphics.ps.dsc.events.AbstractResourcesDSCComment]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.286 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.286 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.FixedLength]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.072 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.072 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.impl.XMLDocumentScannerImpl$XMLDeclDispatcher]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[37.019 ms]]></TableColumn>
+    <TableColumn><![CDATA[37.019 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.jar.JarFile]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.49 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.49 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.misc.URLClassPath$JarLoader]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.49 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.49 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.EnumNumber]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.997 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.997 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.NumberProperty$Maker]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.997 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.997 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.pagination.SimplePageMaster]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[42.164 ms]]></TableColumn>
+    <TableColumn><![CDATA[42.164 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.flow.table.TableColumn]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.645 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.645 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.parsers.AbstractXMLDocumentParser]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.645 ms]]></TableColumn>
+    <TableColumn><![CDATA[39.645 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.xml.transform.TransformerFactory]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[38.183 ms]]></TableColumn>
+    <TableColumn><![CDATA[38.183 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.render.ps.PSDictionary]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[35.849 ms]]></TableColumn>
+    <TableColumn><![CDATA[35.849 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.render.ps.PSPageDeviceDictionary]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[35.849 ms]]></TableColumn>
+    <TableColumn><![CDATA[35.849 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.StringProperty]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[38.595 ms]]></TableColumn>
+    <TableColumn><![CDATA[38.595 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.NumberProperty]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.449 ms]]></TableColumn>
+    <TableColumn><![CDATA[40.449 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.apps.Fop]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.931 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.931 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.management.jmxremote.LocalRMIServerSocketFactory$1]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.003 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.FOElementMapping$TableRowMaker]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[21.452 ms]]></TableColumn>
+    <TableColumn><![CDATA[21.452 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.ref.Finalizer$FinalizerThread]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.003 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.ref.Reference]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.003 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.ref.Reference$ReferenceHandler]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.003 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[Harness]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24188.768 ms]]></TableColumn>
+    <TableColumn><![CDATA[24188.768 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.rmi.server.UnicastRef]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.099 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.099 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.ExpiringCache]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[17.48 ms]]></TableColumn>
+    <TableColumn><![CDATA[17.48 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.xml.transform.SecuritySupport$4]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.597 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.597 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.xml.transform.SecuritySupport]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.597 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.597 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.DacapoClassLoader]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.472 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.472 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.Float]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.375 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.375 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xmlgraphics.ps.dsc.events.DSCCommentPageResources]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.286 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.286 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.impl.XMLEntityManager$ScannedEntity]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.678 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.678 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.dacapo.harness.CommandLineArgs]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[3.905 ms]]></TableColumn>
+    <TableColumn><![CDATA[3.905 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.text.Format]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.61 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.61 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.properties.KeepProperty]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.185 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.185 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xerces.impl.XMLDocumentScannerImpl$TrailingMiscDispatcher]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.816 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.816 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.flow.ListBlock]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[21.239 ms]]></TableColumn>
+    <TableColumn><![CDATA[21.239 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.FOElementMapping$ListBlockMaker]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[21.239 ms]]></TableColumn>
+    <TableColumn><![CDATA[21.239 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.KnuthPossPosIter]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.228 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.228 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.GeneratedMethodAccessor36]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[3.841 ms]]></TableColumn>
+    <TableColumn><![CDATA[3.841 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.FOTreeBuilder$1]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.129 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.129 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fo.flow.ListItemBody]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.836 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.836 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.io.PrintWriter]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.586 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.586 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xml.utils.DefaultErrorHandler]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.586 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.586 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.xalan.processor.TransformerFactoryImpl]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.586 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.586 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.GeneratedConstructorAccessor16]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.586 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.586 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.reflect.DelegatingConstructorAccessorImpl]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.586 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.586 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.lang.reflect.Constructor]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.586 ms]]></TableColumn>
+    <TableColumn><![CDATA[18.586 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.layoutmgr.LayoutManagerMapping$PageNumberLayoutManagerMaker]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.416 ms]]></TableColumn>
+    <TableColumn><![CDATA[19.416 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.util.locale.provider.CalendarProviderImpl]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.125 ms]]></TableColumn>
+    <TableColumn><![CDATA[20.125 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.apache.fop.fonts.base14.Symbol]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[14.526 ms]]></TableColumn>
+    <TableColumn><![CDATA[14.526 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.net.PlainSocketImpl]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.003 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.net.AbstractPlainSocketImpl]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.003 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.003 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[java.util.concurrent.locks.LockSupport]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.003 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[com.sun.jmx.remote.internal.ServerCommunicatorAdmin$Timeout]]></TableColumn>
+    <TableColumn><![CDATA[0,00%]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[24189.003 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.0 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+  </TableBody> </TableData>
+</ExportedView>
