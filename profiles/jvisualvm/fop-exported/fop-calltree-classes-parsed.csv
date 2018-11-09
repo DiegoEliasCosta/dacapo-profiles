@@ -1,0 +1,821 @@
+Threads,Methods,Self Time,Self Time (CPU),Time,Time (CPU)
+Finalizer,Finalizer,24189003,0,24189003,0
+Finalizer,java.lang.Object.wait[native](),24189003,0,24189003,0
+Finalizer,java.lang.ref.Finalizer$FinalizerThread.run(),0,0,24189003,0
+Finalizer,java.lang.ref.ReferenceQueue.remove(),0,0,48378006,0
+JMX server connection timeout 15,JMX server connection timeout 15,24189003,0,24189003,0
+JMX server connection timeout 15,com.sun.jmx.remote.internal.ServerCommunicatorAdmin$Timeout.run(),0,0,24189003,0
+JMX server connection timeout 15,java.lang.Object.wait[native](),24189003,0,24189003,0
+JMX server connection timeout 15,java.lang.Thread.run(),0,0,24189003,0
+RMI Scheduler(0),RMI Scheduler(0),24189003,0,24189003,0
+RMI Scheduler(0),java.lang.Thread.run(),0,0,24189003,0
+RMI Scheduler(0),java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(),0,0,48378006,0
+RMI Scheduler(0),java.util.concurrent.ThreadPoolExecutor$Worker.run(),0,0,24189003,0
+RMI Scheduler(0),java.util.concurrent.ThreadPoolExecutor.getTask(),0,0,24189003,0
+RMI Scheduler(0),java.util.concurrent.ThreadPoolExecutor.runWorker(),0,0,24189003,0
+RMI Scheduler(0),java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(),0,0,24189003,0
+RMI Scheduler(0),java.util.concurrent.locks.LockSupport.parkNanos(),0,0,24189003,0
+RMI Scheduler(0),sun.misc.Unsafe.park[native](),24189003,0,24189003,0
+RMI TCP Accept-0,RMI TCP Accept-0,24189003,0,24189003,0
+RMI TCP Accept-0,java.lang.Thread.run(),0,0,24189003,0
+RMI TCP Accept-0,java.net.AbstractPlainSocketImpl.accept(),0,0,24189003,0
+RMI TCP Accept-0,java.net.DualStackPlainSocketImpl.accept0[native](),24189003,0,24189003,0
+RMI TCP Accept-0,java.net.DualStackPlainSocketImpl.socketAccept(),0,0,24189003,0
+RMI TCP Accept-0,java.net.PlainSocketImpl.accept(),0,0,24189003,0
+RMI TCP Accept-0,java.net.ServerSocket.accept(),0,0,24189003,0
+RMI TCP Accept-0,java.net.ServerSocket.implAccept(),0,0,24189003,0
+RMI TCP Accept-0,sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(),0,0,24189003,0
+RMI TCP Accept-0,sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(),0,0,24189003,0
+RMI TCP Accept-0,sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(),0,0,24189003,0
+RMI TCP Connection(1)-129.206.61.71,RMI TCP Connection(1)-129.206.61.71,24189003,24189003,24189003,24189003
+RMI TCP Connection(1)-129.206.61.71,com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(),0,0,6317506,6317506
+RMI TCP Connection(1)-129.206.61.71,com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(),0,0,12635012,12635012
+RMI TCP Connection(1)-129.206.61.71,com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(),0,0,6317506,6317506
+RMI TCP Connection(1)-129.206.61.71,com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(),0,0,6317506,6317506
+RMI TCP Connection(1)-129.206.61.71,com.sun.jmx.mbeanserver.MBeanSupport.invoke(),0,0,6317506,6317506
+RMI TCP Connection(1)-129.206.61.71,com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(),0,0,12635012,12635012
+RMI TCP Connection(1)-129.206.61.71,com.sun.jmx.mbeanserver.PerInterface.invoke(),0,0,6317506,6317506
+RMI TCP Connection(1)-129.206.61.71,java.io.BufferedInputStream.fill(),0,0,17851906,17851906
+RMI TCP Connection(1)-129.206.61.71,java.io.BufferedInputStream.read(),0,0,17851906,17851906
+RMI TCP Connection(1)-129.206.61.71,java.io.FilterInputStream.read(),0,0,17851906,17851906
+RMI TCP Connection(1)-129.206.61.71,java.lang.Object.clone[native](),19591,19591,19591,19591
+RMI TCP Connection(1)-129.206.61.71,java.lang.Thread.run(),0,0,24189003,24189003
+RMI TCP Connection(1)-129.206.61.71,java.lang.reflect.Method.getParameterTypes(),0,0,19591,19591
+RMI TCP Connection(1)-129.206.61.71,java.lang.reflect.Method.invoke(),0,0,18952518,18952518
+RMI TCP Connection(1)-129.206.61.71,java.net.SocketInputStream.read(),0,0,35703812,35703812
+RMI TCP Connection(1)-129.206.61.71,java.net.SocketInputStream.socketRead(),0,0,17851906,17851906
+RMI TCP Connection(1)-129.206.61.71,java.net.SocketInputStream.socketRead0[native](),17851906,17851906,17851906,17851906
+RMI TCP Connection(1)-129.206.61.71,java.security.AccessController.doPrivileged[native](),0,0,30526100,30526100
+RMI TCP Connection(1)-129.206.61.71,java.util.concurrent.ThreadPoolExecutor$Worker.run(),0,0,24189003,24189003
+RMI TCP Connection(1)-129.206.61.71,java.util.concurrent.ThreadPoolExecutor.runWorker(),0,0,24189003,24189003
+RMI TCP Connection(1)-129.206.61.71,javax.management.StandardMBean.invoke(),0,0,6317506,6317506
+RMI TCP Connection(1)-129.206.61.71,javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(),0,0,6317506,6317506
+RMI TCP Connection(1)-129.206.61.71,javax.management.remote.rmi.RMIConnectionImpl.access$300(),0,0,6317506,6317506
+RMI TCP Connection(1)-129.206.61.71,javax.management.remote.rmi.RMIConnectionImpl.doOperation(),0,0,6317506,6317506
+RMI TCP Connection(1)-129.206.61.71,javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(),0,0,6317506,6317506
+RMI TCP Connection(1)-129.206.61.71,javax.management.remote.rmi.RMIConnectionImpl.invoke(),0,0,6317506,6317506
+RMI TCP Connection(1)-129.206.61.71,sun.management.ThreadImpl.dumpAllThreads(),0,0,6317506,6317506
+RMI TCP Connection(1)-129.206.61.71,sun.management.ThreadImpl.dumpThreads0[native](),6317506,6317506,6317506,6317506
+RMI TCP Connection(1)-129.206.61.71,sun.reflect.DelegatingMethodAccessorImpl.invoke(),0,0,18952518,18952518
+RMI TCP Connection(1)-129.206.61.71,sun.reflect.GeneratedMethodAccessor2.invoke(),0,0,6317506,6317506
+RMI TCP Connection(1)-129.206.61.71,sun.reflect.GeneratedMethodAccessor34.invoke(),0,0,6317506,6317506
+RMI TCP Connection(1)-129.206.61.71,sun.reflect.GeneratedMethodAccessor35.invoke(),0,0,6025817,6025817
+RMI TCP Connection(1)-129.206.61.71,sun.reflect.NativeMethodAccessorImpl.invoke(),0,0,291689,291689
+RMI TCP Connection(1)-129.206.61.71,sun.reflect.NativeMethodAccessorImpl.invoke0[native](),0,0,291689,291689
+RMI TCP Connection(1)-129.206.61.71,sun.reflect.misc.MethodUtil.invoke(),0,0,6317506,6317506
+RMI TCP Connection(1)-129.206.61.71,sun.reflect.misc.Trampoline.invoke(),0,0,6317506,6317506
+RMI TCP Connection(1)-129.206.61.71,sun.rmi.server.UnicastServerRef.dispatch(),0,0,6337097,6337097
+RMI TCP Connection(1)-129.206.61.71,sun.rmi.server.UnicastServerRef.unmarshalParameters(),0,0,19591,19591
+RMI TCP Connection(1)-129.206.61.71,sun.rmi.server.UnicastServerRef.unmarshalParametersUnchecked(),0,0,19591,19591
+RMI TCP Connection(1)-129.206.61.71,sun.rmi.transport.Transport$1.run(),0,0,12674194,12674194
+RMI TCP Connection(1)-129.206.61.71,sun.rmi.transport.Transport.serviceCall(),0,0,6337097,6337097
+RMI TCP Connection(1)-129.206.61.71,sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$$Lambda$4.1533812849.run(),0,0,24189003,24189003
+RMI TCP Connection(1)-129.206.61.71,sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(),0,0,24189003,24189003
+RMI TCP Connection(1)-129.206.61.71,sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(),0,0,24189003,24189003
+RMI TCP Connection(1)-129.206.61.71,sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(),0,0,24189003,24189003
+RMI TCP Connection(1)-129.206.61.71,sun.rmi.transport.tcp.TCPTransport.handleMessages(),0,0,24189003,24189003
+RMI TCP Connection(2)-129.206.61.71,RMI TCP Connection(2)-129.206.61.71,24189003,24189003,24189003,24189003
+RMI TCP Connection(2)-129.206.61.71,com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(),0,0,12012415,12012415
+RMI TCP Connection(2)-129.206.61.71,com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(),0,0,24024830,24024830
+RMI TCP Connection(2)-129.206.61.71,com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(),0,0,12012415,12012415
+RMI TCP Connection(2)-129.206.61.71,com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(),0,0,12012415,12012415
+RMI TCP Connection(2)-129.206.61.71,com.sun.jmx.mbeanserver.MBeanSupport.invoke(),0,0,12012415,12012415
+RMI TCP Connection(2)-129.206.61.71,com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(),0,0,24024830,24024830
+RMI TCP Connection(2)-129.206.61.71,com.sun.jmx.mbeanserver.PerInterface.invoke(),0,0,12012415,12012415
+RMI TCP Connection(2)-129.206.61.71,java.io.BufferedInputStream.fill(),0,0,12157489,12157489
+RMI TCP Connection(2)-129.206.61.71,java.io.BufferedInputStream.read(),0,0,12157489,12157489
+RMI TCP Connection(2)-129.206.61.71,java.io.FilterInputStream.read(),0,0,12157489,12157489
+RMI TCP Connection(2)-129.206.61.71,java.io.ObjectInputStream.readObject(),0,0,19099,19099
+RMI TCP Connection(2)-129.206.61.71,java.io.ObjectInputStream.readObject0(),0,0,19099,19099
+RMI TCP Connection(2)-129.206.61.71,java.io.ObjectInputStream.readOrdinaryObject(),0,0,19099,19099
+RMI TCP Connection(2)-129.206.61.71,java.io.ObjectInputStream.readSerialData(),0,0,19099,19099
+RMI TCP Connection(2)-129.206.61.71,java.io.ObjectStreamClass.getClassDataLayout(),0,0,19099,19099
+RMI TCP Connection(2)-129.206.61.71,java.io.ObjectStreamClass.getClassDataLayout0(),0,0,19099,19099
+RMI TCP Connection(2)-129.206.61.71,java.lang.Class.getSuperclass[native](),19099,19099,19099,19099
+RMI TCP Connection(2)-129.206.61.71,java.lang.Thread.run(),0,0,24189003,24189003
+RMI TCP Connection(2)-129.206.61.71,java.lang.reflect.Method.invoke(),0,0,36037245,36037245
+RMI TCP Connection(2)-129.206.61.71,java.net.SocketInputStream.read(),0,0,24314978,24314978
+RMI TCP Connection(2)-129.206.61.71,java.net.SocketInputStream.socketRead(),0,0,12157489,12157489
+RMI TCP Connection(2)-129.206.61.71,java.net.SocketInputStream.socketRead0[native](),12157489,12157489,12157489,12157489
+RMI TCP Connection(2)-129.206.61.71,java.security.AccessController.doPrivileged[native](),0,0,36220517,36220517
+RMI TCP Connection(2)-129.206.61.71,java.util.concurrent.ThreadPoolExecutor$Worker.run(),0,0,24189003,24189003
+RMI TCP Connection(2)-129.206.61.71,java.util.concurrent.ThreadPoolExecutor.runWorker(),0,0,24189003,24189003
+RMI TCP Connection(2)-129.206.61.71,javax.management.StandardMBean.invoke(),0,0,12012415,12012415
+RMI TCP Connection(2)-129.206.61.71,javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(),0,0,12012415,12012415
+RMI TCP Connection(2)-129.206.61.71,javax.management.remote.rmi.RMIConnectionImpl.access$300(),0,0,12012415,12012415
+RMI TCP Connection(2)-129.206.61.71,javax.management.remote.rmi.RMIConnectionImpl.doOperation(),0,0,12012415,12012415
+RMI TCP Connection(2)-129.206.61.71,javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(),0,0,12012415,12012415
+RMI TCP Connection(2)-129.206.61.71,javax.management.remote.rmi.RMIConnectionImpl.invoke(),0,0,12012415,12012415
+RMI TCP Connection(2)-129.206.61.71,sun.management.ThreadImpl.dumpAllThreads(),0,0,12012415,12012415
+RMI TCP Connection(2)-129.206.61.71,sun.management.ThreadImpl.dumpThreads0[native](),12012415,12012415,12012415,12012415
+RMI TCP Connection(2)-129.206.61.71,sun.reflect.DelegatingMethodAccessorImpl.invoke(),0,0,36037245,36037245
+RMI TCP Connection(2)-129.206.61.71,sun.reflect.GeneratedMethodAccessor2.invoke(),0,0,12012415,12012415
+RMI TCP Connection(2)-129.206.61.71,sun.reflect.GeneratedMethodAccessor34.invoke(),0,0,12012415,12012415
+RMI TCP Connection(2)-129.206.61.71,sun.reflect.GeneratedMethodAccessor35.invoke(),0,0,12012415,12012415
+RMI TCP Connection(2)-129.206.61.71,sun.reflect.misc.MethodUtil.invoke(),0,0,12012415,12012415
+RMI TCP Connection(2)-129.206.61.71,sun.reflect.misc.Trampoline.invoke(),0,0,12012415,12012415
+RMI TCP Connection(2)-129.206.61.71,sun.rmi.server.UnicastRef.unmarshalValue(),0,0,19099,19099
+RMI TCP Connection(2)-129.206.61.71,sun.rmi.server.UnicastServerRef.dispatch(),0,0,12031514,12031514
+RMI TCP Connection(2)-129.206.61.71,sun.rmi.server.UnicastServerRef.unmarshalParameters(),0,0,19099,19099
+RMI TCP Connection(2)-129.206.61.71,sun.rmi.server.UnicastServerRef.unmarshalParametersUnchecked(),0,0,19099,19099
+RMI TCP Connection(2)-129.206.61.71,sun.rmi.transport.Transport$1.run(),0,0,24063028,24063028
+RMI TCP Connection(2)-129.206.61.71,sun.rmi.transport.Transport.serviceCall(),0,0,12031514,12031514
+RMI TCP Connection(2)-129.206.61.71,sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$$Lambda$4.1533812849.run(),0,0,24189003,24189003
+RMI TCP Connection(2)-129.206.61.71,sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(),0,0,24189003,24189003
+RMI TCP Connection(2)-129.206.61.71,sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(),0,0,24189003,24189003
+RMI TCP Connection(2)-129.206.61.71,sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(),0,0,24189003,24189003
+RMI TCP Connection(2)-129.206.61.71,sun.rmi.transport.tcp.TCPTransport.handleMessages(),0,0,24189003,24189003
+RMI TCP Connection(3)-129.206.61.71,RMI TCP Connection(3)-129.206.61.71,22809799,22809799,22809799,22809799
+RMI TCP Connection(3)-129.206.61.71,com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(),0,0,5859081,5859081
+RMI TCP Connection(3)-129.206.61.71,com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(),0,0,11718162,11718162
+RMI TCP Connection(3)-129.206.61.71,com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(),0,0,5859081,5859081
+RMI TCP Connection(3)-129.206.61.71,com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(),0,0,5859081,5859081
+RMI TCP Connection(3)-129.206.61.71,com.sun.jmx.mbeanserver.MBeanSupport.invoke(),0,0,5859081,5859081
+RMI TCP Connection(3)-129.206.61.71,com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(),0,0,11718162,11718162
+RMI TCP Connection(3)-129.206.61.71,com.sun.jmx.mbeanserver.PerInterface.invoke(),0,0,5859081,5859081
+RMI TCP Connection(3)-129.206.61.71,java.io.BufferedInputStream.fill(),0,0,16946876,16946876
+RMI TCP Connection(3)-129.206.61.71,java.io.BufferedInputStream.read(),0,0,16946876,16946876
+RMI TCP Connection(3)-129.206.61.71,java.io.FilterInputStream.read(),0,0,16946876,16946876
+RMI TCP Connection(3)-129.206.61.71,java.lang.Thread.run(),0,0,22809799,22809799
+RMI TCP Connection(3)-129.206.61.71,java.lang.reflect.Method.invoke(),0,0,17581085,17581085
+RMI TCP Connection(3)-129.206.61.71,java.net.SocketInputStream.read(),0,0,33893752,33893752
+RMI TCP Connection(3)-129.206.61.71,java.net.SocketInputStream.socketRead(),0,0,16946876,16946876
+RMI TCP Connection(3)-129.206.61.71,java.net.SocketInputStream.socketRead0[native](),16946876,16946876,16946876,16946876
+RMI TCP Connection(3)-129.206.61.71,java.security.AccessController.doPrivileged[native](),0,0,28672722,28672722
+RMI TCP Connection(3)-129.206.61.71,java.util.concurrent.ThreadPoolExecutor$Worker.run(),0,0,22809799,22809799
+RMI TCP Connection(3)-129.206.61.71,java.util.concurrent.ThreadPoolExecutor.runWorker(),0,0,22809799,22809799
+RMI TCP Connection(3)-129.206.61.71,javax.management.StandardMBean.invoke(),0,0,5859081,5859081
+RMI TCP Connection(3)-129.206.61.71,javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(),0,0,5859081,5859081
+RMI TCP Connection(3)-129.206.61.71,javax.management.remote.rmi.RMIConnectionImpl.access$300(),0,0,5859081,5859081
+RMI TCP Connection(3)-129.206.61.71,javax.management.remote.rmi.RMIConnectionImpl.doOperation(),0,0,5859081,5859081
+RMI TCP Connection(3)-129.206.61.71,javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(),0,0,5859081,5859081
+RMI TCP Connection(3)-129.206.61.71,javax.management.remote.rmi.RMIConnectionImpl.getAttributes(),3841,3841,3841,3841
+RMI TCP Connection(3)-129.206.61.71,javax.management.remote.rmi.RMIConnectionImpl.invoke(),0,0,5859081,5859081
+RMI TCP Connection(3)-129.206.61.71,sun.management.ThreadImpl.dumpAllThreads(),0,0,5859081,5859081
+RMI TCP Connection(3)-129.206.61.71,sun.management.ThreadImpl.dumpThreads0[native](),5859081,5859081,5859081,5859081
+RMI TCP Connection(3)-129.206.61.71,sun.reflect.DelegatingMethodAccessorImpl.invoke(),0,0,17581085,17581085
+RMI TCP Connection(3)-129.206.61.71,sun.reflect.GeneratedMethodAccessor2.invoke(),0,0,5859081,5859081
+RMI TCP Connection(3)-129.206.61.71,sun.reflect.GeneratedMethodAccessor34.invoke(),0,0,5859081,5859081
+RMI TCP Connection(3)-129.206.61.71,sun.reflect.GeneratedMethodAccessor35.invoke(),0,0,5859081,5859081
+RMI TCP Connection(3)-129.206.61.71,sun.reflect.GeneratedMethodAccessor36.invoke(),0,0,3841,3841
+RMI TCP Connection(3)-129.206.61.71,sun.reflect.misc.MethodUtil.invoke(),0,0,5859081,5859081
+RMI TCP Connection(3)-129.206.61.71,sun.reflect.misc.Trampoline.invoke(),0,0,5859081,5859081
+RMI TCP Connection(3)-129.206.61.71,sun.rmi.server.UnicastServerRef.dispatch(),0,0,5862923,5862923
+RMI TCP Connection(3)-129.206.61.71,sun.rmi.transport.Transport$1.run(),0,0,11725846,11725846
+RMI TCP Connection(3)-129.206.61.71,sun.rmi.transport.Transport.serviceCall(),0,0,5862923,5862923
+RMI TCP Connection(3)-129.206.61.71,sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$$Lambda$4.1533812849.run(),0,0,22809799,22809799
+RMI TCP Connection(3)-129.206.61.71,sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(),0,0,22809799,22809799
+RMI TCP Connection(3)-129.206.61.71,sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(),0,0,22809799,22809799
+RMI TCP Connection(3)-129.206.61.71,sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(),0,0,22809799,22809799
+RMI TCP Connection(3)-129.206.61.71,sun.rmi.transport.tcp.TCPTransport.handleMessages(),0,0,22809799,22809799
+Reference Handler,Reference Handler,24189003,0,24189003,0
+Reference Handler,java.lang.Object.wait(),0,0,24189003,0
+Reference Handler,java.lang.Object.wait[native](),24189003,0,24189003,0
+Reference Handler,java.lang.ref.Reference$ReferenceHandler.run(),0,0,24189003,0
+Reference Handler,java.lang.ref.Reference.tryHandlePending(),0,0,24189003,0
+main,Harness.main(),0,0,24189003,24189003
+main,java.io.BufferedOutputStream.flush(),0,0,347534,347534
+main,java.io.BufferedOutputStream.flushBuffer(),0,0,1229189,1229189
+main,java.io.BufferedOutputStream.write(),0,0,881655,881655
+main,java.io.BufferedWriter.<init>(),18586,18586,37172,37172
+main,java.io.ExpiringCache.put(),0,0,17480,17480
+main,java.io.File.delete(),0,0,429155,429155
+main,java.io.File.exists(),0,0,110438,110438
+main,java.io.File.getCanonicalPath(),0,0,275664,275664
+main,java.io.File.isDirectory(),0,0,54883,54883
+main,java.io.File.renameTo(),3257,3257,49118,49118
+main,java.io.FileDescriptor.closeAll(),0,0,2694644,2694644
+main,java.io.FileInputStream.read(),0,0,426258,426258
+main,java.io.FileInputStream.read0[native](),40823,40823,40823,40823
+main,java.io.FileInputStream.readBytes[native](),385435,385435,385435,385435
+main,java.io.FileOutputStream$1.close(),0,0,2694644,2694644
+main,java.io.FileOutputStream.<init>(),0,0,2496370,2496370
+main,java.io.FileOutputStream.access$000(),0,0,2694644,2694644
+main,java.io.FileOutputStream.close(),0,0,2694644,2694644
+main,java.io.FileOutputStream.close0[native](),2694644,2694644,2694644,2694644
+main,java.io.FileOutputStream.open(),0,0,1248185,1248185
+main,java.io.FileOutputStream.open0[native](),1248185,1248185,1248185,1248185
+main,java.io.FileOutputStream.write(),0,0,1229189,1229189
+main,java.io.FileOutputStream.writeBytes[native](),1229189,1229189,1229189,1229189
+main,java.io.FilePermission$1.run(),0,0,551328,551328
+main,java.io.FilePermission.<init>(),0,0,294262,294262
+main,java.io.FilePermission.init(),0,0,294262,294262
+main,java.io.FilterOutputStream.close(),0,0,2694644,2694644
+main,java.io.FilterOutputStream.write(),0,0,861855,861855
+main,java.io.OutputStreamWriter.flushBuffer(),0,0,347534,347534
+main,java.io.PrintStream.newLine(),0,0,81132,81132
+main,java.io.PrintStream.print(),0,0,266402,266402
+main,java.io.PrintStream.println(),0,0,276995,276995
+main,java.io.PrintStream.write(),0,0,613936,613936
+main,java.io.PrintWriter.<init>(),0,0,18586,18586
+main,java.io.WinNTFileSystem.canonicalize(),0,0,275664,275664
+main,java.io.WinNTFileSystem.canonicalize0[native](),199931,199931,199931,199931
+main,java.io.WinNTFileSystem.canonicalizeWithPrefix(),0,0,19597,19597
+main,java.io.WinNTFileSystem.canonicalizeWithPrefix0[native](),19597,19597,19597,19597
+main,java.io.WinNTFileSystem.delete(),0,0,429155,429155
+main,java.io.WinNTFileSystem.delete0[native](),429155,429155,429155,429155
+main,java.io.WinNTFileSystem.getBooleanAttributes[native](),165321,165321,165321,165321
+main,java.io.WinNTFileSystem.rename(),0,0,45861,45861
+main,java.io.WinNTFileSystem.rename0[native](),45861,45861,45861,45861
+main,java.lang.AbstractStringBuilder.append(),0,0,39227,39227
+main,java.lang.AbstractStringBuilder.ensureCapacityInternal(),0,0,19043,19043
+main,java.lang.Class.getMethod(),0,0,199477,199477
+main,java.lang.Class.getMethod0(),0,0,199477,199477
+main,java.lang.Class.newInstance(),0,0,18586,18586
+main,java.lang.Class.privateGetMethodRecursive(),0,0,199477,199477
+main,java.lang.Class.searchMethods(),0,0,199477,199477
+main,java.lang.ClassLoader.findLoadedClass(),0,0,20472,20472
+main,java.lang.ClassLoader.findLoadedClass0[native](),20472,20472,20472,20472
+main,java.lang.ClassLoader.getResource(),0,0,243385,243385
+main,java.lang.ClassLoader.loadClass(),0,0,20472,20472
+main,java.lang.Double.parseDouble(),0,0,37860,37860
+main,java.lang.Double.toString(),0,0,63350,63350
+main,java.lang.Float.toString(),0,0,19375,19375
+main,java.lang.Long.toString(),18088,18088,36176,36176
+main,java.lang.Object.clone[native](),177926,177926,177926,177926
+main,java.lang.String.intern[native](),278831,278831,278831,278831
+main,java.lang.String.valueOf(),42164,42164,123602,123602
+main,java.lang.StringBuffer.<init>(),104454,104454,104454,104454
+main,java.lang.StringBuffer.append(),115196,115196,172512,172512
+main,java.lang.StringBuffer.toString(),198247,198247,198247,198247
+main,java.lang.System.currentTimeMillis[native](),41857,41857,41857,41857
+main,java.lang.System.setOut(),0,0,48288,48288
+main,java.lang.System.setOut0[native](),48288,48288,48288,48288
+main,java.lang.Throwable.<init>(),0,0,115371,115371
+main,java.lang.Throwable.fillInStackTrace(),0,0,115371,115371
+main,java.lang.Throwable.fillInStackTrace[native](),115371,115371,115371,115371
+main,java.lang.Throwable.getOurStackTrace(),0,0,58702,58702
+main,java.lang.Throwable.getStackTrace(),0,0,58702,58702
+main,java.lang.Throwable.getStackTraceElement[native](),58702,58702,58702,58702
+main,java.lang.reflect.Constructor.newInstance(),0,0,18586,18586
+main,java.lang.reflect.Method.invoke(),0,0,46311756,46311756
+main,java.net.URLClassLoader$2.run(),0,0,81024,81024
+main,java.net.URLClassLoader.findResource(),0,0,100301,100301
+main,java.net.URLClassLoader.getResourceAsStream(),0,0,394564,394564
+main,java.security.AccessController.doPrivileged[native](),2708883,2708883,3661948,3661948
+main,java.text.DecimalFormat.append(),18630,18630,18630,18630
+main,java.text.DecimalFormat.format(),637150,637150,6870963,6870963
+main,java.text.DecimalFormat.subformat(),0,0,18630,18630
+main,java.text.DigitList.round(),635685,635685,635685,635685
+main,java.text.DigitList.set(),184911,184911,3424198,3424198
+main,java.text.Format.format(),0,0,20610,20610
+main,java.text.NumberFormat.format(),0,0,3423688,3423688
+main,java.text.SimpleDateFormat.<init>(),0,0,40250,40250
+main,java.text.SimpleDateFormat.initializeCalendar(),0,0,20125,20125
+main,java.util.AbstractCollection.addAll(),0,0,59735,59735
+main,java.util.ArrayList.addAll(),0,0,60112,60112
+main,java.util.ArrayList.remove(),18626,18626,18626,18626
+main,java.util.Arrays.copyOf(),19043,19043,19043,19043
+main,java.util.Calendar.createCalendar(),0,0,20125,20125
+main,java.util.Calendar.getInstance(),0,0,20125,20125
+main,java.util.HashMap.get(),0,0,83438,83438
+main,java.util.HashMap.getNode(),83438,83438,83438,83438
+main,java.util.HashMap.hash(),14412,14412,161557,161557
+main,java.util.HashMap.put(),40438,40438,221181,221181
+main,java.util.HashMap.putVal(),19186,19186,19186,19186
+main,java.util.HashSet.add(),0,0,147145,147145
+main,java.util.Hashtable.clone(),11346,11346,32717,32717
+main,java.util.LinkedList.removeLast(),4919,4919,4919,4919
+main,java.util.LinkedList.toArray(),60112,60112,60112,60112
+main,java.util.jar.JarFile.getEntry(),0,0,20490,20490
+main,java.util.jar.JarFile.getJarEntry(),0,0,20490,20490
+main,java.util.zip.ZipFile.getEntry(),0,0,20490,20490
+main,java.util.zip.ZipFile.getEntry[native](),20490,20490,20490,20490
+main,javax.xml.parsers.FactoryFinder.find(),0,0,333675,333675
+main,javax.xml.parsers.FactoryFinder.findJarServiceProvider(),0,0,333675,333675
+main,javax.xml.parsers.FactoryFinder.newInstance(),0,0,20472,20472
+main,javax.xml.parsers.SAXParserFactory.newInstance(),0,0,333675,333675
+main,javax.xml.parsers.SecuritySupport$4.run(),0,0,313202,313202
+main,javax.xml.parsers.SecuritySupport.getResourceAsStream(),0,0,313202,313202
+main,javax.xml.transform.FactoryFinder.find(),0,0,38184,38184
+main,javax.xml.transform.FactoryFinder.findJarServiceProvider(),0,0,38184,38184
+main,javax.xml.transform.FactoryFinder.newInstance(),0,0,18586,18586
+main,javax.xml.transform.SecuritySupport$4.run(),0,0,19597,19597
+main,javax.xml.transform.SecuritySupport.getResourceAsStream(),0,0,19597,19597
+main,javax.xml.transform.TransformerFactory.newInstance(),0,0,38184,38184
+main,main,24189003,24189003,24189003,24189003
+main,org.apache.commons.cli.CommandLine.getOptionValue(),0,0,7810,7810
+main,org.apache.commons.cli.CommandLine.getOptionValues(),3905,3905,3905,3905
+main,org.apache.commons.io.IOUtils.closeQuietly(),0,0,2694644,2694644
+main,org.apache.commons.logging.LogFactory$1.run(),0,0,199477,199477
+main,org.apache.commons.logging.LogFactory.getContextClassLoader(),0,0,199477,199477
+main,org.apache.commons.logging.LogFactory.getFactory(),0,0,2829975,2829975
+main,org.apache.commons.logging.LogFactory.getLog(),0,0,2829975,2829975
+main,org.apache.commons.logging.impl.Jdk14Logger.info(),0,0,174073,174073
+main,org.apache.commons.logging.impl.Jdk14Logger.log(),0,0,174073,174073
+main,org.apache.fop.apps.Fop.<init>(),0,0,19931,19931
+main,org.apache.fop.apps.Fop.createDefaultHandler(),0,0,19931,19931
+main,org.apache.fop.apps.FopFactory.<init>(),0,0,435694,435694
+main,org.apache.fop.apps.FopFactory.newFop(),0,0,19931,19931
+main,org.apache.fop.apps.FopFactory.newInstance(),0,0,435694,435694
+main,org.apache.fop.apps.FopFactory.setUseCache(),0,0,19812,19812
+main,org.apache.fop.area.Area.addTrait(),0,0,74036,74036
+main,org.apache.fop.area.AreaTreeHandler.endPageSequence(),0,0,12467699,12467699
+main,org.apache.fop.area.IDTracker.signalIDProcessed(),19930,19930,19930,19930
+main,org.apache.fop.area.LineArea.<init>(),79573,79573,79573,79573
+main,org.apache.fop.area.MainReference.createSpan(),19774,19774,19774,19774
+main,org.apache.fop.area.MainReference.getCurrentSpan(),19639,19639,19639,19639
+main,org.apache.fop.area.Page.<init>(),20868,20868,20868,20868
+main,org.apache.fop.area.PageViewport.<init>(),21558,21558,62201,62201
+main,org.apache.fop.area.PageViewport.createSpan(),0,0,19774,19774
+main,org.apache.fop.area.PageViewport.getCurrentSpan(),0,0,19639,19639
+main,org.apache.fop.area.RenderPagesModel.addPage(),20294,20294,6737638,6737638
+main,org.apache.fop.area.RenderPagesModel.checkPreparedPages(),0,0,6717344,6717344
+main,org.apache.fop.area.inline.SpaceArea.<init>(),0,0,114455,114455
+main,org.apache.fop.area.inline.TextArea.addSpace(),0,0,114455,114455
+main,org.apache.fop.area.inline.TextArea.getText(),0,0,19803,19803
+main,org.apache.fop.cli.CommandLineOptions.<init>(),0,0,435694,435694
+main,org.apache.fop.cli.InputHandler.createMainSource(),0,0,58607,58607
+main,org.apache.fop.cli.InputHandler.renderTo(),0,0,18822186,18822186
+main,org.apache.fop.cli.InputHandler.transformTo(),0,0,18802255,18802255
+main,org.apache.fop.cli.Main.startFOP(),0,0,22122753,22122753
+main,org.apache.fop.fo.ElementMapping.getTable(),0,0,396612,396612
+main,org.apache.fop.fo.ElementMappingRegistry.<init>(),0,0,415882,415882
+main,org.apache.fop.fo.ElementMappingRegistry.addElementMapping(),0,0,831764,831764
+main,org.apache.fop.fo.ElementMappingRegistry.setupDefaultMappings(),0,0,415882,415882
+main,org.apache.fop.fo.FOElementMapping$ListBlockMaker.make(),0,0,21239,21239
+main,org.apache.fop.fo.FOElementMapping$TableRowMaker.make(),0,0,21452,21452
+main,org.apache.fop.fo.FONode.getFOEventHandler(),518231,518231,2710151,2710151
+main,org.apache.fop.fo.FONode.getUserAgent(),0,0,76002,76002
+main,org.apache.fop.fo.FONode.inMarker(),0,0,282645,282645
+main,org.apache.fop.fo.FOPropertyMapping$2.get(),0,0,40110,40110
+main,org.apache.fop.fo.FOText.bind(),0,0,493382,493382
+main,org.apache.fop.fo.FOText.charIterator(),39689,39689,39689,39689
+main,org.apache.fop.fo.FOText.endOfNode(),0,0,59509,59509
+main,org.apache.fop.fo.FOText.textTransform(),0,0,39410,39410
+main,org.apache.fop.fo.FOTreeBuilder$1.make(),0,0,20129,20129
+main,org.apache.fop.fo.FOTreeBuilder$MainFOHandler.characters(),20516,20516,654314,654314
+main,org.apache.fop.fo.FOTreeBuilder$MainFOHandler.endElement(),38672,38672,13231184,13231184
+main,org.apache.fop.fo.FOTreeBuilder$MainFOHandler.startElement(),163301,163301,3870701,3870701
+main,org.apache.fop.fo.FOTreeBuilder.<init>(),0,0,19931,19931
+main,org.apache.fop.fo.FOTreeBuilder.characters(),0,0,654314,654314
+main,org.apache.fop.fo.FOTreeBuilder.endElement(),0,0,13231184,13231184
+main,org.apache.fop.fo.FOTreeBuilder.startElement(),0,0,3870701,3870701
+main,org.apache.fop.fo.FObj$FObjIterator.nextNode(),37867,37867,37867,37867
+main,org.apache.fop.fo.FObj.<init>(),42691,42691,42691,42691
+main,org.apache.fop.fo.FObj.addChildNode(),768709,768709,768709,768709
+main,org.apache.fop.fo.FObj.bind(),0,0,40764,40764
+main,org.apache.fop.fo.FObj.checkId(),0,0,39602,39602
+main,org.apache.fop.fo.FObj.createPropertyList(),0,0,20129,20129
+main,org.apache.fop.fo.FObj.getChildNodes(),0,0,37867,37867
+main,org.apache.fop.fo.FObj.processNode(),0,0,2638576,2638576
+main,org.apache.fop.fo.FObj.startOfNode(),0,0,39602,39602
+main,org.apache.fop.fo.FObjMixed.addCharacters(),19375,19375,633798,633798
+main,org.apache.fop.fo.FObjMixed.addChildNode(),0,0,59745,59745
+main,org.apache.fop.fo.FObjMixed.endOfNode(),0,0,663654,663654
+main,org.apache.fop.fo.FObjMixed.flushText(),19687,19687,100020,100020
+main,org.apache.fop.fo.PropertyList.addAttributesToList(),82994,82994,563693,563693
+main,org.apache.fop.fo.PropertyList.convertAttributeToProperty(),0,0,461161,461161
+main,org.apache.fop.fo.PropertyList.get(),139761,139761,6530120,6530120
+main,org.apache.fop.fo.PropertyList.getBorderPaddingBackgroundProps(),0,0,336355,336355
+main,org.apache.fop.fo.PropertyList.getFontProps(),0,0,234069,234069
+main,org.apache.fop.fo.PropertyList.getHyphenationProps(),0,0,191059,191059
+main,org.apache.fop.fo.PropertyList.getMarginBlockProps(),0,0,416511,416511
+main,org.apache.fop.fo.PropertyList.getMarginInlineProps(),0,0,40350,40350
+main,org.apache.fop.fo.PropertyList.getNearestSpecified(),19734,19734,304074,304074
+main,org.apache.fop.fo.PropertyList.getTextDecorationProps(),0,0,44177,44177
+main,org.apache.fop.fo.PropertyList.makeProperty(),0,0,284340,284340
+main,org.apache.fop.fo.RecursiveCharIterator.<init>(),0,0,39689,39689
+main,org.apache.fop.fo.RecursiveCharIterator.clone(),41399,41399,79266,79266
+main,org.apache.fop.fo.RecursiveCharIterator.getNextCharIter(),0,0,39689,39689
+main,org.apache.fop.fo.RecursiveCharIterator.mark(),0,0,79266,79266
+main,org.apache.fop.fo.RecursiveCharIterator.replaceChar(),17906,17906,17906,17906
+main,org.apache.fop.fo.StaticPropertyList.<init>(),20129,20129,20129,20129
+main,org.apache.fop.fo.StaticPropertyList.get(),0,0,4064696,4064696
+main,org.apache.fop.fo.XMLWhiteSpaceHandler$EOLchecker.beforeLinefeed(),21060,21060,43269,43269
+main,org.apache.fop.fo.XMLWhiteSpaceHandler.handleWhiteSpace(),345409,345409,1488324,1488324
+main,org.apache.fop.fo.expr.PropertyParser.parse(),0,0,216926,216926
+main,org.apache.fop.fo.expr.PropertyParser.parseAdditiveExpr(),0,0,137926,137926
+main,org.apache.fop.fo.expr.PropertyParser.parseMultiplicativeExpr(),0,0,137926,137926
+main,org.apache.fop.fo.expr.PropertyParser.parsePrimaryExpr(),39543,39543,137926,137926
+main,org.apache.fop.fo.expr.PropertyParser.parseProperty(),78999,78999,216926,216926
+main,org.apache.fop.fo.expr.PropertyParser.parseUnaryExpr(),0,0,137926,137926
+main,org.apache.fop.fo.extensions.svg.BatikExtensionElementMapping.getAParserClassName(),0,0,83386,83386
+main,org.apache.fop.fo.extensions.svg.BatikExtensionElementMapping.initialize(),0,0,83386,83386
+main,org.apache.fop.fo.extensions.svg.SVGElementMapping.getAParserClassName(),0,0,313225,313225
+main,org.apache.fop.fo.extensions.svg.SVGElementMapping.initialize(),0,0,313225,313225
+main,org.apache.fop.fo.flow.AbstractListItemPart.validateChildNode(),19362,19362,19362,19362
+main,org.apache.fop.fo.flow.BasicLink.endOfNode(),0,0,61749,61749
+main,org.apache.fop.fo.flow.Block.bind(),0,0,1612840,1612840
+main,org.apache.fop.fo.flow.Block.endOfNode(),0,0,500889,500889
+main,org.apache.fop.fo.flow.Inline.bind(),0,0,236752,236752
+main,org.apache.fop.fo.flow.Inline.endOfNode(),0,0,184655,184655
+main,org.apache.fop.fo.flow.InlineLevel.bind(),0,0,236752,236752
+main,org.apache.fop.fo.flow.ListBlock.<init>(),0,0,21239,21239
+main,org.apache.fop.fo.flow.ListItem.bind(),0,0,102316,102316
+main,org.apache.fop.fo.flow.ListItem.startOfNode(),0,0,18330,18330
+main,org.apache.fop.fo.flow.ListItemBody.endOfNode(),0,0,18836,18836
+main,org.apache.fop.fo.flow.table.FixedColRowGroupBuilder.endTableRow(),18629,18629,38558,38558
+main,org.apache.fop.fo.flow.table.FixedColRowGroupBuilder.handleRowEnd(),0,0,19928,19928
+main,org.apache.fop.fo.flow.table.SeparateBorderResolver.endRow(),19928,19928,19928,19928
+main,org.apache.fop.fo.flow.table.Table.bind(),0,0,41913,41913
+main,org.apache.fop.fo.flow.table.Table.endOfNode(),20430,20430,20430,20430
+main,org.apache.fop.fo.flow.table.TableBody.addChildNode(),0,0,38558,38558
+main,org.apache.fop.fo.flow.table.TableCell.bind(),0,0,20599,20599
+main,org.apache.fop.fo.flow.table.TableCell.setCollapsedBorders(),18982,18982,39381,39381
+main,org.apache.fop.fo.flow.table.TableCell.startOfNode(),0,0,39381,39381
+main,org.apache.fop.fo.flow.table.TableCellContainer.<init>(),0,0,21452,21452
+main,org.apache.fop.fo.flow.table.TableCellContainer.addTableCellChild(),0,0,20549,20549
+main,org.apache.fop.fo.flow.table.TableColumn.bind(),0,0,18373,18373
+main,org.apache.fop.fo.flow.table.TableColumn.startOfNode(),0,0,21272,21272
+main,org.apache.fop.fo.flow.table.TableFObj.<init>(),0,0,21452,21452
+main,org.apache.fop.fo.flow.table.TableFObj.createBorder(),20399,20399,20399,20399
+main,org.apache.fop.fo.flow.table.TableFObj.getTable(),20549,20549,41098,41098
+main,org.apache.fop.fo.flow.table.TableFObj.startOfNode(),0,0,60653,60653
+main,org.apache.fop.fo.flow.table.TableRow.<init>(),0,0,21452,21452
+main,org.apache.fop.fo.flow.table.TableRow.addChildNode(),0,0,41112,41112
+main,org.apache.fop.fo.flow.table.TableRow.bind(),0,0,21785,21785
+main,org.apache.fop.fo.flow.table.TableRow.processNode(),0,0,42561,42561
+main,org.apache.fop.fo.pagination.AbstractPageSequence.makeFormattedPageNumber(),20817,20817,73666,73666
+main,org.apache.fop.fo.pagination.Flow.validateChildNode(),20136,20136,20136,20136
+main,org.apache.fop.fo.pagination.PageNumberGenerator.makeFormattedPageNumber(),52849,52849,52849,52849
+main,org.apache.fop.fo.pagination.PageSequence.endOfNode(),0,0,12467699,12467699
+main,org.apache.fop.fo.pagination.SimplePageMaster.getRegion(),0,0,42164,42164
+main,org.apache.fop.fo.properties.BorderWidthPropertyMaker.get(),0,0,98110,98110
+main,org.apache.fop.fo.properties.ColorProperty$Maker.convertProperty(),20447,20447,20447,20447
+main,org.apache.fop.fo.properties.CommonBorderPaddingBackground.<init>(),41491,41491,336355,336355
+main,org.apache.fop.fo.properties.CommonBorderPaddingBackground.hasBackground(),21353,21353,21353,21353
+main,org.apache.fop.fo.properties.CommonBorderPaddingBackground.initBorderInfo(),0,0,218960,218960
+main,org.apache.fop.fo.properties.CommonFont.getFontState(),70239,70239,89075,89075
+main,org.apache.fop.fo.properties.CommonFont.getInstance(),0,0,234069,234069
+main,org.apache.fop.fo.properties.CommonFont.hashCode(),39534,39534,39534,39534
+main,org.apache.fop.fo.properties.CommonHyphenation.getInstance(),0,0,191059,191059
+main,org.apache.fop.fo.properties.CommonMarginBlock.<init>(),19681,19681,416511,416511
+main,org.apache.fop.fo.properties.CommonMarginInline.<init>(),0,0,40350,40350
+main,org.apache.fop.fo.properties.CommonTextDecoration.calcTextDecoration(),44176,44176,153967,153967
+main,org.apache.fop.fo.properties.CommonTextDecoration.createFromPropertyList(),0,0,44177,44177
+main,org.apache.fop.fo.properties.CompoundPropertyMaker.convertProperty(),62690,62690,225694,225694
+main,org.apache.fop.fo.properties.CompoundPropertyMaker.get(),21033,21033,1193465,1193465
+main,org.apache.fop.fo.properties.CompoundPropertyMaker.make(),0,0,1293062,1293062
+main,org.apache.fop.fo.properties.CompoundPropertyMaker.makeCompound(),325845,325845,325845,325845
+main,org.apache.fop.fo.properties.EnumNumber.getInstance(),0,0,39997,39997
+main,org.apache.fop.fo.properties.EnumProperty.getInstance(),0,0,221817,221817
+main,org.apache.fop.fo.properties.FixedLength.getInstance(),0,0,40144,40144
+main,org.apache.fop.fo.properties.FontFamilyProperty$Maker.make(),80462,80462,119058,119058
+main,org.apache.fop.fo.properties.FontSizePropertyMaker.make(),0,0,61951,61951
+main,org.apache.fop.fo.properties.IndentPropertyMaker.compute(),0,0,157715,157715
+main,org.apache.fop.fo.properties.IndentPropertyMaker.computeConforming(),0,0,157715,157715
+main,org.apache.fop.fo.properties.IndentPropertyMaker.getCorresponding(),0,0,157715,157715
+main,org.apache.fop.fo.properties.KeepProperty$Maker.convertProperty(),0,0,166798,166798
+main,org.apache.fop.fo.properties.KeepProperty.getKeep(),0,0,20185,20185
+main,org.apache.fop.fo.properties.LineHeightPropertyMaker.compute(),0,0,404669,404669
+main,org.apache.fop.fo.properties.LineHeightPropertyMaker.convertProperty(),19634,19634,141880,141880
+main,org.apache.fop.fo.properties.LineHeightPropertyMaker.make(),0,0,482840,482840
+main,org.apache.fop.fo.properties.NumberProperty$Maker.convertProperty(),0,0,39997,39997
+main,org.apache.fop.fo.properties.NumberProperty.getInstance(),0,0,40449,40449
+main,org.apache.fop.fo.properties.Property.isAuto(),19327,19327,19327,19327
+main,org.apache.fop.fo.properties.PropertyCache.eq(),60404,60404,60404,60404
+main,org.apache.fop.fo.properties.PropertyCache.fetch(),17860,17860,997338,997338
+main,org.apache.fop.fo.properties.PropertyCache.get(),278561,278561,480809,480809
+main,org.apache.fop.fo.properties.PropertyCache.hash(),102308,102308,102308,102308
+main,org.apache.fop.fo.properties.PropertyMaker.compute(),226179,226179,383894,383894
+main,org.apache.fop.fo.properties.PropertyMaker.findProperty(),878418,878418,3266265,3266265
+main,org.apache.fop.fo.properties.PropertyMaker.get(),175076,175076,3804473,3804473
+main,org.apache.fop.fo.properties.PropertyMaker.make(),159557,159557,725989,725989
+main,org.apache.fop.fo.properties.SpaceProperty$Maker.convertProperty(),0,0,58896,58896
+main,org.apache.fop.fo.properties.StringProperty.getInstance(),0,0,38595,38595
+main,org.apache.fop.fonts.AbstractCodePointMapping.mapChar(),14526,14526,14526,14526
+main,org.apache.fop.fonts.Font.getAscender(),42938,42938,42938,42938
+main,org.apache.fop.fonts.Font.getCharWidth(),0,0,199828,199828
+main,org.apache.fop.fonts.Font.hasChar(),161811,161811,199828,199828
+main,org.apache.fop.fonts.Font.hasKerning(),19949,19949,19949,19949
+main,org.apache.fop.fonts.FontCache.getDefaultCacheFile(),0,0,19812,19812
+main,org.apache.fop.fonts.FontCache.getUserHome(),0,0,19812,19812
+main,org.apache.fop.fonts.FontCache.load(),0,0,19812,19812
+main,org.apache.fop.fonts.FontInfo.createFontKey(),18836,18836,18836,18836
+main,org.apache.fop.fonts.FontInfo.fontLookup(),0,0,37672,37672
+main,org.apache.fop.fonts.FontInfo.getFontInstance(),0,0,83438,83438
+main,org.apache.fop.fonts.base14.Courier.hasChar(),19440,19440,19440,19440
+main,org.apache.fop.fonts.base14.Courier.mapChar(),19164,19164,19164,19164
+main,org.apache.fop.fonts.base14.Helvetica.hasChar(),18577,18577,18577,18577
+main,org.apache.fop.fonts.base14.Helvetica.mapChar(),39736,39736,39736,39736
+main,org.apache.fop.fonts.base14.Symbol.mapChar(),0,0,14526,14526
+main,org.apache.fop.layoutmgr.AbstractBaseLayoutManager.<init>(),19416,19416,19416,19416
+main,org.apache.fop.layoutmgr.AbstractBreaker.addAreas(),0,0,15114918,15114918
+main,org.apache.fop.layoutmgr.AbstractBreaker.doLayout(),19469,19469,25301178,25301178
+main,org.apache.fop.layoutmgr.AbstractBreaker.getNextBlockList(),19872,19872,3757008,3757008
+main,org.apache.fop.layoutmgr.AbstractLayoutManager.<init>(),0,0,19416,19416
+main,org.apache.fop.layoutmgr.AbstractLayoutManager.addChildLMs(),39192,39192,39192,39192
+main,org.apache.fop.layoutmgr.AbstractLayoutManager.createChildLMs(),0,0,81907,81907
+main,org.apache.fop.layoutmgr.AbstractLayoutManager.createNextChildLMs(),0,0,35150,35150
+main,org.apache.fop.layoutmgr.AbstractLayoutManager.getChildLM(),0,0,248149,248149
+main,org.apache.fop.layoutmgr.AbstractLayoutManager.getPSLM(),76667,76667,228248,228248
+main,org.apache.fop.layoutmgr.AbstractPageSequenceLayoutManager.finishPage(),0,0,6737638,6737638
+main,org.apache.fop.layoutmgr.AbstractPageSequenceLayoutManager.makeNewPage(),0,0,7386484,7386484
+main,org.apache.fop.layoutmgr.AbstractPageSequenceLayoutManager.notifyEndOfLayout(),0,0,19930,19930
+main,org.apache.fop.layoutmgr.AreaAdditionUtil.addAreas(),40307,40307,1390755,1390755
+main,org.apache.fop.layoutmgr.BlockLayoutManager$ProxyLMiter.createNextChildLMs(),0,0,63998,63998
+main,org.apache.fop.layoutmgr.BlockLayoutManager$ProxyLMiter.hasNext(),0,0,63998,63998
+main,org.apache.fop.layoutmgr.BlockLayoutManager.addAreas(),0,0,1209791,1209791
+main,org.apache.fop.layoutmgr.BlockLayoutManager.createLineManager(),0,0,60775,60775
+main,org.apache.fop.layoutmgr.BlockLayoutManager.createNextChildLMs(),19690,19690,105641,105641
+main,org.apache.fop.layoutmgr.BlockLayoutManager.getNextKnuthElements(),0,0,3214408,3214408
+main,org.apache.fop.layoutmgr.BlockLayoutManager.getParentArea(),82711,82711,82711,82711
+main,org.apache.fop.layoutmgr.BlockLayoutManager.initialize(),0,0,107358,107358
+main,org.apache.fop.layoutmgr.BlockStackingLayoutManager.addKnuthElementsForBreakBefore(),0,0,105641,105641
+main,org.apache.fop.layoutmgr.BlockStackingLayoutManager.addKnuthElementsForSpaceAfter(),0,0,20838,20838
+main,org.apache.fop.layoutmgr.BlockStackingLayoutManager.addKnuthElementsForSpaceBefore(),0,0,19327,19327
+main,org.apache.fop.layoutmgr.BlockStackingLayoutManager.getBreakBefore(),0,0,105641,105641
+main,org.apache.fop.layoutmgr.BlockStackingLayoutManager.getNextKnuthElements(),19961,19961,5368446,5368446
+main,org.apache.fop.layoutmgr.BlockStackingLayoutManager.wrapPositionElements(),20157,20157,40314,40314
+main,org.apache.fop.layoutmgr.BreakingAlgorithm.calculateBreakPoints(),0,0,142211,142211
+main,org.apache.fop.layoutmgr.BreakingAlgorithm.considerLegalBreak(),224037,224037,265296,265296
+main,org.apache.fop.layoutmgr.BreakingAlgorithm.findBreakingPoints(),65143,65143,945302,945302
+main,org.apache.fop.layoutmgr.FlowLayoutManager.addAreas(),0,0,1261938,1261938
+main,org.apache.fop.layoutmgr.FlowLayoutManager.getNextKnuthElements(),0,0,3336309,3336309
+main,org.apache.fop.layoutmgr.KnuthPossPosIter.<init>(),0,0,20228,20228
+main,org.apache.fop.layoutmgr.LMiter.hasNext(),0,0,140791,140791
+main,org.apache.fop.layoutmgr.LayoutManagerMapping$PageNumberLayoutManagerMaker.make(),0,0,19416,19416
+main,org.apache.fop.layoutmgr.LayoutManagerMapping.makeLayoutManagers(),23281,23281,42697,42697
+main,org.apache.fop.layoutmgr.MinOptMaxUtil.toMinOptMax(),20838,20838,40165,40165
+main,org.apache.fop.layoutmgr.Page.<init>(),0,0,62201,62201
+main,org.apache.fop.layoutmgr.PageBreaker.addAreas(),0,0,1261938,1261938
+main,org.apache.fop.layoutmgr.PageBreaker.doPhase3(),0,0,7489363,7489363
+main,org.apache.fop.layoutmgr.PageBreaker.getCurrentDisplayAlign(),0,0,42164,42164
+main,org.apache.fop.layoutmgr.PageBreaker.getNextBlockList(),0,0,4662168,4662168
+main,org.apache.fop.layoutmgr.PageBreaker.getNextKnuthElements(),0,0,3336309,3336309
+main,org.apache.fop.layoutmgr.PageBreaker.handleBreakTrait(),0,0,7386484,7386484
+main,org.apache.fop.layoutmgr.PageBreaker.startPart(),0,0,6124314,6124314
+main,org.apache.fop.layoutmgr.PageBreakingAlgorithm.<init>(),0,0,156555,156555
+main,org.apache.fop.layoutmgr.PageBreakingAlgorithm.computeDifference(),0,0,19581,19581
+main,org.apache.fop.layoutmgr.PageBreakingAlgorithm.considerLegalBreak(),0,0,168970,168970
+main,org.apache.fop.layoutmgr.PageBreakingAlgorithm.createNode(),21677,21677,21677,21677
+main,org.apache.fop.layoutmgr.PageBreakingAlgorithm.getLineWidth(),0,0,19581,19581
+main,org.apache.fop.layoutmgr.PageProvider.cacheNextPage(),0,0,135867,135867
+main,org.apache.fop.layoutmgr.PageProvider.getAvailableBPD(),0,0,19581,19581
+main,org.apache.fop.layoutmgr.PageProvider.getPage(),19581,19581,291315,291315
+main,org.apache.fop.layoutmgr.PageSequenceLayoutManager.activateLayout(),0,0,12467699,12467699
+main,org.apache.fop.layoutmgr.PageSequenceLayoutManager.createPage(),0,0,135867,135867
+main,org.apache.fop.layoutmgr.PageSequenceLayoutManager.finishPage(),0,0,7397812,7397812
+main,org.apache.fop.layoutmgr.PageSequenceLayoutManager.layoutSideRegion(),0,0,660174,660174
+main,org.apache.fop.layoutmgr.PositionIterator.<init>(),20228,20228,20228,20228
+main,org.apache.fop.layoutmgr.PositionIterator.hasNext(),370201,370201,370201,370201
+main,org.apache.fop.layoutmgr.PositionIterator.next(),18510,18510,18510,18510
+main,org.apache.fop.layoutmgr.SpaceElement.<init>(),0,0,40165,40165
+main,org.apache.fop.layoutmgr.SpaceElement.notifyLayoutManager(),40717,40717,40717,40717
+main,org.apache.fop.layoutmgr.SpaceResolver$SpaceHandlingBreakPosition.<init>(),19769,19769,19769,19769
+main,org.apache.fop.layoutmgr.SpaceResolver$SpaceHandlingBreakPosition.notifyBreakSituation(),0,0,40717,40717
+main,org.apache.fop.layoutmgr.SpaceResolver.<init>(),0,0,19701,19701
+main,org.apache.fop.layoutmgr.SpaceResolver.generate(),0,0,19769,19769
+main,org.apache.fop.layoutmgr.SpaceResolver.performConditionalsNotification(),0,0,40717,40717
+main,org.apache.fop.layoutmgr.SpaceResolver.performSpaceResolutionRules2to3(),19701,19701,19701,19701
+main,org.apache.fop.layoutmgr.SpaceResolver.resolve(),0,0,19701,19701
+main,org.apache.fop.layoutmgr.SpaceResolver.resolveElementList(),82869,82869,122341,122341
+main,org.apache.fop.layoutmgr.StaticContentLayoutManager$StaticContentBreaker.addAreas(),0,0,68096,68096
+main,org.apache.fop.layoutmgr.StaticContentLayoutManager$StaticContentBreaker.doPhase3(),0,0,68096,68096
+main,org.apache.fop.layoutmgr.StaticContentLayoutManager$StaticContentBreaker.getNextKnuthElements(),0,0,356778,356778
+main,org.apache.fop.layoutmgr.StaticContentLayoutManager$StaticContentBreaker.observeElementList(),18713,18713,18713,18713
+main,org.apache.fop.layoutmgr.StaticContentLayoutManager.doLayout(),0,0,660174,660174
+main,org.apache.fop.layoutmgr.TraitSetter.addBackground(),0,0,21353,21353
+main,org.apache.fop.layoutmgr.TraitSetter.addMargins(),0,0,38372,38372
+main,org.apache.fop.layoutmgr.inline.AlignmentContext.<init>(),0,0,2647762,2647762
+main,org.apache.fop.layoutmgr.inline.AlignmentContext.getBaselineOffset(),0,0,162282,162282
+main,org.apache.fop.layoutmgr.inline.AlignmentContext.getOffset(),0,0,79003,79003
+main,org.apache.fop.layoutmgr.inline.AlignmentContext.getTotalAlignmentBaselineOffset(),0,0,324564,324564
+main,org.apache.fop.layoutmgr.inline.AlignmentContext.getTotalBaselineOffset(),0,0,162282,162282
+main,org.apache.fop.layoutmgr.inline.AlignmentContext.getTotalTopOffset(),0,0,79003,79003
+main,org.apache.fop.layoutmgr.inline.BasicScaledBaselineTable.<init>(),0,0,2810044,2810044
+main,org.apache.fop.layoutmgr.inline.BasicScaledBaselineTable.deriveScaledBaselineTable(),0,0,162282,162282
+main,org.apache.fop.layoutmgr.inline.InlineLayoutManager.addAreas(),42022,42022,306701,306701
+main,org.apache.fop.layoutmgr.inline.InlineLayoutManager.addId(),0,0,21391,21391
+main,org.apache.fop.layoutmgr.inline.InlineLayoutManager.getNextKnuthElements(),0,0,347870,347870
+main,org.apache.fop.layoutmgr.inline.LeafNodeLayoutManager.<init>(),0,0,19416,19416
+main,org.apache.fop.layoutmgr.inline.LeafNodeLayoutManager.addAreas(),0,0,50282,50282
+main,org.apache.fop.layoutmgr.inline.LeafNodeLayoutManager.getNextKnuthElements(),0,0,63436,63436
+main,org.apache.fop.layoutmgr.inline.LineLayoutManager$LineBreakingAlgorithm.findBreakingPoints(),0,0,282994,282994
+main,org.apache.fop.layoutmgr.inline.LineLayoutManager$LineBreakingAlgorithm.makeLineBreakPosition(),0,0,83279,83279
+main,org.apache.fop.layoutmgr.inline.LineLayoutManager$LineBreakingAlgorithm.updateData2(),58932,58932,142211,142211
+main,org.apache.fop.layoutmgr.inline.LineLayoutManager.addAreas(),0,0,1108568,1108568
+main,org.apache.fop.layoutmgr.inline.LineLayoutManager.addInlineArea(),41822,41822,1108568,1108568
+main,org.apache.fop.layoutmgr.inline.LineLayoutManager.collectInlineKnuthElements(),0,0,489417,489417
+main,org.apache.fop.layoutmgr.inline.LineLayoutManager.createLineBreaks(),0,0,282994,282994
+main,org.apache.fop.layoutmgr.inline.LineLayoutManager.findOptimalBreakingPoints(),0,0,282994,282994
+main,org.apache.fop.layoutmgr.inline.LineLayoutManager.getNextKnuthElements(),0,0,3048638,3048638
+main,org.apache.fop.layoutmgr.inline.PageNumberLayoutManager.<init>(),0,0,19416,19416
+main,org.apache.fop.layoutmgr.inline.PageNumberLayoutManager.addId(),0,0,16066,16066
+main,org.apache.fop.layoutmgr.inline.PageNumberLayoutManager.getEffectiveArea(),0,0,34215,34215
+main,org.apache.fop.layoutmgr.inline.PageNumberLayoutManager.makeAlignmentContext(),0,0,63436,63436
+main,org.apache.fop.layoutmgr.inline.PageNumberLayoutManager.updateContent(),0,0,19803,19803
+main,org.apache.fop.layoutmgr.inline.ScaledBaselineTableFactory.makeFontScaledBaselineTable(),0,0,4903407,4903407
+main,org.apache.fop.layoutmgr.inline.TextLayoutManager.addAreas(),0,0,711897,711897
+main,org.apache.fop.layoutmgr.inline.TextLayoutManager.createTextArea(),20999,20999,383828,383828
+main,org.apache.fop.layoutmgr.inline.TextLayoutManager.getNextKnuthElements(),56365,56365,97299,97299
+main,org.apache.fop.layoutmgr.list.ListBlockLayoutManager.addAreas(),0,0,346166,346166
+main,org.apache.fop.layoutmgr.list.ListBlockLayoutManager.getNextKnuthElements(),0,0,1077019,1077019
+main,org.apache.fop.layoutmgr.list.ListItemContentLayoutManager.addAreas(),0,0,305626,305626
+main,org.apache.fop.layoutmgr.list.ListItemContentLayoutManager.getParentArea(),19463,19463,19463,19463
+main,org.apache.fop.layoutmgr.list.ListItemLayoutManager.addAreas(),0,0,346166,346166
+main,org.apache.fop.layoutmgr.list.ListItemLayoutManager.getNextKnuthElements(),0,0,1077019,1077019
+main,org.apache.fop.layoutmgr.list.ListItemLayoutManager.getParentArea(),0,0,19186,19186
+main,org.apache.fop.layoutmgr.table.RowGroupLayoutManager.createElementsForRowGroup(),0,0,421319,421319
+main,org.apache.fop.layoutmgr.table.RowGroupLayoutManager.getNextKnuthElements(),0,0,421319,421319
+main,org.apache.fop.layoutmgr.table.RowPainter.addAreasAndFlushRow(),0,0,60721,60721
+main,org.apache.fop.layoutmgr.table.RowPainter.addAreasForCell(),0,0,60721,60721
+main,org.apache.fop.layoutmgr.table.RowPainter.handleTableContentPosition(),0,0,60721,60721
+main,org.apache.fop.layoutmgr.table.TableCellLayoutManager.addAreas(),0,0,60721,60721
+main,org.apache.fop.layoutmgr.table.TableCellLayoutManager.getNextKnuthElements(),0,0,401723,401723
+main,org.apache.fop.layoutmgr.table.TableContentLayoutManager.addAreas(),0,0,60721,60721
+main,org.apache.fop.layoutmgr.table.TableContentLayoutManager.addBodyAreas(),0,0,60721,60721
+main,org.apache.fop.layoutmgr.table.TableContentLayoutManager.addTablePartAreas(),0,0,60721,60721
+main,org.apache.fop.layoutmgr.table.TableContentLayoutManager.getKnuthElementsForRowIterator(),0,0,421319,421319
+main,org.apache.fop.layoutmgr.table.TableContentLayoutManager.getNextKnuthElements(),0,0,421319,421319
+main,org.apache.fop.layoutmgr.table.TableLayoutManager.addAreas(),0,0,60721,60721
+main,org.apache.fop.layoutmgr.table.TableLayoutManager.getNextKnuthElements(),0,0,595392,595392
+main,org.apache.fop.layoutmgr.table.TableStepper.considerRowLastStep(),19595,19595,19595,19595
+main,org.apache.fop.layoutmgr.table.TableStepper.getCombinedKnuthElementsForRowGroup(),0,0,19595,19595
+main,org.apache.fop.layoutmgr.table.TableStepper.getFirstStep(),0,0,19595,19595
+main,org.apache.fop.render.AbstractPathOrientedRenderer.drawBackAndBorders(),0,0,235933,235933
+main,org.apache.fop.render.AbstractPathOrientedRenderer.drawBorders(),40840,40840,235933,235933
+main,org.apache.fop.render.AbstractPathOrientedRenderer.handleBlockTraits(),0,0,275138,275138
+main,org.apache.fop.render.AbstractPathOrientedRenderer.handleRegionTraits(),21552,21552,21552,21552
+main,org.apache.fop.render.AbstractPathOrientedRenderer.renderFlow(),0,0,5777589,5777589
+main,org.apache.fop.render.AbstractPathOrientedRenderer.renderInlineAreaBackAndBorders(),38284,38284,38284,38284
+main,org.apache.fop.render.AbstractPathOrientedRenderer.renderReferenceArea(),0,0,785429,785429
+main,org.apache.fop.render.AbstractRenderer.renderBlock(),0,0,9735270,9735270
+main,org.apache.fop.render.AbstractRenderer.renderBlocks(),130405,130405,15403319,15403319
+main,org.apache.fop.render.AbstractRenderer.renderBodyRegion(),0,0,5777589,5777589
+main,org.apache.fop.render.AbstractRenderer.renderFlow(),0,0,5777589,5777589
+main,org.apache.fop.render.AbstractRenderer.renderInlineArea(),0,0,10703453,10703453
+main,org.apache.fop.render.AbstractRenderer.renderInlineBlockParent(),0,0,19196,19196
+main,org.apache.fop.render.AbstractRenderer.renderInlineParent(),0,0,691973,691973
+main,org.apache.fop.render.AbstractRenderer.renderLineArea(),0,0,5556839,5556839
+main,org.apache.fop.render.AbstractRenderer.renderMainReference(),0,0,5777589,5777589
+main,org.apache.fop.render.AbstractRenderer.renderPage(),0,0,6218536,6218536
+main,org.apache.fop.render.AbstractRenderer.renderPageAreas(),0,0,6218536,6218536
+main,org.apache.fop.render.AbstractRenderer.renderRegion(),0,0,221984,221984
+main,org.apache.fop.render.AbstractRenderer.renderRegionViewport(),0,0,6118513,6118513
+main,org.apache.fop.render.AbstractRenderer.renderText(),0,0,4492926,4492926
+main,org.apache.fop.render.PrintRenderer.getFontFromArea(),0,0,83438,83438
+main,org.apache.fop.render.ps.PSDictionary.toString(),0,0,35850,35850
+main,org.apache.fop.render.ps.PSFontUtils.reencodeFonts(),0,0,199835,199835
+main,org.apache.fop.render.ps.PSFontUtils.writeFontDict(),40609,40609,480888,480888
+main,org.apache.fop.render.ps.PSPageDeviceDictionary.getContent(),0,0,35850,35850
+main,org.apache.fop.render.ps.PSRenderer.beginTextObject(),0,0,136595,136595
+main,org.apache.fop.render.ps.PSRenderer.comment(),0,0,119042,119042
+main,org.apache.fop.render.ps.PSRenderer.concatMatrix(),0,0,120707,120707
+main,org.apache.fop.render.ps.PSRenderer.concatenateTransformationMatrix(),0,0,56384,56384
+main,org.apache.fop.render.ps.PSRenderer.drawBackAndBorders(),0,0,275138,275138
+main,org.apache.fop.render.ps.PSRenderer.drawBorderLine(),0,0,117757,117757
+main,org.apache.fop.render.ps.PSRenderer.drawLine(),0,0,77478,77478
+main,org.apache.fop.render.ps.PSRenderer.endTextObject(),0,0,19017,19017
+main,org.apache.fop.render.ps.PSRenderer.endVParea(),0,0,19017,19017
+main,org.apache.fop.render.ps.PSRenderer.lineTo(),0,0,40362,40362
+main,org.apache.fop.render.ps.PSRenderer.moveTo(),0,0,17215,17215
+main,org.apache.fop.render.ps.PSRenderer.renderInlineParent(),0,0,691973,691973
+main,org.apache.fop.render.ps.PSRenderer.renderPage(),0,0,6717344,6717344
+main,org.apache.fop.render.ps.PSRenderer.renderRegionViewport(),0,0,6218536,6218536
+main,org.apache.fop.render.ps.PSRenderer.renderSpace(),0,0,697952,697952
+main,org.apache.fop.render.ps.PSRenderer.renderText(),493102,493102,9255220,9255220
+main,org.apache.fop.render.ps.PSRenderer.renderWord(),39109,39109,3794973,3794973
+main,org.apache.fop.render.ps.PSRenderer.restoreGraphicsState(),0,0,38034,38034
+main,org.apache.fop.render.ps.PSRenderer.rmoveTo(),21342,21342,435705,435705
+main,org.apache.fop.render.ps.PSRenderer.saveGraphicsState(),0,0,156353,156353
+main,org.apache.fop.render.ps.PSRenderer.startVParea(),0,0,78367,78367
+main,org.apache.fop.render.ps.PSRenderer.useFont(),166614,166614,417240,417240
+main,org.apache.fop.render.ps.PSRenderer.writeHeader(),0,0,260569,260569
+main,org.apache.fop.render.ps.PSRenderer.writeln(),0,0,1023382,1023382
+main,org.apache.fop.traits.MinOptMax.clone(),0,0,156555,156555
+main,org.apache.xalan.processor.TransformerFactoryImpl.<init>(),0,0,18586,18586
+main,org.apache.xalan.transformer.TransformerIdentityImpl.characters(),0,0,654314,654314
+main,org.apache.xalan.transformer.TransformerIdentityImpl.endElement(),0,0,13231184,13231184
+main,org.apache.xalan.transformer.TransformerIdentityImpl.startElement(),0,0,3870701,3870701
+main,org.apache.xalan.transformer.TransformerIdentityImpl.transform(),0,0,18705462,18705462
+main,org.apache.xerces.impl.XMLDTDScannerImpl.init(),0,0,20422,20422
+main,org.apache.xerces.impl.XMLDTDScannerImpl.reset(),0,0,20422,20422
+main,org.apache.xerces.impl.XMLDTDScannerImpl.setScannerState(),20422,20422,20422,20422
+main,org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(),17834,17834,18567281,18567281
+main,org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanCharReference(),0,0,156560,156560
+main,org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanContent(),62833,62833,639615,639615
+main,org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(),0,0,18624118,18624118
+main,org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanXMLDeclOrTextDecl(),0,0,37020,37020
+main,org.apache.xerces.impl.XMLDocumentScannerImpl$TrailingMiscDispatcher.dispatch(),0,0,19816,19816
+main,org.apache.xerces.impl.XMLDocumentScannerImpl$XMLDeclDispatcher.dispatch(),0,0,37020,37020
+main,org.apache.xerces.impl.XMLEntityManager$RewindableInputStream.read(),0,0,467081,467081
+main,org.apache.xerces.impl.XMLEntityManager$ScannedEntity.setReader(),0,0,18678,18678
+main,org.apache.xerces.impl.XMLEntityManager.createReader(),0,0,18678,18678
+main,org.apache.xerces.impl.XMLEntityManager.expandSystemId(),0,0,19049,19049
+main,org.apache.xerces.impl.XMLEntityManager.expandSystemIdStrictOff(),0,0,19049,19049
+main,org.apache.xerces.impl.XMLEntityManager.setupCurrentEntity(),0,0,19049,19049
+main,org.apache.xerces.impl.XMLEntityScanner.load(),0,0,426258,426258
+main,org.apache.xerces.impl.XMLEntityScanner.scanChar(),0,0,22482,22482
+main,org.apache.xerces.impl.XMLEntityScanner.scanContent(),0,0,79026,79026
+main,org.apache.xerces.impl.XMLEntityScanner.scanLiteral(),0,0,59709,59709
+main,org.apache.xerces.impl.XMLEntityScanner.scanQName(),163657,163657,410720,410720
+main,org.apache.xerces.impl.XMLEntityScanner.setEncoding(),0,0,18678,18678
+main,org.apache.xerces.impl.XMLEntityScanner.skipChar(),0,0,19673,19673
+main,org.apache.xerces.impl.XMLEntityScanner.skipDeclSpaces(),0,0,18341,18341
+main,org.apache.xerces.impl.XMLEntityScanner.skipSpaces(),0,0,19816,19816
+main,org.apache.xerces.impl.XMLEntityScanner.skipString(),0,0,81166,81166
+main,org.apache.xerces.impl.XMLNSDocumentScannerImpl.scanAttribute(),19337,19337,287293,287293
+main,org.apache.xerces.impl.XMLNSDocumentScannerImpl.scanEndElement(),0,0,13312351,13312351
+main,org.apache.xerces.impl.XMLNSDocumentScannerImpl.scanStartElement(),19777,19777,4421246,4421246
+main,org.apache.xerces.impl.XMLScanner.scanAttributeValue(),0,0,59709,59709
+main,org.apache.xerces.impl.XMLScanner.scanPseudoAttribute(),0,0,18341,18341
+main,org.apache.xerces.impl.XMLScanner.scanXMLDeclOrTextDecl(),0,0,18341,18341
+main,org.apache.xerces.impl.XMLVersionDetector.determineDocVersion(),0,0,41532,41532
+main,org.apache.xerces.impl.io.UTF8Reader.<init>(),18678,18678,18678,18678
+main,org.apache.xerces.impl.io.UTF8Reader.read(),0,0,426258,426258
+main,org.apache.xerces.jaxp.SAXParserFactoryImpl.newSAXParser(),16930,16930,81534,81534
+main,org.apache.xerces.jaxp.SAXParserFactoryImpl.newSAXParserImpl(),0,0,40009,40009
+main,org.apache.xerces.jaxp.SAXParserFactoryImpl.setFeature(),0,0,40009,40009
+main,org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.<init>(),0,0,104612,104612
+main,org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(),0,0,18686072,18686072
+main,org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.setProperty(),0,0,19390,19390
+main,org.apache.xerces.jaxp.SAXParserImpl.<init>(),0,0,144621,144621
+main,org.apache.xerces.parsers.AbstractSAXParser.characters(),0,0,654314,654314
+main,org.apache.xerces.parsers.AbstractSAXParser.endElement(),0,0,13231184,13231184
+main,org.apache.xerces.parsers.AbstractSAXParser.getProperty(),19390,19390,19390,19390
+main,org.apache.xerces.parsers.AbstractSAXParser.parse(),0,0,18686072,18686072
+main,org.apache.xerces.parsers.AbstractSAXParser.startElement(),0,0,3870701,3870701
+main,org.apache.xerces.parsers.AbstractXMLDocumentParser.emptyElement(),0,0,39646,39646
+main,org.apache.xerces.parsers.ObjectFactory.createObject(),0,0,209224,209224
+main,org.apache.xerces.parsers.ObjectFactory.findJarServiceProvider(),0,0,61765,61765
+main,org.apache.xerces.parsers.SAXParser.<init>(),0,0,209224,209224
+main,org.apache.xerces.parsers.SecuritySupport$6.run(),0,0,61765,61765
+main,org.apache.xerces.parsers.SecuritySupport$7.run(),0,0,42846,42846
+main,org.apache.xerces.parsers.SecuritySupport.getFileExists(),0,0,42846,42846
+main,org.apache.xerces.parsers.SecuritySupport.getResourceAsStream(),0,0,61765,61765
+main,org.apache.xerces.parsers.XML11Configuration.parse(),0,0,37372144,37372144
+main,org.apache.xerces.parsers.XML11Configuration.reset(),0,0,20422,20422
+main,org.apache.xerces.parsers.XMLParser.parse(),0,0,18686072,18686072
+main,org.apache.xerces.util.SymbolTable$Entry.<init>(),0,0,60084,60084
+main,org.apache.xerces.util.SymbolTable.addSymbol(),60931,60931,121016,121016
+main,org.apache.xerces.util.URI.<init>(),0,0,38098,38098
+main,org.apache.xerces.util.URI.initialize(),0,0,19049,19049
+main,org.apache.xerces.util.URI.initializeScheme(),19049,19049,19049,19049
+main,org.apache.xerces.xinclude.XIncludeHandler.characters(),0,0,654314,654314
+main,org.apache.xerces.xinclude.XIncludeHandler.emptyElement(),0,0,39646,39646
+main,org.apache.xerces.xinclude.XIncludeHandler.endElement(),0,0,13231184,13231184
+main,org.apache.xerces.xinclude.XIncludeHandler.startElement(),40998,40998,3872053,3872053
+main,org.apache.xml.utils.DefaultErrorHandler.<init>(),0,0,18586,18586
+main,org.apache.xmlgraphics.fonts.Glyphs.charToGlyphName(),18930,18930,18930,18930
+main,org.apache.xmlgraphics.ps.PSFontUtils.defineWinAnsiEncoding(),180904,180904,199835,199835
+main,org.apache.xmlgraphics.ps.PSGenerator.concatMatrix(),20799,20799,355365,355365
+main,org.apache.xmlgraphics.ps.PSGenerator.convertRealToDSC(),0,0,19375,19375
+main,org.apache.xmlgraphics.ps.PSGenerator.convertStringToDSC(),127770,127770,255540,255540
+main,org.apache.xmlgraphics.ps.PSGenerator.formatDouble(),0,0,3325791,3325791
+main,org.apache.xmlgraphics.ps.PSGenerator.formatDouble5(),0,0,97897,97897
+main,org.apache.xmlgraphics.ps.PSGenerator.formatMatrix(),0,0,97897,97897
+main,org.apache.xmlgraphics.ps.PSGenerator.newLine(),19017,19017,38817,38817
+main,org.apache.xmlgraphics.ps.PSGenerator.restoreGraphicsState(),0,0,19017,19017
+main,org.apache.xmlgraphics.ps.PSGenerator.saveGraphicsState(),0,0,156353,156353
+main,org.apache.xmlgraphics.ps.PSGenerator.useFont(),0,0,163213,163213
+main,org.apache.xmlgraphics.ps.PSGenerator.useLineWidth(),0,0,40278,40278
+main,org.apache.xmlgraphics.ps.PSGenerator.write(),500346,500346,1362204,1362204
+main,org.apache.xmlgraphics.ps.PSGenerator.writeDSCComment(),0,0,100816,100816
+main,org.apache.xmlgraphics.ps.PSGenerator.writeln(),0,0,1401021,1401021
+main,org.apache.xmlgraphics.ps.PSProcSet.getResourceSpecification(),0,0,59735,59735
+main,org.apache.xmlgraphics.ps.PSResource.getResourceSpecification(),0,0,87410,87410
+main,org.apache.xmlgraphics.ps.PSResource.hashCode(),0,0,147145,147145
+main,org.apache.xmlgraphics.ps.PSResource.toString(),0,0,147145,147145
+main,org.apache.xmlgraphics.ps.dsc.ResourceTracker.notifyResourceUsageOnPage(),0,0,87410,87410
+main,org.apache.xmlgraphics.ps.dsc.ResourceTracker.writeResources(),0,0,59735,59735
+main,org.apache.xmlgraphics.ps.dsc.events.AbstractResourcesDSCComment.<init>(),0,0,20286,20286
+main,org.apache.xmlgraphics.ps.dsc.events.AbstractResourcesDSCComment.addResources(),0,0,20286,20286
+main,org.apache.xmlgraphics.ps.dsc.events.DSCCommentPageResources.<init>(),0,0,20286,20286
+main,org.dacapo.harness.Benchmark.deleteFile(),0,0,493164,493164
+main,org.dacapo.harness.Benchmark.postIteration(),0,0,493164,493164
+main,org.dacapo.harness.Benchmark.postIterationCleanup(),0,0,493164,493164
+main,org.dacapo.harness.Benchmark.run(),0,0,24185098,24185098
+main,org.dacapo.harness.Benchmark.startIteration(),0,0,1185258,1185258
+main,org.dacapo.harness.Benchmark.stopIteration(),0,0,32133,32133
+main,org.dacapo.harness.Callback.complete(),0,0,141078,141078
+main,org.dacapo.harness.Callback.runAgain(),0,0,3905,3905
+main,org.dacapo.harness.Callback.start(),0,0,553990,553990
+main,org.dacapo.harness.CommandLineArgs.getIterations(),0,0,3905,3905
+main,org.dacapo.harness.DacapoClassLoader.loadClass(),0,0,20472,20472
+main,org.dacapo.harness.Fop.augmentSystemProperties(),9308,9308,9308,9308
+main,org.dacapo.harness.Fop.iterate(),0,0,22122753,22122753
+main,org.dacapo.harness.TeeOutputStream.newLog(),0,0,1077958,1077958
+main,org.dacapo.harness.TeeOutputStream.openLog(),0,0,1077958,1077958
+main,org.dacapo.harness.TeeOutputStream.version(),0,0,49118,49118
+main,org.dacapo.harness.TeePrintStream.openLog(),0,0,1077958,1077958
+main,org.dacapo.harness.TeePrintStream.version(),0,0,49118,49118
+main,org.dacapo.harness.TestHarness.main(),0,0,24189003,24189003
+main,org.dacapo.harness.TestHarness.runBenchmark(),0,0,24189003,24189003
+main,sun.misc.FloatingDecimal$BinaryToASCIIBuffer.access$100(),1850173,1850173,1850173,1850173
+main,sun.misc.FloatingDecimal$BinaryToASCIIBuffer.toJavaFormatString(),220646,220646,220646,220646
+main,sun.misc.FloatingDecimal.appendTo(),0,0,20184,20184
+main,sun.misc.FloatingDecimal.getBinaryToASCIIConverter(),0,0,3660787,3660787
+main,sun.misc.FloatingDecimal.parseDouble(),37860,37860,37860,37860
+main,sun.misc.FloatingDecimal.toJavaFormatString(),0,0,82725,82725
+main,sun.misc.URLClassPath$JarLoader.findResource(),0,0,20490,20490
+main,sun.misc.URLClassPath$JarLoader.getResource(),0,0,20490,20490
+main,sun.misc.URLClassPath.findResource(),0,0,40512,40512
+main,sun.misc.URLClassPath.getNextLoader(),20022,20022,20022,20022
+main,sun.net.www.protocol.file.FileURLConnection.getPermission(),0,0,294262,294262
+main,sun.net.www.protocol.jar.JarFileFactory.get(),0,0,294262,294262
+main,sun.net.www.protocol.jar.JarFileFactory.getCachedJarFile(),0,0,294262,294262
+main,sun.net.www.protocol.jar.JarFileFactory.getPermission(),0,0,294262,294262
+main,sun.net.www.protocol.jar.JarURLConnection.connect(),0,0,294262,294262
+main,sun.net.www.protocol.jar.JarURLConnection.getInputStream(),0,0,294262,294262
+main,sun.nio.cs.StreamEncoder.flushBuffer(),0,0,347534,347534
+main,sun.nio.cs.StreamEncoder.implFlushBuffer(),0,0,347534,347534
+main,sun.nio.cs.StreamEncoder.writeBytes(),0,0,347534,347534
+main,sun.reflect.DelegatingConstructorAccessorImpl.newInstance(),0,0,18586,18586
+main,sun.reflect.DelegatingMethodAccessorImpl.invoke(),0,0,46311756,46311756
+main,sun.reflect.GeneratedConstructorAccessor16.newInstance(),0,0,18586,18586
+main,sun.reflect.GeneratedMethodAccessor31.invoke(),0,0,22122753,22122753
+main,sun.reflect.NativeMethodAccessorImpl.invoke(),0,0,24189003,24189003
+main,sun.reflect.NativeMethodAccessorImpl.invoke0[native](),0,0,24189003,24189003
+main,sun.util.locale.provider.CalendarProviderImpl.getInstance(),0,0,20125,20125
